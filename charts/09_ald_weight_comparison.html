@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ALD vs Portal Weight Comparison</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+  /* AI: Standalone comparison chart — ALD certified measured weights vs Refit8 portal estimated
+     weights, binned by ALD material category. Custom canvas rendering with interactive hover
+     showing individual item breakdown within portal bars. Refit8 brand tokens applied. */
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Geist', 'Inter', system-ui, sans-serif;
+    background: #F4F2EE;
+    color: #1E1B5C;
+    padding: 28px 32px 40px;
+    min-height: 100vh;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 18px;
+    gap: 20px;
+  }
+  .header-text { flex: 1; }
+  .eyebrow {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; color: #E8762B; margin-bottom: 6px;
+  }
+  h1 { font-size: 20px; font-weight: 700; line-height: 1.25; margin-bottom: 6px; color: #1E1B5C; }
+  .subtitle { font-size: 13px; color: #555; line-height: 1.55; max-width: 680px; }
+  .header-logo { height: 52px; object-fit: contain; flex-shrink: 0; margin-top: 2px; }
+  .logo-group { display: flex; align-items: center; gap: 16px; flex-shrink: 0; }
+  .logo-divider { width: 1px; height: 36px; background: #ccc; }
+
+  .legend-row {
+    display: flex; gap: 22px; margin: 14px 0 8px;
+    flex-wrap: wrap; align-items: center;
+  }
+  .legend-item { display: flex; align-items: center; gap: 7px; font-size: 12px; color: #333; }
+  .legend-swatch { width: 14px; height: 14px; border-radius: 3px; flex-shrink: 0; }
+  .legend-divider { width: 1px; height: 16px; background: #ccc; }
+  .legend-note { font-size: 11px; color: #888; font-style: italic; }
+
+  .chart-container {
+    background: #fff;
+    border-radius: 10px;
+    padding: 16px 20px 20px;
+    box-shadow: 0 1px 4px rgba(30,27,92,0.07);
+  }
+  #mainCanvas { display: block; width: 100%; }
+
+  .tooltip-box {
+    position: fixed;
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+    pointer-events: none;
+    max-width: 300px;
+    z-index: 9999;
+    display: none;
+  }
+  .tt-title { font-weight: 700; color: #1E1B5C; margin-bottom: 7px; font-size: 12.5px; }
+  .tt-row { display: flex; align-items: center; gap: 8px; padding: 2px 0; }
+  .tt-swatch { width: 9px; height: 9px; border-radius: 2px; flex-shrink: 0; }
+  .tt-name { flex: 1; color: #444; font-size: 11.5px; }
+  .tt-weight { font-weight: 600; color: #1E1B5C; white-space: nowrap; font-size: 11.5px; }
+  .tt-divider { border-top: 1px solid #eee; margin: 5px 0 3px; }
+  .tt-row.total .tt-name { color: #777; font-size: 11px; }
+  .tt-row.total .tt-weight { font-size: 11px; }
+  .tt-row.ald-row .tt-weight { color: #1E1B5C; }
+
+  .analysis-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 16px;
+  }
+  .note-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 13px 15px;
+    font-size: 12px;
+    line-height: 1.55;
+    box-shadow: 0 1px 3px rgba(30,27,92,0.06);
+    border-left: 3px solid transparent;
+  }
+  .note-card.over  { border-left-color: #E8762B; }
+  .note-card.under { border-left-color: #1E1B5C; }
+  .note-card.match { border-left-color: #065f46; }
+  .note-card.ald-only { border-left-color: #999; }
+  .note-card strong {
+    display: block; font-size: 11.5px; font-weight: 700;
+    margin-bottom: 5px; color: #1E1B5C;
+  }
+  .note-card b { font-weight: 700; }
+
+  .section-label {
+    font-size: 10.5px; font-weight: 700; letter-spacing: 0.06em;
+    text-transform: uppercase; color: #1E1B5C;
+    margin: 22px 0 6px; padding-left: 8px;
+    border-left: 3px solid #E8762B;
+  }
+  .pie-card {
+    background: #fff; border-radius: 10px; padding: 20px;
+    box-shadow: 0 1px 4px rgba(30,27,92,0.07);
+    display: flex; gap: 32px; align-items: flex-start; flex-wrap: wrap;
+  }
+  .pie-canvas-wrap {
+    flex-shrink: 0; position: relative;
+    width: 340px; height: 340px;
+  }
+  .pie-center-label {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; pointer-events: none;
+  }
+  .pie-center-label .total-num {
+    font-size: 22px; font-weight: 700; color: #1E1B5C; line-height: 1;
+  }
+  .pie-center-label .total-unit {
+    font-size: 11px; color: #888; margin-top: 3px;
+  }
+  .pie-legend { flex: 1; min-width: 220px; }
+  .pw-group { margin-bottom: 14px; }
+  .pw-group-title {
+    display: flex; align-items: center; gap: 7px;
+    font-size: 11.5px; font-weight: 700; color: #1E1B5C;
+    margin-bottom: 5px; padding-bottom: 4px;
+    border-bottom: 1px solid #eee;
+  }
+  .pw-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+  .pw-total { margin-left: auto; font-size: 11px; color: #888; font-weight: 400; }
+  .pw-item {
+    display: flex; align-items: center; gap: 7px;
+    font-size: 11px; color: #444; padding: 2px 0; padding-left: 17px;
+  }
+  .pw-item-swatch { width: 8px; height: 8px; border-radius: 2px; flex-shrink: 0; }
+  .pw-item-name { flex: 1; }
+  .pw-item-weight { color: #888; white-space: nowrap; }
+
+  .data-disclaimer {
+    margin-top: 14px; font-size: 11px; color: #888;
+    line-height: 1.6; text-align: center;
+  }
+  .data-disclaimer span { color: #1E1B5C; font-weight: 600; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-text">
+    <div class="eyebrow">Chifley Tower L13 · 2 Chifley Square · 2026</div>
+    <h1>Comparison of ALD Resource Recovery Report to pre-defit audit estimates</h1>
+    <div class="subtitle">Comparing the estimated weight of the fitout audit to the real C&amp;D waste data collected by ALD</div>
+  </div>
+  <div class="logo-group">
+    <img class="header-logo" src="../data/images/logos/ALD_logo_transparent.png" alt="ALD Corporate">
+    <div class="logo-divider"></div>
+    <img class="header-logo" src="../data/images/logos/Refit8_logo.png" alt="Refit8">
+  </div>
+</div>
+
+<div class="legend-row">
+  <div class="legend-item">
+    <div class="legend-swatch" style="background:#1E1B5C;"></div>
+    ALD Actual (certified measured)
+  </div>
+  <div class="legend-item">
+    <div class="legend-swatch" style="background:#E8762B;"></div>
+    Portal Estimated (audit-based)
+  </div>
+  <div class="legend-divider"></div>
+  <div class="legend-note">Hover over portal bars to reveal individual item breakdown</div>
+</div>
+
+<div class="chart-container">
+  <canvas id="mainCanvas"></canvas>
+</div>
+
+<div id="tooltip" class="tooltip-box"></div>
+
+<div class="analysis-grid">
+
+  <div class="note-card over">
+    <strong>Portal over-estimates (&gt;50%)</strong>
+    <b>Carpet Tiles (+119%):</b> Portal includes full audit qty of both Grey and Accent tile batches; ALD measured only the stewardship collection batch sent to Milliken.<br>
+    <b>AC Flex (+61%):</b> Portal quantified flexible HVAC ducting from floorplans and an estimate based on NLA; possible overlap with rigid HVAC ducting or more was retained than anticipated.<br>
+    <b>Glass (+55%):</b> Portal includes glass partitions and screens not confirmed as collected by ALD; some glass may have been retained or disposed separately.<br>
+    <b>Metal (Reuse) (+80%):</b> Likely item mismatch — currently assuming CPU Bracket (107.8 kg) which exceeds the ALD reported value (60 kg).
+  </div>
+
+  <div class="note-card under">
+    <strong>Portal under-estimates (&gt;50%)</strong>
+    <b>Vinyl / Off-cut Carpet (−82%):</b> Portal did not quantify the proportion of carpet tile that would be unsuitable for stewardship and thus contribute to the reported weight.<br>
+    <b>Hard Plastic (−89%):</b> Unable to identify likely items for this material category.<br>
+    <b>Heavy Metal (−54%):</b> Structural or other metal components removed by ALD potentially not captured during audit; under-estimated weight of structural fixings.
+  </div>
+
+  <div class="note-card match">
+    <strong>Good alignment (&lt;10% divergence)</strong>
+    Ceiling Tiles (Recycle) · Ceiling Tiles (Retain) · Plasterboard · Cables · Cardboard · Insulation (Recycle) · Wall Sockets (R+) · Plastic · Plastic Chair (Reuse) · Electronics (Reuse)
+  </div>
+
+  <div class="note-card ald-only">
+    <strong>No Audit Data</strong>
+    <b>Stationary (37 kg):</b> Refit8 did not directly capture stationary or similar small items left by previous tenants.<br><br>
+    <b>Note on methodology:</b> Portal pathway assignments do not always align with ALD's collection categories. Asset-material matching is based on similar material, item description and assigned pathway given ALD primarily accounts for Disposal and Recycle pathways.
+  </div>
+
+</div>
+
+<div class="section-label">ALD Recorded Weight by Pathway</div>
+<div class="pie-card">
+  <div class="pie-canvas-wrap">
+    <canvas id="pieCanvas"></canvas>
+    <div class="pie-center-label">
+      <div class="total-num" id="pieCenterNum">25,973</div>
+      <div class="total-unit">kg total</div>
+    </div>
+  </div>
+  <div class="pie-legend" id="pieLegend"></div>
+</div>
+
+<div class="data-disclaimer">
+  <span>Data sources:</span>
+  ALD Corporate Resource Recovery Report · HUNTER 202561 · 2 Chifley Square Level 13 · 27 Mar – 15 Apr 2026
+  &nbsp;|&nbsp; Refit8 portal audit data · assets.json · Updated May 2026
+</div>
+
+<script>
+// ── Data ──────────────────────────────────────────────────────────────────────
+const CHART_DATA = [
+  {label: "Metal (Light)", ald: 4228.0, portal: 3339.1, items: [{name: "Side Pedestal", w: 2380}, {name: "Metal Skirting", w: 450}, {name: "Stud and Track in Partition Wall", w: 183.6}, {name: "Workstation Cable Tray", w: 112.2}, {name: "Workstation Power Outlet Floorbox", w: 83.2}, {name: "Air Inlet", w: 40}, {name: "Ceiling Return Air Diffuser", w: 36}, {name: "Radial Air Diffuser", w: 30}, {name: "Door Hinge Flat", w: 11.7}, {name: "Door Handle", w: 6.5}, {name: "Bell Ornamental Attached to Wall", w: 4}, {name: "Door Stop", w: 1.95}]},
+  {label: "Timber", ald: 3870.0, portal: 2544.5, items: [{name: "Workstation Tabletops", w: 1640}, {name: "Joinery - Fixed Cabinet", w: 440}, {name: "Joinery - Testing Room Table", w: 176.4}, {name: "Joinery - Printer Station", w: 110}, {name: "Workstation Tabletop - Timber Laminate", w: 50}, {name: "Timber Breakout Screen", w: 44.1}, {name: "Joinery - Printer Station Cabinetry", w: 35}, {name: "Joinery - Fixed Cabinetry Above Tea Station", w: 27}, {name: "Side Pedestal Timber Laminate", w: 22}]},
+  {label: "Ceiling Tiles (Retain)", ald: 3328.0, portal: 3328, items: [{name: "Mineral Fibre Ceiling Tile (r)", w: 3328}]},
+  {label: "Plasterboard", ald: 3148.0, portal: 3145, items: [{name: "Plasterboard Partition Wall", w: 3145}]},
+  {label: "Carpet Tiles", ald: 1500.0, portal: 3291.7, items: [{name: "Carpet Tile - Grey", w: 3114}, {name: "Carpet Tile - Accent", w: 177.72}]},
+  {label: "Heavy Metal", ald: 1180.0, portal: 548, items: [{name: "Workstation End Legs", w: 340}, {name: "Workstation Middle Legs", w: 208}]},
+  {label: "Ceiling Tiles (Recycle)", ald: 1118.0, portal: 1118, items: [{name: "Mineral Fibre Ceiling Tile", w: 1118}]},
+  {label: "Aluminium", ald: 1062.0, portal: 880, items: [{name: "Partition Wall Framing System", w: 480}, {name: "HVAC Ducting - Rigid", w: 210}, {name: "PAC Unit", w: 190}]},
+  {label: "Furniture (Reuse)", ald: 876.0, portal: 572, items: [{name: "Breakout Round Table White", w: 171}, {name: "Breakout Lounge Seating (double)", w: 165}, {name: "Interview Table Round", w: 90}, {name: "P4 Breakout Stool Upholstered", w: 32}, {name: "Breakout Table High", w: 30}, {name: "P4 Breakout Stool Unupholstered", w: 30}, {name: "Breakout Lounge Seating (single)", w: 28}, {name: "Breakout Low Table Egg", w: 18}, {name: "Breakout Standard Beanbag", w: 8}]},
+  {label: "Chair (Recycled)", ald: 780.0, portal: 1130, items: [{name: "Task Chair", w: 930}, {name: "Meeting Room Chair", w: 200}]},
+  {label: "Electronics (Reuse)", ald: 780.0, portal: 719.6, items: [{name: "Westinghouse 501L Refrigerator", w: 350}, {name: "Westinghouse 455L Refrigerator-Freezer", w: 140}, {name: "Bosch Dishwasher - Silence", w: 47}, {name: "Smeg Dishwasher", w: 47}, {name: "Bosch Dishwasher - SilencePlus", w: 45}, {name: "PA Speaker", w: 20.7}, {name: "Printer", w: 20}, {name: "Panasonic Microwave", w: 10}, {name: "Sharp Microwave", w: 10}, {name: "Downlight Main", w: 8.8}, {name: "Nero Sandwich Press", w: 5}, {name: "Emergency LED Luminaire", w: 3.6}, {name: "Exit Sign", w: 3}, {name: "PIR Sensor", w: 1.95}, {name: "Light Switch", w: 1.8}, {name: "Nero Toaster", w: 1.8}, {name: "Emergency Light", w: 1.5}, {name: "WAP", w: 1}, {name: "Honeywell Sensor", w: 0.96}]},
+  {label: "Vinyl / Off-cut Carpet", ald: 673.0, portal: 119, items: [{name: "Breakout Flooring", w: 119}], aldSplit: [{name: 'Recycle', w: 538.4, color: '#1a4ba6'}, {name: 'Landfill', w: 134.6, color: '#991b1b'}]},
+  {label: "Insulation (Recycle)", ald: 667.0, portal: 667.5, items: [{name: "Polyester Wall Insulation", w: 667.5}]},
+  {label: "MDF Door / Sheet", ald: 639.0, portal: 530, items: [{name: "Door Core", w: 490}, {name: "Door Solid with Glass Pane", w: 40}], aldSplit: [{name: 'Recycle', w: 511.2, color: '#1a4ba6'}, {name: 'Landfill', w: 127.8, color: '#991b1b'}]},
+  {label: "Glass", ald: 451.0, portal: 699, items: [{name: "Glass Window Pane", w: 271}, {name: "Laminated Glass Panel on Wooden Screen", w: 268}, {name: "Glass Partition Door", w: 160}]},
+  {label: "Mixed Waste", ald: 383.0, portal: 496.3, items: [{name: "Kitchen Island with In-joinery Bins", w: 370}, {name: "Miscellaneous Waste", w: 120}, {name: "Pinboard Above Printer Station", w: 5}, {name: "Door Textile Soft Close", w: 1.3}], aldSplit: [{name: 'Reuse', w: 35, color: '#166534'}, {name: 'Recycle', w: 278.4, color: '#1a4ba6'}, {name: 'Landfill', w: 69.6, color: '#991b1b'}]},
+  {label: "Cables", ald: 271.0, portal: 271, items: [{name: "Copper Cabling", w: 271}]},
+  {label: "Hard Plastic", ald: 239.0, portal: 27.2, items: [{name: "Plastic Skirting Fill", w: 27}, {name: "Antenna Cover", w: 0.2}]},
+  {label: "AC Flex", ald: 232.0, portal: 374.2, items: [{name: "HVAC Ducting - Flexible", w: 374.22}], aldSplit: [{name: 'Recycle', w: 185.6, color: '#1a4ba6'}, {name: 'Landfill', w: 46.4, color: '#991b1b'}]},
+  {label: "Plastic", ald: 165.0, portal: 150, items: [{name: "Workstation Privacy Panel", w: 102}, {name: "Standing Bin with Changeable Lids", w: 48}]},
+  {label: "Cardboard", ald: 150.0, portal: 150, items: [{name: "Cardboard", w: 150}]},
+  {label: "Metal (Reuse)", ald: 60.0, portal: 107.8, items: [{name: "CPU Bracket", w: 107.8}]},
+  {label: "Plastic Chair (Reuse)", ald: 60.0, portal: 59.5, items: [{name: "Kitchen Wing Chair", w: 44}, {name: "Plastic Low Stool Seat", w: 15.5}]},
+  {label: "Insulation (Retain)", ald: 48.4, portal: 66, items: [{name: "Polyester Wall Insulation (r)", w: 66}]},
+  {label: "Stationary (ALD reuse)", ald: 37.0, portal: 0, items: []},
+  {label: "Wall Sockets (R+)", ald: 28.0, portal: 28.1, items: [{name: "Miscellaneous Wall Sockets", w: 28.05}]},
+];
+
+// ── Constants ─────────────────────────────────────────────────────────────────
+const NAVY    = '#1E1B5C';
+const ORANGE  = '#E8762B';
+const BG_LIGHT = '#F4F2EE';
+
+// Segment palette — varied orange/amber shades for item breakdown
+const SEG_COLORS = [
+  '#E8762B','#C44E10','#F4A460','#8B3A0A','#F7C08A',
+  '#A83B0C','#EF8A47','#6B2D08','#FAD0A0','#D4713A',
+  '#B85520','#F2B070','#7A2A08','#E8A96B','#9C3C10',
+  '#F59B5F','#5A2006','#FBDCB8','#D06030','#E07040',
+];
+
+// ── Layout params ─────────────────────────────────────────────────────────────
+const LABEL_W   = 192;
+const PAD_TOP   = 28;
+const PAD_BTM   = 40;
+const PAD_RIGHT = 24;
+const BAR_H     = 13;
+const BAR_GAP   = 5;     // between ALD and portal rows
+const BIN_PAD   = 20;    // space between bins
+const BIN_H     = BAR_H * 2 + BAR_GAP + BIN_PAD;
+
+// ── State ─────────────────────────────────────────────────────────────────────
+const canvas  = document.getElementById('mainCanvas');
+const ctx     = canvas.getContext('2d');
+const tooltip = document.getElementById('tooltip');
+let dpr = 1, cW = 0, cH = 0;
+let hoveredBin = -1, hoveredItem = -1, hoveredBarType = 'portal';
+let hitAreas = [];
+
+// ── Setup ─────────────────────────────────────────────────────────────────────
+function setupCanvas() {
+  dpr = window.devicePixelRatio || 1;
+  cW  = canvas.parentElement.clientWidth - 40;
+  cH  = PAD_TOP + CHART_DATA.length * BIN_H + PAD_BTM;
+  canvas.style.width  = cW + 'px';
+  canvas.style.height = cH + 'px';
+  canvas.width  = Math.round(cW * dpr);
+  canvas.height = Math.round(cH * dpr);
+  ctx.setTransform(1,0,0,1,0,0);
+  ctx.scale(dpr, dpr);
+}
+
+function chartArea() {
+  return { x: LABEL_W, y: PAD_TOP, w: cW - LABEL_W - PAD_RIGHT, h: cH - PAD_TOP - PAD_BTM };
+}
+
+function getScale(ca) {
+  const maxV = Math.max(...CHART_DATA.map(d => Math.max(d.ald, d.portal)));
+  const nice  = Math.ceil(maxV / 500) * 500;
+  return { max: nice, s: ca.w / nice };
+}
+
+// ── Rounded rect helpers ───────────────────────────────────────────────────────
+function rr(x, y, w, h, r, left = true, right = true) {
+  const rl = left ? r : 0, rr_ = right ? r : 0;
+  ctx.beginPath();
+  ctx.moveTo(x + rl, y);
+  ctx.lineTo(x + w - rr_, y);
+  if (right) ctx.quadraticCurveTo(x + w, y, x + w, y + rr_);
+  else ctx.lineTo(x + w, y);
+  ctx.lineTo(x + w, y + h - rr_);
+  if (right) ctx.quadraticCurveTo(x + w, y + h, x + w - rr_, y + h);
+  else ctx.lineTo(x + w, y + h);
+  ctx.lineTo(x + rl, y + h);
+  if (left) ctx.quadraticCurveTo(x, y + h, x, y + h - rl);
+  else ctx.lineTo(x, y + h);
+  ctx.lineTo(x, y + rl);
+  if (left) ctx.quadraticCurveTo(x, y, x + rl, y);
+  else ctx.lineTo(x, y);
+  ctx.closePath();
+}
+
+// ── Draw ──────────────────────────────────────────────────────────────────────
+function draw() {
+  ctx.clearRect(0, 0, cW, cH);
+  hitAreas = [];
+
+  const ca = chartArea();
+  const { max, s } = getScale(ca);
+
+  // Grid lines
+  ctx.save();
+  for (let v = 0; v <= max; v += 500) {
+    const gx = ca.x + v * s;
+    ctx.strokeStyle = v === 0 ? '#c8c8c8' : '#ebebeb';
+    ctx.lineWidth   = v === 0 ? 1.5 : 1;
+    ctx.setLineDash([]);
+    ctx.beginPath(); ctx.moveTo(gx, ca.y - 8); ctx.lineTo(gx, ca.y + ca.h); ctx.stroke();
+    // axis label
+    if (v > 0 || v === 0) {
+      ctx.fillStyle   = '#999';
+      ctx.font        = '10px Arial';
+      ctx.textAlign   = 'center';
+      ctx.textBaseline = 'top';
+      const lbl = v >= 1000 ? (v/1000).toFixed(v % 1000 === 0 ? 0 : 1) + 't' : v === 0 ? '0' : v + 'kg';
+      ctx.fillText(lbl, gx, ca.y + ca.h + 6);
+    }
+  }
+  ctx.restore();
+
+  // Bins
+  CHART_DATA.forEach((bin, bi) => {
+    const by   = ca.y + bi * BIN_H;
+    const isHov = bi === hoveredBin;
+
+    // Label
+    ctx.save();
+    ctx.fillStyle    = isHov ? NAVY : '#3a3a4a';
+    ctx.font         = isHov ? 'bold 11px Arial' : '11px Arial';
+    ctx.textAlign    = 'right';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(bin.label, LABEL_W - 9, by + BAR_H + (BAR_GAP / 2));
+    ctx.restore();
+
+    // ALD bar — solid or split on hover
+    const aldW = bin.ald * s;
+    const aldHov = isHov && hoveredBarType === 'ald' && bin.aldSplit;
+    if (aldHov) {
+      let segX = ca.x;
+      bin.aldSplit.forEach((seg, si) => {
+        if (seg.w <= 0) return;
+        const segW = seg.w * s;
+        const isFirst = si === 0;
+        const isLast  = si === bin.aldSplit.length - 1;
+        ctx.save();
+        rr(segX, by, segW, BAR_H, 2, isFirst, isLast);
+        ctx.fillStyle = seg.color;
+        ctx.fill();
+        if (!isFirst) {
+          ctx.strokeStyle = 'rgba(255,255,255,0.8)';
+          ctx.lineWidth = 1;
+          ctx.beginPath(); ctx.moveTo(segX, by); ctx.lineTo(segX, by + BAR_H); ctx.stroke();
+        }
+        ctx.restore();
+        hitAreas.push({ bi, si, x: segX, y: by, w: segW, h: BAR_H, type: 'ald-seg' });
+        segX += segW;
+      });
+    } else {
+      ctx.fillStyle = NAVY;
+      rr(ca.x, by, aldW, BAR_H, 2);
+      ctx.fill();
+      hitAreas.push({ bi, ii: -1, x: ca.x, y: by, w: aldW, h: BAR_H, type: 'ald' });
+    }
+
+    // Portal bar
+    const py = by + BAR_H + BAR_GAP;
+    const portalW = bin.portal * s;
+    const portalHov = isHov && hoveredBarType === 'portal';
+
+    if (bin.items.length === 0) {
+      ctx.save();
+      ctx.setLineDash([4, 3]);
+      ctx.strokeStyle = '#c8c8c8';
+      ctx.lineWidth   = 1;
+      ctx.strokeRect(ca.x + 0.5, py + 0.5, 56, BAR_H - 1);
+      ctx.setLineDash([]);
+      ctx.restore();
+      ctx.fillStyle    = '#aaa';
+      ctx.font         = '9.5px Arial';
+      ctx.textAlign    = 'left';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('no match', ca.x + 5, py + BAR_H / 2);
+    } else if (portalHov) {
+      // Segmented hover reveal
+      let segX = ca.x;
+      bin.items.forEach((item, ii) => {
+        if (item.w <= 0) return;
+        const segW = item.w * s;
+        if (segW < 0.5) return;
+        const isLast  = ii === bin.items.length - 1 || bin.items.slice(ii + 1).every(x => x.w <= 0);
+        const isFirst = ii === 0;
+        const isActive = ii === hoveredItem;
+        ctx.save();
+        rr(segX, py, segW, BAR_H, 2, isFirst, isLast);
+        const base = SEG_COLORS[ii % SEG_COLORS.length];
+        ctx.fillStyle = isActive ? lighten(base, 0.18) : base;
+        ctx.fill();
+        if (!isFirst) {
+          ctx.strokeStyle = 'rgba(255,255,255,0.75)';
+          ctx.lineWidth = 1;
+          ctx.beginPath(); ctx.moveTo(segX, py); ctx.lineTo(segX, py + BAR_H); ctx.stroke();
+        }
+        ctx.restore();
+        hitAreas.push({ bi, ii, x: segX, y: py, w: segW, h: BAR_H, type: 'seg' });
+        segX += segW;
+      });
+    } else {
+      ctx.fillStyle = ORANGE;
+      rr(ca.x, py, portalW, BAR_H, 2);
+      ctx.fill();
+      hitAreas.push({ bi, ii: -1, x: ca.x, y: py, w: portalW, h: BAR_H, type: 'portal' });
+    }
+  });
+
+  // x-axis unit label
+  ctx.fillStyle    = '#aaa';
+  ctx.font         = '11px Arial';
+  ctx.textAlign    = 'center';
+  ctx.textBaseline = 'bottom';
+  ctx.fillText('Weight (kg)', ca.x + ca.w / 2, cH - 2);
+}
+
+function lighten(hex, amt) {
+  const r = Math.min(255, parseInt(hex.slice(1,3),16) + Math.round(amt*255));
+  const g = Math.min(255, parseInt(hex.slice(3,5),16) + Math.round(amt*255));
+  const b = Math.min(255, parseInt(hex.slice(5,7),16) + Math.round(amt*255));
+  return `rgb(${r},${g},${b})`;
+}
+
+// ── Tooltip ───────────────────────────────────────────────────────────────────
+function positionTooltip(e) {
+  const tw = tooltip.offsetWidth || 260;
+  const th = tooltip.offsetHeight || 160;
+  const tx = e.clientX + 16 + tw > window.innerWidth ? e.clientX - tw - 10 : e.clientX + 16;
+  const ty = e.clientY + 20 + th > window.innerHeight ? e.clientY - th - 10 : e.clientY + 20;
+  tooltip.style.left = tx + 'px';
+  tooltip.style.top  = ty + 'px';
+}
+
+function showPortalTooltip(e, bin, activeItem) {
+  if (!bin.items.length) { hideTooltip(); return; }
+  let html = `<div class="tt-title">${bin.label} — Portal Estimated</div>`;
+  bin.items.forEach((it, ii) => {
+    if (it.w <= 0) return;
+    const pct = bin.portal > 0 ? (it.w / bin.portal * 100).toFixed(0) : 0;
+    const isAct = ii === activeItem;
+    html += `<div class="tt-row" style="${isAct ? 'background:#FFF7ED;border-radius:3px;margin:0 -4px;padding:1px 4px;' : ''}">
+      <div class="tt-swatch" style="background:${SEG_COLORS[ii % SEG_COLORS.length]}"></div>
+      <div class="tt-name">${it.name}</div>
+      <div class="tt-weight">${fmt(it.w)} kg <span style="color:#bbb;font-weight:400">(${pct}%)</span></div>
+    </div>`;
+  });
+  html += `<div class="tt-divider"></div>
+    <div class="tt-row total"><div class="tt-name">Portal total</div><div class="tt-weight">${fmt(bin.portal)} kg</div></div>
+    <div class="tt-row ald-row"><div class="tt-name" style="color:#1E1B5C;font-weight:600">ALD actual</div><div class="tt-weight" style="color:#1E1B5C">${fmt(bin.ald)} kg</div></div>`;
+  tooltip.innerHTML = html;
+  tooltip.style.display = 'block';
+  positionTooltip(e);
+}
+
+function showAldTooltip(e, bin) {
+  if (!bin.aldSplit) { hideTooltip(); return; }
+  let html = `<div class="tt-title">${bin.label} — ALD Actual</div>`;
+  bin.aldSplit.forEach(seg => {
+    const pct = (seg.w / bin.ald * 100).toFixed(0);
+    html += `<div class="tt-row">
+      <div class="tt-swatch" style="background:${seg.color}"></div>
+      <div class="tt-name">${seg.name}</div>
+      <div class="tt-weight">${fmt(seg.w)} kg <span style="color:#bbb;font-weight:400">(${pct}%)</span></div>
+    </div>`;
+  });
+  html += `<div class="tt-divider"></div>
+    <div class="tt-row total"><div class="tt-name">ALD total</div><div class="tt-weight">${fmt(bin.ald)} kg</div></div>`;
+  tooltip.innerHTML = html;
+  tooltip.style.display = 'block';
+  positionTooltip(e);
+}
+
+function hideTooltip() { tooltip.style.display = 'none'; }
+function fmt(v) { return (+v).toLocaleString('en-AU', { maximumFractionDigits: 1 }); }
+
+// ── Mouse events ──────────────────────────────────────────────────────────────
+canvas.addEventListener('mousemove', e => {
+  const rect = canvas.getBoundingClientRect();
+  const mx = e.clientX - rect.left;
+  const my = e.clientY - rect.top;
+
+  let nb = -1, ni = -1, nbt = 'portal';
+  for (let k = hitAreas.length - 1; k >= 0; k--) {
+    const h = hitAreas[k];
+    if (mx >= h.x && mx <= h.x + h.w && my >= h.y && my <= h.y + h.h) {
+      nb = h.bi;
+      if (h.type === 'seg')     { ni = h.ii; nbt = 'portal'; }
+      else if (h.type === 'ald-seg') { ni = h.si; nbt = 'ald'; }
+      else if (h.type === 'ald')     { nbt = 'ald'; }
+      else                           { nbt = 'portal'; }
+      break;
+    }
+  }
+
+  if (nb !== hoveredBin || ni !== hoveredItem || nbt !== hoveredBarType) {
+    hoveredBin = nb; hoveredItem = ni; hoveredBarType = nbt;
+    draw();
+  }
+
+  if (nb >= 0) {
+    const bin = CHART_DATA[nb];
+    if (hoveredBarType === 'ald' && bin.aldSplit) {
+      showAldTooltip(e, bin);
+      canvas.style.cursor = 'crosshair';
+    } else if (hoveredBarType === 'portal' && bin.items.length > 0) {
+      showPortalTooltip(e, bin, ni);
+      canvas.style.cursor = 'crosshair';
+    } else {
+      hideTooltip();
+      canvas.style.cursor = 'default';
+    }
+  } else {
+    hideTooltip();
+    canvas.style.cursor = 'default';
+  }
+});
+
+canvas.addEventListener('mouseleave', () => {
+  hoveredBin = hoveredItem = -1; hoveredBarType = 'portal';
+  draw();
+  hideTooltip();
+});
+
+// ── Resize + Init ─────────────────────────────────────────────────────────────
+let resizeTimer;
+window.addEventListener('resize', () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => { setupCanvas(); draw(); }, 80);
+});
+
+setupCanvas();
+draw();
+</script>
+
+<script>
+// ── Pie chart — ALD recorded weight by pathway (one solid slice per pathway) ──
+const PIE_PATHWAYS = [
+  {
+    name: 'Recycle', color: '#3b82f6',   // bright blue
+    items: [
+      {name: 'Metal',                  w: 4228.0},
+      {name: 'Timber',                 w: 3870.0},
+      {name: 'Plasterboard',           w: 3148.0},
+      {name: 'Heavy Metal',            w: 1180.0},
+      {name: 'Ceiling Tiles',          w: 1118.0},
+      {name: 'Aluminium',              w: 1062.0},
+      {name: 'Chair',                  w: 780.0},
+      {name: 'Insulation',             w: 667.0},
+      {name: 'Vinyl / Off-cut Carpet', w: 538.4},
+      {name: 'MDF Door / Sheet',       w: 511.2},
+      {name: 'Glass',                  w: 451.0},
+      {name: 'Mixed Waste',            w: 278.4},
+      {name: 'Cables',                 w: 271.0},
+      {name: 'Hard Plastic',           w: 239.0},
+      {name: 'AC Flex',                w: 185.6},
+      {name: 'Plastic',                w: 165.0},
+      {name: 'Cardboard',              w: 150.0},
+    ]
+  },
+  {
+    name: 'Retain', color: '#10b981',    // bright emerald — distinct from Reuse
+    items: [
+      {name: 'Ceiling Tiles',     w: 3328.0},
+      {name: 'Banquette Seating', w: 130.0},
+      {name: 'Insulation',        w: 48.4},
+      {name: 'Wall Sockets',      w: 28.0},
+    ]
+  },
+  {
+    name: 'Reuse', color: '#8b5cf6',     // bright violet — clearly distinct from Retain
+    items: [
+      {name: 'Furniture',     w: 876.0},
+      {name: 'Electronics',   w: 780.0},
+      {name: 'Plastic Chair', w: 60.0},
+      {name: 'Metal',         w: 60.0},
+      {name: 'Stationary',    w: 37.0},
+      {name: 'Mixed Waste',   w: 35.0},
+    ]
+  },
+  {
+    name: 'Stewardship', color: '#f59e0b', // bright amber
+    items: [
+      {name: 'Carpet Tiles', w: 1500.0},
+    ]
+  },
+  {
+    name: 'Dispose', color: '#ef4444',   // bright red
+    items: [
+      {name: 'Vinyl / Off-cut Carpet', w: 134.6},
+      {name: 'MDF Door / Sheet',       w: 127.8},
+      {name: 'Mixed Waste',            w: 69.6},
+      {name: 'AC Flex',                w: 46.4},
+    ]
+  },
+];
+
+// One slice per pathway — solid colour, no per-item subdivision
+const pieLabels  = PIE_PATHWAYS.map(pw => pw.name);
+const pieData    = PIE_PATHWAYS.map(pw => pw.items.reduce((a, b) => a + b.w, 0));
+const pieColors  = PIE_PATHWAYS.map(pw => pw.color);
+const pieTotal   = pieData.reduce((a, b) => a + b, 0);
+
+// Build legend — pathway header + item list, all items share pathway colour
+const legendEl = document.getElementById('pieLegend');
+legendEl.innerHTML = PIE_PATHWAYS.map((pw, pi) => {
+  const pwTotal = pieData[pi];
+  const pct = (pwTotal / pieTotal * 100).toFixed(1);
+  const rows = pw.items.map(item =>
+    `<div class="pw-item">
+      <div class="pw-item-swatch" style="background:${pw.color}"></div>
+      <div class="pw-item-name">${item.name}</div>
+      <div class="pw-item-weight">${item.w.toLocaleString('en-AU', {maximumFractionDigits:1})} kg</div>
+    </div>`
+  ).join('');
+  return `<div class="pw-group">
+    <div class="pw-group-title">
+      <div class="pw-dot" style="background:${pw.color}"></div>
+      ${pw.name}
+      <span class="pw-total">${pwTotal.toLocaleString('en-AU', {maximumFractionDigits:1})} kg · ${pct}%</span>
+    </div>
+    ${rows}
+  </div>`;
+}).join('');
+
+// Draw donut — one arc per pathway
+const pieCtx = document.getElementById('pieCanvas').getContext('2d');
+new Chart(pieCtx, {
+  type: 'doughnut',
+  data: {
+    labels: pieLabels,
+    datasets: [{
+      data: pieData,
+      backgroundColor: pieColors,
+      borderColor: '#F4F2EE',
+      borderWidth: 3,
+      hoverOffset: 10,
+      hoverBorderColor: '#fff',
+      hoverBorderWidth: 3,
+    }]
+  },
+  options: {
+    cutout: '56%',
+    responsive: true,
+    maintainAspectRatio: true,
+    animation: { duration: 600, easing: 'easeInOutQuart' },
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        backgroundColor: '#fff',
+        titleColor: '#1E1B5C',
+        titleFont: { weight: 'bold', size: 13 },
+        bodyColor: '#444',
+        borderColor: '#e0e0e0',
+        borderWidth: 1,
+        padding: 12,
+        callbacks: {
+          label(item) {
+            const pct = (item.raw / pieTotal * 100).toFixed(1);
+            return `${item.raw.toLocaleString('en-AU', {maximumFractionDigits:1})} kg  (${pct}% of total)`;
+          }
+        }
+      }
+    }
+  }
+});
+
+document.getElementById('pieCenterNum').textContent =
+  pieTotal.toLocaleString('en-AU', {maximumFractionDigits: 0});
+</script>
+</body>
+</html>

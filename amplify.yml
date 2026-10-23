@@ -1,0 +1,15 @@
+# Amplify Hosting build spec for this static, no-build site.
+# There is no compile step: opgg-bri-portal.html loads data/*.json and
+# charts/*.html directly via relative fetch()/iframe paths at runtime.
+version: 1
+frontend:
+  phases:
+    build:
+      commands:
+        - echo "Static site — no build step required"
+  artifacts:
+    baseDirectory: /
+    files:
+      - '**/*'
+  cache:
+    paths: []

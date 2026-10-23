@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Refit8 — Material Intelligence Portal</title>
+<link rel="icon" type="image/png" href="data/images/logos/logo-mark.png">
+
+<!--
+  OPGG-BRI PROJECT PORTAL
+  ══════════════════════════════════════════════════════════════
+  Based on: portal-mockup.html skeleton
+  Branding:  Refit8 Brand Guidelines (Mar 2026)
+             · Momentum Orange  #ef7417
+             · Midnight Navy    #23225f
+             · Geist (body/headers) · Chivo Mono (labels/data)
+  Data:      Placeholder demolition audit data
+             ↳ Replace ASSETS array + KPI values with real data
+             ↳ All PLACEHOLDER markers are searchable by Ctrl+F
+  ══════════════════════════════════════════════════════════════
+-->
+
+<!-- BRANDING: Geist (body/headers) + Chivo Mono (labels/numbers) per brand guidelines -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Chivo+Mono:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ══ SPLASH SCREEN ══ -->
+<div id="r8-splash">
+  <div class="spl-content">
+    <img class="spl-logo" src="data/images/logos/Refit8_logo.png" alt="Refit8">
+    <div class="spl-eyebrow">Refit8 Material Intelligence</div>
+    <h1 class="spl-title">Digital infrastructure for<br><span>auditable, circular fitouts.</span></h1>
+    <div class="spl-projects">
+      <button class="spl-card" onclick="dismissSplash()">
+        <div class="spl-card-eyebrow">Active Project</div>
+        <h4>OPGG-BRI</h4>
+        <p>Charter Hall · Level 13, Sydney CBD</p>
+        <div class="spl-card-go">Enter portal &rarr;</div>
+      </button>
+    </div>
+    <button class="spl-skip" onclick="dismissSplash()">Skip</button>
+  </div>
+  <div class="spl-bg-figure" aria-hidden="true">
+    <img src="data/images/Sketches/Refit8 Isometric Asset.png" alt="">
+  </div>
+</div>
+
+<!-- Sticky Refit8 monogram watermark -->
+<div class="r8-monogram" aria-hidden="true"></div>
+
+<div class="app">
+
+<!-- ══════════════ TOP NAV ══════════════ -->
+<nav class="topnav">
+
+  <!-- Refit8 Full Logo -->
+  <a class="r8-logo" href="#" onclick="event.preventDefault();navHome()" title="Home">
+    <img src="data/images/logos/Refit8_logo.png" alt="Refit8">
+  </a>
+
+  <!-- Nav tabs — PLACEHOLDER: add/rename tabs to match your views -->
+  <div class="nav-tabs">
+    <button class="nav-tab" data-tab="home" onclick="setNav(this)">Home</button>
+    <div class="nav-drop">
+      <button class="nav-tab" data-tab="dashboard" onclick="setNav(this);this.blur()">Dashboard</button>
+      <div class="nav-drop-menu-wrap">
+        <div class="nav-drop-menu">
+          <a onclick="goDashView('all')">Overview</a>
+          <a onclick="goDashView('flow')">Material Pathway Flow</a>
+          <a onclick="goDashView('pyr')">Recovery by Pathway</a>
+          <a onclick="goDashView('outflow')">Material Outflow Impact</a>
+          <a onclick="goDashView('sust')">Sustainability Impact</a>
+          <a onclick="goDashView('reuse')">On-Site Reuse</a>
+        </div>
+      </div>
+    </div>
+    <button class="nav-tab" data-tab="register"  onclick="setNav(this)">Asset Register</button>
+    <button class="nav-tab" data-tab="aldreport"  onclick="setNav(this)">ALD Report</button>
+    <button class="nav-tab" data-tab="pathways"   onclick="setNav(this)">Pathways</button>
+    <button class="nav-tab" data-tab="benchmarks" onclick="setNav(this)">Benchmarks</button>
+    <button class="nav-tab" data-tab="reports"    onclick="setNav(this)">Reports</button>
+  </div>
+
+  <div class="nav-right">
+    <button class="nav-search">
+      <svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      Search…
+      <kbd>⌘K</kbd>
+    </button>
+    <button class="icon-btn">
+      <svg class="i" viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+      <span class="notif">2</span>
+    </button>
+    <button class="btn-export">↑ Export Report</button>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════════════
+     TAB PAGES — only one visible at a time.
+     All share grid-row:2 / grid-column:1 of .app.
+     JS setNav() toggles display between tabs.
+════════════════════════════════════════════════════ -->
+
+<!-- ══ HOME TAB (landing page — accessed via Refit8 logo) ══ -->
+<div id="tab-home" class="tab-page tab-scroll" style="display:block">
+<div class="home-wrap">
+
+  <!-- ══ HERO ══ -->
+  <div class="home-hero">
+    <h1 class="hh-heading"><span>Charter Hall, <span class="hh-accent">The Collective</span></span><br><em>OPGG-BRI</em></h1>
+    <p class="hh-lead">Digital infrastructure for auditable, circular fitouts.</p>
+    <p class="hh-sub">A trusted, interactive record of built form, services and FF&amp;E assets, traceable across the fitout lifecycle.</p>
+    <div class="hh-actions">
+      <button class="hh-btn primary" onclick="setNav(document.querySelector('[data-tab=register]'))">View all assets →</button>
+      <button class="hh-btn ghost" onclick="setNav(document.querySelector('[data-tab=dashboard]'))">Open dashboard</button>
+    </div>
+  </div>
+
+  <!-- ══ LIVE STATS BAND ══ -->
+  <div class="home-stats">
+    <div class="hs-item">
+      <div class="hs-val" id="home-total-wt">—</div>
+      <div class="hs-lbl">Total Fitout Mass</div>
+    </div>
+    <div class="hs-item">
+      <div class="hs-val good" id="home-diversion">—</div>
+      <div class="hs-lbl">Diversion Rate</div>
+    </div>
+    <div class="hs-item">
+      <div class="hs-val" id="home-assets">—</div>
+      <div class="hs-lbl">Asset Types Audited</div>
+    </div>
+    <div class="hs-item">
+      <div class="hs-val accent" id="home-nla">—</div>
+      <div class="hs-lbl">Net Lettable Area</div>
+    </div>
+  </div>
+
+  <!-- ══ ABOUT ══ -->
+  <div class="home-card">
+    <div class="hc-eyebrow">About the Platform</div>
+    <h2 class="hc-title">Adaptability, made measurable</h2>
+    <div class="hc-flex">
+      <figure class="hc-figure">
+        <img src="data/images/Refit8_asset_isometric.webp" alt="Isometric cutaway of an audited office floor with asset categories labelled" loading="lazy">
+        <span class="hc-figure-tag">Sample image</span>
+      </figure>
+      <div class="hc-copy">
+        <p class="hc-body">At Refit8, we envision a future where nothing in the built environment goes to waste — where every material is visible, every decision is informed, and every project begins with the data it needs to act responsibly. By bringing clarity to what already exists within buildings and fit-outs, we believe better outcomes follow for people, projects, and the planet.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ THE PROJECT ══ -->
+  <div class="home-project">
+    <div class="hp-info">
+      <div class="hc-eyebrow">The Project</div>
+      <h2 class="hc-title">OPGG-BRI</h2>
+      <p class="hp-addr">📍 2 Chifley Square L13, Sydney NSW 2000</p>
+      <p class="hc-body">This platform provides structured access to asset and built-form data, with insights on quantities, material composition, and sustainable pathways to guide reuse, recycling, and responsible decision-making.</p>
+    </div>
+    <div class="hp-photo">
+      <img src="data/images/Site Photos/Chifley1.jpeg" alt="OPGG-BRI">
+    </div>
+  </div>
+
+  <!-- ══ PROJECT TIMELINE (full width) ══ -->
+  <section class="tl-card">
+    <div class="tl-hd">
+      <div>
+        <div class="hc-eyebrow">Delivery</div>
+        <h3 class="hc-title" style="font-size:22px">Project Timeline</h3>
+      </div>
+      <span class="tl-status"><span class="tl-status-dot"></span>In progress &middot; 4 of 5 stages complete</span>
+    </div>
+    <div class="tl-track">
+      <span class="tl-interval" title="Two months of iterative audit and trade consultation cycles sit between these stages">2 months &middot; audit cycles</span>
+      <div class="tl-step done">
+        <span class="tl-node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V9l7-6 7 6v12"/><path d="M10 21v-6h4v6"/></svg></span>
+        <div class="tl-name">Site Orientation &amp; Planning</div>
+        <div class="tl-date">05 / 03 / 2026</div>
+        <span class="tl-state">Complete</span>
+      </div>
+      <div class="tl-step done">
+        <span class="tl-node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span>
+        <div class="tl-name">Initial Audit &amp; Trades Consultation</div>
+        <div class="tl-date">19 / 03 / 2026</div>
+        <span class="tl-state">Complete</span>
+      </div>
+      <div class="tl-step done gap">
+        <span class="tl-node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h5"/></svg></span>
+        <div class="tl-name">Final Audit &amp; Data Processing</div>
+        <div class="tl-date">19 / 05 / 2026</div>
+        <span class="tl-state">Complete</span>
+      </div>
+      <div class="tl-step done">
+        <span class="tl-node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17h2l1-9h12l1 9h2"/><path d="M8 17a2 2 0 1 0 4 0M13 17a2 2 0 1 0 4 0"/><path d="M12 3v5M9.5 5.5 12 8l2.5-2.5"/></svg></span>
+        <div class="tl-name">C&amp;D Material Outflows</div>
+        <div class="tl-date">27 / 08 / 2026</div>
+        <span class="tl-state">Complete</span>
+      </div>
+      <div class="tl-step next">
+        <span class="tl-node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.9 8 10 4.6-1.1 8-5 8-10V6l-8-4Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+        <div class="tl-name">Project Close-Out &amp; Reporting</div>
+        <div class="tl-date">Upcoming</div>
+        <span class="tl-state">Scheduled</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ EXPLORE ══ -->
+  <div class="home-explore">
+    <div class="hc-eyebrow">Explore</div>
+    <h2 class="hc-title">Site Navigation</h2>
+    <p class="he-sub">Use the navigation bar at the top of the screen or the cards below to explore the portal.</p>
+    <div class="he-grid">
+
+      <div class="he-card" onclick="setNav(document.querySelector('[data-tab=dashboard]'))">
+        <span class="he-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></svg></span>
+        <div class="he-label">01 · Insights</div>
+        <div class="he-name">Dashboard</div>
+        <div class="he-desc">Key metrics, material flow charts with diversion pathways, and sustainability impact at a glance.</div>
+        <div class="he-open">Open →</div>
+      </div>
+
+      <div class="he-card" onclick="setNav(document.querySelector('[data-tab=register]'))">
+        <span class="he-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg></span>
+        <div class="he-label">02 · Inventory</div>
+        <div class="he-name">Asset Register</div>
+        <div class="he-desc">Full audited inventory of every asset on site — searchable, filterable and sortable by material, pathway and more.</div>
+        <div class="he-open">Open →</div>
+      </div>
+
+      <div class="he-card" onclick="setNav(document.querySelector('[data-tab=aldreport]'))">
+        <span class="he-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 17v-4M12 17v-7M16 17v-2"/></svg></span>
+        <div class="he-label">03 · Recovery Data</div>
+        <div class="he-name">ALD Report</div>
+        <div class="he-desc">Consolidated resource recovery reporting across pre-defit and post-defit material streams.</div>
+        <div class="he-open">Open →</div>
+      </div>
+
+      <div class="he-card" onclick="setNav(document.querySelector('[data-tab=pathways]'))">
+        <span class="he-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M6 9v4a5 5 0 0 0 5 5h4"/></svg></span>
+        <div class="he-label">04 · Recovery</div>
+        <div class="he-name">Pathways</div>
+        <div class="he-desc">Material destination breakdown and the recovery partner receiving each outgoing stream.</div>
+        <div class="he-open">Open →</div>
+      </div>
+
+      <div class="he-card" onclick="setNav(document.querySelector('[data-tab=benchmarks]'))">
+        <span class="he-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.9 8 10 4.6-1.1 8-5 8-10V6l-8-4Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+        <div class="he-label">05 · Performance</div>
+        <div class="he-name">Benchmarks</div>
+        <div class="he-desc">Project performance measured against Green Star, LEED v5 and Living Building Challenge frameworks.</div>
+        <div class="he-open">Open →</div>
+      </div>
+
+      <div class="he-card" onclick="setNav(document.querySelector('[data-tab=reports]'))">
+        <span class="he-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4a2 2 0 0 1 2-2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h8"/></svg></span>
+        <div class="he-label">06 · Documents</div>
+        <div class="he-name">Reports</div>
+        <div class="he-desc">Project documentation repository, plus report exports prepared by the Refit8 team.</div>
+        <div class="he-open">Open →</div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<!-- New Refit8 site footer (Home page only — see renderSiteFooters()) -->
+<div class="site-footer-mount"></div>
+</div><!-- /tab-home -->
+
+<!-- ══ CONTACT TAB ══ (reached only via the Home-page footer link) -->
+<div id="tab-contact" class="tab-page tab-scroll">
+<div class="ph-page" style="max-width:1160px">
+  <div class="hc-eyebrow">Get in touch</div>
+  <h2 class="hc-title" style="margin-bottom:6px">Contact Us</h2>
+  <p class="ph-sub" style="margin-bottom:4px">Questions about the audit, the data, or extending Refit8 to another project — the team will come back to you.</p>
+
+  <div class="contact-grid">
+    <div class="contact-card">
+      <div class="hc-eyebrow">Send a message</div>
+      <h3 class="hc-title" style="font-size:20px;margin-bottom:22px">How can we help?</h3>
+      <div class="cf-row">
+        <div class="cf-field"><label>First name</label><input type="text" id="cf-first" placeholder="Jane"></div>
+        <div class="cf-field"><label>Last name</label><input type="text" id="cf-last" placeholder="Doe"></div>
+      </div>
+      <div class="cf-row">
+        <div class="cf-field"><label>Work email</label><input type="text" id="cf-email" placeholder="jane@company.com"></div>
+        <div class="cf-field"><label>Organisation</label><input type="text" id="cf-org" placeholder="Charter Hall"></div>
+      </div>
+      <div class="cf-field">
+        <label>Enquiry type</label>
+        <select id="cf-type">
+          <option>Project data question</option>
+          <option>Report or export request</option>
+          <option>New project enquiry</option>
+          <option>Platform access</option>
+          <option>Something else</option>
+        </select>
+      </div>
+      <div class="cf-field"><label>Message</label><textarea id="cf-msg" placeholder="Tell us a little about what you need…"></textarea></div>
+      <button class="hh-btn primary" style="border:none" onclick="sendContactEnquiry()">Send enquiry →</button>
+      <p style="font-size:12.5px;color:var(--ink-4);margin-top:12px">This opens a pre-written email in your mail app, ready to send to the Refit8 team.</p>
+    </div>
+
+    <div class="contact-card">
+      <div class="hc-eyebrow">Direct</div>
+      <h3 class="hc-title" style="font-size:20px;margin-bottom:12px">Refit8</h3>
+      <div class="cf-detail">
+        <span class="cf-detail-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span>
+        <div><div class="cf-detail-lbl">Email</div><div class="cf-detail-val"><a href="mailto:contact@refit8.io">contact@refit8.io</a></div></div>
+      </div>
+      <div class="cf-detail">
+        <span class="cf-detail-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
+        <div><div class="cf-detail-lbl">Studio</div><div class="cf-detail-val">Sydney, NSW</div></div>
+      </div>
+      <div class="cf-detail">
+        <span class="cf-detail-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20Z"/></svg></span>
+        <div><div class="cf-detail-lbl">Web</div><div class="cf-detail-val"><a href="https://refit8.io" target="_blank" rel="noopener">refit8.io</a></div></div>
+      </div>
+      <div class="cf-detail">
+        <span class="cf-detail-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
+        <div><div class="cf-detail-lbl">Response time</div><div class="cf-detail-val">Within 2 business days</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="site-footer-mount"></div>
+</div><!-- /tab-contact -->
+
+<!-- ══ DISCLAIMER TAB ══ (reached only via the site footer link) -->
+<div id="tab-disclaimer" class="tab-page tab-scroll">
+<div class="ph-page" style="max-width:860px">
+  <h1 class="hc-title">Disclaimer</h1>
+
+  <p class="hc-body">This report has been prepared by Refit8 for the specific site, project and purpose identified within the document. It is intended to support project planning, asset and material management, circularity, reuse, recovery and sustainability decision-making.</p>
+  <p class="hc-body">The audit is based on information collected through a physical walk-through of the site by Refit8 personnel using Refit8&rsquo;s digital audit application, together with information made available by the client or relevant project stakeholders at the time of the assessment.</p>
+  <p class="hc-body">The audit may include furniture, fixtures and equipment (FF&amp;E), elements of the built form, and an indicative assessment of building services. Unless expressly stated otherwise, the audit is visual and non-invasive. Refit8 does not undertake destructive investigation, engineering inspection, services testing, hazardous materials assessment, structural assessment or verification of concealed or inaccessible elements as part of a standard audit.</p>
+  <p class="hc-body">Where an audit is undertaken prior to fitout, refurbishment, strip-out or other project works, the report reflects the condition and information available at the time of inspection. Subsequent project works, design development, procurement decisions, contractor activities or changes to site conditions may affect the accuracy or relevance of the findings.</p>
+  <p class="hc-body">Asset quantities, materials, dimensions, weights, conditions and classifications may include estimates where direct measurement, product documentation or other verified information is unavailable. These estimates should be treated as indicative unless specifically identified as verified.</p>
+
+  <h2 class="hc-title" style="font-size:22px;margin-top:32px;margin-bottom:10px">Circularity and Recovery Pathways</h2>
+  <p class="hc-body">Pathways identified within the report may represent:</p>
+  <ul class="hc-body" style="margin:0 0 16px;padding-left:22px;">
+    <li>recommendations made by Refit8 based on the information available at the time of assessment;</li>
+    <li>pathways nominated or preferred by the client; or</li>
+    <li>actual outcomes recorded following project delivery.</li>
+  </ul>
+  <p class="hc-body">The status of each pathway should therefore be considered when interpreting the report.</p>
+  <p class="hc-body">Recommendations relating to retention, reuse, rehoming, repair, refurbishment, remanufacture, recycling, stewardship or disposal identify potential pathways rather than guaranteed outcomes. Their implementation may depend on subsequent inspection, contractor capability, logistics, programme requirements, product condition, regulatory requirements, market demand and other project-specific factors.</p>
+
+  <h2 class="hc-title" style="font-size:22px;margin-top:32px;margin-bottom:10px">Carbon and Emissions Information</h2>
+  <p class="hc-body">Where greenhouse gas emissions, embodied carbon or emissions reductions are reported, calculations are prepared using a GHG Protocol-aligned, emissions-factor-based methodology and the best available information at the time of assessment.</p>
+  <p class="hc-body">Calculations may rely on quantities recorded or estimated during the audit, material assumptions, published emissions factors, environmental product declarations, lifecycle datasets or other third-party sources.</p>
+  <p class="hc-body">Carbon calculations should therefore be understood as estimates subject to the assumptions, system boundaries, emissions factors and data quality stated or inherent in the methodology. Results may change where more detailed product, quantity or lifecycle information becomes available.</p>
+  <p class="hc-body">Unless expressly stated otherwise, Refit8&rsquo;s carbon calculations are intended to support project decision-making and reporting and do not constitute independent verification, certification or assurance of a client&rsquo;s greenhouse gas inventory or environmental claims.</p>
+
+  <h2 class="hc-title" style="font-size:22px;margin-top:32px;margin-bottom:10px">Reliance and Scope</h2>
+  <p class="hc-body">This report should be read in conjunction with its stated scope, methodology, assumptions and any identified data limitations.</p>
+  <p class="hc-body">Refit8 does not warrant that every asset, material, building element or service present at the site has been identified. Items that were concealed, inaccessible, not visible during the site walk-through, outside the agreed audit scope or introduced or removed after the audit may not be represented.</p>
+  <p class="hc-body">This report does not constitute structural, engineering, building compliance, hazardous materials, environmental, legal, financial or regulatory certification unless such services are expressly included within the agreed scope and undertaken by an appropriately qualified professional.</p>
+  <p class="hc-body" style="margin-bottom:0">The report has been prepared for the client and project identified within it. Any third party seeking to rely on the report should consider the purpose, scope, date, assumptions and limitations under which it was prepared.</p>
+</div>
+<div class="site-footer-mount"></div>
+</div><!-- /tab-disclaimer -->
+
+<!-- ══ DASHBOARD TAB ══ -->
+<div id="tab-dashboard" class="tab-page tab-scroll">
+
+<!-- Dashboard sub-nav -->
+<div class="dash-subnav" id="dash-subnav">
+  <button class="dash-subtab on" data-view="all"     onclick="setDashView(this)">Overview</button>
+  <button class="dash-subtab" data-view="flow"    onclick="setDashView(this)">Material Pathway Flow</button>
+  <button class="dash-subtab" data-view="pyr"     onclick="setDashView(this)">Recovery by Pathway</button>
+  <button class="dash-subtab" data-view="outflow" onclick="setDashView(this)">Material Outflow Impact</button>
+  <button class="dash-subtab" data-view="sust"    onclick="setDashView(this)">Sustainability Impact</button>
+  <button class="dash-subtab" data-view="reuse"   onclick="setDashView(this)">On-Site Reuse</button>
+</div>
+
+
+<div class="r8-dash">
+
+  <!-- KPI summary strip — computed from ASSETS -->
+  <div class="r8-kpi-strip">
+    <div class="r8-kpi accent">
+      <span class="rk-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 8l10 5 10-5-10-5Z"/><path d="M2 16l10 5 10-5M2 12l10 5 10-5"/></svg></span>
+      <div class="rkl">Total Fitout Mass</div>
+      <div class="rkv" id="ov-total-wt">—<span class="rku">kg</span></div>
+      <div class="rks" id="ov-items-sub">— asset types · — categories</div>
+    </div>
+    <div class="r8-kpi">
+      <span class="rk-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></span>
+      <div class="rkl">Net Lettable Area</div>
+      <div class="rkv" id="ov-nla">—<span class="rku">m²</span></div>
+      <div class="rks" id="ov-nla-sub">— kg/m² fitout density</div>
+    </div>
+    <div class="r8-kpi good">
+      <span class="rk-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9 9 0 0 1 9 9"/><path d="m16 8 5-5v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9 9 0 0 1-9-9"/><path d="m8 16-5 5v-5h5"/></svg></span>
+      <div class="rkl">Diversion Rate</div>
+      <div class="rkv" id="ov-diversion">—<span class="rku">%</span></div>
+      <div class="rks" id="ov-divert-sub">— kg diverted</div>
+    </div>
+    <div class="r8-kpi">
+      <span class="rk-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M8 6V4h8v2"/><path d="M6 6l1 14h10l1-14"/></svg></span>
+      <div class="rkl">Mass to Landfill</div>
+      <div class="rkv" id="ov-landfill">—<span class="rku">kg</span></div>
+      <div class="rks" id="ov-landfill-sub">— m³ estimated volume</div>
+    </div>
+  </div>
+  <!-- Overview mini-chart previews (visible on Overview only) -->
+  <div class="ov-minis" id="ov-minis">
+    <div class="ov-minis-head">Dashboard Previews</div>
+    <div class="ov-mini-grid">
+      <div class="ov-mini" onclick="setDashView(document.querySelector('.dash-subtab[data-view=flow]'))">
+        <h4>Material Pathway Flow</h4>
+        <div class="om-viz" id="om-flow"></div>
+        <div class="om-open">View chart →</div>
+      </div>
+      <div class="ov-mini" onclick="setDashView(document.querySelector('.dash-subtab[data-view=pyr]'))">
+        <h4>Recovery by Pathway</h4>
+        <div class="om-viz" id="om-pyr"></div>
+        <div class="om-open">View chart →</div>
+      </div>
+      <div class="ov-mini" onclick="setDashView(document.querySelector('.dash-subtab[data-view=outflow]'))">
+        <h4>Material Outflow Impact</h4>
+        <div class="om-viz" id="om-outflow"></div>
+        <div class="om-open">View chart →</div>
+      </div>
+      <div class="ov-mini" onclick="setDashView(document.querySelector('.dash-subtab[data-view=sust]'))">
+        <h4>Sustainability Impact</h4>
+        <div class="om-viz" id="om-sust"></div>
+        <div class="om-open">View chart →</div>
+      </div>
+      <div class="ov-mini" onclick="setDashView(document.querySelector('.dash-subtab[data-view=reuse]'))">
+        <h4>On-Site Reuse</h4>
+        <div class="om-viz" id="om-reuse"></div>
+        <div class="om-open">View chart →</div>
+      </div>
+      <div class="ov-mini" onclick="setNav(document.querySelector('[data-tab=aldreport]'))">
+        <h4>Project Circularity</h4>
+        <div class="om-viz" id="om-alddiv"></div>
+        <div class="om-open">View ALD report →</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ Widget 1: Material Pathway Flow ═══ -->
+  <div class="r8-widget" id="ov-w-flow">
+    <div class="r8-widget-open-bar">
+      <span class="r8-widget-open-label">Material Pathway Flow</span>
+      <a class="r8-widget-open-btn" href="charts/05_material_pathway_flow.html" target="_blank">
+        <svg width="10" height="10" viewBox="0 0 10 10"><path d="M2 2h6v6M8 2 2 8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" fill="none"/></svg>
+        Open
+      </a>
+    </div>
+    <div class="r8-widget-body">
+      <div class="r8-loading-bar" id="lb-flow"></div>
+      <iframe id="fr-flow" src="charts/05_material_pathway_flow.html" title="Material Pathway Flow" scrolling="no"></iframe>
+    </div>
+  </div>
+
+  <!-- ═══ Widget 2: Recovery by Pathway ═══ -->
+  <div class="r8-widget" id="ov-w-pyr">
+    <div class="r8-widget-open-bar">
+      <span class="r8-widget-open-label">Recovery by Pathway</span>
+      <a class="r8-widget-open-btn" href="charts/02_recovery_pyramid.html" target="_blank">
+        <svg width="10" height="10" viewBox="0 0 10 10"><path d="M2 2h6v6M8 2 2 8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" fill="none"/></svg>
+        Open
+      </a>
+    </div>
+    <div class="r8-widget-body">
+      <div class="r8-loading-bar" id="lb-pyr"></div>
+      <iframe id="fr-pyr" src="charts/02_recovery_pyramid.html" title="Recovery by Pathway" scrolling="no"></iframe>
+    </div>
+  </div>
+
+
+  <!-- ═══ Widget 4: Material Outflow Impact ═══ -->
+  <div class="r8-widget" id="ov-w-outflow">
+    <div class="r8-widget-open-bar">
+      <span class="r8-widget-open-label">Material Outflow Impact</span>
+      <a class="r8-widget-open-btn" href="charts/14_material_outflow_impact.html" target="_blank">
+        <svg width="10" height="10" viewBox="0 0 10 10"><path d="M2 2h6v6M8 2 2 8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" fill="none"/></svg>
+        Open
+      </a>
+    </div>
+    <div class="r8-widget-body">
+      <div class="r8-loading-bar" id="lb-outflow"></div>
+      <iframe id="fr-outflow" src="charts/14_material_outflow_impact.html" title="Material Outflow Impact" scrolling="no"></iframe>
+    </div>
+  </div>
+
+  <!-- ═══ Widget 5: Sustainability Impact ═══ -->
+  <div class="r8-widget" id="ov-w-sust">
+    <div class="r8-widget-open-bar">
+      <span class="r8-widget-open-label">Sustainability Impact</span>
+      <a class="r8-widget-open-btn" href="charts/04_sustainability_impact.html" target="_blank">
+        <svg width="10" height="10" viewBox="0 0 10 10"><path d="M2 2h6v6M8 2 2 8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" fill="none"/></svg>
+        Open
+      </a>
+    </div>
+    <div class="r8-widget-body">
+      <div class="r8-loading-bar" id="lb-sust"></div>
+      <iframe id="fr-sust" src="charts/04_sustainability_impact.html" title="Sustainability Impact" scrolling="no"></iframe>
+    </div>
+  </div>
+
+  <!-- ═══ Widget 6: On-Site Reuse ═══ -->
+  <div class="r8-widget" id="ov-w-reuse">
+    <div class="r8-widget-open-bar">
+      <span class="r8-widget-open-label">On-Site Reuse</span>
+      <a class="r8-widget-open-btn" href="charts/15_embodied_carbon_retained.html" target="_blank">
+        <svg width="10" height="10" viewBox="0 0 10 10"><path d="M2 2h6v6M8 2 2 8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" fill="none"/></svg>
+        Open
+      </a>
+    </div>
+    <div class="r8-widget-body">
+      <div class="r8-loading-bar" id="lb-reuse"></div>
+      <iframe id="fr-reuse" src="charts/15_embodied_carbon_retained.html" title="On-Site Reuse" scrolling="no"></iframe>
+    </div>
+  </div>
+  <div class="disclaimer-bar" style="margin-top:0">
+    <strong>Disclaimer:</strong> Carbon emission metrics in this report have been calculated using an emissions-factor based methodology as outlined in the GHG Protocol: Technical Guidance for Calculating Scope 3 Emissions. Some assumptions have been made regarding material composition, embodied carbon and processing emissions. Therefore, these values are indicative only.
+  </div>
+
+</div>
+
+<div class="site-footer-mount"></div>
+
+</div><!-- /tab-dashboard -->
+
+
+<!-- ══ ASSET REGISTER TAB (default) ══ -->
+<div id="tab-register" class="tab-page">
+<div class="main">
+
+  <!-- ── LEFT PANEL ── -->
+  <div class="left">
+
+    <!--
+      KPI STRIP — 6 metrics
+      PLACEHOLDER: Update all values and labels for your project.
+      Structure: { label, value, sub, class, highlight/active }
+    -->
+    <div class="kpi-strip" style="display:none">
+      <div class="kpi active">
+        <div class="kpi-label">Total Fitout Mass</div>
+        <div class="kpi-val" id="reg-total-wt">—</div>
+        <div class="kpi-sub">across all materials</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Diversion Rate</div>
+        <div class="kpi-val" id="reg-diversion">—</div>
+        <div class="kpi-sub">Target: 80%</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Unique Asset Types</div>
+        <div class="kpi-val" id="reg-items">—</div>
+
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Landfill Mass</div>
+        <div class="kpi-val navy" id="reg-landfill">—</div>
+        <div class="kpi-sub">not diverted</div>
+        <div class="kpi-sub" id="reg-wi" style="margin-top:2px;font-size:11px;opacity:0.75">—</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Estimated Embodied Carbon</div>
+        <div class="kpi-val orange" id="reg-ec">—</div>
+        <div class="kpi-sub">using material composition estimates</div>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;flex:1;overflow:hidden">
+
+      <!-- REGISTER HEADER -->
+      <div class="reg-header">
+        <div class="reg-header-text">
+          <div class="reg-title">Asset Register</div>
+          <div class="reg-sub">Every recorded asset across the project - switch views or use filters to browse select items.</div>
+        </div>
+        <div class="reg-actions">
+          <button class="reg-btn" onclick="document.querySelector('.btn-export').click()">
+            <svg class="i" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Export
+          </button>
+        </div>
+      </div>
+
+      <!-- VIEW TABS -->
+      <div class="reg-views">
+        <button class="reg-view-tab on" id="rv-table"   onclick="showView('table')">Table</button>
+        <button class="reg-view-tab"    id="rv-gallery" onclick="showView('grid')">Gallery</button>
+        <button class="reg-view-tab"    id="rv-board"   onclick="showView('board')">Pathway Board</button>
+      </div>
+
+      <!-- TOOLBAR: search · filter · quick views · count -->
+      <div class="xbar">
+        <div class="search-wrap">
+          <svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" class="search-inp" placeholder="Search assets, materials, categories…" id="srch" oninput="doFilter()">
+        </div>
+        <div class="filter-panel-wrap">
+          <button class="x-btn" id="filterBtn" onclick="toggleFilterPanel(event)">
+            <svg class="i" viewBox="0 0 24 24"><line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
+            Filter
+            <span class="fcount" id="filterCount" style="display:none">0</span>
+          </button>
+          <div class="filter-panel" id="filterPanel">
+            <div class="fp-section" style="display:flex;justify-content:space-between;align-items:center;padding-bottom:6px">
+              <span class="fp-title">Filters</span>
+              <button class="fp-ctrl" style="font-weight:600;color:var(--navy)" onclick="clearFilters()">Clear all</button>
+            </div>
+            <div class="fp-divider"></div>
+            <div class="fp-section">
+              <button class="fp-head fp-toggle" onclick="fpToggleGroup(this)">
+                <span class="fp-title">Pathway</span>
+                <svg class="fp-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="fp-list" id="fp-pw-list"></div>
+            </div>
+            <div class="fp-divider"></div>
+            <div class="fp-section collapsed">
+              <button class="fp-head fp-toggle" onclick="fpToggleGroup(this)">
+                <span class="fp-title">Category</span>
+                <svg class="fp-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="fp-list" id="fp-cat-list"></div>
+            </div>
+            <div class="fp-divider"></div>
+            <div class="fp-section collapsed">
+              <button class="fp-head fp-toggle" onclick="fpToggleGroup(this)">
+                <span class="fp-title">Material</span>
+                <svg class="fp-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="fp-list" id="fp-mat-list"></div>
+            </div>
+          </div>
+        </div>
+        <div class="qv-wrap">
+          <button class="qv-btn" id="qvBtn" onclick="toggleQvMenu(event)">
+            <span id="qvLabel">Show All</span>
+            <svg class="i" viewBox="0 0 24 24" style="width:12px;height:12px"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="qv-menu" id="qvMenu"></div>
+        </div>
+        <span class="reg-count" id="regCount">—</span>
+      </div>
+
+      <!-- PRESET FILTER PILLS — hidden for now (kept in the DOM so this is a
+           one-line revert: remove the display:none in .preset-bars in
+           styles.css to bring them back). -->
+      <div class="preset-bars" id="presetBars">
+        <div class="pw-bar" id="pwBar"></div>
+        <div class="pw-bar" id="catBar"></div>
+      </div>
+
+      <!-- ACTIVE FILTER CHIPS -->
+      <div class="filter-chips" id="filterChips"></div>
+
+      <!-- TABLE VIEW -->
+      <div class="table-wrap" id="vT">
+        <table class="t">
+          <thead>
+            <tr id="regThead"></tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+
+      <!-- GRID VIEW -->
+      <div class="table-wrap" id="vG" style="display:none">
+        <div class="grid-view" id="gridC"></div>
+      </div>
+
+      <!-- PATHWAY BOARD VIEW -->
+      <div class="board-wrap" id="vB">
+        <div class="board" id="boardC"></div>
+      </div>
+
+      <!-- STATUS BAR — PLACEHOLDER: update project/date -->
+      <div class="statusbar">
+        <span class="live-sig"><span class="live-dot-sm"></span>Live data</span>
+        <span id="cnt">8 assets</span>
+      </div>
+    </div>
+  </div><!-- /left -->
+
+  <!-- ── PANEL RESIZER ── -->
+  <div class="rp-resizer" id="rpResizer" title="Drag to resize panel"></div>
+
+  <!-- ── RIGHT PANEL ── -->
+  <div class="right">
+    <div class="rp-tabs">
+      <div class="rp-tab on" style="cursor:default">Asset Detail</div>
+    </div>
+
+    <!-- ── ASSET DETAIL PANEL ── (populated on row click) -->
+    <div class="rp-body" id="p-detail">
+      <div id="detailInner">
+        <div class="d-empty">
+          <div class="dico">◈</div>
+          <div class="dmsg">Select any asset from the register to view its audit notes, pathway instructions, and partner details.</div>
+        </div>
+      </div>
+    </div>
+  </div><!-- /right -->
+</div><!-- /main -->
+</div><!-- /tab-register -->
+
+
+<!-- ══ ALD REPORT TAB ══ -->
+<div id="tab-aldreport" class="tab-page tab-scroll">
+<div class="r8-dash">
+
+  <h2 style="font-size:22px;font-weight:600;color:#1A1816;letter-spacing:-.3px;margin:2px 0 2px;font-family:var(--font)">ALD Resource Recovery</h2>
+
+  <div class="r8-kpi-strip">
+    <div class="r8-kpi accent">
+      <span class="rk-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 8l10 5 10-5-10-5Z"/><path d="M2 16l10 5 10-5M2 12l10 5 10-5"/></svg></span>
+      <div class="rkl">Total Mass</div>
+      <div class="rkv" id="ald-total-mass">—</div>
+      <div class="rks">consolidated from ALD reports</div>
+    </div>
+    <div class="r8-kpi">
+      <span class="rk-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13"/><path d="M9 21v-6h6v6"/></svg></span>
+      <div class="rkl">Pre-defit Mass</div>
+      <div class="rkv" id="ald-defit-mass">—</div>
+      <div class="rks">previous fitout</div>
+    </div>
+    <div class="r8-kpi">
+      <span class="rk-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="9"/></svg></span>
+      <div class="rkl">Post-defit Mass</div>
+      <div class="rkv" id="ald-trade-mass" style="color:#E8762B">—</div>
+      <div class="rks">new fitout construction</div>
+    </div>
+    <div class="r8-kpi">
+      <span class="rk-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M8 6V4h8v2"/><path d="M6 6l1 14h10l1-14"/></svg></span>
+      <div class="rkl">Landfill Mass</div>
+      <div class="rkv" id="ald-landfill-mass" style="color:#dc2626">—</div>
+      <div class="rks">not diverted</div>
+    </div>
+  </div>
+
+  <!-- ═══ Widget: ALD Resource Recovery table ═══ -->
+  <div class="r8-widget" id="ov-w-ald-table">
+    <div class="r8-widget-open-bar">
+      <span class="r8-widget-open-label">ALD Resource Recovery</span>
+      <div class="vseg" id="ald-toggle">
+        <button class="on" data-mode="all" onclick="aldSetMode(this)" style="padding:5px 12px;font-family:var(--font);font-size:12.5px;font-weight:600">Show All</button>
+        <button data-mode="trade" onclick="aldSetMode(this)" style="padding:5px 12px;font-family:var(--font);font-size:12.5px;font-weight:600">Post-defit Only</button>
+      </div>
+    </div>
+    <div class="r8-widget-body" style="position:static;padding:4px 20px 18px;overflow:auto">
+      <div class="table-wrap" style="border:none;max-height:none">
+        <table class="t" id="ald-table">
+          <thead>
+            <tr>
+              <th>Material Stream</th>
+              <th>Total Mass (kg)</th>
+              <th>Landfill Mass (kg)</th>
+              <th>Origin</th>
+            </tr>
+          </thead>
+          <tbody id="ald-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="disclaimer-bar" style="margin-top:6px">
+    <strong>Note:</strong> Defit items refer to material outflows from the original tenancy during clear-out, strip-out and demo. Construction waste items are materials (excess, off-cuts, etc.) from the construction and makegood of the new fitout, hence they have been excluded from the primary reporting in the asset register and dashboard but have been included here to show that waste diversion pathways were also implemented for these items.
+  </div>
+
+  <!-- ═══ Widget: Mass by Material Stream ═══ -->
+  <div class="r8-widget" id="ov-w-ald-diversion">
+    <div class="r8-widget-open-bar">
+      <span class="r8-widget-open-label">Mass by Material Stream</span>
+      <a class="r8-widget-open-btn" href="charts/17_ald_mass_diversion.html" target="_blank">
+        <svg width="10" height="10" viewBox="0 0 10 10"><path d="M2 2h6v6M8 2 2 8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" fill="none"/></svg>
+        Open
+      </a>
+    </div>
+    <div class="r8-widget-body">
+      <div class="r8-loading-bar" id="lb-ald-diversion"></div>
+      <iframe id="fr-ald-diversion" src="charts/17_ald_mass_diversion.html" title="Mass by Material Stream" scrolling="no"></iframe>
+    </div>
+  </div>
+
+  <!-- ═══ Widget: Material Composition ═══ -->
+  <div class="r8-widget" id="ov-w-ald-share">
+    <div class="r8-widget-open-bar">
+      <span class="r8-widget-open-label">Material Composition</span>
+      <a class="r8-widget-open-btn" href="charts/18_ald_material_share.html" target="_blank">
+        <svg width="10" height="10" viewBox="0 0 10 10"><path d="M2 2h6v6M8 2 2 8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" fill="none"/></svg>
+        Open
+      </a>
+    </div>
+    <div class="r8-widget-body">
+      <div class="r8-loading-bar" id="lb-ald-share"></div>
+      <iframe id="fr-ald-share" src="charts/18_ald_material_share.html" title="Material Composition" scrolling="no"></iframe>
+    </div>
+  </div>
+
+</div>
+</div><!-- /tab-aldreport -->
+
+
+<!-- ══ PATHWAYS TAB ══ -->
+<div id="tab-pathways" class="tab-page tab-scroll">
+<div class="ph-page" style="max-width:1160px">
+  <h2 class="hc-title" style="margin-bottom:6px">Pathway Analysis</h2>
+  <p class="ph-sub" style="margin-bottom:26px">How audited material flows out of OPGG-BRI — each stream routed to the recovery partner best placed to handle it.</p>
+
+  <!-- ══ PROJECT TEAM ══ -->
+  <div class="ph-section" style="border-radius:22px;padding:28px 32px;margin-bottom:22px;">
+    <h3 class="hc-title" style="font-size:22px;margin-bottom:4px;">Project Team</h3>
+    <p style="font-size:15.5px;color:var(--ink-3);margin-bottom:26px;">The advisory, design, and research partners overseeing the circular defit — no material flows through these organisations.</p>
+    <div class="fb-team-grid" id="fb-team"></div>
+  </div>
+
+  <!-- ══ FLOW BOARD ══ -->
+  <div class="flow-board">
+    <div class="fb-source">
+      <div class="fbs-name">OPGG-BRI</div>
+      <div class="fbs-loc">Sydney CBD · Level 13</div>
+      <div class="fbs-divider"></div>
+      <div class="fbs-val" id="fbs-total">—</div>
+      <div class="fbs-lbl">Audited Material</div>
+      <div class="fbs-sub" id="fbs-sub">—</div>
+    </div>
+    <div class="fb-streams" id="flow-streams">
+      <div style="color:var(--ink-4);font-size:15px;padding:8px">Loading…</div>
+    </div>
+  </div>
+
+
+</div>
+
+<div class="site-footer-mount"></div>
+</div><!-- /tab-pathways -->
+
+
+<!-- ══ BENCHMARKS TAB ══ -->
+<div id="tab-benchmarks" class="tab-page tab-scroll">
+<div class="ph-page bm-page" style="max-width:1160px">
+  <div class="hc-eyebrow">Certification</div>
+  <h2 class="hc-title" style="margin-bottom:6px">Sustainability Benchmarks</h2>
+  <p class="ph-sub" style="margin-bottom:26px">Live project performance measured against three leading frameworks. Figures update directly from the audited asset register; items marked <em>New Fitout</em> are assessed once the incoming fitout is specified.</p>
+
+  <div class="bm-summary">
+    <div class="bm-sum-tile">
+      <span class="bm-sum-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg></span>
+      <div><div class="bm-sum-val" id="bm-div-rate">&mdash;</div><div class="bm-sum-lbl">Diversion Rate</div></div>
+    </div>
+    <div class="bm-sum-tile">
+      <span class="bm-sum-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m9 12 2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></span>
+      <div><div class="bm-sum-val" id="bm-met">&mdash;</div><div class="bm-sum-lbl">Criteria Met</div></div>
+    </div>
+    <div class="bm-sum-tile">
+      <span class="bm-sum-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.9 8 10 4.6-1.1 8-5 8-10V6l-8-4Z"/></svg></span>
+      <div><div class="bm-sum-val">3</div><div class="bm-sum-lbl">Frameworks Tracked</div></div>
+    </div>
+    <div class="bm-sum-tile">
+      <span class="bm-sum-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M8 2v4M16 2v4M3 10h18"/></svg></span>
+      <div><div class="bm-sum-val" id="bm-updated">&mdash;</div><div class="bm-sum-lbl">Last Assessed</div></div>
+    </div>
+  </div>
+
+  <section class="bm-card gs">
+    <header class="bm-card-hd">
+      <span class="bm-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.9 8 10 4.6-1.1 8-5 8-10V6l-8-4Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+      <div class="bm-card-title">
+        <div class="bm-card-eyebrow">Green Building Council of Australia</div>
+        <h3>Green Star Fitouts v1</h3>
+        <p>Circular and Responsible</p>
+      </div>
+    </header>
+    <div class="bm-rows">
+      <div class="bm-row">
+        <div class="bm-row-main"><span class="bm-row-name">Material Outflows Reporting</span></div>
+        <span class="bv g" id="gs-reporting">Achieved &#10003;</span>
+      </div>
+      <div class="bm-row">
+        <div class="bm-row-main"><span class="bm-row-name">On-site Separation</span></div>
+        <span class="bv g" id="gs-separation">Achieved &#10003;</span>
+      </div>
+      <div class="bm-row">
+        <div class="bm-row-main"><span class="bm-row-name">Off-Site Reuse</span><span class="bm-thresh">&ge; 10% by mass</span></div>
+        <span class="bv" id="gs-offsite-reuse">&mdash;</span>
+      </div>
+      <div class="bm-row fitout">
+        <div class="bm-row-main"><span class="bm-row-name">Fitout Reuse</span><span class="bm-fitout">New Fitout</span></div>
+        <span class="bv" id="gs-fitout-reuse">&mdash;</span>
+      </div>
+      <div class="bm-row fitout">
+        <div class="bm-row-main"><span class="bm-row-name">Circularity Measurement</span><span class="bm-thresh">10 / 20 / 30% circular</span><span class="bm-fitout">New Fitout</span></div>
+        <span class="bv o" id="gs-circularity">TBA</span>
+      </div>
+      <div class="bm-row fitout">
+        <div class="bm-row-main"><span class="bm-row-name">Fitout Elements</span><span class="bm-thresh">Joinery, partitions, furniture, fixtures</span><span class="bm-fitout">New Fitout</span></div>
+        <span class="bv o" id="gs-fitout-elements">TBA</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="bm-card leed">
+    <header class="bm-card-hd">
+      <span class="bm-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V8l7-5 7 5v13"/><path d="M9 21v-5h6v5"/></svg></span>
+      <div class="bm-card-title">
+        <div class="bm-card-eyebrow">US Green Building Council</div>
+        <h3>LEED v5 &mdash; ID+C, BD+C</h3>
+        <p>Materials &amp; Resources credits</p>
+      </div>
+    </header>
+    <div class="bm-rows">
+      <div class="bm-row">
+        <div class="bm-row-main"><span class="bm-row-name">C&amp;D Materials Management Plan</span></div>
+        <span class="bv g" id="leed-cd-mgmt-plan">Achieved &#10003;</span>
+      </div>
+      <div class="bm-row">
+        <div class="bm-row-main"><span class="bm-row-name">MRc1 &mdash; Interior Materials Reuse</span><span class="bm-thresh">10 / 20 / 30 / 40%</span></div>
+        <span class="bv" id="leed-mrc1">&mdash;</span>
+      </div>
+      <div class="bm-row">
+        <div class="bm-row-main"><span class="bm-row-name">MRc5 &mdash; C&amp;D Material Diversion</span><span class="bm-thresh">35 / 50 / 65%</span></div>
+        <span class="bv" id="leed-mrc5-div">&mdash;</span>
+      </div>
+      <div class="bm-row">
+        <div class="bm-row-main"><span class="bm-row-name">MRc5 &mdash; Targeted Materials</span><span class="bm-thresh">&gt; 10% &middot; gypsum, carpet, ceiling, furniture</span></div>
+        <span class="bv" id="leed-mrc5-tgt">&mdash;</span>
+      </div>
+      <div class="bm-row fitout">
+        <div class="bm-row-main"><span class="bm-row-name">MRc4 &mdash; Building Product Procurement</span><span class="bm-fitout">New Fitout</span></div>
+        <span class="bv o" id="leed-mrc4">TBA</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="bm-card lbc">
+    <header class="bm-card-hd">
+      <span class="bm-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c5-3 8-7 8-11a8 8 0 0 0-16 0c0 4 3 8 8 11Z"/><path d="M12 21V9"/><path d="M12 13c2 0 3.5-1.5 3.5-3.5M12 15c-2 0-3.5-1.5-3.5-3.5"/></svg></span>
+      <div class="bm-card-title">
+        <div class="bm-card-eyebrow">International Living Future Institute</div>
+        <h3>Living Building Challenge</h3>
+        <p>Materials Petal &mdash; Net Positive Waste</p>
+      </div>
+    </header>
+    <div class="bm-rows">
+      <div class="bm-row">
+        <div class="bm-row-main"><span class="bm-row-name">C&amp;D Diversion</span><span class="bm-thresh">&ge; 80%</span></div>
+        <span class="bv" id="lbc-diversion">&mdash;</span>
+      </div>
+      <div class="bm-row">
+        <div class="bm-row-main"><span class="bm-row-name">Minimum Diversion &mdash; Metal</span><span class="bm-thresh">&ge; 99%</span></div>
+        <span class="bv" id="lbc-metal">&mdash;</span>
+      </div>
+      <div class="bm-row">
+        <div class="bm-row-main"><span class="bm-row-name">Minimum Diversion &mdash; Paper &amp; Cardboard</span><span class="bm-thresh">&ge; 99%</span></div>
+        <span class="bv" id="lbc-paper">&mdash;</span>
+      </div>
+      <div class="bm-row">
+        <div class="bm-row-main"><span class="bm-row-name">Minimum Diversion &mdash; Carpet, Foam &amp; Insulation</span><span class="bm-thresh">&ge; 95%</span></div>
+        <span class="bv" id="lbc-carpet">&mdash;</span>
+      </div>
+      <div class="bm-row fitout">
+        <div class="bm-row-main"><span class="bm-row-name">Salvaged Materials</span><span class="bm-thresh">1&times; per 500 m&sup2;</span><span class="bm-fitout">New Fitout</span></div>
+        <span class="bv" id="lbc-salvaged">&mdash;</span>
+      </div>
+      <div class="bm-row fitout">
+        <div class="bm-row-main"><span class="bm-row-name">Local Sourcing</span><span class="bm-thresh">&ge; 20% within 500 km</span><span class="bm-fitout">New Fitout</span></div>
+        <span class="bv o" id="lbc-local">TBA</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="disclaimer-bar" style="margin-top:6px">
+    <strong>Note:</strong> Benchmark figures are derived from the audited asset register and the methodology described in each framework. Credits marked <em>New Fitout</em> depend on incoming fitout specification and are reported as TBA until that scope is confirmed.
+  </div>
+</div>
+
+<div class="site-footer-mount"></div>
+</div><!-- /tab-benchmarks -->
+
+
+<!-- ══ REPORTS TAB ══ -->
+<div id="tab-reports" class="tab-page tab-scroll">
+<div class="doc-repo">
+  <div class="repo-hdr">
+    <div>
+      <h2 class="repo-title">Reports &amp; Documents</h2>
+    </div>
+    <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+      <div class="repo-stats-box">
+        <span id="repo-file-count">—</span>
+        <span id="repo-total-size">Loading…</span>
+      </div>
+      <button class="rfile-btn" style="background:var(--navy);color:#fff;border:none;padding:9px 18px;font-size:14px;cursor:pointer;" onclick="openUploadModal()">+ Upload Document</button>
+    </div>
+  </div>
+
+  <div class="repo-search-wrap">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input type="text" class="repo-search" id="repo-search" placeholder="Search documents…" oninput="repoFilter(this.value)" autocomplete="off">
+  </div>
+
+  <div class="repo-tree" id="repo-tree">
+    <div class="repo-empty">Loading documents…</div>
+  </div>
+</div>
+
+<div class="site-footer-mount"></div>
+</div><!-- /tab-reports -->
+
+
+<!-- ══ PARTNER NETWORK TAB ══ (geographic location map — placeholder coordinates) -->
+<div id="tab-network" class="tab-page" style="display:none; padding:0; overflow:hidden;">
+  <iframe
+    id="fr-network"
+    src="charts/07_partner_map.html"
+    title="Partner Location Map"
+    style="width:100%; height:100%; border:none; display:block;"
+    scrolling="no">
+  </iframe>
+</div><!-- /tab-network -->
+
+
+</div><!-- /app -->
+
+
+<!-- ═══ Contact Us Modal (Export Report) ═══ -->
+<div class="upload-modal-overlay" id="contact-modal-overlay" style="display:none" onclick="if(event.target===this)closeContactModal()">
+  <div class="upload-modal xr-modal">
+    <div class="upload-modal-hdr">
+      <div>
+        <div class="hc-eyebrow" style="margin-bottom:3px">Reports</div>
+        <h3>Request an Export</h3>
+      </div>
+      <button class="upload-modal-close" onclick="closeContactModal()">&#x2715;</button>
+    </div>
+    <div class="upload-modal-body">
+      <div class="xr-section">
+        <div class="xr-label">Download now</div>
+        <p class="xr-intro" style="margin-bottom:12px">These two files cover most requests and can be downloaded straight away.</p>
+        <div class="xr-dl-grid">
+          <a class="xr-dl" href="Reports/Exports/OPGG-BRI_Portal_Report.pdf" download>
+            <span class="xr-dl-ico">PDF</span>
+            <span class="xr-dl-txt"><b>Portal Report</b><i>Home, dashboard, asset register sample, ALD report, pathways and benchmarks</i></span>
+            <span class="xr-dl-go">&darr;</span>
+          </a>
+          <a class="xr-dl" href="Reports/Exports/OPGG-BRI_Asset_Register.xlsx" download>
+            <span class="xr-dl-ico xl">XLSX</span>
+            <span class="xr-dl-txt"><b>Asset Register</b><i>Full asset register in Excel, without photos or estimated emissions</i></span>
+            <span class="xr-dl-go">&darr;</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="xr-divider"></div>
+      <div class="xr-label">Need something more specific?</div>
+      <p class="xr-intro">Project reports are prepared and verified by the Refit8 team. Choose what you need and we&rsquo;ll prepare it for you.</p>
+
+      <div class="xr-section">
+        <div class="xr-label">Include in export</div>
+        <div class="xr-opts">
+          <label class="xr-opt"><input type="checkbox" class="xr-scope" value="Asset Register" checked><span><b>Asset Register</b><i>Full audited inventory, all fields</i></span></label>
+          <label class="xr-opt"><input type="checkbox" class="xr-scope" value="Pathway Analysis"><span><b>Pathway Analysis</b><i>Destinations and recovery partners</i></span></label>
+          <label class="xr-opt"><input type="checkbox" class="xr-scope" value="Sustainability Impact"><span><b>Sustainability Impact</b><i>Waste emissions and embodied carbon</i></span></label>
+          <label class="xr-opt"><input type="checkbox" class="xr-scope" value="Benchmarks"><span><b>Benchmarks</b><i>Green Star, LEED v5, LBC</i></span></label>
+          <label class="xr-opt"><input type="checkbox" class="xr-scope" value="ALD Resource Recovery"><span><b>ALD Resource Recovery</b><i>Consolidated outflow reporting</i></span></label>
+          <label class="xr-opt"><input type="checkbox" class="xr-scope" value="Full Audit Report"><span><b>Full Audit Report</b><i>Complete documented report pack</i></span></label>
+        </div>
+      </div>
+
+      <div class="xr-row">
+        <div class="upload-field">
+          <label>Format</label>
+          <select id="xr-format"><option>PDF report</option><option>Excel workbook</option><option>CSV data files</option><option>Not sure — advise me</option></select>
+        </div>
+        <div class="upload-field">
+          <label>Needed by</label>
+          <select id="xr-when"><option>No fixed deadline</option><option>Within 48 hours</option><option>This week</option><option>This month</option></select>
+        </div>
+      </div>
+      <div class="xr-row">
+        <div class="upload-field"><label>Your name</label><input type="text" id="xr-name" placeholder="Jane Doe"></div>
+        <div class="upload-field"><label>Work email</label><input type="text" id="xr-email" placeholder="jane@company.com"></div>
+      </div>
+      <div class="upload-field"><label>Notes <span style="text-transform:none;letter-spacing:0;color:var(--ink-4)">(optional)</span></label><textarea id="xr-notes" placeholder="Anything specific you need included…" style="min-height:72px"></textarea></div>
+    </div>
+    <div class="upload-modal-footer" style="justify-content:space-between;align-items:center">
+      <span class="xr-foot">Sent to <b>contact@refit8.io</b></span>
+      <div style="display:flex;gap:10px;">
+        <button class="btn-cancel" onclick="closeContactModal()">Cancel</button>
+        <a class="btn-submit" id="contact-mailto-link" href="#" style="text-decoration:none;display:inline-flex;align-items:center;" onclick="return buildExportRequest()">&#9993; Send request</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ Upload Document Modal ═══ -->
+<div class="upload-modal-overlay" id="upload-modal-overlay" style="display:none" onclick="if(event.target===this)closeUploadModal()">
+  <div class="upload-modal">
+    <div class="upload-modal-hdr">
+      <h3>Upload Document</h3>
+      <button class="upload-modal-close" onclick="closeUploadModal()">&#x2715;</button>
+    </div>
+    <div class="upload-modal-body">
+      <div class="upload-field">
+        <label>Document Title</label>
+        <input type="text" id="udoc-title" placeholder="">
+      </div>
+      <div class="upload-field">
+        <label>Folder</label>
+        <select id="udoc-folder">
+          <option value="">— Select folder —</option>
+          <option>Floor Plans</option>
+          <option>Miscellaneous</option>
+          <option>Resource Recovery Report</option>
+          <option>Downstream Documentation &amp; Reporting</option>
+        </select>
+        <button type="button" class="udoc-create-folder-btn" onclick="alert('Create New Folder functionality coming soon.')">+ Create New</button>
+      </div>
+      <div class="upload-field">
+        <label>File Name <span class="field-note">(as it will appear in the repository)</span></label>
+        <input type="text" id="udoc-name" placeholder="">
+      </div>
+      <div class="upload-field">
+        <label>Attach to</label>
+        <div class="udoc-attach-toggle">
+          <button type="button" id="udoc-toggle-asset" class="udoc-toggle-btn active" onclick="udocSetAttach('asset')">Asset</button>
+          <button type="button" id="udoc-toggle-partner" class="udoc-toggle-btn" onclick="udocSetAttach('partner')">Partner</button>
+        </div>
+        <div id="udoc-attach-asset" class="udoc-attach-panel">
+          <input type="text" id="udoc-asset-lookup" placeholder="Search assets…" autocomplete="off">
+          <span class="field-note">Functionality coming soon — asset lookup will draw from the Asset Register.</span>
+        </div>
+        <div id="udoc-attach-partner" class="udoc-attach-panel" style="display:none">
+          <input type="text" id="udoc-partner-lookup" placeholder="Search partners…" autocomplete="off">
+          <span class="field-note">Functionality coming soon — partner lookup will draw from the Partner list.</span>
+        </div>
+      </div>
+      <div class="upload-dropzone" id="udoc-dropzone"
+           ondragover="event.preventDefault();this.classList.add('drag-over')"
+           ondragleave="this.classList.remove('drag-over')"
+           ondrop="handleDocDrop(event)"
+           onclick="document.getElementById('udoc-fileinput').click()">
+        <div class="upload-dropzone-icon">&#128196;</div>
+        <p>Drag &amp; drop files here, or <strong>browse</strong></p>
+        <p class="upload-dropzone-hint">PDF, DOCX, XLSX, PNG &middot; Max 50 MB</p>
+        <div class="upload-dropzone-files" id="udoc-filelist"></div>
+      </div>
+      <input type="file" id="udoc-fileinput" style="display:none" multiple onchange="handleDocFileSelect(this.files)">
+    </div>
+    <div class="upload-modal-footer">
+      <button class="btn-wmos" onclick="alert('WMOS import coming soon.')">&#128279; Import from WMOS</button>
+      <div style="display:flex;gap:10px;">
+        <button class="btn-cancel" onclick="closeUploadModal()">Cancel</button>
+        <button class="btn-submit" onclick="alert('Upload functionality coming soon.')">Upload</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="app.js" defer></script>
+
+</body>
+</html>

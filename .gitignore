@@ -1,0 +1,27 @@
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+
+# Local env / secrets (none expected in this static site, but just in case)
+.env
+.env.*
+
+# Python cache (in case local scripts are run in this folder)
+__pycache__/
+*.pyc
+*.pyo
+
+# Local backup copies made while editing — never commit these
+*.pre-merge-backup*
+*_pre-merge-backup*
+**/_pre-merge-backup/
+
+# Teammate's design-import reference snapshot — its own separate git repo,
+# never meant to be committed here; kept locally only for cross-checking.
+LH Merge/

@@ -1,0 +1,238 @@
+/* ============================================================
+   Refit8 — colors & type foundations
+   Source: Branding deliverables (Dropbox), 2026.
+   Core brand: AI Material Intelligence platform for the built
+   environment. Bold orange + navy on B&W photography.
+   ============================================================ */
+
+/* ---------- Webfonts (local TTFs in assets/fonts) ---------- */
+@font-face {
+  font-family: "Geist";
+  src: url("assets/fonts/Geist-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Geist";
+  src: url("assets/fonts/Geist-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Chivo Mono";
+  src: url("assets/fonts/ChivoMono-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Chivo Mono";
+  src: url("assets/fonts/ChivoMono-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* ====== Core brand colors (sampled from logos & banners) ====== */
+  --r8-orange:        #E8762B;   /* Primary brand orange — wordmark, CTA blocks */
+  --r8-orange-deep:   #D45F18;   /* Pressed / hover-darker */
+  --r8-orange-soft:   #F4A86A;   /* Subtle backgrounds, dividers */
+  --r8-orange-tint:   #FBE6D3;   /* Faintest tint, e.g. callout fills */
+
+  --r8-navy:          #1E1B5C;   /* Primary navy — chips, dark surfaces */
+  --r8-navy-deep:     #131036;   /* Darker navy, strokes on light */
+  --r8-navy-soft:     #2E2A7A;   /* Hover state for navy */
+
+  /* ====== Neutrals — warm off-white to deep ink ====== */
+  --r8-paper:         #F4F2EE;   /* Page background — warm off-white */
+  --r8-paper-2:       #ECE9E3;   /* Slightly darker paper */
+  --r8-line:          #E2DED6;   /* Hairline rules on paper */
+  --r8-mute:          #B5B0A6;   /* Muted text on paper */
+  --r8-ink-2:         #57534B;   /* Secondary text */
+  --r8-ink:           #1A1816;   /* Primary text — near-black, warm */
+  --r8-white:         #FFFFFF;
+
+  /* ====== Semantic foreground/background tokens ====== */
+  --bg:               var(--r8-paper);
+  --bg-2:             var(--r8-paper-2);
+  --bg-elevated:      var(--r8-white);
+  --bg-inverse:       var(--r8-navy);
+
+  --fg:               var(--r8-ink);
+  --fg-2:             var(--r8-ink-2);
+  --fg-3:             var(--r8-mute);
+  --fg-inverse:       var(--r8-white);
+  --fg-on-orange:     var(--r8-white);
+
+  --accent:           var(--r8-orange);
+  --accent-fg:        var(--r8-white);
+  --accent-2:         var(--r8-navy);
+
+  --border:           var(--r8-line);
+  --border-strong:    var(--r8-ink);
+
+  /* ====== Status / data viz (derived to fit B&W + orange palette) ====== */
+  --ok:               #2F8F5A;
+  --warn:             #C98A1A;
+  --crit:             #B94A2A;
+  --info:             var(--r8-navy);
+
+  /* ====== Spacing scale (4px base) ====== */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+
+  /* ====== Radius — capsule-leaning, generous ====== */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 14px;   /* Standard chip / card inner */
+  --radius-lg: 22px;   /* Hero card, advert blocks (matches LinkedIn chip group) */
+  --radius-xl: 32px;
+  --radius-pill: 999px;
+
+  /* ====== Shadows — restrained; brand feels flat ====== */
+  --shadow-sm: 0 1px 2px rgba(26,24,22,.06), 0 1px 1px rgba(26,24,22,.04);
+  --shadow-md: 0 6px 18px -8px rgba(26,24,22,.18), 0 2px 4px rgba(26,24,22,.06);
+  --shadow-lg: 0 24px 48px -20px rgba(26,24,22,.28);
+
+  /* ====== Type families ====== */
+  --font-sans: "Geist", "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "Chivo Mono", ui-monospace, "JetBrains Mono", "SFMono-Regular", Menlo, monospace;
+
+  /* ====== Type — semantic styles (size / line-height / weight / tracking) ====== */
+  /* Eyebrows are mono ALL-CAPS — see banners. */
+  --t-eyebrow-size: 13px;
+  --t-eyebrow-lh: 1.3;
+  --t-eyebrow-track: 0.14em;
+
+  --t-display-size: 72px;
+  --t-display-lh: 1.02;
+  --t-display-weight: 300;     /* Geist Light, large */
+  --t-display-track: -0.02em;
+
+  --t-h1-size: 48px;
+  --t-h1-lh: 1.06;
+  --t-h1-weight: 400;
+  --t-h1-track: -0.015em;
+
+  --t-h2-size: 32px;
+  --t-h2-lh: 1.12;
+  --t-h2-weight: 400;
+  --t-h2-track: -0.01em;
+
+  --t-h3-size: 22px;
+  --t-h3-lh: 1.2;
+  --t-h3-weight: 400;
+  --t-h3-track: -0.005em;
+
+  --t-body-size: 16px;
+  --t-body-lh: 1.5;
+  --t-body-weight: 400;
+
+  --t-small-size: 13px;
+  --t-small-lh: 1.45;
+
+  --t-mono-size: 13px;
+
+  /* ====== Layout ====== */
+  --container-max: 1280px;
+  --gutter: 24px;
+
+  /* ====== Motion ====== */
+  --ease-out: cubic-bezier(.2,.7,.2,1);
+  --ease-in-out: cubic-bezier(.5,0,.2,1);
+  --dur-fast: 120ms;
+  --dur-base: 220ms;
+  --dur-slow: 420ms;
+}
+
+/* ============================================================
+   Semantic element defaults — opt-in by adding `.r8` to <body>
+   ============================================================ */
+.r8 {
+  font-family: var(--font-sans);
+  color: var(--fg);
+  background: var(--bg);
+  font-size: var(--t-body-size);
+  line-height: var(--t-body-lh);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.r8 .eyebrow,
+.r8 [data-style="eyebrow"] {
+  font-family: var(--font-mono);
+  font-size: var(--t-eyebrow-size);
+  line-height: var(--t-eyebrow-lh);
+  letter-spacing: var(--t-eyebrow-track);
+  text-transform: uppercase;
+  font-weight: 400;
+  color: var(--fg-2);
+}
+
+.r8 .display,
+.r8 h1.display {
+  font-family: var(--font-sans);
+  font-size: var(--t-display-size);
+  line-height: var(--t-display-lh);
+  font-weight: var(--t-display-weight);
+  letter-spacing: var(--t-display-track);
+  text-wrap: balance;
+}
+
+.r8 h1, .r8 .h1 {
+  font-family: var(--font-sans);
+  font-size: var(--t-h1-size);
+  line-height: var(--t-h1-lh);
+  font-weight: var(--t-h1-weight);
+  letter-spacing: var(--t-h1-track);
+  text-wrap: balance;
+}
+
+.r8 h2, .r8 .h2 {
+  font-family: var(--font-sans);
+  font-size: var(--t-h2-size);
+  line-height: var(--t-h2-lh);
+  font-weight: var(--t-h2-weight);
+  letter-spacing: var(--t-h2-track);
+}
+
+.r8 h3, .r8 .h3 {
+  font-family: var(--font-sans);
+  font-size: var(--t-h3-size);
+  line-height: var(--t-h3-lh);
+  font-weight: var(--t-h3-weight);
+}
+
+.r8 p, .r8 .body {
+  font-family: var(--font-sans);
+  font-size: var(--t-body-size);
+  line-height: var(--t-body-lh);
+  text-wrap: pretty;
+}
+
+.r8 small, .r8 .small {
+  font-size: var(--t-small-size);
+  line-height: var(--t-small-lh);
+  color: var(--fg-2);
+}
+
+.r8 code, .r8 .mono {
+  font-family: var(--font-mono);
+  font-size: var(--t-mono-size);
+}
+
+/* ====== Common utility surfaces ====== */
+.r8 .surface-paper   { background: var(--bg);          color: var(--fg); }
+.r8 .surface-card    { background: var(--bg-elevated); color: var(--fg); border: 1px solid var(--border); border-radius: var(--radius-md); }
+.r8 .surface-orange  { background: var(--accent);      color: var(--accent-fg); border-radius: var(--radius-lg); }
+.r8 .surface-navy    { background: var(--bg-inverse);  color: var(--fg-inverse); border-radius: var(--radius-md); }

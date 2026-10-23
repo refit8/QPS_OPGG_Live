@@ -1,0 +1,571 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Lifecycle Assessment — OPGG-BRI</title>
+<link rel="stylesheet" href="../Refit8_dashboard_mockup/shared.css"/>
+<style>
+.summary { grid-template-columns: repeat(3, 1fr); }
+#lca-svg { display: block; width: 100%; min-width: 700px; }
+
+/* ── Tooltip ── */
+.lca-tip {
+  position: fixed;
+  z-index: 300;
+  background: linear-gradient(160deg, var(--panel-2) 0%, var(--bg-2) 100%);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 14px 16px;
+  min-width: 230px;
+  max-width: 300px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .12s ease;
+  box-shadow: 0 24px 64px rgba(0,0,0,.55), 0 0 0 1px rgba(232,118,43,.07);
+}
+.lca-tip.show { opacity: 1; }
+.tip-stage  { font-size: 17.5px; font-weight: 700; color: var(--text); letter-spacing: -.2px; margin-bottom: 2px; }
+.tip-desc   { font-size: 11.2px; font-family: "Chivo Mono", monospace; text-transform: uppercase; letter-spacing: .1em; color: var(--text-mute); margin-bottom: 9px; line-height: 1.5; }
+.tip-div    { height: 1px; background: var(--line-soft); margin-bottom: 8px; }
+.tip-row    { display: flex; align-items: center; gap: 7px; padding: 2.5px 0; font-size: 13.8px; }
+.tip-dot    { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+.tip-label  { flex: 1; color: var(--text-dim); }
+.tip-val    { font-family: "Chivo Mono", monospace; font-size: 12.5px; color: var(--text); white-space: nowrap; }
+.tip-saving { font-family: "Chivo Mono", monospace; font-size: 12.5px; color: #34d399; white-space: nowrap; }
+.tip-warn   { font-family: "Chivo Mono", monospace; font-size: 12.5px; color: #fb923c; white-space: nowrap; }
+
+/* ── Export button ── */
+.export-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  background: transparent;
+  border: 1px solid rgba(232,118,43,0.55);
+  border-radius: 8px;
+  color: var(--accent, #E8762B);
+  font-size: 12.5px;
+  font-family: "Chivo Mono", monospace;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background .15s ease, border-color .15s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.export-btn:hover { background: rgba(232,118,43,0.1); border-color: #E8762B; }
+.export-btn svg { flex-shrink: 0; }
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <div class="brand"><div class="logo">r8</div><div>Refit8 <small>Material Intelligence</small></div></div>
+  <div class="crumbs">opgg-bri / <span>lifecycle-assessment</span></div>
+</nav>
+
+<div class="wrap">
+  <div class="pagehead">
+    <div>
+      <h1>Lifecycle Assessment</h1>
+      <p>Cumulative Global Warming Potential (GWP) across all lifecycle stages, benchmarked against industry average baselines from product extraction through circular-economy recovery.</p>
+    </div>
+    <div class="meta">
+      <b>Project</b> OPGG-BRI — Demolition Audit<br>
+      <b>Standard</b> EN 15978 · Modules A1–D<br>
+      <b>Metric</b> Cumulative GWP (kg CO₂e) · Cradle to grave + circular<br>
+      <b>Stages</b> 17 modules across 5 lifecycle phases
+    </div>
+  </div>
+
+  <div class="summary">
+    <div class="stat">
+      <div class="label">Industry Total</div>
+      <div class="value">531 <span class="unit">kg CO₂e</span></div>
+      <div class="sub">Cumulative GWP across full A1–D lifecycle</div>
+    </div>
+    <div class="stat accent">
+      <div class="label">Your Project</div>
+      <div class="value">317 <span class="unit">kg CO₂e</span></div>
+      <div class="sub">Post circular-economy recovery credits applied</div>
+    </div>
+    <div class="stat good">
+      <div class="label">Carbon Saved</div>
+      <div class="value">40% <span class="unit"></span></div>
+      <div class="sub">214 kg CO₂e avoided vs. industry average</div>
+    </div>
+  </div>
+
+  <div class="chart">
+    <div class="chart-head">
+      <div class="chart-title">Cumulative GWP by Lifecycle Stage</div>
+      <div class="legend" style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+        <span>
+          <svg width="28" height="14" viewBox="0 0 28 14" style="display:inline-block;vertical-align:middle;margin-right:5px">
+            <line x1="0" y1="7" x2="28" y2="7" stroke="rgba(180,200,220,0.6)" stroke-width="2" stroke-dasharray="5,3"/>
+            <circle cx="14" cy="7" r="3.5" fill="#FFFFFF" stroke="rgba(180,200,220,0.65)" stroke-width="1.5"/>
+          </svg>
+          Industry average
+        </span>
+        <span>
+          <svg width="28" height="14" viewBox="0 0 28 14" style="display:inline-block;vertical-align:middle;margin-right:5px">
+            <line x1="0" y1="7" x2="28" y2="7" stroke="#E8762B" stroke-width="2.5"/>
+            <circle cx="14" cy="7" r="3.5" fill="#FFFFFF" stroke="#E8762B" stroke-width="1.5"/>
+          </svg>
+          Your project
+        </span>
+        <span>
+          <svg width="28" height="14" viewBox="0 0 28 14" style="display:inline-block;vertical-align:middle;margin-right:5px">
+            <rect x="0" y="2" width="28" height="10" rx="2" fill="rgba(232,118,43,0.18)"/>
+          </svg>
+          Carbon saving
+        </span>
+        <button class="export-btn" onclick="requestExport()">
+          <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.5 1v7M4 6l2.5 2.5L9 6" stroke="#E8762B" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M2 10h9" stroke="#E8762B" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+          Export
+        </button>
+      </div>
+    </div>
+
+    <svg id="lca-svg" viewBox="0 0 1100 490" preserveAspectRatio="xMidYMid meet"></svg>
+
+    <div class="foot">
+      <span class="hint pulse">● <b>Hover</b> a stage to see incremental and cumulative values &nbsp;·&nbsp; shaded area = carbon avoided</span>
+      <span>Source: EN 15978 LCA · Cumulative GWP (kg CO₂e) · Modules A1 through D</span>
+    </div>
+  </div>
+</div>
+
+<div class="lca-tip" id="lca-tip"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script>
+/* ================================================================
+ * EXPORT — CSV download
+ * ================================================================ */
+const LCA_STAGE_LABELS = {
+  A0: 'A0 - Baseline start',
+  A1: 'A1 - Raw material extraction and processing',
+  A2: 'A2 - Transport to manufacturer',
+  A3: 'A3 - Manufacturing',
+  A4: 'A4 - Transport to site',
+  A5: 'A5 - Construction & Installation',
+  B1: 'B1 - Use of installed product',
+  B2: 'B2 - Maintenance',
+  B3: 'B3 - Repair',
+  B4: 'B4 - Replacement',
+  B5: 'B5 - Refurbishment',
+  B6: 'B6 - Operational energy use',
+  B7: 'B7 - Operational water use',
+  C1: 'C1 - Demolition',
+  C2: 'C2 - Transport to facility',
+  C3: 'C3 - Waste Processing (for reuse, recovery, recycling)',
+  C4: 'C4 - Disposal',
+  D:  'D - Reuse and Recovery',
+};
+
+/* Export -> the portal's Request an Export form */
+function requestExport() {
+  if (window.parent && window.parent !== window) window.parent.postMessage({ type: 'r8-open-export' }, '*');
+  else window.location.href = '../opgg-bri-portal.html?export=1';
+}
+
+function exportLCA() {
+  const headers = [
+    'LCA Stage',
+    'Industry Average (GWP - kgCO2e)',
+    'Example Project (GWP - kgCO2e)',
+    'Stage',
+    'Industry',
+    'You',
+  ];
+
+  const rows = LCA.map(d => [
+    LCA_STAGE_LABELS[d.stage] || d.stage,
+    d.industry,
+    d.project,
+    d.stage,
+    d.industry,
+    d.project,
+  ]);
+
+  const csv = [headers, ...rows]
+    .map(row => row.map(v => `"${String(v).replace(/"/g, '""')}"`).join(','))
+    .join('\r\n');
+
+  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+  const url  = URL.createObjectURL(blob);
+  const a    = document.createElement('a');
+  a.href     = url;
+  a.download = 'Refit8_Lifecycle_Assessment.csv';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+/* ================================================================
+ * DATA — Source: Sample Asset List (Mock Dashboard) Time Location.xlsx
+ *        Sheet: Lifecycle Assessment (columns F-H, cumulative GWP)
+ * ================================================================ */
+const LCA = [
+  { stage:'A0', label:'Baseline start',                          industry:0,   project:0,   incInd:0,   incProj:0   },
+  { stage:'A1', label:'Raw material extraction & processing',    industry:200, project:100, incInd:200, incProj:100  },
+  { stage:'A2', label:'Transport to manufacturer',               industry:218, project:118, incInd:18,  incProj:18   },
+  { stage:'A3', label:'Manufacturing',                           industry:300, project:159, incInd:82,  incProj:41   },
+  { stage:'A4', label:'Transport to site',                       industry:310, project:169, incInd:10,  incProj:10   },
+  { stage:'A5', label:'Construction & installation',             industry:332, project:197, incInd:22,  incProj:28   },
+  { stage:'B1', label:'Use of installed product',                industry:340, project:205, incInd:8,   incProj:8    },
+  { stage:'B2', label:'Maintenance',                             industry:350, project:213, incInd:10,  incProj:8    },
+  { stage:'B3', label:'Repair',                                  industry:358, project:221, incInd:8,   incProj:8    },
+  { stage:'B4', label:'Replacement',                             industry:358, project:221, incInd:0,   incProj:0    },
+  { stage:'B5', label:'Refurbishment',                           industry:366, project:229, incInd:8,   incProj:8    },
+  { stage:'B6', label:'Operational energy use',                  industry:396, project:249, incInd:30,  incProj:20   },
+  { stage:'B7', label:'Operational water use',                   industry:426, project:269, incInd:30,  incProj:20   },
+  { stage:'C1', label:'Demolition',                              industry:441, project:289, incInd:15,  incProj:20   },
+  { stage:'C2', label:'Transport to facility',                   industry:451, project:297, incInd:10,  incProj:8    },
+  { stage:'C3', label:'Waste processing',                        industry:481, project:347, incInd:30,  incProj:50   },
+  { stage:'C4', label:'Disposal',                                industry:531, project:367, incInd:50,  incProj:20   },
+  { stage:'D',  label:'Reuse & recovery (circular economy)',     industry:531, project:317, incInd:0,   incProj:-50  },
+];
+
+const GROUPS = [
+  { name:'Product Stage',    first:'A0', last:'A3' },
+  { name:'Construction',     first:'A4', last:'A5' },
+  { name:'Use Stage',        first:'B1', last:'B7' },
+  { name:'End of Life',      first:'C1', last:'C4' },
+  { name:'Circular Economy', first:'D',  last:'D'  },
+];
+
+const GROUP_COLORS = [
+  'rgba(232,118,43,0.04)',
+  'rgba(100,160,255,0.025)',
+  'rgba(232,118,43,0.04)',
+  'rgba(100,160,255,0.025)',
+  'rgba(232,118,43,0.06)',
+];
+
+/* ================================================================
+ * CHART LAYOUT
+ * ================================================================ */
+const VW = 1100, VH = 490;
+const M  = { top: 46, right: 74, bottom: 54, left: 68 };
+const cW = VW - M.left - M.right;
+const cH = VH - M.top  - M.bottom;
+
+const svg = d3.select('#lca-svg');
+const g   = svg.append('g').attr('transform', `translate(${M.left},${M.top})`);
+
+/* ── Scales ── */
+const xScale = d3.scalePoint()
+  .domain(LCA.map(d => d.stage))
+  .range([0, cW])
+  .padding(0.5);
+
+const Y_MAX  = 600;
+const yScale = d3.scaleLinear().domain([0, Y_MAX]).range([cH, 0]);
+
+/* ── Group boundary helper ── */
+function midX(a, b) { return (xScale(a) + xScale(b)) / 2; }
+
+const gBounds = GROUPS.map((grp, i) => ({
+  ...grp,
+  x0: i === 0 ? 0 : midX(GROUPS[i-1].last, grp.first),
+  x1: i === GROUPS.length - 1 ? cW : midX(grp.last, GROUPS[i+1].first),
+}));
+gBounds.forEach(b => { b.cx = (b.x0 + b.x1) / 2; });
+
+/* ================================================================
+ * STAGE GROUP BACKGROUNDS & LABELS
+ * ================================================================ */
+gBounds.forEach((grp, i) => {
+  /* Background band */
+  g.append('rect')
+    .attr('x', grp.x0).attr('y', 0)
+    .attr('width', grp.x1 - grp.x0).attr('height', cH)
+    .attr('fill', GROUP_COLORS[i]);
+
+  /* Vertical separator (not on leftmost) */
+  if (i > 0) {
+    g.append('line')
+      .attr('x1', grp.x0).attr('x2', grp.x0)
+      .attr('y1', -10).attr('y2', cH + 10)
+      .attr('stroke', 'rgba(100,150,200,0.15)')
+      .attr('stroke-width', 1)
+      .attr('stroke-dasharray', '4,3');
+  }
+
+  /* Group name label above chart */
+  g.append('text')
+    .attr('x', grp.cx).attr('y', -18)
+    .attr('text-anchor', 'middle')
+    .attr('font-size', 9)
+    .attr('font-family', '"Chivo Mono", monospace')
+    .attr('fill', i === 4 ? 'rgba(232,118,43,0.55)' : 'rgba(87,83,75,0.65)')
+    .attr('letter-spacing', '.08em')
+    .text(grp.name.toUpperCase());
+});
+
+/* ================================================================
+ * GRID LINES
+ * ================================================================ */
+const Y_TICKS = [0, 100, 200, 300, 400, 500, 600];
+
+g.selectAll('.grid').data(Y_TICKS).join('line')
+  .attr('class', 'grid')
+  .attr('x1', 0).attr('x2', cW)
+  .attr('y1', d => yScale(d)).attr('y2', d => yScale(d))
+  .attr('stroke', 'rgba(22,49,74,0.3)')
+  .attr('stroke-width', 1);
+
+/* ================================================================
+ * AXES
+ * ================================================================ */
+/* Y axis */
+g.append('g')
+  .call(d3.axisLeft(yScale)
+    .tickValues(Y_TICKS)
+    .tickFormat(d => d + ' kg')
+    .tickSize(0))
+  .call(ax => ax.select('.domain').remove())
+  .call(ax => ax.selectAll('.tick text')
+    .attr('font-size', 10)
+    .attr('font-family', '"Chivo Mono", monospace')
+    .attr('fill', 'rgba(90,114,144,0.75)')
+    .attr('dx', -8));
+
+/* Y axis label */
+svg.append('text')
+  .attr('transform', `translate(14,${M.top + cH / 2}) rotate(-90)`)
+  .attr('text-anchor', 'middle')
+  .attr('font-size', 9)
+  .attr('font-family', '"Chivo Mono", monospace')
+  .attr('fill', 'rgba(90,114,144,0.5)')
+  .attr('letter-spacing', '.07em')
+  .text('CUMULATIVE GWP (kg CO₂e)');
+
+/* X axis — blank tick for A0 */
+g.append('g')
+  .attr('transform', `translate(0,${cH})`)
+  .call(d3.axisBottom(xScale)
+    .tickValues(LCA.map(d => d.stage))
+    .tickFormat(d => d === 'A0' ? '' : d)
+    .tickSize(4))
+  .call(ax => ax.select('.domain').attr('stroke', 'rgba(22,49,74,0.7)'))
+  .call(ax => ax.selectAll('.tick text')
+    .attr('font-size', 10.5)
+    .attr('font-family', '"Chivo Mono", monospace')
+    .attr('fill', 'rgba(90,114,144,0.8)')
+    .attr('dy', 14))
+  .call(ax => ax.selectAll('.tick line')
+    .attr('stroke', 'rgba(22,49,74,0.7)'));
+
+/* ================================================================
+ * CARBON SAVING AREA FILL
+ * ================================================================ */
+const area = d3.area()
+  .x(d => xScale(d.stage))
+  .y0(d => yScale(d.industry))
+  .y1(d => yScale(d.project))
+  .curve(d3.curveMonotoneX);
+
+g.append('path')
+  .datum(LCA)
+  .attr('d', area)
+  .attr('fill', 'rgba(232,118,43,0.1)')
+  .attr('stroke', 'none');
+
+/* ================================================================
+ * LINES
+ * ================================================================ */
+const mkLine = key => d3.line()
+  .x(d => xScale(d.stage))
+  .y(d => yScale(d[key]))
+  .curve(d3.curveMonotoneX);
+
+/* Industry — dashed, muted */
+g.append('path')
+  .datum(LCA)
+  .attr('d', mkLine('industry'))
+  .attr('fill', 'none')
+  .attr('stroke', 'rgba(180,200,220,0.55)')
+  .attr('stroke-width', 2)
+  .attr('stroke-dasharray', '6,4');
+
+/* Project — solid green */
+g.append('path')
+  .datum(LCA)
+  .attr('d', mkLine('project'))
+  .attr('fill', 'none')
+  .attr('stroke', '#E8762B')
+  .attr('stroke-width', 2.5);
+
+/* ================================================================
+ * STATIC DOT MARKERS
+ * ================================================================ */
+g.selectAll('.ind-dot').data(LCA).join('circle')
+  .attr('class', 'ind-dot')
+  .attr('cx', d => xScale(d.stage))
+  .attr('cy', d => yScale(d.industry))
+  .attr('r', 3.5)
+  .attr('fill', '#FFFFFF')
+  .attr('stroke', 'rgba(180,200,220,0.65)')
+  .attr('stroke-width', 1.5)
+  .style('pointer-events', 'none');
+
+g.selectAll('.proj-dot').data(LCA).join('circle')
+  .attr('class', 'proj-dot')
+  .attr('cx', d => xScale(d.stage))
+  .attr('cy', d => yScale(d.project))
+  .attr('r', 3.5)
+  .attr('fill', '#FFFFFF')
+  .attr('stroke', '#E8762B')
+  .attr('stroke-width', 1.5)
+  .style('pointer-events', 'none');
+
+/* ================================================================
+ * END-VALUE LABELS (at stage D)
+ * ================================================================ */
+const last = LCA[LCA.length - 1];
+const endX = xScale('D') + 13;
+
+g.append('text')
+  .attr('x', endX).attr('y', yScale(last.industry) + 4)
+  .attr('font-size', 9.5)
+  .attr('font-family', '"Chivo Mono", monospace')
+  .attr('fill', 'rgba(180,200,220,0.65)')
+  .text('531 kg');
+
+g.append('text')
+  .attr('x', endX).attr('y', yScale(last.project) + 4)
+  .attr('font-size', 9.5)
+  .attr('font-family', '"Chivo Mono", monospace')
+  .attr('fill', 'rgba(232,118,43,0.85)')
+  .text('317 kg');
+
+/* ================================================================
+ * HOVER INTERACTION
+ * ================================================================ */
+const tipEl = document.getElementById('lca-tip');
+
+const trackLine = g.append('line')
+  .attr('y1', 0).attr('y2', cH)
+  .attr('stroke', 'rgba(232,118,43,0.65)')
+  .attr('stroke-width', 1.5)
+  .attr('stroke-dasharray', '4,3')
+  .attr('opacity', 0)
+  .style('pointer-events', 'none');
+
+const hoverInd = g.append('circle')
+  .attr('r', 5.5)
+  .attr('fill', '#FFFFFF')
+  .attr('stroke', 'rgba(180,200,220,0.85)')
+  .attr('stroke-width', 2)
+  .attr('opacity', 0)
+  .style('pointer-events', 'none');
+
+const hoverProj = g.append('circle')
+  .attr('r', 5.5)
+  .attr('fill', '#FFFFFF')
+  .attr('stroke', '#E8762B')
+  .attr('stroke-width', 2)
+  .attr('opacity', 0)
+  .style('pointer-events', 'none');
+
+const stagePositions = LCA.map(d => ({ d, x: xScale(d.stage) }));
+
+function nearestPoint(mx) {
+  let best = stagePositions[0];
+  let bestDist = Infinity;
+  stagePositions.forEach(p => {
+    const dist = Math.abs(p.x - mx);
+    if (dist < bestDist) { bestDist = dist; best = p; }
+  });
+  return best.d;
+}
+
+function placeTip(ev) {
+  const tw = tipEl.offsetWidth, th = tipEl.offsetHeight;
+  let tx = ev.clientX + 14, ty = ev.clientY - 44;
+  if (tx + tw > window.innerWidth - 8)  tx = ev.clientX - tw - 14;
+  if (ty + th > window.innerHeight - 8) ty = window.innerHeight - th - 8;
+  if (ty < 8) ty = 8;
+  tipEl.style.left = tx + 'px';
+  tipEl.style.top  = ty + 'px';
+}
+
+/* Transparent hit-area overlay over the chart */
+svg.append('rect')
+  .attr('x', M.left).attr('y', M.top)
+  .attr('width', cW).attr('height', cH)
+  .attr('fill', 'transparent')
+  .on('mousemove', function(ev) {
+    const [mx] = d3.pointer(ev, g.node());
+    const d = nearestPoint(mx);
+    const x = xScale(d.stage);
+    const saving   = d.industry - d.project;
+    const savingPct = d.industry > 0 ? Math.round(saving / d.industry * 100) : 0;
+    const fmtInc = v => v > 0 ? `+${v}` : `${v}`;
+    const hasInc = d.incInd !== 0 || d.incProj !== 0;
+    const isCircular = d.stage === 'D';
+
+    trackLine.attr('x1', x).attr('x2', x).attr('opacity', 1);
+    hoverInd.attr('cx', x).attr('cy', yScale(d.industry)).attr('opacity', 1);
+    hoverProj.attr('cx', x).attr('cy', yScale(d.project)).attr('opacity', 1);
+
+    tipEl.innerHTML = `
+      <div class="tip-stage">${d.stage === 'A0' ? 'Baseline' : d.stage}</div>
+      <div class="tip-desc">${d.label}</div>
+      <div class="tip-div"></div>
+      <div class="tip-row">
+        <span class="tip-dot" style="background:rgba(180,200,220,0.65)"></span>
+        <span class="tip-label">Industry cumulative</span>
+        <span class="tip-val">${d.industry} kg CO₂e</span>
+      </div>
+      <div class="tip-row">
+        <span class="tip-dot" style="background:var(--accent)"></span>
+        <span class="tip-label">Your project</span>
+        <span class="tip-val">${d.project} kg CO₂e</span>
+      </div>
+      ${hasInc ? `
+      <div class="tip-div"></div>
+      <div class="tip-row">
+        <span class="tip-dot" style="background:rgba(180,200,220,0.35)"></span>
+        <span class="tip-label">Industry this stage</span>
+        <span class="tip-val">${fmtInc(d.incInd)} kg CO₂e</span>
+      </div>
+      <div class="tip-row">
+        <span class="tip-dot" style="background:rgba(232,118,43,0.35)"></span>
+        <span class="tip-label">Project this stage</span>
+        <span class="${d.incProj < 0 ? 'tip-saving' : 'tip-val'}">${fmtInc(d.incProj)} kg CO₂e${d.incProj < 0 ? ' ↓ circular credit' : ''}</span>
+      </div>` : ''}
+      ${saving > 0 ? `
+      <div class="tip-div"></div>
+      <div class="tip-row">
+        <span class="tip-dot" style="background:#34d399"></span>
+        <span class="tip-label">Carbon saved at stage</span>
+        <span class="tip-saving">${saving} kg CO₂e (${savingPct}%)</span>
+      </div>` : saving < 0 ? `
+      <div class="tip-div"></div>
+      <div class="tip-row">
+        <span class="tip-dot" style="background:#fb923c"></span>
+        <span class="tip-label">Above industry average</span>
+        <span class="tip-warn">+${Math.abs(saving)} kg CO₂e</span>
+      </div>` : ''}
+    `;
+    tipEl.classList.add('show');
+    placeTip(ev);
+  })
+  .on('mouseleave', function() {
+    trackLine.attr('opacity', 0);
+    hoverInd.attr('opacity', 0);
+    hoverProj.attr('opacity', 0);
+    tipEl.classList.remove('show');
+  });
+</script>
+</body>
+</html>

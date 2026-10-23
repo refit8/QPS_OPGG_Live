@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Offline data fallback: embedded copies of the JSON this page fetches,
+     used only if fetch() fails (e.g. opened directly via file:// instead of a server). -->
+<script>
+function loadJSONWithFallback(url, embeddedId) {
+  return fetch(url).then(function(r){
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    return r.json();
+  }).catch(function(err){
+    var el = document.getElementById(embeddedId);
+    if (el) {
+      try { return JSON.parse(el.textContent); }
+      catch (parseErr) { throw err; }
+    }
+    throw err;
+  });
+}
+</script>
+<script type="application/json" id="embedded-ald-json">
+[
+  {
+    "materialStream": "Plasterboard",
+    "totalMass": 3148,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Carpet Tiles (R)",
+    "totalMass": 1500,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Heavy Metal",
+    "totalMass": 1180,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Ceiling Tiles",
+    "totalMass": 1118,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Aluminium",
+    "totalMass": 1062,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Furniture (R)",
+    "totalMass": 876,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Electronic (R)",
+    "totalMass": 780,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Chair",
+    "totalMass": 780,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Insulation",
+    "totalMass": 667,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Vinyl / Off-cut",
+    "totalMass": 673,
+    "landfillMass": 134.6,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "MDF Door / Sheet",
+    "totalMass": 639,
+    "landfillMass": 127.8,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Mixed Waste",
+    "totalMass": 348,
+    "landfillMass": 69.6,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Hard Plastic",
+    "totalMass": 239,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "AC Flex",
+    "totalMass": 232,
+    "landfillMass": 46.4,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Plastic",
+    "totalMass": 165,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Cardboard",
+    "totalMass": 150,
+    "landfillMass": 0,
+    "origin": "Construction"
+  },
+  {
+    "materialStream": "Metal (R)",
+    "totalMass": 60,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Mixed Waste (R)",
+    "totalMass": 35,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Plastic Chair (R)",
+    "totalMass": 60,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Stationary (R)",
+    "totalMass": 37,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Mixed Waste",
+    "totalMass": 640,
+    "landfillMass": 128,
+    "origin": "Construction"
+  },
+  {
+    "materialStream": "Metal",
+    "totalMass": 5634,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Mixed Waste",
+    "totalMass": 5217,
+    "landfillMass": 1043.4,
+    "origin": "Construction"
+  },
+  {
+    "materialStream": "Timber",
+    "totalMass": 4014,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Access Floor",
+    "totalMass": 1620,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Glass",
+    "totalMass": 762,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Cables",
+    "totalMass": 747,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Mixed Waste",
+    "totalMass": 4577,
+    "landfillMass": 915.4,
+    "origin": "Construction"
+  },
+  {
+    "materialStream": "Metal",
+    "totalMass": 806,
+    "landfillMass": 0,
+    "origin": "Construction"
+  },
+  {
+    "materialStream": "Cables",
+    "totalMass": 476,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Glass",
+    "totalMass": 311,
+    "landfillMass": 0,
+    "origin": "Construction"
+  },
+  {
+    "materialStream": "Timber",
+    "totalMass": 144,
+    "landfillMass": 0,
+    "origin": "Construction"
+  }
+]
+</script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Material Stream Share — OPGG-BRI</title>
+<link rel="stylesheet" href="../Refit8_dashboard_mockup/shared.css" />
+<style>
+/* =========================================================================
+ * 18 - Material Stream Share of Total Mass · ALD Report tab
+ * -------------------------------------------------------------------------
+ * AI: Donut chart modelled on the material-share chart in the ALD Resource
+ * Recovery report (see reference screenshot supplied by the user). Data is
+ * live from ../data/ald_report.json, grouped by materialStream name exactly
+ * as in 17_ald_mass_diversion.html. Hand-built inline SVG (no charting
+ * library) so the callout-line label layout can be replicated precisely.
+ * The 17 largest streams get a direct label + leader line; the remaining
+ * 8 streams are each < 1% of total mass and are rendered as unlabeled grey
+ * slivers (still hoverable via native title tooltips) rather than forcing
+ * 25 mutually-distinct hues onto one chart.
+ *
+ * NOT wired into opgg-bri-portal.html yet - standalone reference only,
+ * per instruction. To embed later, follow the same iframe + r8fitIframe
+ * pattern used for 17_ald_mass_diversion.html in the ALD Report tab.
+ * ========================================================================= */
+
+html, body { height: auto; overflow: visible; }
+.wrap { padding: 26px var(--gutter) 30px; }
+
+.chart-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 22px 26px 24px;
+}
+
+.chart-card-head { margin-bottom: 6px; }
+.chart-card-head h2 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 17px;
+  color: var(--r8-navy);
+  margin: 0 0 4px;
+}
+.chart-card-head p {
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  color: var(--text-dim);
+  margin: 0;
+  max-width: 640px;
+  line-height: 1.5;
+}
+
+#donut-wrap { width: 100%; }
+#donut-wrap svg { width: 100%; height: auto; display: block; }
+
+.donut-slice { stroke: var(--panel); stroke-width: 1.5; transition: opacity .15s ease; }
+.donut-slice:hover { opacity: 0.82; }
+.donut-slice.minor { stroke-width: 1; }
+
+.callout-line { fill: none; stroke-width: 1.1; opacity: 0.85; }
+.callout-label { font-family: var(--font-sans); font-size: 12.5px; fill: var(--text); }
+.callout-label tspan.pct { fill: var(--text-dim); }
+
+</style>
+</head>
+<body>
+
+<main class="wrap">
+  <div class="chart-card">
+    <div class="chart-card-head">
+      <h2>Material Composition</h2>
+    </div>
+    <div id="donut-wrap"></div>
+  </div>
+</main>
+
+<script>
+/* Base 8 categorical hues (fixed order) - cycled for the labelled slices;
+   every slice carries its own text label, so a repeated hue a few
+   positions apart does not create an identification problem. */
+const BASE_HUES = ['#2a78d6', '#eb6834', '#1baf7a', '#eda100', '#e87ba4', '#008300', '#4a3aa7', '#e34948'];
+const MINOR_GREY = '#B5B0A6';
+const MINOR_SHARE_CUTOFF = 0.01; // slices below 1% of total get no label
+
+function fmt(v) {
+  return Math.round(v).toLocaleString('en-AU');
+}
+
+function polar(cx, cy, r, angleDeg) {
+  const a = (angleDeg - 90) * Math.PI / 180;
+  return [cx + r * Math.cos(a), cy + r * Math.sin(a)];
+}
+
+function donutPath(cx, cy, rOuter, rInner, startDeg, endDeg) {
+  const [x1, y1] = polar(cx, cy, rOuter, startDeg);
+  const [x2, y2] = polar(cx, cy, rOuter, endDeg);
+  const [x3, y3] = polar(cx, cy, rInner, endDeg);
+  const [x4, y4] = polar(cx, cy, rInner, startDeg);
+  const large = (endDeg - startDeg) > 180 ? 1 : 0;
+  return `M ${x1} ${y1} A ${rOuter} ${rOuter} 0 ${large} 1 ${x2} ${y2} ` +
+         `L ${x3} ${y3} A ${rInner} ${rInner} 0 ${large} 0 ${x4} ${y4} Z`;
+}
+
+const NS = 'http://www.w3.org/2000/svg';
+function el(tag, attrs = {}) {
+  const e = document.createElementNS(NS, tag);
+  for (const k in attrs) e.setAttribute(k, attrs[k]);
+  return e;
+}
+
+async function init() {
+  let raw;
+  try {
+    raw = await loadJSONWithFallback('../data/ald_report.json', 'embedded-ald-json');
+  } catch (e) {
+    document.getElementById('donut-wrap').innerHTML =
+      '<div style="padding:24px;color:var(--text-mute);font-family:var(--font-sans);font-size:13px">Error loading data - open via a local server.</div>';
+    return;
+  }
+
+  // Group by material stream name (same rule as the mass-diversion chart).
+  // A trailing "(R)" suffix is merged into its non-(R) counterpart and the
+  // "(R)" is dropped from the displayed label.
+  const normalizeName = (name) => name.replace(/\s*\(R\)\s*$/i, '').trim();
+  const agg = new Map();
+  for (const r of raw) {
+    const name = normalizeName(r.materialStream);
+    if (!agg.has(name)) agg.set(name, 0);
+    agg.set(name, agg.get(name) + (r.totalMass || 0));
+  }
+
+  const items = Array.from(agg, ([name, total]) => ({ name, total }))
+    .sort((a, b) => b.total - a.total);
+
+  const grandTotal = items.reduce((s, i) => s + i.total, 0);
+  items.forEach(i => { i.share = i.total / grandTotal; });
+
+  // Assign colour: cycle the 8-hue set for every slice above the cutoff,
+  // grey for the small residual slices.
+  let hueIdx = 0;
+  items.forEach(i => {
+    if (i.share >= MINOR_SHARE_CUTOFF) {
+      i.color = BASE_HUES[hueIdx % BASE_HUES.length];
+      hueIdx++;
+      i.labelled = true;
+    } else {
+      i.color = MINOR_GREY;
+      i.labelled = false;
+    }
+  });
+
+  // ── Layout ──
+  // W/H here are just an internal working canvas — the viewBox is cropped to
+  // the actual rendered extent below, so the chart has no dead margin
+  // regardless of how many streams end up labelled.
+  const W = 1100, H = 760;
+  const cx = W / 2, cy = H / 2;
+  const rOuter = 190, rInner = 108;
+  const svg = el('svg', { xmlns: NS });
+
+  // Slices
+  let cursor = 0; // degrees, starting at top, clockwise
+  const labelled = [];
+  items.forEach(i => {
+    const sweep = i.share * 360;
+    const startDeg = cursor;
+    const endDeg = cursor + sweep;
+    const midDeg = (startDeg + endDeg) / 2;
+    const path = el('path', {
+      class: 'donut-slice' + (i.labelled ? '' : ' minor'),
+      d: donutPath(cx, cy, rOuter, rInner, startDeg, endDeg),
+      fill: i.color,
+    });
+    const title = el('title');
+    title.textContent = `${i.name}: ${fmt(i.total)} kg (${(i.share * 100).toFixed(2)}%)`;
+    path.appendChild(title);
+    svg.appendChild(path);
+    if (i.labelled) {
+      const [mx, my] = polar(cx, cy, rOuter, midDeg);
+      labelled.push({ ...i, midDeg, mx, my });
+    }
+    cursor = endDeg;
+  });
+
+  // Split labelled slices left/right by natural mid-angle x sign
+  const right = labelled.filter(i => i.mx >= cx).sort((a, b) => a.my - b.my);
+  const left  = labelled.filter(i => i.mx < cx).sort((a, b) => a.my - b.my);
+
+  const MIN_GAP = 30;
+
+  function resolveStack(list) {
+    if (!list.length) return;
+    // push down to enforce a minimum vertical gap between labels — no fixed
+    // top/bottom clamp, since the viewBox is cropped to fit afterward
+    list[0].labelY = list[0].my;
+    for (let k = 1; k < list.length; k++) {
+      list[k].labelY = Math.max(list[k].my, list[k - 1].labelY + MIN_GAP);
+    }
+  }
+  resolveStack(right);
+  resolveStack(left);
+
+  const RIGHT_COL_X = cx + 300;
+  const LEFT_COL_X  = cx - 300;
+  const BEND_R = rOuter + 42;
+
+  function drawLabel(i, side) {
+    const colX = side === 'right' ? RIGHT_COL_X : LEFT_COL_X;
+    const [bx, by] = polar(cx, cy, BEND_R, i.midDeg);
+    const points = `${i.mx.toFixed(1)},${i.my.toFixed(1)} ${bx.toFixed(1)},${by.toFixed(1)} ${colX},${i.labelY.toFixed(1)}`;
+    svg.appendChild(el('polyline', { class: 'callout-line', points, stroke: i.color }));
+
+    const text = el('text', {
+      class: 'callout-label',
+      x: colX + (side === 'right' ? 8 : -8),
+      y: i.labelY,
+      'text-anchor': side === 'right' ? 'start' : 'end',
+      'dominant-baseline': 'middle',
+    });
+    const tspanName = el('tspan');
+    tspanName.textContent = i.name.toLowerCase() + ': ';
+    const tspanPct = el('tspan', { class: 'pct' });
+    tspanPct.textContent = (i.share * 100).toFixed(2) + '%';
+    text.appendChild(tspanName);
+    text.appendChild(tspanPct);
+    svg.appendChild(text);
+  }
+
+  right.forEach(i => drawLabel(i, 'right'));
+  left.forEach(i => drawLabel(i, 'left'));
+
+  // Crop the viewBox to the actual vertical extent used (ring + label stacks),
+  // instead of the fixed working canvas — this is what removes the dead
+  // margin above/below the chart regardless of how many streams get labelled.
+  const usedY = [cy - rOuter, cy + rOuter, ...right.map(i => i.labelY), ...left.map(i => i.labelY)];
+  const PAD = 24;
+  const viewTop = Math.min(...usedY) - PAD;
+  const viewH   = (Math.max(...usedY) + PAD) - viewTop;
+  svg.setAttribute('viewBox', `0 ${viewTop} ${W} ${viewH}`);
+
+  document.getElementById('donut-wrap').appendChild(svg);
+
+}
+
+init();
+</script>
+</body>
+</html>

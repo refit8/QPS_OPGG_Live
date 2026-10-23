@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Offline data fallback: embedded copies of the JSON this page fetches,
+     used only if fetch() fails (e.g. opened directly via file:// instead of a server). -->
+<script>
+function loadJSONWithFallback(url, embeddedId) {
+  return fetch(url).then(function(r){
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    return r.json();
+  }).catch(function(err){
+    var el = document.getElementById(embeddedId);
+    if (el) {
+      try { return JSON.parse(el.textContent); }
+      catch (parseErr) { throw err; }
+    }
+    throw err;
+  });
+}
+</script>
+<script type="application/json" id="embedded-ald-json">
+[
+  {
+    "materialStream": "Plasterboard",
+    "totalMass": 3148,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Carpet Tiles (R)",
+    "totalMass": 1500,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Heavy Metal",
+    "totalMass": 1180,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Ceiling Tiles",
+    "totalMass": 1118,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Aluminium",
+    "totalMass": 1062,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Furniture (R)",
+    "totalMass": 876,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Electronic (R)",
+    "totalMass": 780,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Chair",
+    "totalMass": 780,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Insulation",
+    "totalMass": 667,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Vinyl / Off-cut",
+    "totalMass": 673,
+    "landfillMass": 134.6,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "MDF Door / Sheet",
+    "totalMass": 639,
+    "landfillMass": 127.8,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Mixed Waste",
+    "totalMass": 348,
+    "landfillMass": 69.6,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Hard Plastic",
+    "totalMass": 239,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "AC Flex",
+    "totalMass": 232,
+    "landfillMass": 46.4,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Plastic",
+    "totalMass": 165,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Cardboard",
+    "totalMass": 150,
+    "landfillMass": 0,
+    "origin": "Construction"
+  },
+  {
+    "materialStream": "Metal (R)",
+    "totalMass": 60,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Mixed Waste (R)",
+    "totalMass": 35,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Plastic Chair (R)",
+    "totalMass": 60,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Stationary (R)",
+    "totalMass": 37,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Mixed Waste",
+    "totalMass": 640,
+    "landfillMass": 128,
+    "origin": "Construction"
+  },
+  {
+    "materialStream": "Metal",
+    "totalMass": 5634,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Mixed Waste",
+    "totalMass": 5217,
+    "landfillMass": 1043.4,
+    "origin": "Construction"
+  },
+  {
+    "materialStream": "Timber",
+    "totalMass": 4014,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Access Floor",
+    "totalMass": 1620,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Glass",
+    "totalMass": 762,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Cables",
+    "totalMass": 747,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Mixed Waste",
+    "totalMass": 4577,
+    "landfillMass": 915.4,
+    "origin": "Construction"
+  },
+  {
+    "materialStream": "Metal",
+    "totalMass": 806,
+    "landfillMass": 0,
+    "origin": "Construction"
+  },
+  {
+    "materialStream": "Cables",
+    "totalMass": 476,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Glass",
+    "totalMass": 311,
+    "landfillMass": 0,
+    "origin": "Construction"
+  },
+  {
+    "materialStream": "Timber",
+    "totalMass": 144,
+    "landfillMass": 0,
+    "origin": "Construction"
+  }
+]
+</script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Total vs Diverted Mass — OPGG-BRI</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.2.0/chartjs-plugin-datalabels.min.js"></script>
+<link rel="stylesheet" href="../Refit8_dashboard_mockup/shared.css" />
+<style>
+/* =========================================================================
+ * 17 — Total vs Diverted Mass by Material Stream · ALD Report tab
+ * -------------------------------------------------------------------------
+ * AI: Horizontal grouped bar chart modelled on the "total vs diverted"
+ * chart in the ALD Resource Recovery report. Data comes live from
+ * ../data/ald_report.json (same source as the ALD Report tab's main
+ * table) — rows are grouped by materialStream name (e.g. every "Mixed
+ * Waste" line across Defit/Trade is summed into one bar) and Diverted
+ * Mass is derived as totalMass - landfillMass. Sorted descending by
+ * total mass. Standalone page - embedded as an iframe in the ALD Report
+ * tab of opgg-bri-portal.html, auto-sized via r8fitIframe().
+ * ========================================================================= */
+
+html, body { height: auto; overflow: visible; }
+.wrap { padding: 26px var(--gutter) 30px; }
+
+.chart-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 22px 26px 24px;
+}
+
+.chart-card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+.chart-card-head h2 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 17px;
+  color: var(--r8-navy);
+  margin: 0 0 4px;
+}
+.chart-card-head p {
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  color: var(--text-dim);
+  margin: 0;
+  max-width: 560px;
+  line-height: 1.5;
+}
+
+.chart-legend {
+  display: flex;
+  gap: 16px;
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+.chart-legend .item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: var(--text-dim);
+  white-space: nowrap;
+}
+.chart-legend .sw {
+  width: 11px;
+  height: 11px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+#chart-wrap { position: relative; width: 100%; }
+
+</style>
+</head>
+<body>
+
+<main class="wrap">
+  <div class="chart-card">
+    <div class="chart-card-head">
+      <div>
+        <h2>Mass by Material Stream</h2>
+      </div>
+      <div class="chart-legend">
+        <span class="item"><span class="sw" style="background:#1E1B5C"></span>Total Mass</span>
+        <span class="item"><span class="sw" style="background:#2F8F5A"></span>Diverted Mass</span>
+      </div>
+    </div>
+    <div id="chart-wrap">
+      <canvas id="massChart"></canvas>
+    </div>
+  </div>
+</main>
+
+<script>
+const COLOR_TOTAL    = '#1E1B5C';
+const COLOR_DIVERTED = '#2F8F5A';
+
+function fmt(v) {
+  return Math.round(v).toLocaleString('en-AU');
+}
+
+async function init() {
+  let raw;
+  try {
+    raw = await loadJSONWithFallback('../data/ald_report.json', 'embedded-ald-json');
+  } catch (e) {
+    document.getElementById('chart-wrap').innerHTML =
+      '<div style="padding:24px;color:var(--text-mute);font-family:var(--font-sans);font-size:13px">Error loading data - open via a local server.</div>';
+    return;
+  }
+
+  // Group by material stream name - every line item with the same name
+  // (regardless of Defit/Trade origin) is summed into a single bar. A
+  // trailing "(R)" suffix (e.g. "Metal (R)") is treated as the same
+  // material as its non-(R) counterpart and merged under the plain name.
+  const normalizeName = (name) => name.replace(/\s*\(R\)\s*$/i, '').trim();
+  const agg = new Map();
+  for (const r of raw) {
+    const name = normalizeName(r.materialStream);
+    if (!agg.has(name)) agg.set(name, { total: 0, landfill: 0 });
+    const a = agg.get(name);
+    a.total    += r.totalMass || 0;
+    a.landfill += r.landfillMass || 0;
+  }
+
+  const items = Array.from(agg, ([name, v]) => ({
+    name,
+    total: v.total,
+    diverted: v.total - v.landfill,
+  })).sort((a, b) => b.total - a.total);
+
+  // Set a container height so horizontal bars get a sensible thickness
+  // regardless of how many material streams are in the data.
+  const rowH = 44;
+  document.getElementById('chart-wrap').style.height = (items.length * rowH + 40) + 'px';
+
+  const ctx = document.getElementById('massChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: items.map(i => i.name),
+      datasets: [
+        {
+          label: 'Total Mass (kg)',
+          data: items.map(i => i.total),
+          backgroundColor: COLOR_TOTAL,
+          borderRadius: 3,
+          barPercentage: 0.78,
+          categoryPercentage: 0.8,
+        },
+        {
+          label: 'Diverted Mass (kg)',
+          data: items.map(i => i.diverted),
+          backgroundColor: COLOR_DIVERTED,
+          borderRadius: 3,
+          barPercentage: 0.78,
+          categoryPercentage: 0.8,
+        },
+      ],
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      layout: { padding: { right: 56 } },
+      scales: {
+        x: {
+          beginAtZero: true,
+          grid: { color: '#E2DED6' },
+          ticks: {
+            font: { family: 'Geist, system-ui, sans-serif', size: 11 },
+            color: '#57534B',
+            callback: v => fmt(v),
+          },
+        },
+        y: {
+          grid: { display: false },
+          ticks: {
+            font: { family: 'Geist, system-ui, sans-serif', size: 12.5, weight: '500' },
+            color: '#1A1816',
+          },
+        },
+      },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#fff',
+          titleColor: '#1E1B5C',
+          bodyColor: '#1A1816',
+          borderColor: '#E2DED6',
+          borderWidth: 1,
+          padding: 10,
+          titleFont: { family: 'Geist, system-ui, sans-serif', weight: '600' },
+          bodyFont: { family: 'Geist, system-ui, sans-serif' },
+          callbacks: {
+            label: (c) => `${c.dataset.label}: ${fmt(c.parsed.x)} kg`,
+          },
+        },
+        datalabels: {
+          anchor: 'end',
+          align: 'end',
+          color: '#57534B',
+          font: { family: 'Chivo Mono, monospace', size: 10.5 },
+          formatter: (v) => fmt(v),
+        },
+      },
+    },
+    plugins: [ChartDataLabels],
+  });
+
+}
+
+init();
+</script>
+</body>
+</html>

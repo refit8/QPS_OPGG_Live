@@ -1,0 +1,194 @@
+[
+  {
+    "materialStream": "Plasterboard",
+    "totalMass": 3148,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Carpet Tiles (R)",
+    "totalMass": 1500,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Heavy Metal",
+    "totalMass": 1180,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Ceiling Tiles",
+    "totalMass": 1118,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Aluminium",
+    "totalMass": 1062,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Furniture (R)",
+    "totalMass": 876,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Electronic (R)",
+    "totalMass": 780,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Chair",
+    "totalMass": 780,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Insulation",
+    "totalMass": 667,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Vinyl / Off-cut",
+    "totalMass": 673,
+    "landfillMass": 134.6,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "MDF Door / Sheet",
+    "totalMass": 639,
+    "landfillMass": 127.8,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Mixed Waste",
+    "totalMass": 348,
+    "landfillMass": 69.6,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Hard Plastic",
+    "totalMass": 239,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "AC Flex",
+    "totalMass": 232,
+    "landfillMass": 46.4,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Plastic",
+    "totalMass": 165,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Cardboard",
+    "totalMass": 150,
+    "landfillMass": 0,
+    "origin": "Construction"
+  },
+  {
+    "materialStream": "Metal (R)",
+    "totalMass": 60,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Mixed Waste (R)",
+    "totalMass": 35,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Plastic Chair (R)",
+    "totalMass": 60,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Stationary (R)",
+    "totalMass": 37,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Mixed Waste",
+    "totalMass": 640,
+    "landfillMass": 128,
+    "origin": "Construction"
+  },
+  {
+    "materialStream": "Metal",
+    "totalMass": 5634,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Mixed Waste",
+    "totalMass": 5217,
+    "landfillMass": 1043.4,
+    "origin": "Construction"
+  },
+  {
+    "materialStream": "Timber",
+    "totalMass": 4014,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Access Floor",
+    "totalMass": 1620,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Glass",
+    "totalMass": 762,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Cables",
+    "totalMass": 747,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Mixed Waste",
+    "totalMass": 4577,
+    "landfillMass": 915.4,
+    "origin": "Construction"
+  },
+  {
+    "materialStream": "Metal",
+    "totalMass": 806,
+    "landfillMass": 0,
+    "origin": "Construction"
+  },
+  {
+    "materialStream": "Cables",
+    "totalMass": 476,
+    "landfillMass": 0,
+    "origin": "Defit"
+  },
+  {
+    "materialStream": "Glass",
+    "totalMass": 311,
+    "landfillMass": 0,
+    "origin": "Construction"
+  },
+  {
+    "materialStream": "Timber",
+    "totalMass": 144,
+    "landfillMass": 0,
+    "origin": "Construction"
+  }
+]

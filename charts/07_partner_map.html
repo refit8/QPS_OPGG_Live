@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Offline data fallback: embedded copies of the JSON this page fetches,
+     used only if fetch() fails (e.g. opened directly via file:// instead of a server). -->
+<script>
+function loadJSONWithFallback(url, embeddedId) {
+  return fetch(url).then(function(r){
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    return r.json();
+  }).catch(function(err){
+    var el = document.getElementById(embeddedId);
+    if (el) {
+      try { return JSON.parse(el.textContent); }
+      catch (parseErr) { throw err; }
+    }
+    throw err;
+  });
+}
+</script>
+<script type="application/json" id="embedded-partners-json">
+[
+  {
+    "name": "ALD",
+    "featured": true,
+    "role": "Recycle",
+    "itemMain": "Plasterboard Partition Wall",
+    "materialMain": "Metal",
+    "location": null,
+    "logo": "ALD_logo.png",
+    "hover_display": "materialMain",
+    "oversight": false
+  },
+  {
+    "name": "Bingo",
+    "featured": false,
+    "role": "Dispose",
+    "itemMain": "Kitchen Countertop",
+    "materialMain": "Composite",
+    "location": null,
+    "logo": "bingo_logo.png",
+    "hover_display": null,
+    "oversight": false
+  },
+  {
+    "name": "CDT",
+    "featured": false,
+    "role": "Advisory and Research",
+    "itemMain": "Banquette Seating",
+    "materialMain": "Mixed",
+    "location": null,
+    "logo": "CDT_logo.jpg",
+    "hover_display": "itemMain",
+    "oversight": true
+  },
+  {
+    "name": "Green Ceramics",
+    "featured": false,
+    "role": null,
+    "itemMain": "Glass Partition with Laminate",
+    "materialMain": "Glass: Laminated",
+    "location": null,
+    "logo": "green_ceramics_logo.png",
+    "hover_display": "materialMain",
+    "oversight": false
+  },
+  {
+    "name": "Hammond Studio",
+    "featured": true,
+    "role": "Adaptive Reuse",
+    "itemMain": null,
+    "materialMain": null,
+    "location": null,
+    "logo": "Hammond_logo.png",
+    "hover_display": null,
+    "oversight": true,
+    "oversightRole": "Architecture & Design",
+    "returnFlow": true
+  },
+  {
+    "name": "Infrabuild",
+    "featured": false,
+    "role": "recycle",
+    "itemMain": "Partition Wall Framing System",
+    "materialMain": "Metal: Aluminium",
+    "location": null,
+    "logo": "infrabuild_logo.png",
+    "hover_display": "materialMain",
+    "oversight": false
+  },
+  {
+    "name": "Koskela",
+    "featured": true,
+    "role": "Refurbish",
+    "itemMain": "Workstation Tabletops",
+    "materialMain": "Wood: Particleboard",
+    "location": null,
+    "logo": "Koskela_icon.jpg",
+    "hover_display": null,
+    "oversight": false,
+    "returnFlow": true
+  },
+  {
+    "name": "Loop",
+    "featured": false,
+    "role": "Rehome",
+    "itemMain": null,
+    "materialMain": null,
+    "location": null,
+    "logo": "loop_logo.png",
+    "hover_display": null,
+    "oversight": false
+  },
+  {
+    "name": "Milliken",
+    "featured": true,
+    "role": "Stewardship",
+    "itemMain": "Carpet Tile - Grey",
+    "materialMain": "Polymer: Carpet Tile",
+    "location": null,
+    "logo": "Milliken_logo.png",
+    "hover_display": "itemMain",
+    "oversight": false
+  },
+  {
+    "name": "Ontera",
+    "featured": false,
+    "role": "Stewardship",
+    "itemMain": "Carpet Tile - Grey",
+    "materialMain": "Polymer: Carpet Tile",
+    "location": null,
+    "logo": "ontera_logo.png",
+    "hover_display": null,
+    "oversight": false
+  },
+  {
+    "name": "PIF",
+    "featured": false,
+    "role": null,
+    "itemMain": null,
+    "materialMain": null,
+    "location": null,
+    "logo": "pif_logo.png",
+    "hover_display": null,
+    "oversight": false
+  },
+  {
+    "name": "Planet Protector",
+    "featured": false,
+    "role": "Remanufacture",
+    "itemMain": "Pinboard Above Printer Station",
+    "materialMain": "Textile",
+    "location": null,
+    "logo": "planet_protector_logo.png",
+    "hover_display": null,
+    "oversight": false
+  },
+  {
+    "name": "Redirect",
+    "featured": false,
+    "role": "Recycle",
+    "itemMain": "Timber Floor-to-Ceiling Screen (standard)",
+    "materialMain": "Mixed",
+    "location": null,
+    "logo": "redirect_logo.png",
+    "hover_display": null,
+    "oversight": false
+  },
+  {
+    "name": "Regyp",
+    "featured": false,
+    "role": "Recycle",
+    "itemMain": "Plasterboard Partition Wall",
+    "materialMain": "Composite: Plasterboard",
+    "location": null,
+    "logo": "regyp_logo.png",
+    "hover_display": "materialMain",
+    "oversight": false
+  },
+  {
+    "name": "Relove",
+    "featured": false,
+    "role": "Rehome",
+    "itemMain": "Workstation Tabletops",
+    "materialMain": "Electronics & Electrical: White Goods",
+    "location": null,
+    "logo": "relove_logo.png",
+    "hover_display": "materialMain",
+    "oversight": false
+  },
+  {
+    "name": "Renasci",
+    "featured": false,
+    "role": "Stewardship",
+    "itemMain": "Carpet Tile - Accent",
+    "materialMain": "Polymer: Carpet Tile",
+    "location": null,
+    "logo": "renasci_logo.png",
+    "hover_display": null,
+    "oversight": false
+  },
+  {
+    "name": "Resourceful Living",
+    "featured": false,
+    "role": "Remanufacture",
+    "itemMain": "Plastic Skirting Fill",
+    "materialMain": "Polymer: Thermoplastic 1-6",
+    "location": null,
+    "logo": "resourceful_living_logo.png",
+    "hover_display": "materialMain",
+    "oversight": false
+  },
+  {
+    "name": "TBD",
+    "featured": false,
+    "role": null,
+    "itemMain": "Printer",
+    "materialMain": "Polymer: Thermoplastic 7",
+    "location": null,
+    "logo": "SurfaceMine_logo.png",
+    "hover_display": "materialMain",
+    "oversight": false
+  },
+  {
+    "name": "Textile Recycling Australia",
+    "featured": false,
+    "role": "Recycle",
+    "itemMain": "Pinboard Above Printer Station",
+    "materialMain": "Polymer: Thermoplastic 1-6",
+    "location": null,
+    "logo": "tra_logo.png",
+    "hover_display": null,
+    "oversight": false
+  },
+  {
+    "name": "Upparel",
+    "featured": false,
+    "role": "Recycle",
+    "itemMain": "Pinboard Above Printer Station",
+    "materialMain": "Polymer: Thermoplastic 1-6",
+    "location": null,
+    "logo": "upparel_logo.png",
+    "hover_display": null,
+    "oversight": false
+  },
+  {
+    "name": "University of Sydney",
+    "featured": false,
+    "role": "Research",
+    "itemMain": null,
+    "materialMain": null,
+    "location": null,
+    "logo": "USYD_icon.png",
+    "hover_display": null,
+    "oversight": true
+  },
+  {
+    "name": "Charter Hall",
+    "featured": false,
+    "role": "Project Management",
+    "itemMain": null,
+    "materialMain": null,
+    "location": null,
+    "logo": "CharterHall_icon.jpg",
+    "hover_display": null,
+    "oversight": true
+  },
+  {
+    "name": "Refit8",
+    "featured": false,
+    "role": "Audit & Circularity",
+    "itemMain": null,
+    "materialMain": null,
+    "location": null,
+    "logo": "Refit8_icon.png",
+    "hover_display": null,
+    "oversight": true
+  },
+  {
+    "name": "On Project",
+    "featured": false,
+    "role": "Project Management",
+    "itemMain": null,
+    "materialMain": null,
+    "location": null,
+    "logo": "OnProject_icon.png",
+    "hover_display": null,
+    "oversight": true
+  },
+  {
+    "name": "WT",
+    "featured": false,
+    "role": "Advisory",
+    "itemMain": null,
+    "materialMain": null,
+    "location": null,
+    "logo": "WT_icon.png",
+    "hover_display": null,
+    "oversight": true
+  },
+  {
+    "name": "Compass Intelle",
+    "featured": false,
+    "role": "Advisory",
+    "itemMain": null,
+    "materialMain": null,
+    "location": null,
+    "logo": "CompassIntelle_icon.png",
+    "hover_display": null,
+    "oversight": true
+  }
+]
+
+</script>
+<!--
+  AI: Pathway Partner Map — OPGG-BRI
+  Standalone page embedded as an iframe in opgg-bri-portal.html (#tab-network).
+  Loads ../data/partners.json and renders all 20 pathway partners as pins on a
+  Leaflet/OpenStreetMap map, colour-coded by role. Left sidebar shows partner cards
+  with role-filter chips. All locations are PLACEHOLDER coordinates — real lat/lng
+  to be substituted once Will provides actual addresses.
+  Refit8 brand tokens: navy #1E1B5C · orange #E8762B · bg #F4F2EE
+-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Partner Network Map — OPGG-BRI</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Chivo+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+
+<style>
+/* ── Refit8 tokens ── */
+:root {
+  --navy:      #1E1B5C;
+  --navy-l:    #2E2A7A;
+  --orange:    #E8762B;
+  --orange-h:  #D45F18;
+  --orange-d:  rgba(232,118,43,0.10);
+  --bg:        #F4F2EE;
+  --surface:   #ECE9E3;
+  --white:     #ffffff;
+  --border:    #E2DED6;
+  --border-2:  #d4d0c8;
+  --ink:       #1b1b1b;
+  --ink-2:     #404040;
+  --ink-3:     #737373;
+  --ink-4:     #a3a3a3;
+  --font:      'Geist', system-ui, sans-serif;
+  --mono:      'Chivo Mono', monospace;
+  --r-sm: 6px; --r-md: 10px; --r-lg: 14px; --r-xl: 20px;
+
+  /* Role colours */
+  --c-dispose:    #dc2626;
+  --c-steward:    #b45309;
+  --c-recycle:    #16a34a;
+  --c-tbd:        #6b7280;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html, body {
+  height: 100%; overflow: hidden;
+  background: var(--bg);
+  font-family: var(--font);
+  font-size: 16.2px;
+  color: var(--ink);
+}
+
+/* ── Layout ── */
+.layout {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  height: 100%;
+}
+
+/* ── SIDEBAR ── */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  border-right: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.sb-header {
+  padding: 18px 18px 14px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.sb-eyebrow {
+  font-family: var(--mono);
+  font-size: 11.2px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 4px;
+}
+.sb-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.2;
+}
+.sb-sub {
+  font-size: 13.8px;
+  color: var(--ink-3);
+  margin-top: 3px;
+  font-family: var(--mono);
+}
+
+/* Placeholder badge */
+.placeholder-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 10px;
+  padding: 4px 10px;
+  background: #fef9c3;
+  border: 1px solid #fde047;
+  border-radius: 99px;
+  font-size: 12.5px;
+  font-family: var(--mono);
+  color: #854d0e;
+}
+
+/* Role filter chips */
+.sb-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 99px;
+  font-size: 13.8px;
+  font-family: var(--mono);
+  font-weight: 500;
+  cursor: pointer;
+  border: 1.5px solid transparent;
+  transition: all .12s;
+  background: var(--white);
+  border-color: var(--border);
+  color: var(--ink-2);
+}
+.chip:hover { border-color: var(--border-2); background: var(--surface); }
+.chip.active { border-color: transparent; color: white; }
+.chip.active.all    { background: var(--navy); }
+.chip.active.dispose  { background: var(--c-dispose); }
+.chip.active.steward  { background: var(--c-steward); }
+.chip.active.recycle  { background: var(--c-recycle); }
+.chip.active.tbd      { background: var(--c-tbd); }
+.chip-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Partner card list */
+.sb-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px 12px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+.sb-list::-webkit-scrollbar { width: 4px; }
+.sb-list::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+.partner-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: var(--r-lg);
+  border: 1px solid var(--border);
+  background: var(--white);
+  margin-bottom: 6px;
+  cursor: pointer;
+  transition: all .12s;
+}
+.partner-card:hover { border-color: var(--border-2); background: var(--surface); }
+.partner-card.active { border-color: var(--orange); background: var(--orange-d); }
+.partner-card.hidden { display: none; }
+
+.pc-role-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.pc-body { flex: 1; min-width: 0; }
+.pc-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.pc-meta {
+  font-size: 12.5px;
+  color: var(--ink-4);
+  font-family: var(--mono);
+  margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.pc-role-badge {
+  font-size: 11.2px;
+  font-weight: 700;
+  font-family: var(--mono);
+  letter-spacing: .4px;
+  padding: 2px 7px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+.rb-dispose  { background: #fee2e2; color: #991b1b; }
+.rb-steward  { background: #fef3c7; color: #92400e; }
+.rb-recycle  { background: #dcfce7; color: #166534; }
+.rb-tbd      { background: #f3f4f6; color: #4b5563; }
+
+/* ── MAP PANEL ── */
+.map-panel {
+  position: relative;
+  height: 100%;
+}
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+/* Leaflet overrides */
+.leaflet-container {
+  font-family: var(--font);
+  background: #e8e0d4;
+}
+
+/* Map placeholder banner */
+.map-placeholder-banner {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  background: #fef9c3;
+  border: 1px solid #fde047;
+  border-radius: 99px;
+  padding: 5px 16px;
+  font-size: 13.8px;
+  font-family: var(--mono);
+  color: #854d0e;
+  pointer-events: none;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+/* Popup styles */
+.leaflet-popup-content-wrapper {
+  border-radius: 12px !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15) !important;
+  border: 1px solid var(--border);
+  padding: 0 !important;
+  overflow: hidden;
+}
+.leaflet-popup-content {
+  margin: 0 !important;
+  min-width: 200px;
+}
+.leaflet-popup-tip-container { display: none; }
+
+.popup-inner {
+  padding: 14px 16px;
+}
+.popup-role {
+  font-size: 11.2px;
+  font-weight: 700;
+  font-family: var(--mono);
+  letter-spacing: .6px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.popup-name {
+  font-size: 16.2px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+.popup-row {
+  font-size: 13.8px;
+  color: var(--ink-2);
+  margin-bottom: 3px;
+}
+.popup-row span {
+  color: var(--ink-4);
+  font-family: var(--mono);
+  font-size: 12.5px;
+}
+.popup-placeholder {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+  font-size: 11.9px;
+  font-family: var(--mono);
+  color: #b45309;
+}
+
+/* Custom pin SVG markers */
+.pin-svg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Map tile attribution */
+.leaflet-control-attribution {
+  font-size: 11.2px !important;
+}
+</style>
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- ── SIDEBAR ── -->
+  <div class="sidebar">
+    <div class="sb-header">
+      <div class="sb-eyebrow">OPGG-BRI · Partner Network</div>
+      <div class="sb-title">Pathway Partners</div>
+      <div class="sb-sub" id="partner-count">20 partners · 4 roles</div>
+      <div class="placeholder-badge">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        Locations are placeholders — update partners.json with real lat/lng
+      </div>
+    </div>
+
+    <!-- Role filter chips -->
+    <div class="sb-filters" id="chipRow">
+      <button class="chip active all" data-role="all" onclick="setFilter('all')">
+        All <span id="chip-count-all" style="opacity:.7"></span>
+      </button>
+      <button class="chip recycle" data-role="Recycle" onclick="setFilter('Recycle')">
+        <span class="chip-dot" style="background:var(--c-recycle)"></span>
+        Recycle
+      </button>
+      <button class="chip steward" data-role="Stewardship" onclick="setFilter('Stewardship')">
+        <span class="chip-dot" style="background:var(--c-steward)"></span>
+        Stewardship
+      </button>
+      <button class="chip dispose" data-role="Dispose" onclick="setFilter('Dispose')">
+        <span class="chip-dot" style="background:var(--c-dispose)"></span>
+        Dispose
+      </button>
+      <button class="chip tbd" data-role="null" onclick="setFilter('null')">
+        <span class="chip-dot" style="background:var(--c-tbd)"></span>
+        TBD
+      </button>
+    </div>
+
+    <!-- Partner card list -->
+    <div class="sb-list" id="partnerList"></div>
+  </div>
+
+  <!-- ── MAP PANEL ── -->
+  <div class="map-panel">
+    <div class="map-placeholder-banner">⚠ Placeholder locations — for design purposes only</div>
+    <div id="map"></div>
+  </div>
+
+</div>
+
+<!-- Leaflet JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+
+<script>
+/* ─────────────────────────────────────────────────────────
+   PARTNER MAP — OPGG-BRI
+   Loads ../data/partners.json and renders pins on Leaflet map.
+   All locations are placeholder coordinates: location: null
+   in partners.json means we use DUMMY_LOCS lookup below.
+   Replace with real lat/lng in partners.json when available.
+───────────────────────────────────────────────────────── */
+
+/* Placeholder coordinates keyed by partner name.
+   Real-world approximate locations for each company,
+   suitable for swapping out once Will provides real addresses. */
+const DUMMY_LOCS = {
+  'ALD':                         { lat: -33.8810, lng: 151.2086, city: 'Sydney CBD, NSW' },
+  'Bingo':                       { lat: -33.8156, lng: 151.0429, city: 'Artarmon, NSW' },
+  'CDT':                         { lat: -33.8848, lng: 151.2089, city: 'Sydney CBD, NSW' },
+  'Green Ceramics':              { lat: -33.8650, lng: 151.2094, city: 'Sydney, NSW' },
+  'Hammond':                     { lat: -33.9399, lng: 151.1641, city: 'Mascot, NSW' },
+  'Infrabuild':                  { lat: -33.8523, lng: 151.1444, city: 'Rhodes, NSW' },
+  'Koskela':                     { lat: -33.9154, lng: 151.1919, city: 'Rosebery, NSW' },
+  'Loop':                        { lat: -37.8128, lng: 144.9750, city: 'Melbourne, VIC' },
+  'Milliken':                    { lat: -33.8850, lng: 151.2100, city: 'Sydney CBD, NSW' },
+  'Ontera':                      { lat: -27.4698, lng: 153.0251, city: 'Brisbane, QLD' },
+  'PIF':                         { lat: -33.7843, lng: 151.1145, city: 'Macquarie Park, NSW' },
+  'Planet Protector':            { lat: -33.8294, lng: 150.9817, city: 'Blacktown, NSW' },
+  'Redirect':                    { lat: -33.7956, lng: 151.1346, city: 'North Ryde, NSW' },
+  'Regyp':                       { lat: -37.7963, lng: 144.9700, city: 'Coburg, VIC' },
+  'Relove':                      { lat: -37.8019, lng: 144.9956, city: 'Fitzroy, VIC' },
+  'Renasci':                     { lat: -37.8244, lng: 144.9820, city: 'South Melbourne, VIC' },
+  'Resourceful Living':          { lat: -33.8997, lng: 151.1730, city: 'Alexandria, NSW' },
+  'Surface Mine':                { lat: -33.8950, lng: 151.1820, city: 'Surry Hills, NSW' },
+  'Textile Recycling Australia': { lat: -37.8320, lng: 144.9650, city: 'Port Melbourne, VIC' },
+  'Upparel':                     { lat: -37.8560, lng: 145.0020, city: 'St Kilda, VIC' },
+};
+
+const ROLE_COLORS = {
+  'Dispose':     '#dc2626',
+  'Stewardship': '#b45309',
+  'Recycle':     '#16a34a',
+  null:          '#6b7280',
+};
+
+const ROLE_LABELS = {
+  'Dispose':     'Dispose',
+  'Stewardship': 'Stewardship',
+  'Recycle':     'Recycle',
+  null:          'TBD',
+};
+
+const ROLE_BADGE_CLASS = {
+  'Dispose':     'rb-dispose',
+  'Stewardship': 'rb-steward',
+  'Recycle':     'rb-recycle',
+  null:          'rb-tbd',
+};
+
+let MAP, partners = [], markers = [], activeFilter = 'all', activeCard = null;
+
+/* ── Initialise Leaflet map ── */
+function initMap() {
+  MAP = L.map('map', {
+    center: [-33.86, 151.20],
+    zoom: 6,
+    zoomControl: true,
+  });
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(MAP);
+}
+
+/* ── Custom SVG marker ── */
+function makeIcon(color) {
+  const svg = `
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="36" viewBox="0 0 28 36">
+      <filter id="ds" x="-30%" y="-10%" width="160%" height="160%">
+        <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="rgba(0,0,0,0.25)"/>
+      </filter>
+      <path d="M14 2C8.48 2 4 6.48 4 12c0 7.5 10 22 10 22S24 19.5 24 12c0-5.52-4.48-10-10-10z"
+            fill="${color}" filter="url(#ds)" stroke="white" stroke-width="1.5"/>
+      <circle cx="14" cy="12" r="4.5" fill="white" fill-opacity="0.9"/>
+    </svg>`;
+  return L.divIcon({
+    html: svg,
+    className: '',
+    iconSize: [28, 36],
+    iconAnchor: [14, 36],
+    popupAnchor: [0, -38],
+  });
+}
+
+/* ── Build popup HTML ── */
+function popupHtml(p) {
+  const color = ROLE_COLORS[p.role];
+  const label = ROLE_LABELS[p.role];
+  return `
+    <div class="popup-inner">
+      <div class="popup-role" style="color:${color}">${label}</div>
+      <div class="popup-name">${p.name}</div>
+      <div class="popup-row"><span>Primary item:</span> ${p.itemMain || '—'}</div>
+      <div class="popup-row"><span>Material:</span> ${p.materialMain || '—'}</div>
+      <div class="popup-row"><span>Location:</span> ${DUMMY_LOCS[p.name]?.city || 'Unknown'}</div>
+      <div class="popup-placeholder">⚠ Placeholder location</div>
+    </div>`;
+}
+
+/* ── Render partner cards in sidebar ── */
+function renderCards() {
+  const list = document.getElementById('partnerList');
+  list.innerHTML = '';
+  partners.forEach((p, i) => {
+    const color = ROLE_COLORS[p.role];
+    const label = ROLE_LABELS[p.role];
+    const badgeCls = ROLE_BADGE_CLASS[p.role];
+    const card = document.createElement('div');
+    card.className = 'partner-card';
+    card.id = 'pc-' + i;
+    card.dataset.role = p.role === null ? 'null' : p.role;
+    card.innerHTML = `
+      <div class="pc-role-dot" style="background:${color}"></div>
+      <div class="pc-body">
+        <div class="pc-name">${p.name}</div>
+        <div class="pc-meta">${p.materialMain || '—'}</div>
+      </div>
+      <div class="pc-role-badge ${badgeCls}">${label}</div>`;
+    card.addEventListener('click', () => selectPartner(i));
+    list.appendChild(card);
+  });
+}
+
+/* ── Render all markers ── */
+function renderMarkers() {
+  markers.forEach(m => MAP.removeLayer(m));
+  markers = [];
+  partners.forEach((p, i) => {
+    const loc = DUMMY_LOCS[p.name];
+    if (!loc) return;
+    const color = ROLE_COLORS[p.role];
+    const marker = L.marker([loc.lat, loc.lng], { icon: makeIcon(color) })
+      .addTo(MAP)
+      .bindPopup(popupHtml(p), { maxWidth: 240 });
+    marker.on('click', () => {
+      highlightCard(i);
+    });
+    markers.push({ marker, index: i, role: p.role });
+  });
+}
+
+/* ── Select / highlight a partner ── */
+function selectPartner(i) {
+  highlightCard(i);
+  const entry = markers.find(m => m.index === i);
+  if (entry) {
+    const loc = DUMMY_LOCS[partners[i].name];
+    if (loc) MAP.setView([loc.lat, loc.lng], Math.max(MAP.getZoom(), 10), { animate: true });
+    entry.marker.openPopup();
+  }
+}
+
+function highlightCard(i) {
+  document.querySelectorAll('.partner-card').forEach(c => c.classList.remove('active'));
+  const card = document.getElementById('pc-' + i);
+  if (card) {
+    card.classList.add('active');
+    card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+}
+
+/* ── Role filter ── */
+function setFilter(role) {
+  activeFilter = role;
+
+  /* Update chip active states */
+  document.querySelectorAll('.chip').forEach(c => {
+    c.classList.remove('active');
+    if (c.dataset.role === role) c.classList.add('active');
+  });
+
+  /* Show/hide partner cards */
+  document.querySelectorAll('.partner-card').forEach(card => {
+    const cardRole = card.dataset.role;
+    const show = role === 'all' || cardRole === role;
+    card.classList.toggle('hidden', !show);
+  });
+
+  /* Show/hide map markers */
+  markers.forEach(({ marker, role: mRole }) => {
+    const mRoleKey = mRole === null ? 'null' : mRole;
+    const show = role === 'all' || mRoleKey === role;
+    if (show) {
+      if (!MAP.hasLayer(marker)) marker.addTo(MAP);
+    } else {
+      if (MAP.hasLayer(marker)) MAP.removeLayer(marker);
+    }
+  });
+
+  /* Update count in sidebar subtitle */
+  const visible = partners.filter(p => {
+    const pr = p.role === null ? 'null' : p.role;
+    return role === 'all' || pr === role;
+  }).length;
+  document.getElementById('partner-count').textContent =
+    visible + (visible === 1 ? ' partner' : ' partners') +
+    (role === 'all' ? ' · 4 roles' : ' · ' + (role === 'null' ? 'TBD' : role));
+}
+
+/* ── Main init ── */
+async function init() {
+  initMap();
+  try {
+    partners = await loadJSONWithFallback('../data/partners.json', 'embedded-partners-json');
+  } catch(e) {
+    /* Fallback: if fetch fails (e.g. opened directly from filesystem),
+       use a minimal placeholder so the UI still renders. */
+    console.warn('Could not load partners.json — using fallback data. Serve via npx serve.', e);
+    partners = Object.keys(DUMMY_LOCS).map(name => ({
+      name, role: null, itemMain: '—', materialMain: '—', location: null, logo: ''
+    }));
+  }
+
+  renderCards();
+  renderMarkers();
+
+  /* Count chips */
+  document.getElementById('chip-count-all').textContent = partners.length;
+}
+
+init();
+</script>
+</body>
+</html>

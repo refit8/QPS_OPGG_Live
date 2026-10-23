@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Pathway Glossary — OPGG-BRI</title>
+<link rel="stylesheet" href="../Refit8_dashboard_mockup/shared.css" />
+<style>
+/* =========================================================================
+ * 16 — Pathway Glossary · standalone reference card for the 8 end-of-life
+ * pathways used across the OPGG-BRI Refit8 portal.
+ * -------------------------------------------------------------------------
+ * AI: Definitions sourced from Reports/Miscellaneous/PathwayDefinitions.png
+ * (originally PathwayDefinitions.txt, replaced with a rendered image).
+ * Not wired into any tab yet — kept as a self-contained component so it can
+ * be dropped into opgg-bri-portal.html (as an iframe, same pattern as the
+ * other charts/*.html files) whenever a glossary is needed, or embedded
+ * standalone. Icons follow the Feather-style line-icon convention already
+ * used in opgg-bri-portal.html (search / filter / grid glyphs).
+ * ========================================================================= */
+
+html, body { height: auto; overflow: visible; }
+.wrap { padding: 32px var(--gutter) 36px; }
+
+.glossary-card {
+  position: relative;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 30px 34px 32px;
+}
+
+.glossary-logo {
+  position: absolute;
+  top: 28px;
+  right: 34px;
+  height: 22px;
+  width: auto;
+  display: block;
+}
+
+.glossary-head {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.glossary-head h2 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 21px;
+  letter-spacing: -0.2px;
+  color: var(--r8-navy);
+  margin: 0 0 6px;
+}
+.glossary-head p {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--text-dim);
+  margin: 0;
+}
+
+.glossary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 34px;
+  row-gap: 26px;
+}
+
+.glossary-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.glossary-item .g-icon {
+  flex: 0 0 auto;
+  width: 22px;
+  height: 22px;
+  margin-top: 1px;
+  color: var(--accent);
+}
+.glossary-item .g-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.glossary-item .g-body h3 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 13.5px;
+  color: var(--text);
+  margin: 0 0 4px;
+}
+.glossary-item .g-body p {
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--text-dim);
+  margin: 0;
+}
+
+@media (max-width: 980px) {
+  .glossary-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .glossary-grid { grid-template-columns: 1fr; }
+  .glossary-card { padding: 24px 20px 26px; }
+  .glossary-logo { position: static; margin: 0 auto 14px; }
+}
+</style>
+</head>
+<body>
+
+<main class="wrap">
+  <div class="glossary-card">
+    <img class="glossary-logo" src="../data/images/logos/Refit8_logo.png" alt="Refit8" />
+    <div class="glossary-head">
+      <h2>Pathway Glossary</h2>
+      <p>Refit8 Definitions for key terms used in this portal.</p>
+    </div>
+
+    <div class="glossary-grid" id="glossary-grid"></div>
+  </div>
+</main>
+
+<script>
+/* icon set — Feather-style line icons (24x24, MIT-convention generic glyphs) */
+const ICONS = {
+  recycle: '<polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10"></path><path d="M20.49 15a9 9 0 0 1-14.85 3.36L1 14"></path>',
+  trash:   '<polyline points="3 6 5 6 21 6"></polyline><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"></path><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line>',
+  heart:   '<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>',
+  lock:    '<rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path>',
+  gear:    '<circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82V15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>',
+  truck:   '<rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle>',
+  return:  '<polyline points="9 14 4 9 9 4"></polyline><path d="M20 20v-7a4 4 0 0 0-4-4H4"></path>',
+  tool:    '<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>',
+};
+
+/* pathway definitions — Reports/Miscellaneous/PathwayDefinitions.png */
+const PATHWAYS = [
+  { icon: 'recycle', label: 'Recycle',
+    text: 'Material is recovered and processed back into original form to re-enter the material supply chain, offsetting the need for virgin materials.' },
+  { icon: 'trash', label: 'Dispose',
+    text: 'Waste material is sent to landfill to be responsibly managed.' },
+  { icon: 'heart', label: 'Rehome',
+    text: 'Asset is transferred to a new owner to be used without significant alterations. This includes donations to charitable organisations.' },
+  { icon: 'lock', label: 'Retain',
+    text: 'Asset remains onsite to be reused in the same or similar application without significant alterations.' },
+  { icon: 'gear', label: 'Remanufacture',
+    text: 'Asset is used in the manufacture of a new product with a different intended use to the original.' },
+  { icon: 'truck', label: 'Reuse',
+    text: 'Ownership of the asset is maintained by the tenant to be used in a new fitout in the same or similar application without significant alterations.' },
+  { icon: 'return', label: 'Stewardship',
+    text: 'Asset is sent back to the manufacturer or supplier at the end of its use to be managed. This may have some conditions.' },
+  { icon: 'tool', label: 'Adaptive Reuse & Refurbish',
+    text: 'Asset is repaired or altered in some way to be used in the same (refurbish) or new (adaptive reuse) application.' },
+];
+
+document.getElementById('glossary-grid').innerHTML = PATHWAYS.map(p => `
+  <div class="glossary-item">
+    <div class="g-icon"><svg viewBox="0 0 24 24">${ICONS[p.icon]}</svg></div>
+    <div class="g-body">
+      <h3>${p.label}</h3>
+      <p>${p.text}</p>
+    </div>
+  </div>
+`).join('');
+</script>
+</body>
+</html>

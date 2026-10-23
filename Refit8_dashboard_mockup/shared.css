@@ -1,0 +1,571 @@
+/* ==========================================================================
+ * Refit8 — Shared Design System
+ * shared.css  v2.0
+ * --------------------------------------------------------------------------
+ * Fonts loaded from local TTFs in "Refit8 Design System/assets/fonts/".
+ *
+ * Contents:
+ *   1. Web fonts (@font-face)
+ *   2. Design tokens (:root)
+ *   3. Reset + base
+ *   4. Body background
+ *   5. Topbar / brand / breadcrumbs
+ *   6. Page layout (.wrap)
+ *   7. Page header (.pagehead)
+ *   8. Summary strip (.summary / .stat)
+ *   9. Controls bar (.controls / .group / .seg / .toggle / .select)
+ *  10. Chart card (.chart / .chart-head / .legend)
+ *  11. Footnote (.foot)
+ *  12. Animations + helpers
+ *  13. Responsive overrides
+ * ========================================================================== */
+
+/* ============================================================
+ * 1. Web fonts
+ * ============================================================ */
+@font-face {
+  font-family: "Geist";
+  src: url("Refit8 Design System/assets/fonts/Geist-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Geist";
+  src: url("Refit8 Design System/assets/fonts/Geist-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Chivo Mono";
+  src: url("Refit8 Design System/assets/fonts/ChivoMono-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Chivo Mono";
+  src: url("Refit8 Design System/assets/fonts/ChivoMono-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* ============================================================
+ * 2. Design tokens
+ * ============================================================ */
+:root {
+  /* ── Refit8 brand palette ── */
+  --r8-orange:       #E8762B;
+  --r8-orange-deep:  #D45F18;
+  --r8-orange-soft:  #F4A86A;
+  --r8-orange-tint:  #FBE6D3;
+
+  --r8-navy:         #1E1B5C;
+  --r8-navy-deep:    #131036;
+  --r8-navy-soft:    #2E2A7A;
+
+  --r8-paper:        #F4F2EE;
+  --r8-paper-2:      #ECE9E3;
+  --r8-line:         #E2DED6;
+  --r8-mute:         #B5B0A6;
+  --r8-ink-2:        #57534B;
+  --r8-ink:          #1A1816;
+  --r8-white:        #FFFFFF;
+
+  /* ── Shared token names (backward-compatible with inline styles) ── */
+  --bg:          #F4F2EE;
+  --bg-2:        #ECE9E3;
+  --panel:       #FFFFFF;
+  --panel-2:     #F4F2EE;
+  --line:        #E2DED6;
+  --line-soft:   rgba(226, 222, 214, 0.75);
+  --text:        #1A1816;
+  --text-dim:    #57534B;
+  --text-mute:   #B5B0A6;
+
+  /* ── Accent: Refit8 orange ── */
+  --accent:      #E8762B;
+  --accent-2:    #F4A86A;
+  --accent-soft: rgba(232, 118, 43, 0.12);
+  --accent-glow: rgba(232, 118, 43, 0.22);
+
+  /* ── Secondary: navy ── */
+  --neutral:     #2E2A7A;
+  --neutral-2:   #1E1B5C;
+
+  /* ── Status ── */
+  --danger:      #B94A2A;
+  --danger-soft: rgba(185, 74, 42, 0.12);
+  --good:        #2F8F5A;
+
+  /* ── Typography ── */
+  --font-sans: "Geist", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "Chivo Mono", "JetBrains Mono", ui-monospace, monospace;
+
+  /* ── Layout ── */
+  --container-max: 1440px;
+  --gutter: 36px;
+
+  /* ── Radius ── */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 18px;
+  --radius-pill: 999px;
+
+  /* ── Shadows ── */
+  --shadow-sm: 0 1px 3px rgba(26,24,22,.05), 0 1px 2px rgba(26,24,22,.04);
+  --shadow-md: 0 4px 16px -4px rgba(26,24,22,.10), 0 2px 4px rgba(26,24,22,.05);
+}
+
+
+/* ============================================================
+ * 3. Reset + base
+ * ============================================================ */
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* ============================================================
+ * 4. Body background
+ * ============================================================ */
+body {
+  min-height: 100vh;
+  background: var(--r8-paper);
+}
+
+
+/* ============================================================
+ * 5. Topbar / brand / breadcrumbs
+ * ============================================================ */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px var(--gutter);
+  border-bottom: 1px solid var(--line);
+  background: var(--r8-white);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: var(--shadow-sm);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  font-family: var(--font-sans);
+  color: var(--text);
+  font-size: 14px;
+}
+
+.brand .logo {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: var(--r8-orange);
+  display: grid;
+  place-items: center;
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 12px;
+  flex-shrink: 0;
+  font-family: var(--font-mono);
+  letter-spacing: -0.5px;
+}
+
+.brand small {
+  display: block;
+  color: var(--text-mute);
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  font-size: 11px;
+  margin-top: 1px;
+  font-family: var(--font-sans);
+}
+
+.crumbs {
+  color: var(--text-mute);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}
+
+.crumbs span { color: var(--accent); }
+
+
+/* ============================================================
+ * 6. Page layout
+ * ============================================================ */
+.wrap {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 32px var(--gutter) 80px;
+}
+
+
+/* ============================================================
+ * 7. Page header
+ * ============================================================ */
+.pagehead {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 22px;
+}
+
+.pagehead h1 {
+  font-size: 34px;
+  line-height: 1.05;
+  margin: 0 0 8px;
+  letter-spacing: -0.5px;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  color: var(--text);
+}
+
+.pagehead h1 .num {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--text-mute);
+  margin-right: 12px;
+  vertical-align: middle;
+}
+
+.pagehead p {
+  margin: 0;
+  color: var(--text-dim);
+  max-width: 640px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.pagehead .meta {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-mute);
+  text-align: right;
+  line-height: 1.8;
+  min-width: 260px;
+  flex-shrink: 0;
+}
+
+.pagehead .meta b {
+  color: var(--text-dim);
+  font-weight: 600;
+}
+
+
+/* ============================================================
+ * 8. Summary strip
+ * ============================================================ */
+.summary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.stat {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 18px 20px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+/* .label inside .stat is the eyebrow label */
+.stat .label {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-mute);
+}
+
+.stat .value {
+  font-size: 28px;
+  font-weight: 400;
+  margin-top: 6px;
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  color: var(--text);
+  font-family: var(--font-sans);
+}
+
+.stat .value .unit {
+  font-size: 13px;
+  color: var(--text-dim);
+  font-weight: 400;
+}
+
+.stat .sub {
+  font-size: 12px;
+  color: var(--text-dim);
+  margin-top: 6px;
+  line-height: 1.45;
+}
+
+.stat.accent .value { color: var(--accent); }
+.stat.danger  .value { color: var(--danger); }
+.stat.good    .value { color: var(--good); }
+
+
+/* ============================================================
+ * 9. Controls bar
+ * ============================================================ */
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 14px 16px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+  box-shadow: var(--shadow-sm);
+}
+
+.group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.group .glabel {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-mute);
+}
+
+/* Segmented pill control */
+.seg {
+  display: inline-flex;
+  padding: 4px;
+  gap: 4px;
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+}
+
+.seg button {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--text-dim);
+  padding: 7px 14px;
+  border-radius: 999px;
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.seg button:hover { color: var(--text); }
+
+.seg button.active {
+  background: var(--accent);
+  color: #FFFFFF;
+  box-shadow: 0 2px 8px var(--accent-glow);
+}
+
+/* Ghost variant — neutral active state */
+.seg.ghost button.active {
+  background: var(--bg-2);
+  color: var(--text);
+  box-shadow: none;
+  border: 1px solid var(--line);
+}
+
+/* Toggle switch (checkbox-based) */
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  color: var(--text-dim);
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+  user-select: none;
+  font-family: var(--font-sans);
+}
+
+.toggle:hover {
+  background: rgba(26, 24, 22, 0.04);
+  color: var(--text);
+}
+
+.toggle input[type="checkbox"] {
+  appearance: none;
+  width: 30px;
+  height: 16px;
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  position: relative;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.toggle input[type="checkbox"]::after {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--text-mute);
+  transition: transform 0.2s, background 0.2s;
+}
+
+.toggle input[type="checkbox"]:checked {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+}
+
+.toggle input[type="checkbox"]:checked::after {
+  transform: translateX(14px);
+  background: var(--accent);
+}
+
+/* Native select */
+.select {
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--text);
+  padding: 7px 12px;
+  font-size: 12.5px;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.select:focus { border-color: var(--accent); }
+
+
+/* ============================================================
+ * 10. Chart card
+ * ============================================================ */
+.chart {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 22px 24px 18px;
+  position: relative;
+  box-shadow: var(--shadow-sm);
+}
+
+.chart-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.chart-title {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  font-family: var(--font-sans);
+  color: var(--text);
+}
+
+.legend {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-dim);
+  flex-wrap: wrap;
+}
+
+.legend .dot {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  margin-right: 6px;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+.legend .dot.neutral { background: var(--neutral-2); }
+.legend .dot.accent  { background: var(--accent); }
+.legend .dot.danger  { background: var(--danger); }
+.legend .dot.good    { background: var(--good); }
+.legend .hint        { color: var(--text-mute); font-style: italic; }
+
+
+/* ============================================================
+ * 11. Footnote
+ * ============================================================ */
+.foot {
+  margin-top: 16px;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--text-mute);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.foot .hint b { color: var(--text-dim); font-weight: 600; }
+
+
+/* ============================================================
+ * 12. Animations + helpers
+ * ============================================================ */
+@keyframes pulse-hint {
+  0%,  100% { opacity: 0.6; }
+  50%        { opacity: 1;   }
+}
+
+.pulse { animation: pulse-hint 2.4s ease-in-out infinite; }
+
+
+/* ============================================================
+ * 13. Responsive overrides
+ * ============================================================ */
+@media (max-width: 900px) {
+  .topbar  { padding: 14px 20px; }
+  .wrap    { padding: 24px 20px 60px; }
+  .summary { grid-template-columns: repeat(2, 1fr); }
+  .pagehead          { flex-direction: column; }
+  .pagehead .meta    { text-align: left; min-width: 0; }
+  .controls          { flex-direction: column; align-items: flex-start; }
+}
