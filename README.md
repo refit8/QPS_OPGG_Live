@@ -1,6 +1,6 @@
-# OPGG-BRI Portal
+# Olympic and Paralympic Games Accommodation Portal
 
-Material intelligence portal for the OPGG-BRI defit. Built by Refit8 for Charter Hall.
+Material intelligence portal for the Olympic and Paralympic Games Accommodation defit. Built by Refit8 for BVN, QPS Headquarters.
 
 This is a fully static site — no backend, no build step. `opgg-bri-portal.html` fetches
 `data/assets.json`, `data/partners.json`, and `data/ald_report.json` at runtime via relative

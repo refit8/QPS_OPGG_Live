@@ -178,7 +178,7 @@ def main():
     for r in parts:
         for pg in r.pages:
             writer.add_page(pg)
-    writer.add_metadata({"/Title": "OPGG-BRI Level 13: Circularity Pilot Report",
+    writer.add_metadata({"/Title": "Olympic and Paralympic Games Accommodation Level 13: Circularity Pilot Report",
                          "/Author": "Refit8", "/CreationDate": date.today().isoformat()})
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     with open(OUT, "wb") as f:

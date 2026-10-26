@@ -1,5 +1,54 @@
 [
   {
+    "id": "flo-001",
+    "title": "Level 2 Proposed General Arrangement (AR-SK02)",
+    "filename": "AR-SK02 [2] Level 2 PROPOSED GA.pdf",
+    "category": "Floorplans",
+    "size": "385 KB",
+    "date": "2026-10-16",
+    "path": "Reports/Floorplans/AR-SK02 [2] Level 2 PROPOSED GA.pdf",
+    "description": "Architectural sketch AR-SK02: proposed general arrangement plan for Level 2."
+  },
+  {
+    "id": "flo-002",
+    "title": "PHQ Level 2 Floor Plan (Dec 2025)",
+    "filename": "PHQ Level 2 DEC 2025.pdf",
+    "category": "Floorplans",
+    "size": "643 KB",
+    "date": "2026-10-08",
+    "path": "Reports/Floorplans/PHQ Level 2 DEC 2025.pdf",
+    "description": "Level 2 floor plan, December 2025."
+  },
+  {
+    "id": "mis-005",
+    "title": "OPGG Consultants Kick Off Meeting Minutes",
+    "filename": "261009_OPGG Consultants Kick Off Meeting Minutes.pdf",
+    "category": "Miscellaneous",
+    "size": "616 KB",
+    "date": "2026-10-12",
+    "path": "Reports/Miscellaneous/261009_OPGG Consultants Kick Off Meeting Minutes.pdf",
+    "description": "Minutes of the OPGG consultants kick-off meeting, 9 October 2026."
+  },
+  {
+    "id": "mis-pathway-defs",
+    "title": "Pathway Definitions",
+    "filename": "PathwayDefinitions.png",
+    "category": "Miscellaneous",
+    "size": "76 KB",
+    "date": "2026-09-17",
+    "path": "Reports/Miscellaneous/PathwayDefinitions.png",
+    "description": "Definitions of the end-of-life pathways used across the portal (Retain, Reuse, Recycle, Rehome and others)."
+  },
+  {
+    "id": "rrr-folder",
+    "category": "Resource Recovery Report",
+    "_empty": true,
+    "title": "",
+    "filename": "",
+    "path": "Reports/Resource Recovery Report/",
+    "description": "Resource recovery report for this project (to be added)."
+  },
+  {
     "id": "ddr-folder",
     "category": "Downstream Documentation & Reporting",
     "_empty": true,

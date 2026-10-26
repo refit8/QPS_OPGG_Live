@@ -16,7 +16,7 @@ function fetchJSON(url) {
 let ASSETS = [];
 
 /* ── Net Lettable Area — single source of truth for all NLA-derived figures ── */
-const NLA_M2 = 793;
+const NLA_M2 = 4000;
 
 /* ── Pathway → badge CSS class ── */
 const PW = {
@@ -1191,7 +1191,7 @@ async function loadALDReport() {
   }
 }
 
-/* ── Home-page site footer: The Collective grid + Refit8 footer ── */
+/* ── Home-page site footer: Project Stakeholders grid + Refit8 footer ── */
 const COLLECTIVE = [
   ['CharterHall_logo.png','Charter Hall'], ['CDT_logo.jpg','CDT'],
   ['Refit8_logo.png','Refit8'], ['Koskela_logo.png','Koskela'],
@@ -1207,7 +1207,7 @@ function renderSiteFooters() {
   const year = new Date().getFullYear();
   const html =
     '<div class="collective"><div class="collective-inner">' +
-      '<div class="collective-hd"><h3>The Collective</h3><span>Partners and specialists delivering this project</span></div>' +
+      '<div class="collective-hd"><h3>Project Stakeholders</h3><span>Partners and specialists delivering this project</span></div>' +
       '<div class="collective-grid">' + tiles + '</div>' +
     '</div></div>' +
     '<footer class="r8-footer"><div class="r8-footer-inner">' +
@@ -1233,7 +1233,7 @@ function renderSiteFooters() {
       '</div>' +
       '<div class="r8-footer-bot">' +
         '<span>&copy; ' + year + ' Refit8 Pty Ltd. All rights reserved.</span>' +
-        '<span>OPGG-BRI · Material Intelligence Portal</span>' +
+        '<span>Olympic and Paralympic Games Accommodation · Material Intelligence Portal</span>' +
       '</div>' +
     '</div></footer>';
   document.querySelectorAll('.site-footer-mount').forEach(m => { m.innerHTML = html; });
@@ -1476,7 +1476,7 @@ document.querySelector('.btn-export').addEventListener('click', function () {
 
 /* ── Contact Us Modal (Export Report) ── */
 var CONTACT_EMAIL = 'contact@refit8.io';
-var CONTACT_SUBJECT = 'OPGG-BRI export';
+var CONTACT_SUBJECT = 'Olympic and Paralympic Games Accommodation export';
 function openContactModal() {
   var el = document.getElementById('contact-modal-overlay');
   if (el) el.style.display = 'flex';
@@ -1489,7 +1489,7 @@ function buildExportRequest() {
   var val = function (id) { var e = document.getElementById(id); return e ? e.value.trim() : ''; };
   var body = [
     'Hello Refit8 team,', '',
-    'I would like to request an export from the OPGG-BRI portal.', '',
+    'I would like to request an export from the Olympic and Paralympic Games Accommodation portal.', '',
     'Sections requested:',
     scopes.map(function (s) { return '  • ' + s; }).join('\n'), '',
     'Format: ' + val('xr-format'),
@@ -1497,7 +1497,7 @@ function buildExportRequest() {
     'Name: ' + (val('xr-name') || '—'),
     'Email: ' + (val('xr-email') || '—'), '',
     'Notes:', (val('xr-notes') || '—'), '',
-    'Sent from the OPGG-BRI Material Intelligence Portal.'
+    'Sent from the Olympic and Paralympic Games Accommodation Material Intelligence Portal.'
   ].join('\n');
   var link = document.getElementById('contact-mailto-link');
   if (link) link.href = 'mailto:' + CONTACT_EMAIL + '?subject=' + encodeURIComponent(CONTACT_SUBJECT) + '&body=' + encodeURIComponent(body);
@@ -1520,9 +1520,9 @@ function sendContactEnquiry() {
     'Email: ' + email,
     'Organisation: ' + (org || '—'),
     'Enquiry type: ' + type, '',
-    'Sent from the OPGG-BRI Material Intelligence Portal.'
+    'Sent from the Olympic and Paralympic Games Accommodation Material Intelligence Portal.'
   ].join('\n');
-  window.location.href = 'mailto:' + CONTACT_EMAIL + '?subject=' + encodeURIComponent('OPGG-BRI enquiry: ' + type) + '&body=' + encodeURIComponent(body);
+  window.location.href = 'mailto:' + CONTACT_EMAIL + '?subject=' + encodeURIComponent('Olympic and Paralympic Games Accommodation enquiry: ' + type) + '&body=' + encodeURIComponent(body);
 }
 function closeContactModal() {
   var el = document.getElementById('contact-modal-overlay');

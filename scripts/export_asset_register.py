@@ -52,10 +52,10 @@ for row in ws.iter_rows(min_row=2, min_col=5, max_col=6):
 
 about = wb.create_sheet("About")
 rows = [
-    ("OPGG-BRI Level 13: Asset Register", ""),
+    ("Olympic and Paralympic Games Accommodation Level 13: Asset Register", ""),
     ("Generated", date.today().isoformat()),
     ("Assets", len(assets)),
-    ("Source", "OPGG-BRI portal (data/assets.json)"),
+    ("Source", "Olympic and Paralympic Games Accommodation portal (data/assets.json)"),
     ("Notes", "Photos and estimated emissions values are excluded. "
               "View the portal for the latest data, images and interactive charts."),
 ]

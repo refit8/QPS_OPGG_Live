@@ -2239,6 +2239,9 @@ nav.topnav { position: relative; }
   background: #e8f6ee; color: #1d6b43;
 }
 .tl-step.next .tl-state { background: var(--orange-dim); color: var(--orange-h); }
+.tl-step.next::after, .tl-step.next ~ .tl-step::after { background: var(--border-2); }
+.tl-step.next ~ .tl-step .tl-node { background: var(--white); color: var(--ink-3); box-shadow: 0 0 0 2px var(--border-2); }
+.tl-step.next ~ .tl-step .tl-state { background: var(--border); color: var(--ink-3); }
 @media (max-width: 900px) {
   .tl-track { display: flex; flex-direction: column; gap: 26px; }
   .tl-step { padding-top: 0; padding-left: 58px; text-align: left; }
