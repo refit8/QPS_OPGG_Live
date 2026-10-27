@@ -255,7 +255,7 @@
       "data/images/images_assets/Sprinkler - 2.png",
       "data/images/images_assets/New Asset - 11.jpg"
     ],
-    "category": "Built Form",
+    "category": "Services",
     "unit": "Count",
     "quantity": 1,
     "manufacturer": null,
@@ -598,7 +598,7 @@
       "data/images/images_assets/New Asset - 9.png",
       "data/images/images_assets/New Asset - 16.jpg"
     ],
-    "category": "Built Form",
+    "category": "Services",
     "unit": "Count",
     "quantity": 1,
     "manufacturer": null,
@@ -714,7 +714,7 @@
       "data/images/images_assets/New Asset - 11.png",
       "data/images/images_assets/New Asset - 18.jpg"
     ],
-    "category": "Built Form",
+    "category": "Services",
     "unit": "Count",
     "quantity": 1,
     "manufacturer": null,
@@ -771,7 +771,7 @@
       "data/images/images_assets/New Asset - 12.png",
       "data/images/images_assets/Network Extension - 2.jpg"
     ],
-    "category": "Built Form",
+    "category": "Services",
     "unit": "Count",
     "quantity": 1,
     "manufacturer": null,
@@ -829,7 +829,7 @@
       "data/images/images_assets/New Asset - 14.png",
       "data/images/images_assets/Ceiling Light Panel - 3.png"
     ],
-    "category": "Built Form",
+    "category": "Services",
     "unit": "Count",
     "quantity": 1,
     "manufacturer": null,
@@ -1179,7 +1179,7 @@
     "images": [
       "data/images/images_assets/New Asset - 21.png"
     ],
-    "category": "Built Form",
+    "category": "Services",
     "unit": "Count",
     "quantity": 1,
     "manufacturer": null,
@@ -1471,7 +1471,7 @@
     "images": [
       "data/images/images_assets/New Asset - 28.png"
     ],
-    "category": "Built Form",
+    "category": "FF&E",
     "unit": "Count",
     "quantity": 1,
     "manufacturer": null,
@@ -1527,7 +1527,7 @@
     "images": [
       "data/images/images_assets/New Asset - 29.png"
     ],
-    "category": "Built Form",
+    "category": "FF&E",
     "unit": "Count",
     "quantity": 1,
     "manufacturer": null,
@@ -1583,7 +1583,7 @@
     "images": [
       "data/images/images_assets/New Asset - 30.png"
     ],
-    "category": "Built Form",
+    "category": "FF&E",
     "unit": "Count",
     "quantity": 1,
     "manufacturer": null,
@@ -1816,7 +1816,8 @@
     "images": [
       "data/images/images_assets/Carpet Tile - Library - 2.png",
       "data/images/images_assets/Carpet Tile - Library.jpg",
-      "data/images/images_assets/Carpet Tile - Library - 3.png"
+      "data/images/images_assets/Carpet Tile - Library - 3.png",
+      "data/images/images_assets/Carpet Tile - Library - 4.jpg"
     ],
     "category": "Built Form",
     "unit": "Area (m2)",
@@ -2104,7 +2105,7 @@
       "data/images/images_assets/Plasterboard Partition Wall.png"
     ],
     "category": "Built Form",
-    "unit": "Linear Metre (m)",
+    "unit": "Area (m2)",
     "quantity": 1,
     "manufacturer": null,
     "supplier": null,
@@ -2160,7 +2161,7 @@
       "data/images/images_assets/New Asset - 36.png"
     ],
     "category": "Built Form",
-    "unit": "Count",
+    "unit": "Volume (m3)",
     "quantity": 1,
     "manufacturer": null,
     "supplier": null,
@@ -2217,7 +2218,7 @@
       "data/images/images_assets/New Asset - 38.png"
     ],
     "category": "Built Form",
-    "unit": "Count",
+    "unit": "Linear Metre (m)",
     "quantity": 1,
     "manufacturer": null,
     "supplier": null,
@@ -2273,7 +2274,7 @@
       "data/images/images_assets/Exit Sign - Wall-mounted.png",
       "data/images/images_assets/Exit Sign - Wall-mounted - 2.png"
     ],
-    "category": "Built Form",
+    "category": "Services",
     "unit": "Count",
     "quantity": 1,
     "manufacturer": null,
@@ -2332,7 +2333,7 @@
       "data/images/images_assets/New Asset - 19.jpg"
     ],
     "category": "Built Form",
-    "unit": "Count",
+    "unit": "Area (m2)",
     "quantity": 1,
     "manufacturer": null,
     "supplier": null,
@@ -2447,7 +2448,7 @@
       "data/images/images_assets/New Asset - 22.jpg"
     ],
     "category": "Built Form",
-    "unit": "Count",
+    "unit": "Area (m2)",
     "quantity": 1,
     "manufacturer": null,
     "supplier": null,
@@ -2791,7 +2792,7 @@
       "data/images/images_assets/New Asset - 46.png",
       "data/images/images_assets/Workstation Desk - 2.png"
     ],
-    "category": "Built Form",
+    "category": "FF&E",
     "unit": "Count",
     "quantity": 1,
     "manufacturer": null,
@@ -3479,7 +3480,7 @@
     "images": [
       "data/images/images_assets/New Asset - 28.jpg"
     ],
-    "category": "Built Form",
+    "category": "FF&E",
     "unit": "Count",
     "quantity": 1,
     "manufacturer": null,
@@ -4051,7 +4052,7 @@
       "data/images/images_assets/New Asset - 34.jpg",
       "data/images/images_assets/Wheelie Bin (various) - 2.jpg"
     ],
-    "category": "Built Form",
+    "category": "FF&E",
     "unit": "Count",
     "quantity": 1,
     "manufacturer": null,
@@ -4107,7 +4108,7 @@
     "images": [
       "data/images/images_assets/New Asset - 35.jpg"
     ],
-    "category": "Built Form",
+    "category": "FF&E",
     "unit": "Count",
     "quantity": 1,
     "manufacturer": null,
@@ -4165,7 +4166,7 @@
       "data/images/images_assets/Glass Partition - 2.jpg"
     ],
     "category": "Built Form",
-    "unit": "Count",
+    "unit": "Area (m2)",
     "quantity": 1,
     "manufacturer": null,
     "supplier": null,
@@ -4223,7 +4224,7 @@
       "data/images/images_assets/Privacy Blinds - 3.png"
     ],
     "category": "Built Form",
-    "unit": "Count",
+    "unit": "Linear Metre (m)",
     "quantity": 1,
     "manufacturer": null,
     "supplier": null,
@@ -4276,7 +4277,7 @@
     "title": "Workstation - Sit-to-Stand Desk",
     "imageUrl": null,
     "images": [],
-    "category": "Built Form",
+    "category": "FF&E",
     "unit": "Count",
     "quantity": 1,
     "manufacturer": null,
@@ -4386,7 +4387,7 @@
     "title": "ZIP Tap - 2-in-1",
     "imageUrl": null,
     "images": [],
-    "category": "Built Form",
+    "category": "Services",
     "unit": "Count",
     "quantity": 1,
     "manufacturer": null,
@@ -4555,7 +4556,7 @@
       "data/images/images_assets/New Asset - 58.png"
     ],
     "category": "Built Form",
-    "unit": "Count",
+    "unit": "Linear Metre (m)",
     "quantity": 1,
     "manufacturer": null,
     "supplier": null,
@@ -5004,7 +5005,7 @@
     "images": [
       "data/images/images_assets/New Asset - 47.jpg"
     ],
-    "category": "Construction Waste",
+    "category": "Services",
     "unit": "Count",
     "quantity": 1,
     "manufacturer": null,
@@ -5117,7 +5118,7 @@
       "data/images/images_assets/Ceiling Grid - 4.jpg"
     ],
     "category": "Built Form",
-    "unit": "Count",
+    "unit": "Linear Metre (m)",
     "quantity": 1,
     "manufacturer": null,
     "supplier": null,
@@ -5343,6 +5344,60 @@
     "images": [
       "data/images/images_assets/New Asset - 64.png"
     ],
+    "category": "Built Form",
+    "unit": "Count",
+    "quantity": 1,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": null,
+    "weight": {
+      "perUnit": null,
+      "total": null
+    },
+    "pathway": {
+      "suggested": null,
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": null,
+    "notes": {
+      "audit": null,
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "14ebe09a-e207-4204-a9a9-ddee46ad885d",
+    "title": "Door Jamb - Timber",
+    "imageUrl": null,
+    "images": [],
     "category": "Built Form",
     "unit": "Count",
     "quantity": 1,
