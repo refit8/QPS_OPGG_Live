@@ -443,6 +443,21 @@ nav.topnav {
   min-width: 16px; text-align: center; line-height: 16px;
   font-family: var(--font);
 }
+/* Starred assets */
+.star-toggle svg { fill: none; stroke: var(--orange); }
+.star-toggle.on { border-color: var(--orange); background: var(--orange-dim); }
+.star-toggle.on svg { fill: var(--orange); }
+.star-btn {
+  display: inline-flex; vertical-align: -2px; margin-right: 5px;
+  padding: 0; border: 0; background: none; cursor: pointer;
+}
+.star-btn svg { width: 14px; height: 14px; fill: none; stroke: var(--grey-400); stroke-width: 2; }
+.star-btn:hover svg { stroke: var(--orange); }
+.star-btn.on svg { fill: var(--orange); stroke: var(--orange); }
+table.t tbody tr:not(:hover) .star-btn:not(.on) { visibility: hidden; }
+.d-header .star-btn { margin: 2px 0 0 8px; }
+.d-header .star-btn svg { width: 20px; height: 20px; stroke: var(--orange); }
+table.t tbody tr.star-end td { border-bottom: 2px solid var(--orange); }
 .vseg {
   display: flex; border: 1px solid var(--border);
   border-radius: var(--r-md); overflow: hidden;

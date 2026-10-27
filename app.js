@@ -91,6 +91,54 @@ function fmt(n)    { return Math.round(n).toLocaleString(); }
 function fmtWt(kg) { return kg >= 1000 ? (kg/1000).toFixed(1)+'t' : fmt(kg)+'kg'; }
 function maxKg()   { return Math.max(...ASSETS.map(a => a.kg || 0)); }
 
+/* ── Starred assets: per-browser favourites (localStorage, keyed by asset id) ──
+   "Starred first" toggle floats starred rows above the rest under any sort.
+   TODO (deferred by user): Export/Import starred. Two small buttons by #starBtn.
+   Export downloads starred-assets.json ([{id, title}]); Import picks that file and
+   MERGES ids into `starred`, skipping ids not in ASSETS, then persists + applySort().
+   Only worth building if stars must move between browsers/machines. */
+const STAR_KEY       = 'r8-starred-assets';
+const STAR_FIRST_KEY = 'r8-starred-first';
+const STAR_SVG = '<svg viewBox="0 0 24 24" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>';
+let starred = new Set();
+let starFirst = false;
+(function loadStars() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(STAR_KEY));
+    if (Array.isArray(saved)) starred = new Set(saved);
+    starFirst = localStorage.getItem(STAR_FIRST_KEY) === '1';
+  } catch(e) {}
+})();
+function isStarred(a) { return starred.has(a.id); }
+function toggleStar(id) {
+  const selRow = document.querySelector('tr.sel');
+  const selIdx = selRow ? parseInt(selRow.id.slice(2), 10) : -1;
+  if (starred.has(id)) starred.delete(id); else starred.add(id);
+  try { localStorage.setItem(STAR_KEY, JSON.stringify([...starred])); } catch(e) {}
+  applySort();
+  if (selIdx >= 0) selAsset(selIdx);
+  syncStarBtn();
+}
+function toggleStarFirst() {
+  starFirst = !starFirst;
+  try { localStorage.setItem(STAR_FIRST_KEY, starFirst ? '1' : '0'); } catch(e) {}
+  syncStarBtn();
+  applySort();
+}
+function syncStarBtn() {
+  const b = document.getElementById('starBtn');
+  if (!b) return;
+  b.classList.toggle('on', starFirst);
+  b.setAttribute('aria-pressed', starFirst ? 'true' : 'false');
+  b.title = starFirst
+    ? 'Starred assets shown first (' + starred.size + ') — click to turn off'
+    : 'Show starred assets first (' + starred.size + ' starred)';
+}
+function starBtnHtml(a) {
+  return '<button class="star-btn' + (isStarred(a) ? ' on' : '') + '" title="' + (isStarred(a) ? 'Unstar' : 'Star') +
+    '" onclick="event.stopPropagation();toggleStar(\'' + a.id + '\')">' + STAR_SVG + '</button>';
+}
+
 /* ── Asset register table columns: order is user-draggable + persisted ── */
 const REG_COLUMNS = [
   { id: 'thumb',    label: '',               sortCol: null,
@@ -98,7 +146,7 @@ const REG_COLUMNS = [
       ? `<div class="a-thumb" style="overflow:hidden;padding:0"><img src="${a.thumbUrl || a.imageUrl}" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>`
       : `<div class="a-thumb" style="background:var(--grey-100);font-size: 13.8px;font-family:var(--font);color:var(--ink-4);display:flex;align-items:center;justify-content:center">&#9670;</div>` },
   { id: 'name',     label: 'Asset Title',    sortCol: 1,
-    cell: a => `<div class="a-name">${a.n}</div><div class="a-meta">${a.mat || ''}</div>` },
+    cell: a => `<div class="a-name">${starBtnHtml(a)}${a.n}</div><div class="a-meta">${a.mat || ''}</div>` },
   { id: 'category', label: 'Category',       sortCol: 6,
     cell: a => `<span class="cat-lbl ${TAG[a.tag]||''}">${TAGL[a.tag]||a.cat}</span>` },
   { id: 'qty',      label: 'Qty',            sortCol: 3,
@@ -165,16 +213,19 @@ function renderRegHead() {
   });
 }
 renderRegHead();
+syncStarBtn();
 
 /* ── Asset register table + gallery + board ── */
 function renderAll() {
   const mx = maxKg();
   const cols = orderedRegColumns();
-  document.getElementById('tbody').innerHTML = filtered.map(a => {
+  document.getElementById('tbody').innerHTML = filtered.map((a, i) => {
     const idx = ASSETS.indexOf(a);
     const pct = a.kg ? Math.round(a.kg / mx * 100) : 0;
     const tds = cols.map(c => `<td>${c.cell(a, {pct})}</td>`).join('');
-    return `<tr onclick="selAsset(${idx})" id="tr${idx}">${tds}</tr>`;
+    const next = filtered[i + 1];
+    const cls = (starFirst && isStarred(a) && next && !isStarred(next)) ? ' class="star-end"' : '';
+    return `<tr onclick="selAsset(${idx})" id="tr${idx}"${cls}>${tds}</tr>`;
   }).join('');
 
   document.getElementById('gridC').innerHTML = filtered.map(a => {
@@ -437,6 +488,7 @@ function sortBy(col) {
 }
 function applySort() {
   filtered.sort((a, b) => {
+    if (starFirst && isStarred(a) !== isStarred(b)) return isStarred(a) ? -1 : 1;
     const va = [null, a.n, a.pw, a.qty, a.kg, a.mat, a.cat, (a.partners||[]).join(', '), ASSETS.indexOf(a), a.waste][sCol];
     const vb = [null, b.n, b.pw, b.qty, b.kg, b.mat, b.cat, (b.partners||[]).join(', '), ASSETS.indexOf(b), b.waste][sCol];
     if (typeof va === 'number') return (va - vb) * sDir;
@@ -620,6 +672,7 @@ function selAsset(idx) {
         '<span class="pw-badge ' + (PW[a.pw]||'') + '" style="margin-left:2px">' + a.pw + '</span>' +
       '</div>' +
     '</div>' +
+    starBtnHtml(a) +
   '</div>' +
   (function(){
     var imgs = a.images && a.images.length ? a.images : (a.imageUrl ? [a.imageUrl] : []);
@@ -682,10 +735,6 @@ function statsAssets() {
   return ASSETS.filter(a => a.cat !== 'Construction Waste' && !a.excluded);
 }
 
-/* ── Reported diversion rate: fixed headline with a +/- error derived from the measured rate
-   (gap to the measured rate, to the nearest whole %). Measured value stays in computeStats().divRate. ── */
-const DIV_RATE_HEADLINE = 95;
-
 /* ── KPI computations (shared) ── */
 function computeStats() {
   const stats      = statsAssets();
@@ -698,8 +747,7 @@ function computeStats() {
   const partners   = new Set(stats.flatMap(a => a.partners)).size;
   const cats       = new Set(stats.map(a => a.cat)).size;
   const retained   = stats.filter(a => a.pw === 'Retain').length;
-  const divRateErr = Math.round(Math.abs(divRate - DIV_RATE_HEADLINE));
-  return { totalKg, totalEc, totalWaste, divertKg, landfillKg, divRate, divRateErr, partners, cats, retained };
+  return { totalKg, totalEc, totalWaste, divertKg, landfillKg, divRate, partners, cats, retained };
 }
 
 /* ── Overview tab KPIs ── */
@@ -709,7 +757,7 @@ function initOverviewStats() {
   const set = (id, html) => { const e = document.getElementById(id); if (e) e.innerHTML = html; };
   set('ov-total-wt',   fmt(s.totalKg) + '<span class="rku">kg</span>');
   set('ov-items-sub',  new Set(statsAssets().map(a => a.n.replace(/\s*\(R\)\s*/i,'').trim())).size + ' unique assets · ' + s.cats + ' defit categories');
-  set('ov-diversion',  DIV_RATE_HEADLINE.toFixed(1) + '<span class="rku">% (&plusmn;' + s.divRateErr + '%)</span>');
+  set('ov-diversion',  s.divRate.toFixed(1) + '<span class="rku">%</span>');
   set('ov-divert-sub', fmt(s.divertKg) + ' kg diverted, including retained assets');
   set('ov-landfill',     fmt(s.landfillKg) + '<span class="rku">kg</span>');
   set('ov-landfill-sub', '~' + (s.landfillKg / 330).toFixed(2) + ' m³ vol · ' + (s.landfillKg / NLA_M2).toFixed(2) + ' kg/m² intensity');
@@ -854,7 +902,7 @@ function initHomeStats() {
   const s   = computeStats();
   const set = (id, html) => { const e = document.getElementById(id); if (e) e.innerHTML = html; };
   set('home-total-wt',  (s.totalKg / 1000).toFixed(1) + '<span class="hs-unit">tonnes</span>');
-  set('home-diversion', DIV_RATE_HEADLINE + '<span class="hs-unit">%</span>');
+  set('home-diversion', s.divRate.toFixed(1) + '<span class="hs-unit">%</span>');
   set('home-assets',    new Set(statsAssets().map(a => a.n.replace(/\s*\(R\)\s*/i,'').trim())).size);
   set('home-nla',       NLA_M2.toLocaleString() + '<span class="hs-unit">m²</span>');
 }
@@ -865,7 +913,7 @@ function initRegisterKPIs() {
   const s   = computeStats();
   const set = (id, html) => { const e = document.getElementById(id); if (e) e.innerHTML = html; };
   set('reg-total-wt',  (s.totalKg/1000).toFixed(1) + ' tonne');
-  set('reg-diversion', DIV_RATE_HEADLINE.toFixed(1) + '% (±' + s.divRateErr + '%)');
+  set('reg-diversion', s.divRate.toFixed(1) + '%');
   set('reg-items',     new Set(statsAssets().map(a => a.n.replace(/\s*\(R\)\s*/i,'').trim())).size);
   set('reg-landfill',  (s.landfillKg/1000).toFixed(2) + ' tonne');
   set('reg-wi', (s.landfillKg / NLA_M2).toFixed(2) + ' kg/m² waste intensity (landfill ÷ NLA)');
@@ -919,7 +967,7 @@ function buildPathwayBreakdown() {
       '<div class="sv red">' + fmtWt(landfillKg) + '</div>' +
       '<div class="ss">' + (landfillKg/totalKg*100).toFixed(1) + '% of total</div></div>' +
     '<div class="stat"><div class="sl">Diversion Rate</div>' +
-      '<div class="sv green">' + DIV_RATE_HEADLINE.toFixed(1) + '<span style="font-size: 16.2px">% (&plusmn;' + Math.round(Math.abs(divRate - DIV_RATE_HEADLINE)) + '%)</span></div></div>' +
+      '<div class="sv green">' + divRate.toFixed(1) + '<span style="font-size: 16.2px">%</span></div></div>' +
     '<div class="stat"><div class="sl">EC Diverted</div>' +
       '<div class="sv navy">' + fmt(ecDiverted) + '<span style="font-size: 11.2px;color:var(--ink-4);margin-left:2px">kgCO2e</span></div></div>';
 
@@ -967,7 +1015,7 @@ function initBenchmarks() {
   (function(){
     const st = computeStats();
     const set = (id, v) => { const e = document.getElementById(id); if (e) e.textContent = v; };
-    set('bm-div-rate', DIV_RATE_HEADLINE.toFixed(1) + '% (±' + st.divRateErr + '%)');
+    set('bm-div-rate', st.divRate.toFixed(1) + '%');
     set('bm-updated', new Date().toLocaleDateString('en-AU', { month: 'short', year: 'numeric' }));
     setTimeout(() => {
       const pills = document.querySelectorAll('.bm-rows .bv');
@@ -1007,8 +1055,8 @@ function initBenchmarks() {
   const mrc1Pts = mrc1Pct >= 40 ? 4 : mrc1Pct >= 30 ? 3 : mrc1Pct >= 20 ? 2 : mrc1Pct >= 10 ? 1 : 0;
   setv('leed-mrc1', mrc1Pct.toFixed(1) + '% ' + tick(mrc1Pct, 10) + '<span class="bench-pts">' + mrc1Pts + ' pt' + (mrc1Pts !== 1 ? 's' : '') + '</span>', mrc1Pct >= 10);
   // MRc5 C&D Material Diversion: total diversion rate (all not Dispose / total)
-  const mrc5DivPts = DIV_RATE_HEADLINE > 65 ? 3 : DIV_RATE_HEADLINE > 50 ? 2 : DIV_RATE_HEADLINE > 35 ? 1 : 0;
-  setv('leed-mrc5-div', DIV_RATE_HEADLINE.toFixed(1) + '% (±' + s.divRateErr + '%) ' + tick(DIV_RATE_HEADLINE, 35) + '<span class="bench-pts">' + mrc5DivPts + ' pt' + (mrc5DivPts !== 1 ? 's' : '') + '</span>', mrc5DivPts > 0);
+  const mrc5DivPts = s.divRate > 65 ? 3 : s.divRate > 50 ? 2 : s.divRate > 35 ? 1 : 0;
+  setv('leed-mrc5-div', s.divRate.toFixed(1) + '% ' + tick(s.divRate, 35) + '<span class="bench-pts">' + mrc5DivPts + ' pt' + (mrc5DivPts !== 1 ? 's' : '') + '</span>', mrc5DivPts > 0);
   // MRc5 Targeted Materials: denominator = NOT Retain (includes Dispose); targeted = the 3 material streams OR any FF&E asset (covers furniture)
   const LEED_TARGETED = ['Polymer: Carpet Tile', 'Ceramic: Mineral Fibre', 'Composite: Plasterboard'];
   const mrc5Base    = assets.filter(a=>a.pw!=='Retain');
@@ -1019,7 +1067,7 @@ function initBenchmarks() {
   setv('leed-mrc5-tgt', mrc5TgtPct.toFixed(1) + '% ' + tick(mrc5TgtPct, 10) + '<span class="bench-pts">' + mrc5TgtPts + ' pt</span>', mrc5TgtPct > 10);
 
   // ── Living Building Challenge — Materials Petal ──
-  setv('lbc-diversion', DIV_RATE_HEADLINE.toFixed(1) + '% (±' + s.divRateErr + '%) ›80% ' + tick(DIV_RATE_HEADLINE, 80), DIV_RATE_HEADLINE >= 80);
+  setv('lbc-diversion', s.divRate.toFixed(1) + '% ›80% ' + tick(s.divRate, 80), s.divRate >= 80);
   // Imperative 16 (Net Positive Waste) sets a target per material stream, not one blanket figure.
   const streamDiv = (matchFn) => {
     const tot = assets.filter(a=>matchFn(a.mat||'')).reduce((t,a)=>t+(a.kg||0),0);

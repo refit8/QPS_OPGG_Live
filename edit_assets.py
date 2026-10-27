@@ -242,6 +242,18 @@ HTML = r"""<!DOCTYPE html>
                font-size: 12px; background: #fff; outline: none; }
   #sort-mode:focus { border-color: #e85d26; }
   #asset-list { flex: 1; overflow-y: auto; }
+  .star-btn { display: inline-flex; padding: 3px; border: 0; background: none; cursor: pointer; flex-shrink: 0; }
+  .star-btn svg { width: 16px; height: 16px; fill: none; stroke: #c4c4d0; stroke-width: 2; stroke-linejoin: round; }
+  .star-btn:hover svg { stroke: #e85d26; }
+  .star-btn.on svg { fill: #e85d26; stroke: #e85d26; }
+  .asset-row:not(:hover) .star-btn:not(.on) { visibility: hidden; }
+  #btn-star-first { display: inline-flex; padding: 5px 7px; border: 1px solid #d0d0dc; border-radius: 6px;
+                    background: #fff; cursor: pointer; }
+  #btn-star-first svg { width: 16px; height: 16px; fill: none; stroke: #e85d26; stroke-width: 2; stroke-linejoin: round; }
+  #btn-star-first.on { border-color: #e85d26; background: #fff4ef; }
+  #btn-star-first.on svg { fill: #e85d26; }
+  .asset-row.star-end { border-bottom: 2px solid #e85d26; }
+  #ed-star .star-btn svg { width: 22px; height: 22px; stroke: #e85d26; }
   .asset-row { display: flex; align-items: center; gap: 10px; padding: 10px 14px;
                cursor: pointer; border-bottom: 1px solid #f0f0f5; transition: background .1s; }
   .asset-row:hover { background: #f7f7fb; }
@@ -347,6 +359,9 @@ HTML = r"""<!DOCTYPE html>
     <button id="btn-add" onclick="addAsset()">+ New</button>
   </div>
   <div id="sort-wrap">
+    <button id="btn-star-first" onclick="toggleStarFirst()" aria-pressed="false" title="Show starred assets first">
+      <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+    </button>
     <label for="sort-mode">Sort</label>
     <select id="sort-mode">
       <option value="">File order</option>
@@ -369,6 +384,7 @@ HTML = r"""<!DOCTYPE html>
         <h2 id="ed-title">—</h2>
         <p id="ed-meta">—</p>
       </div>
+      <span id="ed-star"></span>
       <div style="display:flex;align-items:center;gap:6px;flex-shrink:0">
         <button class="btn-save" id="btn-save" onclick="saveAsset()">Save</button>
         <button class="btn-delete" id="btn-delete" onclick="deleteAsset()">Delete</button>
@@ -495,6 +511,47 @@ let assets = [];
 let searchTimer = null;
 let sortMode = '';
 
+// ── Starred assets (editor's own list — separate from the portal's stars) ───
+// Stored in this browser's localStorage for localhost:5001, keyed by asset id.
+const STAR_KEY = 'r8-editor-starred-assets';
+const STAR_FIRST_KEY = 'r8-editor-starred-first';
+const STAR_SVG = '<svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>';
+let starred = new Set();
+let starFirst = false;
+try {
+  const saved = JSON.parse(localStorage.getItem(STAR_KEY));
+  if (Array.isArray(saved)) starred = new Set(saved);
+  starFirst = localStorage.getItem(STAR_FIRST_KEY) === '1';
+} catch (e) {}
+
+function starBtnHtml(id) {
+  const on = starred.has(id);
+  return `<button class="star-btn${on ? ' on' : ''}" title="${on ? 'Unstar' : 'Star'}" onclick="event.stopPropagation();toggleStar('${id}')">${STAR_SVG}</button>`;
+}
+function toggleStar(id) {
+  if (starred.has(id)) starred.delete(id); else starred.add(id);
+  try { localStorage.setItem(STAR_KEY, JSON.stringify([...starred])); } catch (e) {}
+  sortAssets();
+  renderList();
+  syncStarUi();
+}
+function toggleStarFirst() {
+  starFirst = !starFirst;
+  try { localStorage.setItem(STAR_FIRST_KEY, starFirst ? '1' : '0'); } catch (e) {}
+  sortAssets();
+  renderList();
+  syncStarUi();
+}
+function syncStarUi() {
+  const b = document.getElementById('btn-star-first');
+  b.classList.toggle('on', starFirst);
+  b.setAttribute('aria-pressed', starFirst ? 'true' : 'false');
+  b.title = starFirst
+    ? `Starred assets shown first (${starred.size}) — click to turn off`
+    : `Show starred assets first (${starred.size} starred)`;
+  document.getElementById('ed-star').innerHTML = currentId ? starBtnHtml(currentId) : '';
+}
+
 // ── Init ──────────────────────────────────────────────────────────────────────
 async function fetchList(q='') {
   const res = await fetch(`/api/assets?q=${encodeURIComponent(q)}`);
@@ -504,7 +561,12 @@ async function fetchList(q='') {
 }
 
 function sortAssets() {
-  if (!sortMode) return;
+  if (sortMode) sortByMode();
+  // Array.sort is stable, so this keeps the chosen order within each group.
+  if (starFirst) assets.sort((a, b) => starred.has(b.id) - starred.has(a.id));
+}
+
+function sortByMode() {
   assets.sort((a, b) => {
     const ta = a.title || '', tb = b.title || '';
     if (sortMode === 'title') return ta.localeCompare(tb);
@@ -524,18 +586,21 @@ document.getElementById('sort-mode').addEventListener('change', e => {
 function renderList() {
   const el = document.getElementById('asset-list');
   document.getElementById('count-label').textContent = `${assets.length} asset${assets.length!==1?'s':''}`;
-  el.innerHTML = assets.map(a => {
+  el.innerHTML = assets.map((a, i) => {
+    const next = assets[i + 1];
+    const end = starFirst && starred.has(a.id) && next && !starred.has(next.id);
     const imgHtml = a.imageUrl
       ? `<img class="asset-thumb" src="${a.imageUrl}" onerror="this.style.display='none';this.nextSibling.style.display='flex'">`
         + `<div class="asset-thumb-placeholder" style="display:none">📦</div>`
       : `<div class="asset-thumb-placeholder">📦</div>`;
     const pw = a.pathway || '—';
-    return `<div class="asset-row${a.id===currentId?' active':''}" onclick="loadAsset('${a.id}')">
+    return `<div class="asset-row${a.id===currentId?' active':''}${end?' star-end':''}" onclick="loadAsset('${a.id}')">
       ${imgHtml}
       <div class="asset-info">
         <strong>${a.title}</strong>
         <span>${a.category || ''} · ${pw}</span>
       </div>
+      <span style="margin-left:auto">${starBtnHtml(a.id)}</span>
     </div>`;
   }).join('');
 }
@@ -544,6 +609,7 @@ function renderList() {
 async function loadAsset(id) {
   currentId = id;
   renderList(); // update active highlight
+  syncStarUi();
   const res = await fetch(`/api/assets/${id}`);
   const a = await res.json();
   populateEditor(a);
@@ -888,6 +954,7 @@ async function deleteAsset() {
     document.getElementById('editor').style.display = 'none';
     document.getElementById('placeholder').style.display = 'flex';
     setSaveStatus('');
+    syncStarUi();
     await fetchList(document.getElementById('search').value);
   } else {
     alert('Delete failed: ' + (data.error || 'unknown'));
@@ -901,6 +968,7 @@ document.getElementById('search').addEventListener('input', e => {
 });
 
 // ── Boot ──────────────────────────────────────────────────────────────────────
+syncStarUi();
 fetchList();
 </script>
 </body>

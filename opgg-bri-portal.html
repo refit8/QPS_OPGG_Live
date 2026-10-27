@@ -608,6 +608,9 @@
           <svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
           <input type="text" class="search-inp" placeholder="Search assets, materials, categories…" id="srch" oninput="doFilter()">
         </div>
+        <button class="x-btn star-toggle" id="starBtn" onclick="toggleStarFirst()" aria-pressed="false" title="Show starred assets first">
+          <svg class="i" viewBox="0 0 24 24" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+        </button>
         <div class="filter-panel-wrap">
           <button class="x-btn" id="filterBtn" onclick="toggleFilterPanel(event)">
             <svg class="i" viewBox="0 0 24 24"><line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
