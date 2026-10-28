@@ -131,7 +131,7 @@ function loadJSONWithFallback(url, embeddedId) {
   <section class="pagehead">
     <div>
       <h1>Material Outflow Impact</h1>
-      <p>Two views of the impact of material outflows: the material presence in each of the defined pathways (left) and a focused breakdown of non-recoverable materials and their associated waste emissions (right).</p>
+      <p>The material presence in each of the defined pathways, by mass or waste emissions.</p>
     </div>
     <div class="meta">
       <div><b>Waste Emissions</b> · NGAF, UK DESNZ</div>
@@ -153,23 +153,8 @@ function loadJSONWithFallback(url, embeddedId) {
       <div class="treemap-wrap" id="treemap"></div>
     </section>
 
-    <section class="chart">
-      <div class="chart-head">
-        <div class="chart-title">Disposal Emissions by Category</div>
-        <div class="mini-seg" id="group-toggle">
-          <button class="active" data-mode="material">Material</button>
-          <button data-mode="asset">Asset</button>
-        </div>
-      </div>
-      <div class="panel-sub">Dispose-pathway assets only — hover a slice for the assets behind it.</div>
-      <div class="chart-canvas-wrap">
-        <canvas id="donutCanvas"></canvas>
-      </div>
-    </section>
-
   </div>
 
-  <div id="donutTooltip" class="tt-tooltip"></div>
   <div id="treeTooltip" class="tt-tooltip"></div>
 
 
@@ -489,8 +474,6 @@ function createDonut(canvasId, tooltipId) {
   return { setSlices(newSlices) { slices = newSlices; hovered = -1; setup(); draw(); } };
 }
 
-const donut = createDonut('donutCanvas', 'donutTooltip');
-function applyGrouping(mode) { donut.setSlices(buildSlices(mode)); }
 
 /* =========================================================================
  * RIGHT — Treemap: mass / waste emissions by pathway (Retain excluded)
@@ -679,13 +662,6 @@ document.querySelectorAll('#metric-toggle button').forEach(btn => {
     renderTree();
   });
 });
-document.querySelectorAll('#group-toggle button').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('#group-toggle button').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    applyGrouping(btn.dataset.mode);
-  });
-});
 
 /* =========================================================================
  * Init — single fetch feeds both panels
@@ -738,7 +714,6 @@ document.querySelectorAll('#group-toggle button').forEach(btn => {
     color: PATHWAY_COLORS[p.label] || PALETTE_FALLBACK[fallbackIdx++ % PALETTE_FALLBACK.length],
   }));
 
-  applyGrouping('material');
   renderTree();
 })();
 </script>

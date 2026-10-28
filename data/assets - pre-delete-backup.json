@@ -30,8 +30,8 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 18,
+      "total": 18
     },
     "pathway": {
       "suggested": null,
@@ -41,7 +41,7 @@
     },
     "location": null,
     "notes": {
-      "audit": "Workstation pods built into partition framing. Metal (aluminium?) frame with timber (MDF?) panel on the bottom and textile on the top. Power and services from ceiling through partition into the workstation powerboard.",
+      "audit": "Workstation pods built into partition framing. Metal (aluminium?) frame with timber (MDF?) panel on the bottom and textile on the top. Power and services from ceiling through partition into the workstation powerboard.\n*Decide if to separate into standard, ethernet, GPO as separate line items",
       "workshop": null
     },
     "embodiedCarbon": {
@@ -79,7 +79,7 @@
     ],
     "category": "Built Form",
     "unit": "Area (m2)",
-    "quantity": 1,
+    "quantity": 3293.75,
     "manufacturer": null,
     "supplier": null,
     "dimensions": {
@@ -87,13 +87,13 @@
       "depth": null,
       "width": null
     },
-    "primaryMaterialStream": null,
+    "primaryMaterialStream": "Ceramic: Mineral Fibre",
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 4,
+      "total": 13175.0
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Retain",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -127,75 +127,13 @@
     "pathwayConfirmed": null
   },
   {
-    "id": "b721abca-7758-4c54-aaed-cc67a9386f92",
-    "title": "Workstation Pod",
-    "imageUrl": "data/images/images_assets/New Asset (converted).jpg",
-    "images": [
-      "data/images/images_assets/New Asset (converted).jpg",
-      "data/images/images_assets/New Asset - 6.jpg",
-      "data/images/images_assets/New Asset - 7.jpg",
-      "data/images/images_assets/New Asset - 8.jpg",
-      "data/images/images_assets/New Asset - 9.jpg",
-      "data/images/images_assets/Workstation Pod - 6.png",
-      "data/images/images_assets/Workstation Pod - 7.png",
-      "data/images/images_assets/Workstation Pod - 8.jpg"
-    ],
-    "category": "Built Form",
-    "unit": "Count",
-    "quantity": 1,
-    "manufacturer": null,
-    "supplier": null,
-    "dimensions": {
-      "height": null,
-      "depth": null,
-      "width": null
-    },
-    "primaryMaterialStream": null,
-    "weight": {
-      "perUnit": null,
-      "total": null
-    },
-    "pathway": {
-      "suggested": null,
-      "suggestedId": null,
-      "partners": [],
-      "partnersSupplementary": []
-    },
-    "location": null,
-    "notes": {
-      "audit": "Desk and in-built features of the rest of the workstation. Mostly matches floorplan - check Sitewalk for deviation. Laminated particleboard.",
-      "workshop": null
-    },
-    "embodiedCarbon": {
-      "perUnit": null,
-      "ecSource": "estimate",
-      "total": null
-    },
-    "wasteEmissions": {
-      "factor": null,
-      "efSource": null,
-      "potential": null
-    },
-    "pathwayNotes": {
-      "retain": null,
-      "reuse": null,
-      "adaptiveReuse": null,
-      "refurbish": null,
-      "recycle": null,
-      "disposal": null,
-      "rehome": null,
-      "remanufacture": null,
-      "stewardship": null
-    },
-    "pathwayConfirmed": null
-  },
-  {
     "id": "eb0cc47c-2276-451f-b63d-1bef29f5dbfa",
     "title": "Recessed Troffer Light",
     "imageUrl": "data/images/images_assets/New Asset - 10.jpg",
     "images": [
       "data/images/images_assets/New Asset - 10.jpg",
-      "data/images/images_assets/New Asset - 4.png"
+      "data/images/images_assets/New Asset - 4.png",
+      "data/images/images_assets/Recessed Troffer Light - 3.png"
     ],
     "category": "Services",
     "unit": "Count",
@@ -209,11 +147,11 @@
     },
     "primaryMaterialStream": "Electronics & Electrical: Lighting",
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 4,
+      "total": 4
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Retain",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -254,7 +192,7 @@
       "data/images/images_assets/Sprinkler - 2.png",
       "data/images/images_assets/New Asset - 11.jpg"
     ],
-    "category": "Built Form",
+    "category": "Services",
     "unit": "Count",
     "quantity": 1,
     "manufacturer": null,
@@ -266,8 +204,8 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 0.2,
+      "total": 0.2
     },
     "pathway": {
       "suggested": null,
@@ -277,7 +215,7 @@
     },
     "location": null,
     "notes": {
-      "audit": null,
+      "audit": "Confirm with services consultant if to retain",
       "workshop": null
     },
     "embodiedCarbon": {
@@ -309,7 +247,8 @@
     "imageUrl": "data/images/images_assets/Ceiling Duct - 2.png",
     "images": [
       "data/images/images_assets/Ceiling Duct - 2.png",
-      "data/images/images_assets/New Asset - 12.jpg"
+      "data/images/images_assets/New Asset - 12.jpg",
+      "data/images/images_assets/Ceiling Diffuser - 3.png"
     ],
     "category": "Built Form",
     "unit": "Count",
@@ -323,11 +262,11 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 2,
+      "total": 2
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Dispose",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -367,7 +306,8 @@
     "images": [
       "data/images/images_assets/Mechanical Air Diffuser - 4.png",
       "data/images/images_assets/New Asset - 13.jpg",
-      "data/images/images_assets/New Asset - 14.jpg"
+      "data/images/images_assets/New Asset - 14.jpg",
+      "data/images/images_assets/Mechanical Air Diffuser - 5.png"
     ],
     "category": "Services",
     "unit": "Count",
@@ -379,13 +319,13 @@
       "depth": null,
       "width": null
     },
-    "primaryMaterialStream": null,
+    "primaryMaterialStream": "Metal: Ferrous",
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 4,
+      "total": 4
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Recycle",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -435,10 +375,10 @@
       "depth": null,
       "width": null
     },
-    "primaryMaterialStream": null,
+    "primaryMaterialStream": "Electronics & Electrical: Lighting",
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 0.3,
+      "total": 0.3
     },
     "pathway": {
       "suggested": null,
@@ -448,7 +388,7 @@
     },
     "location": null,
     "notes": {
-      "audit": null,
+      "audit": "Confirm with services consultant if to retain",
       "workshop": null
     },
     "embodiedCarbon": {
@@ -492,10 +432,10 @@
       "depth": null,
       "width": null
     },
-    "primaryMaterialStream": null,
+    "primaryMaterialStream": "Electronics & Electrical: Lighting",
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 1.2,
+      "total": 1.2
     },
     "pathway": {
       "suggested": null,
@@ -505,7 +445,7 @@
     },
     "location": null,
     "notes": {
-      "audit": "Mostly matching FP - check scan to confirm",
+      "audit": "Mostly matching FP - check scan to confirm. Confirm with services consultant if to retain",
       "workshop": null
     },
     "embodiedCarbon": {
@@ -548,10 +488,10 @@
       "depth": null,
       "width": null
     },
-    "primaryMaterialStream": null,
+    "primaryMaterialStream": "Electronics & Electrical: Other",
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 2,
+      "total": 2
     },
     "pathway": {
       "suggested": null,
@@ -561,7 +501,7 @@
     },
     "location": null,
     "notes": {
-      "audit": null,
+      "audit": "Confirm with services consultant if to retain",
       "workshop": null
     },
     "embodiedCarbon": {
@@ -595,7 +535,7 @@
       "data/images/images_assets/New Asset - 9.png",
       "data/images/images_assets/New Asset - 16.jpg"
     ],
-    "category": "Built Form",
+    "category": "Services",
     "unit": "Count",
     "quantity": 1,
     "manufacturer": null,
@@ -605,13 +545,13 @@
       "depth": null,
       "width": null
     },
-    "primaryMaterialStream": null,
+    "primaryMaterialStream": "Electronics & Electrical: Other",
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 0.2,
+      "total": 0.2
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Dispose",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -651,7 +591,8 @@
     "images": [
       "data/images/images_assets/New Asset - 10.png",
       "data/images/images_assets/New Asset - 17.jpg",
-      "data/images/images_assets/WAP Unit - 3.png"
+      "data/images/images_assets/WAP Unit - 3.png",
+      "data/images/images_assets/WAP Unit - 4.png"
     ],
     "category": "Services",
     "unit": "Count",
@@ -663,10 +604,10 @@
       "depth": null,
       "width": null
     },
-    "primaryMaterialStream": null,
+    "primaryMaterialStream": "Electronics & Electrical: AV",
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 0.7,
+      "total": 0.7
     },
     "pathway": {
       "suggested": null,
@@ -676,7 +617,7 @@
     },
     "location": null,
     "notes": {
-      "audit": null,
+      "audit": "Confirm with services consultant if to retain",
       "workshop": null
     },
     "embodiedCarbon": {
@@ -710,7 +651,7 @@
       "data/images/images_assets/New Asset - 11.png",
       "data/images/images_assets/New Asset - 18.jpg"
     ],
-    "category": "Built Form",
+    "category": "Services",
     "unit": "Count",
     "quantity": 1,
     "manufacturer": null,
@@ -720,13 +661,13 @@
       "depth": null,
       "width": null
     },
-    "primaryMaterialStream": null,
+    "primaryMaterialStream": "Electronics & Electrical: Lighting",
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 2,
+      "total": 2
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Retain",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -767,7 +708,7 @@
       "data/images/images_assets/New Asset - 12.png",
       "data/images/images_assets/Network Extension - 2.jpg"
     ],
-    "category": "Built Form",
+    "category": "Services",
     "unit": "Count",
     "quantity": 1,
     "manufacturer": null,
@@ -777,13 +718,13 @@
       "depth": null,
       "width": null
     },
-    "primaryMaterialStream": null,
+    "primaryMaterialStream": "Electronics & Electrical: Other",
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 0.2,
+      "total": 0.2
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Dispose",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -825,7 +766,7 @@
       "data/images/images_assets/New Asset - 14.png",
       "data/images/images_assets/Ceiling Light Panel - 3.png"
     ],
-    "category": "Built Form",
+    "category": "Services",
     "unit": "Count",
     "quantity": 1,
     "manufacturer": null,
@@ -835,13 +776,13 @@
       "depth": null,
       "width": null
     },
-    "primaryMaterialStream": null,
+    "primaryMaterialStream": "Electronics & Electrical: Lighting",
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 3,
+      "total": 3
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Retain",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -880,6 +821,7 @@
     "imageUrl": "data/images/images_assets/New Asset - 15.png",
     "images": [
       "data/images/images_assets/New Asset - 15.png",
+      "data/images/images_assets/Glass Partition - Reflective - 7.png",
       "data/images/images_assets/New Asset - 16.png",
       "data/images/images_assets/New Asset - 17.png",
       "data/images/images_assets/Glass Partition - Reflective - 4.png",
@@ -898,11 +840,11 @@
     },
     "primaryMaterialStream": "Glass: Laminated",
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 32,
+      "total": 32
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Remanufacture",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -952,13 +894,13 @@
       "depth": null,
       "width": null
     },
-    "primaryMaterialStream": null,
+    "primaryMaterialStream": "Metal: Ferrous",
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 25,
+      "total": 25
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Recycle",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -1013,11 +955,11 @@
     },
     "primaryMaterialStream": "Electronics & Electrical: Appliance",
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 25,
+      "total": 50
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Reuse",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -1073,11 +1015,11 @@
     },
     "primaryMaterialStream": "Electronics & Electrical: Appliance",
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 90,
+      "total": 270
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Reuse",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -1130,11 +1072,11 @@
     },
     "primaryMaterialStream": "Electronics & Electrical: Other",
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 0.15,
+      "total": 0.15
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Retain",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -1174,7 +1116,7 @@
     "images": [
       "data/images/images_assets/New Asset - 21.png"
     ],
-    "category": "Built Form",
+    "category": "Services",
     "unit": "Count",
     "quantity": 1,
     "manufacturer": null,
@@ -1186,11 +1128,11 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 12,
+      "total": 12
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Dispose",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -1249,11 +1191,11 @@
     },
     "primaryMaterialStream": "Electronics & Electrical: Appliance",
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 8,
+      "total": 8
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Rehome",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -1295,7 +1237,8 @@
       "data/images/images_assets/Refrigerator (various) - 2.png",
       "data/images/images_assets/Refrigerator (various) - 3.png",
       "data/images/images_assets/Refrigerator (various) - 4.png",
-      "data/images/images_assets/Refrigerator (various) - 5.png"
+      "data/images/images_assets/Refrigerator (various) - 5.png",
+      "data/images/images_assets/Refrigerator (various) - 6.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -1307,13 +1250,13 @@
       "depth": null,
       "width": null
     },
-    "primaryMaterialStream": null,
+    "primaryMaterialStream": "Electronics & Electrical: Appliance",
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 60,
+      "total": 60
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Rehome",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -1365,11 +1308,11 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 30,
+      "total": 30
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Recycle",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -1420,13 +1363,13 @@
       "depth": null,
       "width": null
     },
-    "primaryMaterialStream": null,
+    "primaryMaterialStream": "Electronics & Electrical: Appliance",
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 40,
+      "total": 40
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Rehome",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -1466,7 +1409,7 @@
     "images": [
       "data/images/images_assets/New Asset - 28.png"
     ],
-    "category": "Built Form",
+    "category": "FF&E",
     "unit": "Count",
     "quantity": 1,
     "manufacturer": null,
@@ -1476,13 +1419,13 @@
       "depth": null,
       "width": null
     },
-    "primaryMaterialStream": null,
+    "primaryMaterialStream": "Electronics & Electrical: Appliance",
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 0.8,
+      "total": 0.8
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Dispose",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -1522,7 +1465,7 @@
     "images": [
       "data/images/images_assets/New Asset - 29.png"
     ],
-    "category": "Built Form",
+    "category": "FF&E",
     "unit": "Count",
     "quantity": 1,
     "manufacturer": null,
@@ -1532,13 +1475,13 @@
       "depth": null,
       "width": null
     },
-    "primaryMaterialStream": null,
+    "primaryMaterialStream": "Wood: particleboard",
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 40,
+      "total": 40
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Rehome",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -1578,7 +1521,7 @@
     "images": [
       "data/images/images_assets/New Asset - 30.png"
     ],
-    "category": "Built Form",
+    "category": "FF&E",
     "unit": "Count",
     "quantity": 1,
     "manufacturer": null,
@@ -1590,11 +1533,11 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 14,
+      "total": 14
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Rehome",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -1650,11 +1593,11 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 25,
+      "total": 25
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Remanufacture",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -1709,13 +1652,13 @@
       "depth": null,
       "width": null
     },
-    "primaryMaterialStream": null,
+    "primaryMaterialStream": "Polymer: Carpet Tile",
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 3.5,
+      "total": 3.5
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Stewardship",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -1750,12 +1693,9 @@
   },
   {
     "id": "e16782e9-005c-4728-b9c0-a40e1cc8de44",
-    "title": "Carpet Tile - Alternate",
-    "imageUrl": "data/images/images_assets/Carpet Tile - Alternate.jpg",
-    "images": [
-      "data/images/images_assets/Carpet Tile - Alternate.jpg",
-      "data/images/images_assets/Carpet Tile - Alternate - 3.jpg"
-    ],
+    "title": "Carpet Tile - Alternate 2",
+    "imageUrl": null,
+    "images": [],
     "category": "Built Form",
     "unit": "Area (m2)",
     "quantity": 1,
@@ -1766,13 +1706,13 @@
       "depth": null,
       "width": null
     },
-    "primaryMaterialStream": null,
+    "primaryMaterialStream": "Polymer: Carpet Tile",
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 4.5,
+      "total": 4.5
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Stewardship",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -1807,10 +1747,14 @@
   },
   {
     "id": "f0b1175c-d7a0-4076-8fbb-b2b06ff50606",
-    "title": "Carpet Tile - Library",
-    "imageUrl": "data/images/images_assets/Carpet Tile - Library.jpg",
+    "title": "Carpet Tile - Alternate",
+    "imageUrl": "data/images/images_assets/Carpet Tile - Library - 2.png",
     "images": [
-      "data/images/images_assets/Carpet Tile - Library.jpg"
+      "data/images/images_assets/Carpet Tile - Library - 2.png",
+      "data/images/images_assets/Carpet Tile - Library.jpg",
+      "data/images/images_assets/Carpet Tile - Library - 3.png",
+      "data/images/images_assets/Carpet Tile - Library - 4.jpg",
+      "data/images/images_assets/Carpet Tile - Library - 5.png"
     ],
     "category": "Built Form",
     "unit": "Area (m2)",
@@ -1822,13 +1766,13 @@
       "depth": null,
       "width": null
     },
-    "primaryMaterialStream": null,
+    "primaryMaterialStream": "Polymer: Carpet Tile",
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 4.5,
+      "total": 4.5
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Stewardship",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -1881,8 +1825,8 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 100,
+      "total": 100
     },
     "pathway": {
       "suggested": null,
@@ -1925,7 +1869,8 @@
     "images": [
       "data/images/images_assets/Joinery - In-built utility cabinet.png",
       "data/images/images_assets/Joinery - In-built utility cabinet - 2.jpg",
-      "data/images/images_assets/Joinery - In-built utility cabinet - 3.jpg"
+      "data/images/images_assets/Joinery - In-built utility cabinet - 3.jpg",
+      "data/images/images_assets/Joinery - In-built utility cabinet - 4.png"
     ],
     "category": "Built Form",
     "unit": "Count",
@@ -1939,11 +1884,11 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 150,
+      "total": 150
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Recycle",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -1995,11 +1940,11 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 70,
+      "total": 70
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Rehome",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -2037,7 +1982,8 @@
     "title": "Partition Window Pane",
     "imageUrl": "data/images/images_assets/New Asset - 35.png",
     "images": [
-      "data/images/images_assets/New Asset - 35.png"
+      "data/images/images_assets/New Asset - 35.png",
+      "data/images/images_assets/Partition Window Pane - 2.png"
     ],
     "category": "Built Form",
     "unit": "Area (m2)",
@@ -2051,18 +1997,18 @@
     },
     "primaryMaterialStream": "Glass",
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 25,
+      "total": 25
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Retain",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
     },
     "location": null,
     "notes": {
-      "audit": null,
+      "audit": "Confirm if wall is being retained",
       "workshop": null
     },
     "embodiedCarbon": {
@@ -2091,10 +2037,12 @@
   {
     "id": "82d4d770-9403-4750-8ead-861a929a28c6",
     "title": "Plasterboard Partition Wall",
-    "imageUrl": null,
-    "images": [],
+    "imageUrl": "data/images/images_assets/Plasterboard Partition Wall.png",
+    "images": [
+      "data/images/images_assets/Plasterboard Partition Wall.png"
+    ],
     "category": "Built Form",
-    "unit": "Linear Metre (m)",
+    "unit": "Area (m2)",
     "quantity": 1,
     "manufacturer": null,
     "supplier": null,
@@ -2105,8 +2053,8 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 8.5,
+      "total": 8.5
     },
     "pathway": {
       "suggested": null,
@@ -2116,7 +2064,7 @@
     },
     "location": null,
     "notes": {
-      "audit": null,
+      "audit": "Note existing partition wall not on FP. Confirm extent to which walls will be demolished",
       "workshop": null
     },
     "embodiedCarbon": {
@@ -2150,7 +2098,7 @@
       "data/images/images_assets/New Asset - 36.png"
     ],
     "category": "Built Form",
-    "unit": "Count",
+    "unit": "Volume (m3)",
     "quantity": 1,
     "manufacturer": null,
     "supplier": null,
@@ -2161,8 +2109,8 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 110,
+      "total": 110
     },
     "pathway": {
       "suggested": null,
@@ -2172,7 +2120,7 @@
     },
     "location": null,
     "notes": {
-      "audit": "Above select partition walls. Review scan for extent",
+      "audit": "Above select partition walls. Review scan for extent. Confirm extent to be demolished",
       "workshop": null
     },
     "embodiedCarbon": {
@@ -2200,14 +2148,14 @@
   },
   {
     "id": "1041abae-6900-4608-8b46-d11f36f53658",
-    "title": "Joinery - Partition Divider",
+    "title": "Joinery - Low Partition Shelf",
     "imageUrl": "data/images/images_assets/New Asset - 37.png",
     "images": [
       "data/images/images_assets/New Asset - 37.png",
       "data/images/images_assets/New Asset - 38.png"
     ],
     "category": "Built Form",
-    "unit": "Count",
+    "unit": "Linear Metre (m)",
     "quantity": 1,
     "manufacturer": null,
     "supplier": null,
@@ -2218,11 +2166,11 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 15,
+      "total": 15
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Retain",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -2263,7 +2211,7 @@
       "data/images/images_assets/Exit Sign - Wall-mounted.png",
       "data/images/images_assets/Exit Sign - Wall-mounted - 2.png"
     ],
-    "category": "Built Form",
+    "category": "Services",
     "unit": "Count",
     "quantity": 1,
     "manufacturer": null,
@@ -2275,8 +2223,8 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 1,
+      "total": 1
     },
     "pathway": {
       "suggested": null,
@@ -2286,7 +2234,7 @@
     },
     "location": null,
     "notes": {
-      "audit": null,
+      "audit": "Confirm with services consultant if to retain",
       "workshop": null
     },
     "embodiedCarbon": {
@@ -2322,7 +2270,7 @@
       "data/images/images_assets/New Asset - 19.jpg"
     ],
     "category": "Built Form",
-    "unit": "Count",
+    "unit": "Area (m2)",
     "quantity": 1,
     "manufacturer": null,
     "supplier": null,
@@ -2333,11 +2281,11 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 35,
+      "total": 35
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Dispose",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -2389,11 +2337,11 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 3,
+      "total": 3
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Retain",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -2437,7 +2385,7 @@
       "data/images/images_assets/New Asset - 22.jpg"
     ],
     "category": "Built Form",
-    "unit": "Count",
+    "unit": "Area (m2)",
     "quantity": 1,
     "manufacturer": null,
     "supplier": null,
@@ -2448,11 +2396,11 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 3,
+      "total": 3
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Retain",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -2505,11 +2453,11 @@
     },
     "primaryMaterialStream": "Glass: Laminated",
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 32,
+      "total": 32
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Remanufacture",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -2563,11 +2511,11 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 55,
+      "total": 55
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Retain",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -2603,9 +2551,11 @@
   {
     "id": "76367ac1-69be-45d8-b4a1-f50c1619a1ea",
     "title": "Door - Glass with Timber",
-    "imageUrl": "data/images/images_assets/Door - Glass with Timber.jpg",
+    "imageUrl": "data/images/images_assets/Door - Glass with Timber - 2.png",
     "images": [
-      "data/images/images_assets/Door - Glass with Timber.jpg"
+      "data/images/images_assets/Door - Glass with Timber - 2.png",
+      "data/images/images_assets/Door - Glass with Timber.jpg",
+      "data/images/images_assets/Door - Glass with Timber - 3.png"
     ],
     "category": "Built Form",
     "unit": "Count",
@@ -2619,11 +2569,11 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 45,
+      "total": 45
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Retain",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -2659,8 +2609,10 @@
   {
     "id": "8f72d2ac-0d89-41f6-a834-fc94e7196aea",
     "title": "Door - Solid Core with Glass Pane",
-    "imageUrl": null,
-    "images": [],
+    "imageUrl": "data/images/images_assets/Door - Solid Core with Glass Pane.png",
+    "images": [
+      "data/images/images_assets/Door - Solid Core with Glass Pane.png"
+    ],
     "category": "Built Form",
     "unit": "Count",
     "quantity": 1,
@@ -2673,11 +2625,11 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 40,
+      "total": 40
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Retain",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -2732,8 +2684,8 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 150,
+      "total": 150
     },
     "pathway": {
       "suggested": null,
@@ -2777,7 +2729,7 @@
       "data/images/images_assets/New Asset - 46.png",
       "data/images/images_assets/Workstation Desk - 2.png"
     ],
-    "category": "Built Form",
+    "category": "FF&E",
     "unit": "Count",
     "quantity": 1,
     "manufacturer": null,
@@ -2789,11 +2741,11 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 50,
+      "total": 50
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Rehome",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -2847,11 +2799,11 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 18,
+      "total": 18
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Rehome",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -2904,11 +2856,11 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 2,
+      "total": 2
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Retain",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -2962,11 +2914,11 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 50,
+      "total": 100
     },
     "pathway": {
-      "suggested": "Recycle",
+      "suggested": null,
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -3018,8 +2970,8 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 250,
+      "total": 250
     },
     "pathway": {
       "suggested": null,
@@ -3078,11 +3030,11 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 40,
+      "total": 40
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Rehome",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -3138,11 +3090,11 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 7,
+      "total": 7
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Rehome",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -3194,11 +3146,11 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 45,
+      "total": 45
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Retain",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -3252,11 +3204,11 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 30,
+      "total": 30
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Rehome",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -3308,11 +3260,11 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 87,
+      "total": 87
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Reuse",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -3364,11 +3316,11 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 6,
+      "total": 6
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Retain",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -3406,7 +3358,8 @@
     "title": "Return Air Grille",
     "imageUrl": "data/images/images_assets/New Asset - 27.jpg",
     "images": [
-      "data/images/images_assets/New Asset - 27.jpg"
+      "data/images/images_assets/New Asset - 27.jpg",
+      "data/images/images_assets/Return Air Grille - 2.png"
     ],
     "category": "Services",
     "unit": "Count",
@@ -3420,11 +3373,11 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 3,
+      "total": 3
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Recycle",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -3464,7 +3417,7 @@
     "images": [
       "data/images/images_assets/New Asset - 28.jpg"
     ],
-    "category": "Built Form",
+    "category": "FF&E",
     "unit": "Count",
     "quantity": 1,
     "manufacturer": null,
@@ -3476,11 +3429,11 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 14.4,
+      "total": 14.4
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Reuse",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -3519,6 +3472,7 @@
     "imageUrl": "data/images/images_assets/Lockers - Beige - 4.jpg",
     "images": [
       "data/images/images_assets/Lockers - Beige - 4.jpg",
+      "data/images/images_assets/Lockers - Beige - 5.png",
       "data/images/images_assets/Lockers - Beige.jpg",
       "data/images/images_assets/Lockers - Beige - 2.jpg",
       "data/images/images_assets/Lockers - Beige - 3.jpg"
@@ -3535,8 +3489,8 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 25,
+      "total": 25
     },
     "pathway": {
       "suggested": null,
@@ -3546,63 +3500,7 @@
     },
     "location": null,
     "notes": {
-      "audit": null,
-      "workshop": null
-    },
-    "embodiedCarbon": {
-      "perUnit": null,
-      "ecSource": "estimate",
-      "total": null
-    },
-    "wasteEmissions": {
-      "factor": null,
-      "efSource": null,
-      "potential": null
-    },
-    "pathwayNotes": {
-      "retain": null,
-      "reuse": null,
-      "adaptiveReuse": null,
-      "refurbish": null,
-      "recycle": null,
-      "disposal": null,
-      "rehome": null,
-      "remanufacture": null,
-      "stewardship": null
-    },
-    "pathwayConfirmed": null
-  },
-  {
-    "id": "1cecb1b5-367b-463c-a5b7-0c977fec10e5",
-    "title": "Perimeter Blinds",
-    "imageUrl": "data/images/images_assets/New Asset - 29.jpg",
-    "images": [
-      "data/images/images_assets/New Asset - 29.jpg"
-    ],
-    "category": "Built Form",
-    "unit": "Count",
-    "quantity": 1,
-    "manufacturer": null,
-    "supplier": null,
-    "dimensions": {
-      "height": null,
-      "depth": null,
-      "width": null
-    },
-    "primaryMaterialStream": null,
-    "weight": {
-      "perUnit": null,
-      "total": null
-    },
-    "pathway": {
-      "suggested": null,
-      "suggestedId": null,
-      "partners": [],
-      "partnersSupplementary": []
-    },
-    "location": null,
-    "notes": {
-      "audit": "Confirm if in scope. Confirm if being reteained",
+      "audit": "Confirm if lockers being retained",
       "workshop": null
     },
     "embodiedCarbon": {
@@ -3647,65 +3545,11 @@
     },
     "primaryMaterialStream": "Metal: Ferrous",
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 6,
+      "total": 6
     },
     "pathway": {
       "suggested": "Recycle",
-      "suggestedId": null,
-      "partners": [],
-      "partnersSupplementary": []
-    },
-    "location": null,
-    "notes": {
-      "audit": null,
-      "workshop": null
-    },
-    "embodiedCarbon": {
-      "perUnit": null,
-      "ecSource": "estimate",
-      "total": null
-    },
-    "wasteEmissions": {
-      "factor": null,
-      "efSource": null,
-      "potential": null
-    },
-    "pathwayNotes": {
-      "retain": null,
-      "reuse": null,
-      "adaptiveReuse": null,
-      "refurbish": null,
-      "recycle": null,
-      "disposal": null,
-      "rehome": null,
-      "remanufacture": null,
-      "stewardship": null
-    },
-    "pathwayConfirmed": null
-  },
-  {
-    "id": "d7313918-9616-4933-9a9a-7926bcdb468f",
-    "title": "New Asset",
-    "imageUrl": null,
-    "images": [],
-    "category": "Built Form",
-    "unit": "Count",
-    "quantity": 1,
-    "manufacturer": null,
-    "supplier": null,
-    "dimensions": {
-      "height": null,
-      "depth": null,
-      "width": null
-    },
-    "primaryMaterialStream": null,
-    "weight": {
-      "perUnit": null,
-      "total": null
-    },
-    "pathway": {
-      "suggested": null,
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -3744,6 +3588,7 @@
     "imageUrl": "data/images/images_assets/Door - Solid Core - 2.png",
     "images": [
       "data/images/images_assets/Door - Solid Core - 2.png",
+      "data/images/images_assets/Door - Solid Core - 3.png",
       "data/images/images_assets/New Asset - 30.jpg"
     ],
     "category": "Built Form",
@@ -3758,11 +3603,11 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 45,
+      "total": 45
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Retain",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -3797,7 +3642,7 @@
   },
   {
     "id": "c4e92b7b-2966-4ac3-880f-61224f179b91",
-    "title": "Lounge Chair",
+    "title": "Lounge Chair (various)",
     "imageUrl": "data/images/images_assets/New Asset - 56.png",
     "images": [
       "data/images/images_assets/New Asset - 56.png"
@@ -3814,11 +3659,11 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 20,
+      "total": 20
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Rehome",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -3857,7 +3702,8 @@
     "imageUrl": "data/images/images_assets/New Asset - 31.jpg",
     "images": [
       "data/images/images_assets/New Asset - 31.jpg",
-      "data/images/images_assets/WC - Floor Tile - 2.jpg"
+      "data/images/images_assets/WC - Floor Tile - 2.jpg",
+      "data/images/images_assets/WC - Floor Tile - 3.png"
     ],
     "category": "Built Form",
     "unit": "Area (m2)",
@@ -3871,8 +3717,8 @@
     },
     "primaryMaterialStream": "Ceramic",
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 22,
+      "total": 22
     },
     "pathway": {
       "suggested": null,
@@ -3882,7 +3728,7 @@
     },
     "location": null,
     "notes": {
-      "audit": null,
+      "audit": "Confirm if WC being retained",
       "workshop": null
     },
     "embodiedCarbon": {
@@ -3927,8 +3773,8 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 18,
+      "total": 18
     },
     "pathway": {
       "suggested": null,
@@ -3938,7 +3784,7 @@
     },
     "location": null,
     "notes": {
-      "audit": null,
+      "audit": "Confirm if WC being retained",
       "workshop": null
     },
     "embodiedCarbon": {
@@ -3983,11 +3829,11 @@
     },
     "primaryMaterialStream": "Metal: Non-ferrous",
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 1.5,
+      "total": 1.5
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Retain",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -4042,11 +3888,11 @@
     },
     "primaryMaterialStream": "Metal: Ferrous",
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 50,
+      "total": 50
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Rehome",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -4087,7 +3933,7 @@
       "data/images/images_assets/New Asset - 34.jpg",
       "data/images/images_assets/Wheelie Bin (various) - 2.jpg"
     ],
-    "category": "Built Form",
+    "category": "FF&E",
     "unit": "Count",
     "quantity": 1,
     "manufacturer": null,
@@ -4099,11 +3945,11 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 12,
+      "total": 12
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Reuse",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -4143,7 +3989,7 @@
     "images": [
       "data/images/images_assets/New Asset - 35.jpg"
     ],
-    "category": "Built Form",
+    "category": "FF&E",
     "unit": "Count",
     "quantity": 1,
     "manufacturer": null,
@@ -4155,11 +4001,11 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 40,
+      "total": 40
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Reuse",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -4201,7 +4047,7 @@
       "data/images/images_assets/Glass Partition - 2.jpg"
     ],
     "category": "Built Form",
-    "unit": "Count",
+    "unit": "Area (m2)",
     "quantity": 1,
     "manufacturer": null,
     "supplier": null,
@@ -4212,11 +4058,11 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 30,
+      "total": 30
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Remanufacture",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -4251,14 +4097,15 @@
   },
   {
     "id": "fc2ec5ae-470d-4663-aa8d-58ea1e82d7e0",
-    "title": "Privacy Blinds",
+    "title": "Blinds - Vertical",
     "imageUrl": "data/images/images_assets/New Asset - 37.jpg",
     "images": [
       "data/images/images_assets/New Asset - 37.jpg",
-      "data/images/images_assets/Privacy Blinds - 2.jpg"
+      "data/images/images_assets/Privacy Blinds - 2.jpg",
+      "data/images/images_assets/Privacy Blinds - 3.png"
     ],
     "category": "Built Form",
-    "unit": "Count",
+    "unit": "Linear Metre (m)",
     "quantity": 1,
     "manufacturer": null,
     "supplier": null,
@@ -4269,8 +4116,8 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 1.2,
+      "total": 1.2
     },
     "pathway": {
       "suggested": null,
@@ -4311,7 +4158,7 @@
     "title": "Workstation - Sit-to-Stand Desk",
     "imageUrl": null,
     "images": [],
-    "category": "Built Form",
+    "category": "FF&E",
     "unit": "Count",
     "quantity": 1,
     "manufacturer": null,
@@ -4323,11 +4170,11 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 50,
+      "total": 50
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Reuse",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -4379,11 +4226,11 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 250,
+      "total": 250
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Reuse",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -4421,7 +4268,7 @@
     "title": "ZIP Tap - 2-in-1",
     "imageUrl": null,
     "images": [],
-    "category": "Built Form",
+    "category": "Services",
     "unit": "Count",
     "quantity": 1,
     "manufacturer": null,
@@ -4433,11 +4280,11 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 2,
+      "total": 2
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Refurbish",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -4489,11 +4336,11 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 80,
+      "total": 80
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Rehome",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -4545,11 +4392,11 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 14,
+      "total": 14
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Rehome",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -4590,7 +4437,7 @@
       "data/images/images_assets/New Asset - 58.png"
     ],
     "category": "Built Form",
-    "unit": "Count",
+    "unit": "Linear Metre (m)",
     "quantity": 1,
     "manufacturer": null,
     "supplier": null,
@@ -4601,11 +4448,11 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 0.5,
+      "total": 0.5
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Retain",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -4657,11 +4504,11 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 0.15,
+      "total": 0.15
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Retain",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -4713,11 +4560,11 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 0.6,
+      "total": 0.6
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Dispose",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -4769,11 +4616,11 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 40,
+      "total": 40
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Recycle",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -4825,11 +4672,11 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 40,
+      "total": 40
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Rehome",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -4883,11 +4730,11 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 60,
+      "total": 60
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Rehome",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -4939,8 +4786,8 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 25,
+      "total": 25
     },
     "pathway": {
       "suggested": null,
@@ -4950,7 +4797,7 @@
     },
     "location": null,
     "notes": {
-      "audit": null,
+      "audit": "Confirm if WC being retained",
       "workshop": null
     },
     "embodiedCarbon": {
@@ -4995,11 +4842,11 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": null,
-      "total": null
+      "perUnit": 0.2,
+      "total": 0.2
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Retain",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -5039,7 +4886,860 @@
     "images": [
       "data/images/images_assets/New Asset - 47.jpg"
     ],
-    "category": "Construction Waste",
+    "category": "Services",
+    "unit": "Count",
+    "quantity": 1,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": null,
+    "weight": {
+      "perUnit": 5,
+      "total": 5
+    },
+    "pathway": {
+      "suggested": "Retain",
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": null,
+    "notes": {
+      "audit": null,
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "465de582-9b1b-4213-baf9-768c96892854",
+    "title": "Folding Partition",
+    "imageUrl": null,
+    "images": [],
+    "category": "Built Form",
+    "unit": "Count",
+    "quantity": 1,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": null,
+    "weight": {
+      "perUnit": 600,
+      "total": 600
+    },
+    "pathway": {
+      "suggested": "Recycle",
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": null,
+    "notes": {
+      "audit": "Room could not be accessed but presence confirmed.",
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "0e7fe3b1-ce2b-43da-89c7-727f3c6d0bb3",
+    "title": "Ceiling Grid",
+    "imageUrl": "data/images/images_assets/Ceiling Grid.png",
+    "images": [
+      "data/images/images_assets/Ceiling Grid.png",
+      "data/images/images_assets/Ceiling Grid - 3.jpg",
+      "data/images/images_assets/Ceiling Grid - 4.jpg"
+    ],
+    "category": "Built Form",
+    "unit": "Linear Metre (m)",
+    "quantity": 1,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": null,
+    "weight": {
+      "perUnit": 0.45,
+      "total": 0.45
+    },
+    "pathway": {
+      "suggested": "Retain",
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": null,
+    "notes": {
+      "audit": "Metal runners on to which all ceiling tiles and other features are suspended on. Present throughout including lockers, meals and bathrooms. Only missing in atrium area and lifts",
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "fa343d77-202d-4e78-a6ee-bddc3d08af44",
+    "title": "Blinds - Venetian Window",
+    "imageUrl": "data/images/images_assets/New Asset - 60.png",
+    "images": [
+      "data/images/images_assets/New Asset - 60.png",
+      "data/images/images_assets/New Asset - 61.png",
+      "data/images/images_assets/Blinds - Venetian Window - 3.png"
+    ],
+    "category": "Built Form",
+    "unit": "Count",
+    "quantity": 1,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": null,
+    "weight": {
+      "perUnit": 4,
+      "total": 4
+    },
+    "pathway": {
+      "suggested": null,
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": null,
+    "notes": {
+      "audit": "Same blinds around the perimeter (external windows)",
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "ebaf1968-c4cf-4cfc-8741-9318fd9146c3",
+    "title": "Reception Window",
+    "imageUrl": "data/images/images_assets/New Asset - 62.png",
+    "images": [
+      "data/images/images_assets/New Asset - 62.png"
+    ],
+    "category": "Built Form",
+    "unit": "Count",
+    "quantity": 1,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": null,
+    "weight": {
+      "perUnit": 70,
+      "total": 70
+    },
+    "pathway": {
+      "suggested": "Remanufacture",
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": null,
+    "notes": {
+      "audit": null,
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "4a903ab2-1be4-4766-81ee-04d9e7c3447c",
+    "title": "Miscellaneous Switches and Outlets",
+    "imageUrl": "data/images/images_assets/New Asset - 63.png",
+    "images": [
+      "data/images/images_assets/New Asset - 63.png",
+      "data/images/images_assets/Miscellaneous Switches and Outlets - 2.png"
+    ],
+    "category": "Services",
+    "unit": "Count",
+    "quantity": 1,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": null,
+    "weight": {
+      "perUnit": 0.15,
+      "total": 0.15
+    },
+    "pathway": {
+      "suggested": null,
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": null,
+    "notes": {
+      "audit": null,
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "863dbef4-9b6c-4d7c-a6e0-62c96140ce1e",
+    "title": "WC - Sink",
+    "imageUrl": "data/images/images_assets/New Asset - 64.png",
+    "images": [
+      "data/images/images_assets/New Asset - 64.png"
+    ],
+    "category": "Built Form",
+    "unit": "Count",
+    "quantity": 1,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": null,
+    "weight": {
+      "perUnit": 12,
+      "total": 12
+    },
+    "pathway": {
+      "suggested": null,
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": null,
+    "notes": {
+      "audit": "Confirm if WC being retained",
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "14ebe09a-e207-4204-a9a9-ddee46ad885d",
+    "title": "Door Jamb - Timber",
+    "imageUrl": null,
+    "images": [],
+    "category": "Built Form",
+    "unit": "Count",
+    "quantity": 1,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": null,
+    "weight": {
+      "perUnit": 10,
+      "total": 10
+    },
+    "pathway": {
+      "suggested": null,
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": null,
+    "notes": {
+      "audit": "Review scan to determine jamb for each door",
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "fe08a4a6-caaa-45a8-b8bb-6b73ab8f9037",
+    "title": "Ceiling Channel",
+    "imageUrl": "data/images/images_assets/Ceiling Channel.png",
+    "images": [
+      "data/images/images_assets/Ceiling Channel.png",
+      "data/images/images_assets/Ceiling Channel - 2.png"
+    ],
+    "category": "Built Form",
+    "unit": "Linear Metre (m)",
+    "quantity": 1,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": null,
+    "weight": {
+      "perUnit": 0.3,
+      "total": 0.3
+    },
+    "pathway": {
+      "suggested": null,
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": null,
+    "notes": {
+      "audit": "Edge along the top of most partition walls. Most appears to be same material as ceiling grid",
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "20d83b98-d99d-41d9-a2a5-4307c2a238fe",
+    "title": "Workstation Conduit",
+    "imageUrl": "data/images/images_assets/New Asset - 65.png",
+    "images": [
+      "data/images/images_assets/New Asset - 65.png",
+      "data/images/images_assets/New Asset - 66.png",
+      "data/images/images_assets/New Asset - 67.png"
+    ],
+    "category": "Built Form",
+    "unit": "Count",
+    "quantity": 1,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": "Metal: Non-ferrous",
+    "weight": {
+      "perUnit": 5,
+      "total": 5
+    },
+    "pathway": {
+      "suggested": null,
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": null,
+    "notes": {
+      "audit": "Connecting power and data cabling to the partition with outlets",
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "305053ae-f6b1-404d-90a6-d47186e6b6fb",
+    "title": "Workstation Pod - Left Desk",
+    "imageUrl": "data/images/images_assets/New Asset - 48.jpg",
+    "images": [
+      "data/images/images_assets/New Asset - 48.jpg",
+      "data/images/images_assets/New Asset - 68.png",
+      "data/images/images_assets/New Asset - 69.png"
+    ],
+    "category": "Built Form",
+    "unit": "Count",
+    "quantity": 1,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": null,
+    "weight": {
+      "perUnit": 22,
+      "total": 22
+    },
+    "pathway": {
+      "suggested": null,
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": null,
+    "notes": {
+      "audit": null,
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "f33107ab-5528-4eee-9a55-0e6587d17848",
+    "title": "Workstation Pod - Right Desk",
+    "imageUrl": "data/images/images_assets/New Asset - 70.png",
+    "images": [
+      "data/images/images_assets/New Asset - 70.png",
+      "data/images/images_assets/New Asset - 71.png"
+    ],
+    "category": "Built Form",
+    "unit": "Count",
+    "quantity": 1,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": null,
+    "weight": {
+      "perUnit": 22,
+      "total": 22
+    },
+    "pathway": {
+      "suggested": null,
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": null,
+    "notes": {
+      "audit": null,
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "5f9abe11-c181-4e09-8386-14fd1f3c5a9b",
+    "title": "Workstation Pod - Mounted Drawers",
+    "imageUrl": "data/images/images_assets/New Asset - 72.png",
+    "images": [
+      "data/images/images_assets/New Asset - 72.png",
+      "data/images/images_assets/New Asset - 73.png"
+    ],
+    "category": "Built Form",
+    "unit": "Count",
+    "quantity": 1,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": null,
+    "weight": {
+      "perUnit": 18,
+      "total": 18
+    },
+    "pathway": {
+      "suggested": null,
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": null,
+    "notes": {
+      "audit": null,
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "a055c6b0-189a-4c99-a147-c071c50ef26a",
+    "title": "Workstation Pod - Middle Desk Folding",
+    "imageUrl": "data/images/images_assets/New Asset - 76.png",
+    "images": [
+      "data/images/images_assets/New Asset - 76.png",
+      "data/images/images_assets/Workstation Pod - Middle Desk Folding - 4.png",
+      "data/images/images_assets/New Asset - 74.png",
+      "data/images/images_assets/New Asset - 75.png"
+    ],
+    "category": "Built Form",
+    "unit": "Count",
+    "quantity": 1,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": null,
+    "weight": {
+      "perUnit": 15,
+      "total": 15
+    },
+    "pathway": {
+      "suggested": null,
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": null,
+    "notes": {
+      "audit": null,
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "48504d0b-0816-4e40-b590-ce18fccd2723",
+    "title": "Office Partition",
+    "imageUrl": "data/images/images_assets/New Asset - 77.png",
+    "images": [
+      "data/images/images_assets/New Asset - 77.png",
+      "data/images/images_assets/New Asset - 78.png",
+      "data/images/images_assets/Office Partition - 3.png"
+    ],
+    "category": "Built Form",
+    "unit": "Linear Metre (m)",
+    "quantity": 1,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": null,
+    "weight": {
+      "perUnit": 16,
+      "total": 16
+    },
+    "pathway": {
+      "suggested": null,
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": null,
+    "notes": {
+      "audit": "Alternate Partition found in 'Reception' area",
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "1b6d003a-4825-471f-9040-693ea907c103",
+    "title": "Desk - Linear",
+    "imageUrl": "data/images/images_assets/New Asset - 79.png",
+    "images": [
+      "data/images/images_assets/New Asset - 79.png"
+    ],
+    "category": "Built Form",
     "unit": "Count",
     "quantity": 1,
     "manufacturer": null,

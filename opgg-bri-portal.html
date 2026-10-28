@@ -74,13 +74,13 @@
           <a onclick="goDashView('flow')">Material Pathway Flow</a>
           <a onclick="goDashView('pyr')">Recovery by Pathway</a>
           <a onclick="goDashView('outflow')">Material Outflow Impact</a>
-          <a onclick="goDashView('sust')">Sustainability Impact</a>
-          <a onclick="goDashView('reuse')">On-Site Reuse</a>
         </div>
       </div>
     </div>
     <button class="nav-tab" data-tab="register"  onclick="setNav(this)">Asset Register</button>
+<!-- ALD REPORT removed for now (data/ald_report.json kept) — nav tab
     <button class="nav-tab" data-tab="aldreport"  onclick="setNav(this)">ALD Report</button>
+-->
     <button class="nav-tab" data-tab="pathways"   onclick="setNav(this)">Pathways</button>
     <button class="nav-tab" data-tab="benchmarks" onclick="setNav(this)">Benchmarks</button>
     <button class="nav-tab" data-tab="reports"    onclick="setNav(this)">Reports</button>
@@ -236,6 +236,7 @@
         <div class="he-open">Open →</div>
       </div>
 
+<!-- ALD REPORT removed for now (data/ald_report.json kept) — home card
       <div class="he-card" onclick="setNav(document.querySelector('[data-tab=aldreport]'))">
         <span class="he-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 17v-4M12 17v-7M16 17v-2"/></svg></span>
         <div class="he-label">03 · Recovery Data</div>
@@ -243,10 +244,11 @@
         <div class="he-desc">Consolidated resource recovery reporting across pre-defit and post-defit material streams.</div>
         <div class="he-open">Open →</div>
       </div>
+-->
 
       <div class="he-card" onclick="setNav(document.querySelector('[data-tab=pathways]'))">
         <span class="he-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M6 9v4a5 5 0 0 0 5 5h4"/></svg></span>
-        <div class="he-label">04 · Recovery</div>
+        <div class="he-label">03 · Recovery</div>
         <div class="he-name">Pathways</div>
         <div class="he-desc">Material destination breakdown and the recovery partner receiving each outgoing stream.</div>
         <div class="he-open">Open →</div>
@@ -254,7 +256,7 @@
 
       <div class="he-card" onclick="setNav(document.querySelector('[data-tab=benchmarks]'))">
         <span class="he-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.9 8 10 4.6-1.1 8-5 8-10V6l-8-4Z"/><path d="m9 12 2 2 4-4"/></svg></span>
-        <div class="he-label">05 · Performance</div>
+        <div class="he-label">04 · Performance</div>
         <div class="he-name">Benchmarks</div>
         <div class="he-desc">Project performance measured against Green Star, LEED v5 and Living Building Challenge frameworks.</div>
         <div class="he-open">Open →</div>
@@ -262,7 +264,7 @@
 
       <div class="he-card" onclick="setNav(document.querySelector('[data-tab=reports]'))">
         <span class="he-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4a2 2 0 0 1 2-2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h8"/></svg></span>
-        <div class="he-label">06 · Documents</div>
+        <div class="he-label">05 · Documents</div>
         <div class="he-name">Reports</div>
         <div class="he-desc">Project documentation repository, plus report exports prepared by the Refit8 team.</div>
         <div class="he-open">Open →</div>
@@ -270,6 +272,19 @@
 
     </div>
   </div>
+
+  <!-- ══ EXCLUDED FROM SCOPE ══ -->
+  <section class="home-excluded">
+    <div class="hc-eyebrow">Scope</div>
+    <h2 class="hc-title">Excluded from Scope</h2>
+    <p class="he-sub">The following items were observed during the audit but fell outside the agreed scope, so they have not been assessed or included in the asset register. They can be added if required.</p>
+    <ul class="ex-list">
+      <li>Personal Computers and Monitors</li>
+      <li>Fire Exit Doors</li>
+      <li>Fire Services and Safety Equipment</li>
+      <li>Homicide Department, Plant Rooms, Atrium and Lift Areas</li>
+    </ul>
+  </section>
 
 </div>
 
@@ -381,8 +396,6 @@
   <button class="dash-subtab" data-view="flow"    onclick="setDashView(this)">Material Pathway Flow</button>
   <button class="dash-subtab" data-view="pyr"     onclick="setDashView(this)">Recovery by Pathway</button>
   <button class="dash-subtab" data-view="outflow" onclick="setDashView(this)">Material Outflow Impact</button>
-  <button class="dash-subtab" data-view="sust"    onclick="setDashView(this)">Sustainability Impact</button>
-  <button class="dash-subtab" data-view="reuse"   onclick="setDashView(this)">On-Site Reuse</button>
 </div>
 
 
@@ -434,6 +447,7 @@
         <div class="om-viz" id="om-outflow"></div>
         <div class="om-open">View chart →</div>
       </div>
+<!-- hidden: overview minis (carbon not in scope)
       <div class="ov-mini" onclick="setDashView(document.querySelector('.dash-subtab[data-view=sust]'))">
         <h4>Sustainability Impact</h4>
         <div class="om-viz" id="om-sust"></div>
@@ -444,11 +458,14 @@
         <div class="om-viz" id="om-reuse"></div>
         <div class="om-open">View chart →</div>
       </div>
+
+--><!-- ALD REPORT removed for now (data/ald_report.json kept) — overview mini
       <div class="ov-mini" onclick="setNav(document.querySelector('[data-tab=aldreport]'))">
         <h4>Project Circularity</h4>
         <div class="om-viz" id="om-alddiv"></div>
         <div class="om-open">View ALD report →</div>
       </div>
+-->
     </div>
   </div>
 
@@ -498,7 +515,8 @@
     </div>
   </div>
 
-  <!-- ═══ Widget 5: Sustainability Impact ═══ -->
+<!-- hidden: widgets 5 & 6 (carbon not in scope)
+  <!- - ═══ Widget 5: Sustainability Impact ═══ - ->
   <div class="r8-widget" id="ov-w-sust">
     <div class="r8-widget-open-bar">
       <span class="r8-widget-open-label">Sustainability Impact</span>
@@ -513,7 +531,7 @@
     </div>
   </div>
 
-  <!-- ═══ Widget 6: On-Site Reuse ═══ -->
+  <!- - ═══ Widget 6: On-Site Reuse ═══ - ->
   <div class="r8-widget" id="ov-w-reuse">
     <div class="r8-widget-open-bar">
       <span class="r8-widget-open-label">On-Site Reuse</span>
@@ -527,7 +545,8 @@
       <iframe id="fr-reuse" src="charts/15_embodied_carbon_retained.html" title="On-Site Reuse" scrolling="no"></iframe>
     </div>
   </div>
-  <div class="disclaimer-bar" style="margin-top:0">
+
+-->  <div class="disclaimer-bar" style="margin-top:0">
     <strong>Disclaimer:</strong> Carbon emission metrics in this report have been calculated using an emissions-factor based methodology as outlined in the GHG Protocol: Technical Guidance for Calculating Scope 3 Emissions. Some assumptions have been made regarding material composition, embodied carbon and processing emissions. Therefore, these values are indicative only.
   </div>
 
@@ -720,7 +739,8 @@
 </div><!-- /tab-register -->
 
 
-<!-- ══ ALD REPORT TAB ══ -->
+<!-- ALD REPORT removed for now (data/ald_report.json kept) — tab page
+<!-\- ══ ALD REPORT TAB ══ -\->
 <div id="tab-aldreport" class="tab-page tab-scroll">
 <div class="r8-dash">
 
@@ -753,7 +773,7 @@
     </div>
   </div>
 
-  <!-- ═══ Widget: ALD Resource Recovery table ═══ -->
+  <!-\- ═══ Widget: ALD Resource Recovery table ═══ -\->
   <div class="r8-widget" id="ov-w-ald-table">
     <div class="r8-widget-open-bar">
       <span class="r8-widget-open-label">ALD Resource Recovery</span>
@@ -783,7 +803,7 @@
     <strong>Note:</strong> Defit items refer to material outflows from the original tenancy during clear-out, strip-out and demo. Construction waste items are materials (excess, off-cuts, etc.) from the construction and makegood of the new fitout, hence they have been excluded from the primary reporting in the asset register and dashboard but have been included here to show that waste diversion pathways were also implemented for these items.
   </div>
 
-  <!-- ═══ Widget: Mass by Material Stream ═══ -->
+  <!-\- ═══ Widget: Mass by Material Stream ═══ -\->
   <div class="r8-widget" id="ov-w-ald-diversion">
     <div class="r8-widget-open-bar">
       <span class="r8-widget-open-label">Mass by Material Stream</span>
@@ -798,7 +818,7 @@
     </div>
   </div>
 
-  <!-- ═══ Widget: Material Composition ═══ -->
+  <!-\- ═══ Widget: Material Composition ═══ -\->
   <div class="r8-widget" id="ov-w-ald-share">
     <div class="r8-widget-open-bar">
       <span class="r8-widget-open-label">Material Composition</span>
@@ -814,7 +834,8 @@
   </div>
 
 </div>
-</div><!-- /tab-aldreport -->
+</div><!-\- /tab-aldreport -\->-->
+
 
 
 <!-- ══ PATHWAYS TAB ══ -->
@@ -1056,7 +1077,7 @@
         <div class="xr-dl-grid">
           <a class="xr-dl" href="Reports/Exports/OPGG-BRI_Portal_Report.pdf" download>
             <span class="xr-dl-ico">PDF</span>
-            <span class="xr-dl-txt"><b>Portal Report</b><i>Home, dashboard, asset register sample, ALD report, pathways and benchmarks</i></span>
+            <span class="xr-dl-txt"><b>Portal Report</b><i>Home, dashboard, asset register sample, pathways and benchmarks</i></span>
             <span class="xr-dl-go">&darr;</span>
           </a>
           <a class="xr-dl" href="Reports/Exports/OPGG-BRI_Asset_Register.xlsx" download>
@@ -1078,7 +1099,6 @@
           <label class="xr-opt"><input type="checkbox" class="xr-scope" value="Pathway Analysis"><span><b>Pathway Analysis</b><i>Destinations and recovery partners</i></span></label>
           <label class="xr-opt"><input type="checkbox" class="xr-scope" value="Sustainability Impact"><span><b>Sustainability Impact</b><i>Waste emissions and embodied carbon</i></span></label>
           <label class="xr-opt"><input type="checkbox" class="xr-scope" value="Benchmarks"><span><b>Benchmarks</b><i>Green Star, LEED v5, LBC</i></span></label>
-          <label class="xr-opt"><input type="checkbox" class="xr-scope" value="ALD Resource Recovery"><span><b>ALD Resource Recovery</b><i>Consolidated outflow reporting</i></span></label>
           <label class="xr-opt"><input type="checkbox" class="xr-scope" value="Full Audit Report"><span><b>Full Audit Report</b><i>Complete documented report pack</i></span></label>
         </div>
       </div>

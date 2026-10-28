@@ -16,7 +16,7 @@ function fetchJSON(url) {
 let ASSETS = [];
 
 /* ── Net Lettable Area — single source of truth for all NLA-derived figures ── */
-const NLA_M2 = 4000;
+const NLA_M2 = 3700;
 
 /* ── Pathway → badge CSS class ── */
 const PW = {
@@ -730,7 +730,7 @@ function setDetailImg(assetIdx, i) {
 /* ── Construction Waste is a separate material stream (tracked outside the fitout defit dataset).
    Assets flagged excludeFromStats in assets.json (e.g. Perimeter Blinds, pending base-build confirmation)
    stay in the register but are likewise left out of every total.
-   Excluded from every KPI / chart total below; shown only in the ALD Report tab. ── */
+   Excluded from every KPI / chart total below; shown only in the (currently removed) ALD Report tab. ── */
 function statsAssets() {
   return ASSETS.filter(a => a.cat !== 'Construction Waste' && !a.excluded);
 }
@@ -1099,6 +1099,7 @@ function initBenchmarks() {
 
 /* ═══ Iframe management ═══════════════════════════════════════ */
 function r8fitIframe(iframe, lbId, minH) {
+  if (!iframe) return;
   var lb = document.getElementById(lbId);
   iframe.style.height = (minH || 900) + 'px';
   function measure() {
@@ -1152,8 +1153,6 @@ function remeasureOverviewIframes() {
   r8fitIframe(document.getElementById('fr-outflow'), 'lb-outflow', 700);
   r8fitIframe(document.getElementById('fr-sust'), 'lb-sust', 500);
   r8fitIframe(document.getElementById('fr-reuse'), 'lb-reuse', 700);
-  r8fitIframe(document.getElementById('fr-ald-diversion'), 'lb-ald-diversion', 1100);
-  r8fitIframe(document.getElementById('fr-ald-share'), 'lb-ald-share', 900);
   var _ovT;
   window.addEventListener('resize', function() { clearTimeout(_ovT); _ovT = setTimeout(remeasureOverviewIframes, 150); });
 })();
@@ -1240,17 +1239,18 @@ async function loadALDReport() {
 }
 
 /* ── Home-page site footer: Project Stakeholders grid + Refit8 footer ── */
+// Row 1: QLD Police, ADP, GRC QS, B&B · Row 2: Refit8, ALD, Webb, Philip Chun · BVN (tall) fills a 5th column across both rows.
 const COLLECTIVE = [
-  ['CharterHall_logo.png','Charter Hall'], ['CDT_logo.jpg','CDT'],
-  ['Refit8_logo.png','Refit8'], ['Koskela_logo.png','Koskela'],
-  ['ALD_logo.png','ALD'], ['OnProject_logo.jpg','On Project'],
-  ['CompassIntelle_logo.png','Compass Intelle'], ['WT_logo.png','WT'],
-  ['Hammond_logo.png','Hammond Studio'], ['USYD_logo.png','University of Sydney'],
+  ['QLDPolice_logo.png','QLD Police'], ['ADP_logo.png','ADP Consulting'],
+  ['GRC_icon.png','GRC QS'], ['BandB_logo.png','Bennett and Bennett'],
+  ['Refit8_logo.png','Refit8'], ['ALD_logo.png','ALD'],
+  ['WEBB_icon.jpg','Webb'], ['PC_logo.jpg','Philip Chun'],
+  ['BVN_logo.png','BVN', 'tall'],
 ];
 
 function renderSiteFooters() {
-  const tiles = COLLECTIVE.map(([f, n]) =>
-    '<div class="collective-tile"><img src="data/images/logos/' + f + '" alt="' + n + '" loading="lazy"></div>'
+  const tiles = COLLECTIVE.map(([f, n, cls]) =>
+    '<div class="collective-tile' + (cls ? ' ' + cls : '') + '"><img src="data/images/logos/' + f + '" alt="' + n + '" loading="lazy"></div>'
   ).join('');
   const year = new Date().getFullYear();
   const html =
@@ -1352,7 +1352,8 @@ async function loadData() {
 }
 
 loadData();
-loadALDReport();
+// ALD Report tab removed for now — data/ald_report.json kept. Re-enable with the commented-out blocks in opgg-bri-portal.html.
+// loadALDReport();
 
 
 /* ── Export Report -> Contact Us modal ── */

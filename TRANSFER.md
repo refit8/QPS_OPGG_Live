@@ -56,7 +56,7 @@ Search for `Chifley`, `chifley` and `Charter Hall` (about 50 hits in the portal,
 - Page `<title>` and the README title.
 
 ## 5. Hard-coded Chifley values in the code (will NOT update from the data)
-- `app.js:19`: `NLA_M2 = 793` (net lettable area, drives kg/m² figures)
+- `app.js:19`: `NLA_M2 = 3700` (net lettable area, drives kg/m² figures)
 - `app.js:~1013`: `LEED_TARGETED` material list; Benchmarks (LEED v5, Green Star, LBC)
   criteria and thresholds in the `tab-benchmarks` section of the HTML and `app.js`
   (~lines 979-1013). Redo these for the new project or hide the page

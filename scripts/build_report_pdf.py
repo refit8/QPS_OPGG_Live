@@ -73,7 +73,7 @@ def update_index():
         "size": f"{os.path.getsize(OUT) / 1048576:.1f} MB",
         "path": "Reports/Exports/" + os.path.basename(OUT),
         "description": "Static snapshot of the portal: home, dashboard, asset register sample, "
-                       "ALD report, pathways and benchmarks. View the portal for interactive charts and the latest data.",
+                       "pathways and benchmarks. View the portal for interactive charts and the latest data.",
     }
     index = [e for e in index if e.get("id") != entry["id"]] + [entry]
     with open(idx_path, "w", encoding="utf-8") as f:
@@ -167,7 +167,7 @@ def main():
         page.evaluate("document.getElementById('r8-pdf-reg').remove()")
 
         # 4. Remaining pages
-        for tab in ["aldreport", "pathways", "benchmarks"]:
+        for tab in ["pathways", "benchmarks"]:
             show(tab)
             capture()
 

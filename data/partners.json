@@ -22,41 +22,6 @@
     "oversight": false
   },
   {
-    "name": "CDT",
-    "featured": false,
-    "role": "Advisory and Research",
-    "itemMain": "Banquette Seating",
-    "materialMain": "Mixed",
-    "location": null,
-    "logo": "CDT_logo.jpg",
-    "hover_display": "itemMain",
-    "oversight": true
-  },
-  {
-    "name": "Green Ceramics",
-    "featured": false,
-    "role": null,
-    "itemMain": "Glass Partition with Laminate",
-    "materialMain": "Glass: Laminated",
-    "location": null,
-    "logo": "green_ceramics_logo.png",
-    "hover_display": "materialMain",
-    "oversight": false
-  },
-  {
-    "name": "Hammond Studio",
-    "featured": true,
-    "role": "Adaptive Reuse",
-    "itemMain": null,
-    "materialMain": null,
-    "location": null,
-    "logo": "Hammond_logo.png",
-    "hover_display": null,
-    "oversight": true,
-    "oversightRole": "Architecture & Design",
-    "returnFlow": true
-  },
-  {
     "name": "Infrabuild",
     "featured": false,
     "role": "recycle",
@@ -68,29 +33,6 @@
     "oversight": false
   },
   {
-    "name": "Koskela",
-    "featured": true,
-    "role": "Refurbish",
-    "itemMain": "Workstation Tabletops",
-    "materialMain": "Wood: Particleboard",
-    "location": null,
-    "logo": "Koskela_icon.jpg",
-    "hover_display": null,
-    "oversight": false,
-    "returnFlow": true
-  },
-  {
-    "name": "Loop",
-    "featured": false,
-    "role": "Rehome",
-    "itemMain": null,
-    "materialMain": null,
-    "location": null,
-    "logo": "loop_logo.png",
-    "hover_display": null,
-    "oversight": false
-  },
-  {
     "name": "Milliken",
     "featured": true,
     "role": "Stewardship",
@@ -99,17 +41,6 @@
     "location": null,
     "logo": "Milliken_logo.png",
     "hover_display": "itemMain",
-    "oversight": false
-  },
-  {
-    "name": "Ontera",
-    "featured": false,
-    "role": "Stewardship",
-    "itemMain": "Carpet Tile - Grey",
-    "materialMain": "Polymer: Carpet Tile",
-    "location": null,
-    "logo": "ontera_logo.png",
-    "hover_display": null,
     "oversight": false
   },
   {
@@ -179,28 +110,6 @@
     "oversight": false
   },
   {
-    "name": "Resourceful Living",
-    "featured": false,
-    "role": "Remanufacture",
-    "itemMain": "Plastic Skirting Fill",
-    "materialMain": "Polymer: Thermoplastic 1-6",
-    "location": null,
-    "logo": "resourceful_living_logo.png",
-    "hover_display": "materialMain",
-    "oversight": false
-  },
-  {
-    "name": "TBD",
-    "featured": false,
-    "role": null,
-    "itemMain": "Printer",
-    "materialMain": "Polymer: Thermoplastic 7",
-    "location": null,
-    "logo": "SurfaceMine_logo.png",
-    "hover_display": "materialMain",
-    "oversight": false
-  },
-  {
     "name": "Textile Recycling Australia",
     "featured": false,
     "role": "Recycle",
@@ -223,24 +132,79 @@
     "oversight": false
   },
   {
-    "name": "University of Sydney",
+    "name": "BVN",
     "featured": false,
-    "role": "Research",
+    "role": "Architecture & Design",
     "itemMain": null,
     "materialMain": null,
     "location": null,
-    "logo": "USYD_icon.png",
+    "logo": "BVN_icon.png",
     "hover_display": null,
     "oversight": true
   },
   {
-    "name": "Charter Hall",
+    "name": "QLD Police",
     "featured": false,
-    "role": "Project Management",
+    "role": "Occupant",
     "itemMain": null,
     "materialMain": null,
     "location": null,
-    "logo": "CharterHall_icon.jpg",
+    "logo": "QLDPolice_logo.png",
+    "hover_display": null,
+    "oversight": true
+  },
+  {
+    "name": "ADP Consulting",
+    "featured": false,
+    "role": "Advisory",
+    "itemMain": null,
+    "materialMain": null,
+    "location": null,
+    "logo": "ADP_logo.png",
+    "hover_display": null,
+    "oversight": true
+  },
+  {
+    "name": "Bennett and Bennett",
+    "featured": false,
+    "role": "Surveying",
+    "itemMain": null,
+    "materialMain": null,
+    "location": null,
+    "logo": "BandB_icon.png",
+    "hover_display": null,
+    "oversight": true
+  },
+  {
+    "name": "Philip Chun",
+    "featured": false,
+    "role": "Advisory",
+    "itemMain": null,
+    "materialMain": null,
+    "location": null,
+    "logo": "PC_icon.jpg",
+    "hover_display": null,
+    "oversight": true
+  },
+  {
+    "name": "GRC",
+    "featured": false,
+    "role": "Surveying",
+    "itemMain": null,
+    "materialMain": null,
+    "location": null,
+    "logo": "GRC_icon.png",
+    "hover_display": null,
+    "oversight": true
+  },
+  {
+    "name": "Webb",
+    "featured": false,
+    "role": "Advisory",
+    "itemMain": null,
+    "materialMain": null,
+    "location": null,
+    "logo": "WEBB_icon.jpg",
     "hover_display": null,
     "oversight": true
   },
@@ -252,39 +216,6 @@
     "materialMain": null,
     "location": null,
     "logo": "Refit8_icon.png",
-    "hover_display": null,
-    "oversight": true
-  },
-  {
-    "name": "On Project",
-    "featured": false,
-    "role": "Project Management",
-    "itemMain": null,
-    "materialMain": null,
-    "location": null,
-    "logo": "OnProject_icon.png",
-    "hover_display": null,
-    "oversight": true
-  },
-  {
-    "name": "WT",
-    "featured": false,
-    "role": "Advisory",
-    "itemMain": null,
-    "materialMain": null,
-    "location": null,
-    "logo": "WT_icon.png",
-    "hover_display": null,
-    "oversight": true
-  },
-  {
-    "name": "Compass Intelle",
-    "featured": false,
-    "role": "Advisory",
-    "itemMain": null,
-    "materialMain": null,
-    "location": null,
-    "logo": "CompassIntelle_icon.png",
     "hover_display": null,
     "oversight": true
   }

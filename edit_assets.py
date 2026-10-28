@@ -60,6 +60,11 @@ def api_list():
         "imageUrl": a.get("imageUrl"),
     } for a in assets])
 
+@app.route("/api/materials")
+def api_materials():
+    """Distinct primaryMaterialStream values in use — same list the portal's Material filter shows."""
+    return jsonify(sorted({a["primaryMaterialStream"] for a in load() if a.get("primaryMaterialStream")}))
+
 @app.route("/api/assets/<aid>")
 def api_get(aid):
     assets = load()
@@ -428,7 +433,7 @@ HTML = r"""<!DOCTYPE html>
         <div class="field"><label>Location</label><input id="f-location" placeholder="null"></div>
         <div class="field"><label>Manufacturer</label><input id="f-manufacturer" placeholder="null"></div>
         <div class="field"><label>Supplier</label><input id="f-supplier" placeholder="null"></div>
-        <div class="field"><label>Primary Material Stream</label><input id="f-pms"></div>
+        <div class="field"><label>Primary Material Stream</label><select id="f-pms" onchange="onMaterialChange(this)"></select></div>
       </div>
     </div>
 
@@ -640,7 +645,7 @@ function populateEditor(a) {
   setVal('f-location', a.location);
   setVal('f-manufacturer', a.manufacturer);
   setVal('f-supplier', a.supplier);
-  setVal('f-pms', a.primaryMaterialStream);
+  fillMaterialSelect(a.primaryMaterialStream || '');
 
   // Pathway
   const pw = a.pathway || {};
@@ -874,6 +879,7 @@ async function saveAsset() {
     const data = await res.json();
     if (data.ok) {
       setSaveStatus('✓ Saved', true);
+      loadMaterials();
       // Update list entry title
       const listItem = assets.find(a=>a.id===currentId);
       if (listItem) { listItem.title=patch.title; listItem.pathway=patch.pathway.suggested; }
@@ -899,6 +905,35 @@ async function addAsset() {
 }
 
 // ── Utils ────────────────────────────────────────────────────────────────────
+// ── Primary Material Stream dropdown ─────────────────────────────────────────
+// Options = distinct values already in assets.json (same list as the portal's Material filter).
+// "+ Add new material…" lets you introduce a new value; it joins the list once saved.
+let materials = [];
+const NEW_MATERIAL = '__new__';
+function fillMaterialSelect(current) {
+  const el = document.getElementById('f-pms');
+  const keep = current !== undefined ? current : el.value;
+  const opts = [...materials];
+  if (keep && keep !== NEW_MATERIAL && !opts.includes(keep)) opts.push(keep);
+  el.innerHTML = '<option value="">— none —</option>' +
+    opts.map(m => `<option value="${m.replace(/"/g, '&quot;')}">${m}</option>`).join('') +
+    `<option value="${NEW_MATERIAL}">+ Add new material…</option>`;
+  el.value = keep || '';
+  el.dataset.prev = el.value;
+}
+async function loadMaterials() {
+  materials = await (await fetch('/api/materials')).json();
+  fillMaterialSelect();
+}
+function onMaterialChange(el) {
+  if (el.value !== NEW_MATERIAL) { el.dataset.prev = el.value; return; }
+  const name = (prompt('New primary material stream (e.g. "Metal: Aluminium"):') || '').trim();
+  if (!name) { el.value = el.dataset.prev || ''; return; }
+  const existing = [...el.options].find(o => o.value.toLowerCase() === name.toLowerCase());
+  if (existing) { el.value = existing.value; el.dataset.prev = el.value; return; }
+  fillMaterialSelect(name);
+}
+
 function setVal(id, val) {
   const el = document.getElementById(id);
   if (!el) return;
@@ -969,6 +1004,7 @@ document.getElementById('search').addEventListener('input', e => {
 
 // ── Boot ──────────────────────────────────────────────────────────────────────
 syncStarUi();
+loadMaterials();
 fetchList();
 </script>
 </body>
