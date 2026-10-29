@@ -20,7 +20,7 @@
     ],
     "category": "Built Form",
     "unit": "Linear Metre (m)",
-    "quantity": 1,
+    "quantity": 496,
     "manufacturer": null,
     "supplier": null,
     "dimensions": {
@@ -31,7 +31,7 @@
     "primaryMaterialStream": null,
     "weight": {
       "perUnit": 18,
-      "total": 18
+      "total": 8928
     },
     "pathway": {
       "suggested": null,
@@ -79,7 +79,7 @@
     ],
     "category": "Built Form",
     "unit": "Area (m2)",
-    "quantity": 3293.75,
+    "quantity": 3061.04,
     "manufacturer": null,
     "supplier": null,
     "dimensions": {
@@ -90,7 +90,7 @@
     "primaryMaterialStream": "Ceramic: Mineral Fibre",
     "weight": {
       "perUnit": 4,
-      "total": 13175.0
+      "total": 12244.16
     },
     "pathway": {
       "suggested": "Retain",
@@ -137,7 +137,7 @@
     ],
     "category": "Services",
     "unit": "Count",
-    "quantity": 1,
+    "quantity": 593,
     "manufacturer": null,
     "supplier": null,
     "dimensions": {
@@ -147,8 +147,8 @@
     },
     "primaryMaterialStream": "Electronics & Electrical: Lighting",
     "weight": {
-      "perUnit": 4,
-      "total": 4
+      "perUnit": 8,
+      "total": 4744
     },
     "pathway": {
       "suggested": "Retain",
@@ -158,7 +158,7 @@
     },
     "location": null,
     "notes": {
-      "audit": null,
+      "audit": "Same dimension as ceiling grid tile",
       "workshop": null
     },
     "embodiedCarbon": {
@@ -262,8 +262,8 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": 2,
-      "total": 2
+      "perUnit": 1.5,
+      "total": 1.5
     },
     "pathway": {
       "suggested": "Dispose",
@@ -434,8 +434,8 @@
     },
     "primaryMaterialStream": "Electronics & Electrical: Lighting",
     "weight": {
-      "perUnit": 1.2,
-      "total": 1.2
+      "perUnit": 2,
+      "total": 2
     },
     "pathway": {
       "suggested": null,
@@ -490,8 +490,8 @@
     },
     "primaryMaterialStream": "Electronics & Electrical: Other",
     "weight": {
-      "perUnit": 2,
-      "total": 2
+      "perUnit": 1.5,
+      "total": 1.5
     },
     "pathway": {
       "suggested": null,
@@ -606,8 +606,8 @@
     },
     "primaryMaterialStream": "Electronics & Electrical: AV",
     "weight": {
-      "perUnit": 0.7,
-      "total": 0.7
+      "perUnit": 1.6,
+      "total": 1.6
     },
     "pathway": {
       "suggested": null,
@@ -663,8 +663,8 @@
     },
     "primaryMaterialStream": "Electronics & Electrical: Lighting",
     "weight": {
-      "perUnit": 2,
-      "total": 2
+      "perUnit": 4,
+      "total": 4
     },
     "pathway": {
       "suggested": "Retain",
@@ -720,8 +720,8 @@
     },
     "primaryMaterialStream": "Electronics & Electrical: Other",
     "weight": {
-      "perUnit": 0.2,
-      "total": 0.2
+      "perUnit": 1.2,
+      "total": 1.2
     },
     "pathway": {
       "suggested": "Dispose",
@@ -778,8 +778,8 @@
     },
     "primaryMaterialStream": "Electronics & Electrical: Lighting",
     "weight": {
-      "perUnit": 3,
-      "total": 3
+      "perUnit": 4,
+      "total": 4
     },
     "pathway": {
       "suggested": "Retain",
@@ -896,8 +896,8 @@
     },
     "primaryMaterialStream": "Metal: Ferrous",
     "weight": {
-      "perUnit": 25,
-      "total": 25
+      "perUnit": 18,
+      "total": 18
     },
     "pathway": {
       "suggested": "Recycle",
@@ -955,8 +955,8 @@
     },
     "primaryMaterialStream": "Electronics & Electrical: Appliance",
     "weight": {
-      "perUnit": 25,
-      "total": 50
+      "perUnit": 15,
+      "total": 30
     },
     "pathway": {
       "suggested": "Reuse",
@@ -1308,8 +1308,8 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": 30,
-      "total": 30
+      "perUnit": 23,
+      "total": 23
     },
     "pathway": {
       "suggested": "Recycle",
@@ -1421,8 +1421,8 @@
     },
     "primaryMaterialStream": "Electronics & Electrical: Appliance",
     "weight": {
-      "perUnit": 0.8,
-      "total": 0.8
+      "perUnit": 1.4,
+      "total": 1.4
     },
     "pathway": {
       "suggested": "Dispose",
@@ -1477,8 +1477,8 @@
     },
     "primaryMaterialStream": "Wood: particleboard",
     "weight": {
-      "perUnit": 40,
-      "total": 40
+      "perUnit": 30,
+      "total": 30
     },
     "pathway": {
       "suggested": "Rehome",
@@ -1644,7 +1644,7 @@
     ],
     "category": "Built Form",
     "unit": "Area (m2)",
-    "quantity": 1,
+    "quantity": 3214,
     "manufacturer": "Interface",
     "supplier": null,
     "dimensions": {
@@ -1654,8 +1654,8 @@
     },
     "primaryMaterialStream": "Polymer: Carpet Tile",
     "weight": {
-      "perUnit": 3.5,
-      "total": 3.5
+      "perUnit": 3,
+      "total": 9642
     },
     "pathway": {
       "suggested": "Stewardship",
@@ -1665,61 +1665,7 @@
     },
     "location": null,
     "notes": {
-      "audit": "Interface - Glasbac",
-      "workshop": null
-    },
-    "embodiedCarbon": {
-      "perUnit": null,
-      "ecSource": "estimate",
-      "total": null
-    },
-    "wasteEmissions": {
-      "factor": null,
-      "efSource": null,
-      "potential": null
-    },
-    "pathwayNotes": {
-      "retain": null,
-      "reuse": null,
-      "adaptiveReuse": null,
-      "refurbish": null,
-      "recycle": null,
-      "disposal": null,
-      "rehome": null,
-      "remanufacture": null,
-      "stewardship": null
-    },
-    "pathwayConfirmed": null
-  },
-  {
-    "id": "e16782e9-005c-4728-b9c0-a40e1cc8de44",
-    "title": "Carpet Tile - Alternate 2",
-    "imageUrl": null,
-    "images": [],
-    "category": "Built Form",
-    "unit": "Area (m2)",
-    "quantity": 1,
-    "manufacturer": null,
-    "supplier": null,
-    "dimensions": {
-      "height": null,
-      "depth": null,
-      "width": null
-    },
-    "primaryMaterialStream": "Polymer: Carpet Tile",
-    "weight": {
-      "perUnit": 4.5,
-      "total": 4.5
-    },
-    "pathway": {
-      "suggested": "Stewardship",
-      "suggestedId": null,
-      "partners": [],
-      "partnersSupplementary": []
-    },
-    "location": null,
-    "notes": {
-      "audit": null,
+      "audit": "Interface - Glasbac\n\n*QTY includes path around atrium and circulation",
       "workshop": null
     },
     "embodiedCarbon": {
@@ -1758,7 +1704,7 @@
     ],
     "category": "Built Form",
     "unit": "Area (m2)",
-    "quantity": 1,
+    "quantity": 347,
     "manufacturer": null,
     "supplier": null,
     "dimensions": {
@@ -1768,8 +1714,8 @@
     },
     "primaryMaterialStream": "Polymer: Carpet Tile",
     "weight": {
-      "perUnit": 4.5,
-      "total": 4.5
+      "perUnit": 3.5,
+      "total": 1214.5
     },
     "pathway": {
       "suggested": "Stewardship",
@@ -2166,8 +2112,8 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": 15,
-      "total": 15
+      "perUnit": 10,
+      "total": 10
     },
     "pathway": {
       "suggested": "Retain",
@@ -2223,8 +2169,8 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": 1,
-      "total": 1
+      "perUnit": 1.5,
+      "total": 1.5
     },
     "pathway": {
       "suggested": null,
@@ -2281,8 +2227,8 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": 35,
-      "total": 35
+      "perUnit": 20,
+      "total": 20
     },
     "pathway": {
       "suggested": "Dispose",
@@ -2327,7 +2273,7 @@
     ],
     "category": "Built Form",
     "unit": "Area (m2)",
-    "quantity": 1,
+    "quantity": 63,
     "manufacturer": null,
     "supplier": null,
     "dimensions": {
@@ -2337,8 +2283,8 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": 3,
-      "total": 3
+      "perUnit": 1.5,
+      "total": 94.5
     },
     "pathway": {
       "suggested": "Retain",
@@ -2386,7 +2332,7 @@
     ],
     "category": "Built Form",
     "unit": "Area (m2)",
-    "quantity": 1,
+    "quantity": 70,
     "manufacturer": null,
     "supplier": null,
     "dimensions": {
@@ -2396,8 +2342,8 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": 3,
-      "total": 3
+      "perUnit": 1.5,
+      "total": 105
     },
     "pathway": {
       "suggested": "Retain",
@@ -2501,7 +2447,7 @@
     ],
     "category": "Built Form",
     "unit": "Count",
-    "quantity": 1,
+    "quantity": 6,
     "manufacturer": null,
     "supplier": null,
     "dimensions": {
@@ -2511,8 +2457,8 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": 55,
-      "total": 55
+      "perUnit": 40,
+      "total": 240
     },
     "pathway": {
       "suggested": "Retain",
@@ -2550,7 +2496,7 @@
   },
   {
     "id": "76367ac1-69be-45d8-b4a1-f50c1619a1ea",
-    "title": "Door - Glass with Timber",
+    "title": "Door - Glass Swing with Pull Handle",
     "imageUrl": "data/images/images_assets/Door - Glass with Timber - 2.png",
     "images": [
       "data/images/images_assets/Door - Glass with Timber - 2.png",
@@ -2559,7 +2505,7 @@
     ],
     "category": "Built Form",
     "unit": "Count",
-    "quantity": 1,
+    "quantity": 10,
     "manufacturer": null,
     "supplier": null,
     "dimensions": {
@@ -2570,7 +2516,7 @@
     "primaryMaterialStream": null,
     "weight": {
       "perUnit": 45,
-      "total": 45
+      "total": 450
     },
     "pathway": {
       "suggested": "Retain",
@@ -2580,7 +2526,7 @@
     },
     "location": null,
     "notes": {
-      "audit": null,
+      "audit": "Double door counted as two units",
       "workshop": null
     },
     "embodiedCarbon": {
@@ -2615,7 +2561,7 @@
     ],
     "category": "Built Form",
     "unit": "Count",
-    "quantity": 1,
+    "quantity": 3,
     "manufacturer": null,
     "supplier": null,
     "dimensions": {
@@ -2625,8 +2571,8 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": 40,
-      "total": 40
+      "perUnit": 30,
+      "total": 90
     },
     "pathway": {
       "suggested": "Retain",
@@ -2684,8 +2630,8 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": 150,
-      "total": 150
+      "perUnit": 110,
+      "total": 110
     },
     "pathway": {
       "suggested": null,
@@ -2799,8 +2745,8 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": 18,
-      "total": 18
+      "perUnit": 14,
+      "total": 14
     },
     "pathway": {
       "suggested": "Rehome",
@@ -2914,8 +2860,8 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": 50,
-      "total": 100
+      "perUnit": 200,
+      "total": 400
     },
     "pathway": {
       "suggested": null,
@@ -2970,8 +2916,8 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": 250,
-      "total": 250
+      "perUnit": 40,
+      "total": 40
     },
     "pathway": {
       "suggested": null,
@@ -3136,7 +3082,7 @@
     ],
     "category": "Built Form",
     "unit": "Count",
-    "quantity": 1,
+    "quantity": 3,
     "manufacturer": null,
     "supplier": null,
     "dimensions": {
@@ -3146,8 +3092,8 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": 45,
-      "total": 45
+      "perUnit": 40,
+      "total": 120
     },
     "pathway": {
       "suggested": "Retain",
@@ -3316,8 +3262,8 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": 6,
-      "total": 6
+      "perUnit": 5,
+      "total": 5
     },
     "pathway": {
       "suggested": "Retain",
@@ -3373,8 +3319,8 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": 3,
-      "total": 3
+      "perUnit": 5,
+      "total": 5
     },
     "pathway": {
       "suggested": "Recycle",
@@ -3429,8 +3375,8 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": 14.4,
-      "total": 14.4
+      "perUnit": 14,
+      "total": 14
     },
     "pathway": {
       "suggested": "Reuse",
@@ -3593,7 +3539,7 @@
     ],
     "category": "Built Form",
     "unit": "Count",
-    "quantity": 1,
+    "quantity": 53,
     "manufacturer": null,
     "supplier": null,
     "dimensions": {
@@ -3603,8 +3549,8 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": 45,
-      "total": 45
+      "perUnit": 40,
+      "total": 2120
     },
     "pathway": {
       "suggested": "Retain",
@@ -3773,8 +3719,8 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": 18,
-      "total": 18
+      "perUnit": 25,
+      "total": 25
     },
     "pathway": {
       "suggested": null,
@@ -3829,8 +3775,8 @@
     },
     "primaryMaterialStream": "Metal: Non-ferrous",
     "weight": {
-      "perUnit": 1.5,
-      "total": 1.5
+      "perUnit": 1,
+      "total": 1
     },
     "pathway": {
       "suggested": "Retain",
@@ -3888,8 +3834,8 @@
     },
     "primaryMaterialStream": "Metal: Ferrous",
     "weight": {
-      "perUnit": 50,
-      "total": 50
+      "perUnit": 40,
+      "total": 40
     },
     "pathway": {
       "suggested": "Rehome",
@@ -4001,8 +3947,8 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": 40,
-      "total": 40
+      "perUnit": 65,
+      "total": 65
     },
     "pathway": {
       "suggested": "Reuse",
@@ -4155,7 +4101,7 @@
   },
   {
     "id": "5b097e86-7d99-41de-bd00-d9d4501a0080",
-    "title": "Workstation - Sit-to-Stand Desk",
+    "title": "Workstation - Single Sit-to-Stand",
     "imageUrl": null,
     "images": [],
     "category": "FF&E",
@@ -4226,8 +4172,8 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": 250,
-      "total": 250
+      "perUnit": 200,
+      "total": 200
     },
     "pathway": {
       "suggested": "Reuse",
@@ -4280,8 +4226,8 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": 2,
-      "total": 2
+      "perUnit": 17,
+      "total": 17
     },
     "pathway": {
       "suggested": "Refurbish",
@@ -4730,8 +4676,8 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": 60,
-      "total": 60
+      "perUnit": 80,
+      "total": 80
     },
     "pathway": {
       "suggested": "Rehome",
@@ -4938,8 +4884,10 @@
   {
     "id": "465de582-9b1b-4213-baf9-768c96892854",
     "title": "Folding Partition",
-    "imageUrl": null,
-    "images": [],
+    "imageUrl": "data/images/images_assets/Folding Partition.png",
+    "images": [
+      "data/images/images_assets/Folding Partition.png"
+    ],
     "category": "Built Form",
     "unit": "Count",
     "quantity": 1,
@@ -4952,8 +4900,8 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": 600,
-      "total": 600
+      "perUnit": 100,
+      "total": 100
     },
     "pathway": {
       "suggested": "Recycle",
@@ -5276,7 +5224,7 @@
   },
   {
     "id": "14ebe09a-e207-4204-a9a9-ddee46ad885d",
-    "title": "Door Jamb - Timber",
+    "title": "Door Jamb - Glass Pane",
     "imageUrl": null,
     "images": [],
     "category": "Built Form",
@@ -5289,10 +5237,10 @@
       "depth": null,
       "width": null
     },
-    "primaryMaterialStream": null,
+    "primaryMaterialStream": "Glass",
     "weight": {
-      "perUnit": 10,
-      "total": 10
+      "perUnit": 7,
+      "total": 7
     },
     "pathway": {
       "suggested": null,
@@ -5302,7 +5250,7 @@
     },
     "location": null,
     "notes": {
-      "audit": "Review scan to determine jamb for each door",
+      "audit": "Thin glass pane on select door jamb",
       "workshop": null
     },
     "embodiedCarbon": {
@@ -5348,8 +5296,8 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": 0.3,
-      "total": 0.3
+      "perUnit": 0.2,
+      "total": 0.2
     },
     "pathway": {
       "suggested": null,
@@ -5445,7 +5393,7 @@
   },
   {
     "id": "305053ae-f6b1-404d-90a6-d47186e6b6fb",
-    "title": "Workstation Pod - Left Desk",
+    "title": "Workstation Pod - Desk Left",
     "imageUrl": "data/images/images_assets/New Asset - 48.jpg",
     "images": [
       "data/images/images_assets/New Asset - 48.jpg",
@@ -5454,7 +5402,7 @@
     ],
     "category": "Built Form",
     "unit": "Count",
-    "quantity": 1,
+    "quantity": 163,
     "manufacturer": null,
     "supplier": null,
     "dimensions": {
@@ -5464,8 +5412,8 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": 22,
-      "total": 22
+      "perUnit": 15,
+      "total": 2445
     },
     "pathway": {
       "suggested": null,
@@ -5503,7 +5451,7 @@
   },
   {
     "id": "f33107ab-5528-4eee-9a55-0e6587d17848",
-    "title": "Workstation Pod - Right Desk",
+    "title": "Workstation Pod - Desk Right",
     "imageUrl": "data/images/images_assets/New Asset - 70.png",
     "images": [
       "data/images/images_assets/New Asset - 70.png",
@@ -5511,7 +5459,7 @@
     ],
     "category": "Built Form",
     "unit": "Count",
-    "quantity": 1,
+    "quantity": 163,
     "manufacturer": null,
     "supplier": null,
     "dimensions": {
@@ -5521,8 +5469,8 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": 22,
-      "total": 22
+      "perUnit": 15,
+      "total": 2445
     },
     "pathway": {
       "suggested": null,
@@ -5568,7 +5516,7 @@
     ],
     "category": "Built Form",
     "unit": "Count",
-    "quantity": 1,
+    "quantity": 118,
     "manufacturer": null,
     "supplier": null,
     "dimensions": {
@@ -5578,8 +5526,8 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": 18,
-      "total": 18
+      "perUnit": 15,
+      "total": 1770
     },
     "pathway": {
       "suggested": null,
@@ -5617,7 +5565,7 @@
   },
   {
     "id": "a055c6b0-189a-4c99-a147-c071c50ef26a",
-    "title": "Workstation Pod - Middle Desk Folding",
+    "title": "Workstation Pod - Desk Middle Folding",
     "imageUrl": "data/images/images_assets/New Asset - 76.png",
     "images": [
       "data/images/images_assets/New Asset - 76.png",
@@ -5627,7 +5575,7 @@
     ],
     "category": "Built Form",
     "unit": "Count",
-    "quantity": 1,
+    "quantity": 163,
     "manufacturer": null,
     "supplier": null,
     "dimensions": {
@@ -5637,8 +5585,8 @@
     },
     "primaryMaterialStream": null,
     "weight": {
-      "perUnit": 15,
-      "total": 15
+      "perUnit": 10,
+      "total": 1630
     },
     "pathway": {
       "suggested": null,
@@ -5676,7 +5624,7 @@
   },
   {
     "id": "48504d0b-0816-4e40-b590-ce18fccd2723",
-    "title": "Office Partition",
+    "title": "Desk Partition",
     "imageUrl": "data/images/images_assets/New Asset - 77.png",
     "images": [
       "data/images/images_assets/New Asset - 77.png",
@@ -5740,6 +5688,570 @@
       "data/images/images_assets/New Asset - 79.png"
     ],
     "category": "Built Form",
+    "unit": "Count",
+    "quantity": 1,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": null,
+    "weight": {
+      "perUnit": 35,
+      "total": 35
+    },
+    "pathway": {
+      "suggested": null,
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": null,
+    "notes": {
+      "audit": null,
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "70f436e1-bd62-4f5a-97ae-a19bf2cf83e3",
+    "title": "Resilient Flooring - Server",
+    "imageUrl": "data/images/images_assets/New Asset - 80.png",
+    "images": [
+      "data/images/images_assets/New Asset - 80.png"
+    ],
+    "category": "Built Form",
+    "unit": "Count",
+    "quantity": 6,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": null,
+    "weight": {
+      "perUnit": 1.5,
+      "total": 9
+    },
+    "pathway": {
+      "suggested": null,
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": null,
+    "notes": {
+      "audit": null,
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "32e9afad-7711-429f-93f0-11da343711fd",
+    "title": "Door - Glass with Timber Frame",
+    "imageUrl": "data/images/images_assets/New Asset - 81.png",
+    "images": [
+      "data/images/images_assets/New Asset - 81.png"
+    ],
+    "category": "Built Form",
+    "unit": "Count",
+    "quantity": 2,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": null,
+    "weight": {
+      "perUnit": null,
+      "total": null
+    },
+    "pathway": {
+      "suggested": null,
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": null,
+    "notes": {
+      "audit": "Exec Assist office for example",
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "7f22eada-d736-4695-8025-84f8caf3a2a5",
+    "title": "Door - Solid Swing",
+    "imageUrl": "data/images/images_assets/New Asset - 83.png",
+    "images": [
+      "data/images/images_assets/New Asset - 83.png",
+      "data/images/images_assets/Door - Solid Swing - 3.png"
+    ],
+    "category": "Built Form",
+    "unit": "Count",
+    "quantity": 6,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": null,
+    "weight": {
+      "perUnit": 30,
+      "total": 180
+    },
+    "pathway": {
+      "suggested": null,
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": null,
+    "notes": {
+      "audit": "In bathrooms and locker areas",
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "e3e3a8c1-20c5-41d3-b188-a9ed0dd1ebac",
+    "title": "Desk - Exec Assist",
+    "imageUrl": "data/images/images_assets/New Asset - 84.png",
+    "images": [
+      "data/images/images_assets/New Asset - 84.png"
+    ],
+    "category": "Built Form",
+    "unit": "Count",
+    "quantity": 1,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": null,
+    "weight": {
+      "perUnit": null,
+      "total": null
+    },
+    "pathway": {
+      "suggested": null,
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": null,
+    "notes": {
+      "audit": "Imitation marble (possible particleboard) desk in Exec Assist room",
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "b74571d9-784f-4e69-981a-cb030f56ace5",
+    "title": "Workstation - Dual Sit-to-Stand",
+    "imageUrl": "data/images/images_assets/Workstation - Dual Back-to-Back - 2.png",
+    "images": [
+      "data/images/images_assets/Workstation - Dual Back-to-Back - 2.png",
+      "data/images/images_assets/New Asset - 85.png"
+    ],
+    "category": "Built Form",
+    "unit": "Count",
+    "quantity": 1,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": null,
+    "weight": {
+      "perUnit": null,
+      "total": null
+    },
+    "pathway": {
+      "suggested": null,
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": null,
+    "notes": {
+      "audit": "Sit-to-stand workstation with back-to-back desks and textile privacy panel in between",
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "30611358-b754-4606-8c1c-7a6e6f15a174",
+    "title": "Desk - Corner",
+    "imageUrl": "data/images/images_assets/New Asset - 86.png",
+    "images": [
+      "data/images/images_assets/New Asset - 86.png",
+      "data/images/images_assets/Desk - Corner - 2.png"
+    ],
+    "category": "Built Form",
+    "unit": "Count",
+    "quantity": 4,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": null,
+    "weight": {
+      "perUnit": null,
+      "total": null
+    },
+    "pathway": {
+      "suggested": null,
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": null,
+    "notes": {
+      "audit": null,
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "2680af84-6954-4d9f-a4af-35a7e25d3b2c",
+    "title": "Desk - Mobile Standing",
+    "imageUrl": "data/images/images_assets/New Asset - 87.png",
+    "images": [
+      "data/images/images_assets/New Asset - 87.png"
+    ],
+    "category": "Built Form",
+    "unit": "Count",
+    "quantity": 6,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": null,
+    "weight": {
+      "perUnit": null,
+      "total": null
+    },
+    "pathway": {
+      "suggested": null,
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": null,
+    "notes": {
+      "audit": "Found in Digital Evidence against one wall",
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "41be4924-315b-4f1b-b564-67dae1b92e6b",
+    "title": "Desk - Custom Corner",
+    "imageUrl": "data/images/images_assets/New Asset - 88.png",
+    "images": [
+      "data/images/images_assets/New Asset - 88.png"
+    ],
+    "category": "Built Form",
+    "unit": "Count",
+    "quantity": 1,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": null,
+    "weight": {
+      "perUnit": null,
+      "total": null
+    },
+    "pathway": {
+      "suggested": null,
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": null,
+    "notes": {
+      "audit": "Unique desk found in CIO office",
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "8a368c63-265c-4759-955d-2b44ae692daa",
+    "title": "Desk - Corner Square",
+    "imageUrl": "data/images/images_assets/Desk - Corner Square - 4.png",
+    "images": [
+      "data/images/images_assets/Desk - Corner Square - 4.png",
+      "data/images/images_assets/Desk - Corner Square - 3.png",
+      "data/images/images_assets/New Asset - 89.png",
+      "data/images/images_assets/New Asset - 90.png"
+    ],
+    "category": "Built Form",
+    "unit": "Count",
+    "quantity": 9,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": null,
+    "weight": {
+      "perUnit": null,
+      "total": null
+    },
+    "pathway": {
+      "suggested": null,
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": null,
+    "notes": {
+      "audit": null,
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "60fa6122-1423-44d3-b412-60c7cfaf2326",
+    "title": "Mobile Pedestal",
+    "imageUrl": null,
+    "images": [],
+    "category": "FF&E",
     "unit": "Count",
     "quantity": 1,
     "manufacturer": null,

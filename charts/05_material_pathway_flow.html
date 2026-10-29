@@ -100,6 +100,7 @@ function loadJSONWithFallback(url, embeddedId) {
 .flow-pill{font-family:"Geist",system-ui,sans-serif;font-size: 14px;font-weight:500;letter-spacing:.03em;padding:9px 10px;border-radius:999px;border:1px solid var(--line);color:var(--text-dim);background:var(--panel);cursor:pointer;transition:border-color .15s,color .15s,background .15s;white-space:normal;text-align:center;line-height:1.25;width:100%;min-height:44px;display:flex;align-items:center;justify-content:center;box-sizing:border-box;}
 .flow-pill:hover{border-color:var(--accent);color:var(--accent);}
 .flow-pill.active{border-color:var(--accent);color:#fff;background:var(--accent);font-weight:600;}
+.flow-pill:disabled{opacity:.45;cursor:not-allowed;background:var(--panel);border-color:var(--line);color:var(--text-dim);}
 /* ── Sankey hover transitions ── */
 #sankey-svg .link-bg{transition:fill-opacity .3s ease;}
 #sankey-svg .cat-rect,#sankey-svg .path-rect{transition:opacity .3s ease;}
@@ -169,7 +170,7 @@ function requestExport() {
   <div class="pagehead">
     <div>
       <h1>Material Pathway Flow</h1>
-      <p>Track items from the audited asset register, grouped by material family, through to their assigned pathway destination. Select by weight, quantity, estimated embodied carbon, waste emissions.</p>
+      <p>Track items from the audited asset register, grouped by material family, through to their assigned pathway destination. Select by weight or quantity.</p>
     </div>
   </div>
   <div class="summary">
@@ -202,8 +203,7 @@ function requestExport() {
         <div id="left-pills">
           <button class="flow-pill active" data-side="left" data-metric="weight">Weight</button>
           <button class="flow-pill" data-side="left" data-metric="qty">Items</button>
-          <button class="flow-pill" data-side="left" data-metric="ec">Embodied Carbon</button>
-          <button class="flow-pill" data-side="left" data-metric="waste">Waste Emissions</button>
+          <button class="flow-pill" data-side="left" data-metric="waste" disabled title="Coming soon">Waste Emissions</button>
         </div>
         <div class="cat-filter-section">
           <div class="axis-label-vert" style="border-bottom:none;margin-bottom:0;">
@@ -226,8 +226,7 @@ function requestExport() {
         <div id="right-pills">
           <button class="flow-pill active" data-side="right" data-metric="weight">Weight</button>
           <button class="flow-pill" data-side="right" data-metric="qty">Items</button>
-          <button class="flow-pill" data-side="right" data-metric="ec">Embodied Carbon</button>
-          <button class="flow-pill" data-side="right" data-metric="waste">Waste Emissions</button>
+          <button class="flow-pill" data-side="right" data-metric="waste" disabled title="Coming soon">Waste Emissions</button>
         </div>
       </div>
       <div id="insight-panel">

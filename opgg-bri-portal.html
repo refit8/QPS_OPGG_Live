@@ -39,7 +39,6 @@
       <button class="spl-card" onclick="dismissSplash()">
         <div class="spl-card-eyebrow">Active Project</div>
         <h4>Olympic and Paralympic Games Accommodation</h4>
-        <p>BVN, QPS Headquarters</p>
         <div class="spl-card-go">Enter portal &rarr;</div>
       </button>
     </div>
@@ -163,9 +162,10 @@
       <h2 class="hc-title">QPS Headquarters Level 2</h2>
       <p class="hp-addr">📍 200 Roma Street, Brisbane City QLD 4000</p>
       <p class="hc-body">This platform provides structured access to asset and built-form data, with insights on quantities, material composition, and sustainable pathways to guide reuse, recycling, and responsible decision-making.</p>
+      <p class="hc-body">A digital twin of this fitout has been created using Lidar technology. Explore the 3D-replica of the site to find, dimension and quantify desired items.</p>
     </div>
     <div class="hp-photo">
-      <img src="data/images/Site Photos/Chifley1.jpeg" alt="Olympic and Paralympic Games Accommodation">
+      <img src="data/images/Sketches/address.png" alt="QPS Headquarters, 200 Roma Street, Brisbane">
     </div>
   </div>
 
@@ -179,7 +179,6 @@
       <span class="tl-status"><span class="tl-status-dot"></span>In progress &middot; 2 of 5 stages complete</span>
     </div>
     <div class="tl-track">
-      <span class="tl-interval" title="Two months of iterative audit and trade consultation cycles sit between these stages">2 months &middot; audit cycles</span>
       <div class="tl-step done">
         <span class="tl-node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V9l7-6 7 6v12"/><path d="M10 21v-6h4v6"/></svg></span>
         <div class="tl-name">Site Orientation &amp; Planning</div>
@@ -212,6 +211,10 @@
       </div>
     </div>
   </section>
+
+  <div class="disclaimer-bar" style="margin-top:14px">
+    <strong>Note:</strong> These are preliminary findings. The entire site has not yet been quantified, and the register reflects only the areas and items audited to date. Additional items and quantities can be added to suit how BVN would like to use the data, and the figures shown will update as the register grows.
+  </div>
 
   <!-- ══ EXPLORE ══ -->
   <div class="home-explore">
@@ -275,14 +278,15 @@
 
   <!-- ══ EXCLUDED FROM SCOPE ══ -->
   <section class="home-excluded">
-    <div class="hc-eyebrow">Scope</div>
-    <h2 class="hc-title">Excluded from Scope</h2>
-    <p class="he-sub">The following items were observed during the audit but fell outside the agreed scope, so they have not been assessed or included in the asset register. They can be added if required.</p>
+    <h2 class="hc-title">Out-of-scope</h2>
+    <p class="he-sub">The following areas and items were excluded from the scope of the audit of the fitout so they have not been assessed or included in the asset register.</p>
     <ul class="ex-list">
-      <li>Personal Computers and Monitors</li>
+      <li>Homicide Department, Plant Rooms and Atrium</li>
+      <li>Lift Areas</li>
+      <li>Personal Computers, Monitors and Electronics</li>
       <li>Fire Exit Doors</li>
+      <li>Fire Escapes</li>
       <li>Fire Services and Safety Equipment</li>
-      <li>Homicide Department, Plant Rooms, Atrium and Lift Areas</li>
     </ul>
   </section>
 
@@ -852,18 +856,28 @@
   </div>
 
   <!-- ══ FLOW BOARD ══ -->
-  <div class="flow-board">
-    <div class="fb-source">
-      <div class="fbs-name">Olympic and Paralympic Games Accommodation</div>
-      <div class="fbs-loc">Brisbane City, QLD</div>
-      <div class="fbs-divider"></div>
-      <div class="fbs-val" id="fbs-total">—</div>
-      <div class="fbs-lbl">Audited Material</div>
-      <div class="fbs-sub" id="fbs-sub">—</div>
-    </div>
-    <div class="fb-streams" id="flow-streams">
-      <div style="color:var(--ink-4);font-size:15px;padding:8px">Loading…</div>
-    </div>
+  <div class="ph-section" style="border-radius:22px;padding:28px 32px;text-align:center;">
+    <svg viewBox="0 0 360 240" width="360" height="240" style="max-width:100%;height:auto" role="img" aria-label="Generic closed-loop diagram of defit partners">
+      <defs>
+        <marker id="cl-arrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0 0L10 5L0 10z" fill="#E8762B"/>
+        </marker>
+      </defs>
+      <g fill="none" stroke="#E8762B" stroke-width="2.5" stroke-linecap="round" marker-end="url(#cl-arrow)">
+        <path d="M148 52 A84 84 0 0 1 212 52"/>
+        <path d="M262 100 A84 84 0 0 1 262 140"/>
+        <path d="M212 188 A84 84 0 0 1 148 188"/>
+        <path d="M98 140 A84 84 0 0 1 98 100"/>
+      </g>
+      <g fill="#1E1B5C">
+        <circle cx="180" cy="36" r="22"/>
+        <circle cx="280" cy="120" r="22"/>
+        <circle cx="180" cy="204" r="22"/>
+        <circle cx="80" cy="120" r="22"/>
+      </g>
+      <circle cx="180" cy="120" r="34" fill="none" stroke="#1E1B5C" stroke-width="2" stroke-dasharray="4 5" opacity=".35"/>
+    </svg>
+    <p style="font-size:15.5px;color:var(--ink-3);margin-top:14px;">Network of defit partners to facilitate landfill diversion will be presented here</p>
   </div>
 
 

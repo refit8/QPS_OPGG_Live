@@ -300,6 +300,9 @@ HTML = r"""<!DOCTYPE html>
   .btn-delete:hover { background: #fff0f0; }
   .field input.calc { background: #f0f5ff; color: #444; font-style: italic; }
   .save-status { font-size: 12px; margin-left: 10px; color: #888; }
+  /* Fixed width so the status text appearing never shifts the Save / Delete buttons. */
+  #save-status { display: inline-block; width: 90px; margin-left: 4px; white-space: nowrap;
+                 overflow: hidden; text-overflow: ellipsis; }
   .save-ok  { color: #2a9d5c; }
   .save-err { color: #e84242; }
 
@@ -952,6 +955,7 @@ function getVal(id) {
 function setSaveStatus(msg, ok=false, err=false) {
   const el = document.getElementById('save-status');
   el.textContent = msg;
+  el.title = msg;
   el.className = 'save-status' + (ok?' save-ok':'') + (err?' save-err':'');
 }
 

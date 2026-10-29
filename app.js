@@ -826,64 +826,10 @@ function renderOverviewMinis() {
 
 /* ── Pathways tab: flow board + project team ── */
 async function initPathwaysFlow() {
-  const board = document.getElementById('flow-streams');
-  if (!board || !ASSETS.length) return;
   let partners = [];
   try {
     partners = await fetchJSON('data/partners.json');
   } catch (e) { console.error('Failed to load partners.json:', e); return; }
-
-  const assets = statsAssets();
-  const byPw = {};
-  assets.forEach(a => { byPw[a.pw] = (byPw[a.pw] || 0) + (a.kg || 0); });
-  const totalKg  = assets.reduce((s, a) => s + (a.kg || 0), 0);
-  const retainKg = byPw['Retain'] || 0;
-
-  const set = (id, h) => { const e = document.getElementById(id); if (e) e.innerHTML = h; };
-  set('fbs-total', (totalKg / 1000).toFixed(1) + '<span class="u">tonnes</span>');
-  set('fbs-sub', fmtWt(totalKg - retainKg) + ' leaves the building through the recovery network on the right — ' + fmtWt(retainKg) + ' never leaves at all.');
-
-  const chip = (logoHtml, name, takes, dashed) =>
-    `<div class="fb-chip${dashed ? ' dashed' : ''}">
-      <span class="fb-chip-logo">${logoHtml}</span>
-      <span class="fb-chip-txt"><b>${name}</b><i>${takes}</i></span>
-    </div>`;
-  const logoImg = p => `<img src="data/images/logos/${p.logo}" alt="${p.name}" onerror="this.style.display='none'">`;
-
-  const rows = [{
-    pw: 'Retain', kg: retainKg, tbd: false,
-    chipHtml: chip('<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M6 21V8l6-5 6 5v13M10 21v-4h4v4"/></svg>',
-      'Stays on site', 'Reused within the new fitout', false)
-  }];
-  partners.filter(p => p.featured).forEach(p => {
-    const takes = (p.hover_display && p[p.hover_display]) || p.itemMain || '';
-    rows.push({
-      pw: p.role, kg: p.role ? (byPw[p.role] || 0) : null, tbd: !p.role,
-      chipHtml: chip(logoImg(p), p.name, takes ? 'Takes: ' + takes : '', !p.role)
-    });
-  });
-  const ordered = [rows[0]].concat(
-    rows.slice(1).filter(r => !r.tbd).sort((a, b) => (b.kg || 0) - (a.kg || 0)),
-    rows.slice(1).filter(r => r.tbd)
-  );
-
-  board.innerHTML = ordered.map(r => {
-    const c = r.tbd ? { tx: '#a3a3a3' } : (PW_COLORS[r.pw] || { tx: '#737373' });
-    const name = r.tbd ? 'Pending Confirmation' : r.pw;
-    const meta = r.tbd ? 'Pathway under review'
-      : (r.kg > 0 ? fmtWt(r.kg) + ' of total mass' : '—');
-    const noPct = r.tbd || !(r.kg > 0);
-    const pct = noPct ? '—' : `${(r.kg / totalKg * 100).toFixed(1)}<span>%</span>`;
-    return `<div class="fb-row${r.tbd ? ' tbd' : ''}">
-      <div class="fb-pct${noPct ? ' na' : ''}" style="--c:${c.tx}">${pct}</div>
-      <span class="fb-rule" style="background:${c.tx}"></span>
-      <div class="fb-pwy">
-        <div class="fb-pwy-name">${name}</div>
-        <div class="fb-pwy-meta">${meta}</div>
-      </div>
-      ${r.chipHtml}
-    </div>`;
-  }).join('');
 
   const team = document.getElementById('fb-team');
   if (team) {
