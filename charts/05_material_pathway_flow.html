@@ -29,6 +29,22 @@ function loadJSONWithFallback(url, embeddedId) {
 #sankey-svg{display:block;width:100%;min-width:700px;}
 /* Tight bottom padding so the widget doesn't show excess space */
 .wrap{padding-bottom:16px !important;}
+/* ── Interactive banner (prominent, above chart body) ── */
+.interact-banner {
+  display: flex; align-items: center; gap: 12px;
+  background: rgba(232,118,43,0.08); border: 1px solid rgba(232,118,43,0.25);
+  border-radius: 12px; padding: 11px 16px; margin: 4px 0 14px;
+  font-family: "Geist", system-ui, sans-serif; font-size: 14px;
+  color: var(--text-dim); line-height: 1.5;
+}
+.interact-banner b { color: var(--text); font-weight: 600; }
+.interact-banner .ib-tag {
+  font-family: "Chivo Mono", monospace; font-size: 10.5px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .12em; color: #ffffff;
+  background: var(--accent); border-radius: 999px; padding: 4px 11px; flex-shrink: 0;
+}
+.interact-banner .ib-icon { flex-shrink: 0; color: var(--accent); display: flex; }
+
 
 /* Stat card values in brand navy */
 .stat .value{color:#1E1B5C;}
@@ -107,6 +123,7 @@ function loadJSONWithFallback(url, embeddedId) {
 /* ── CSV export button ── */
 #export-csv-btn{font-family:"Chivo Mono",monospace;font-size: 11.2px;text-transform:uppercase;letter-spacing:.1em;padding:4px 10px;border-radius:8px;border:1px solid var(--line);background:transparent;color:var(--text-mute);cursor:pointer;display:flex;align-items:center;gap:5px;flex-shrink:0;transition:border-color .15s,color .15s,background .15s;white-space:nowrap;}
 #export-csv-btn:hover{border-color:#2a9d5c;color:#2a9d5c;}
+#export-csv-btn:disabled,#export-csv-btn:disabled:hover{opacity:.45;cursor:not-allowed;border-color:var(--line);color:inherit;}
 
 /* ── Brand typography override (match 02_recovery_pyramid.html) ── */
 .pagehead p, .pagehead .meta, .pagehead .meta b { font-family: "Geist", system-ui, sans-serif; }
@@ -177,14 +194,20 @@ function requestExport() {
     <div class="stat accent"><div class="label">Total Material Weight</div><div class="value" id="sum-wt">—</div><div class="sub" id="sum-wt-sub">loading…</div></div>
     <div class="stat"><div class="label">Active Pathways</div><div class="value" id="sum-pw">—</div><div class="sub" id="sum-pw-sub">loading…</div></div>
     <div class="stat"><div class="label">Defit Mass</div><div class="value" id="sum-defit-mass">—</div><div class="sub" id="sum-defit-mass-sub">loading…</div></div>
-    <div class="stat good"><div class="label">Estimated Embodied Carbon</div><div class="value" id="sum-ec">—</div><div class="sub" id="sum-ec-sub">loading…</div></div>
+    <div class="stat"><div class="label">Mass to Landfill</div><div class="value" id="sum-landfill">—</div><div class="sub" id="sum-landfill-sub">loading…</div></div>
   </div>
+  <div class="interact-banner">
+      <span class="ib-tag">Interactive</span>
+      <span class="ib-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11.5V5.5a1.5 1.5 0 0 1 3 0V11m0-1.5a1.5 1.5 0 0 1 3 0V11m0 .5a1.5 1.5 0 0 1 3 0V13m0 .5a1.5 1.5 0 0 1 3 0v3.5a6 6 0 0 1-6 6h-2.5a6 6 0 0 1-4.8-2.4L4.5 16.5a1.6 1.6 0 0 1 2.5-2L9 17"/></svg></span>
+      <span><b>Hover</b> a category or pathway to trace its flow &nbsp;·&nbsp; <b>click</b> a category to explore the assets behind it.</span>
+  </div>
+
   <div class="chart">
     <div class="chart-head">
       <div class="chart-title" id="chart-title">Category → Pathway Flow</div>
       <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
         <div class="legend" id="pathway-legend"></div>
-        <button id="export-csv-btn" title="Request an export">
+        <button id="export-csv-btn" disabled title="Exports coming soon">
           <svg width="10" height="10" viewBox="0 0 10 10" style="flex-shrink:0" fill="none"><path d="M5 1v5M2.5 4.5L5 7l2.5-2.5M1.5 8.5h7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
           Export
         </button>
@@ -239,10 +262,6 @@ function requestExport() {
         </div>
         <div id="insight-cards"></div>
       </div>
-    </div>
-    <div class="foot">
-      <span class="hint pulse">● <b>Hover</b> a flow stream to reveal item breakdown &nbsp;·&nbsp; <b>Click</b> to drill into a category</span>
-      <span>Flow width proportional to selected metric · √-scale for readability</span>
     </div>
   </div>
 </div>
@@ -1141,8 +1160,9 @@ document.getElementById('export-csv-btn').addEventListener('click', requestExpor
   const defitDivPct    = defitMassKg>0 ? (defitDivertedKg/defitMassKg*100).toFixed(1) : '—';
   document.getElementById('sum-wt').textContent    = (totalW/1000).toFixed(1)+' tonne';
   document.getElementById('sum-wt-sub').textContent= cats.length+' material families';
-  document.getElementById('sum-ec').textContent    = (allEC/1000).toFixed(1)+' t CO₂e';
-  document.getElementById('sum-ec-sub').textContent= (allEC/1130).toFixed(1)+' kgCO₂e / m²';
+  const landfillKg = ITEMS.filter(i=>i.pathway==='Dispose').reduce((s,i)=>s+i.weight,0);
+  document.getElementById('sum-landfill').textContent    = fmtW(landfillKg);
+  document.getElementById('sum-landfill-sub').textContent= (totalW>0 ? (landfillKg/totalW*100).toFixed(1) : '0')+'% of total material weight (Dispose)';
   document.getElementById('sum-defit-mass').textContent = Math.round(defitMassKg).toLocaleString() + ' kg';
   document.getElementById('sum-defit-mass-sub').textContent = defitDivPct + '% diverted from landfill';
   document.getElementById('sum-pw').textContent    = activePWs.length;

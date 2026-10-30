@@ -34,7 +34,7 @@
       "total": 8928
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Recycle",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -89,8 +89,8 @@
     },
     "primaryMaterialStream": "Ceramic: Mineral Fibre",
     "weight": {
-      "perUnit": 4,
-      "total": 12244.16
+      "perUnit": 3,
+      "total": 9183.12
     },
     "pathway": {
       "suggested": "Retain",
@@ -5362,7 +5362,7 @@
       "total": 2445
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Recycle",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -5419,7 +5419,7 @@
       "total": 2445
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Recycle",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -5476,7 +5476,7 @@
       "total": 1770
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Recycle",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -5535,7 +5535,7 @@
       "total": 1630
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Recycle",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -5931,7 +5931,7 @@
       "total": 855
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Retain",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []

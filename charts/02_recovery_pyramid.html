@@ -254,6 +254,7 @@ svg .scale-axis-title {
   gap: 5px;
 }
 #export-btn:hover { border-color: var(--accent); color: var(--accent); }
+#export-btn:disabled, #export-btn:disabled:hover { opacity: .45; cursor: not-allowed; border-color: var(--line); color: inherit; }
 
 
 
@@ -551,9 +552,9 @@ function requestExport() {
 
   <section class="summary" style="margin-bottom:18px;">
     <div class="stat accent">
-      <div class="label">Projected Waste Emissions</div>
+      <div class="label">Fitout Intensity</div>
       <div class="value" id="stat-proj-we"></div>
-      <div class="sub">items sent to landfill (Dispose)</div>
+      <div class="sub">fitout mass per m² of NLA</div>
     </div>
     <div class="stat">
       <div class="label">Defit Mass Diverted</div>
@@ -568,7 +569,7 @@ function requestExport() {
     <div class="stat">
       <div class="label">Fitout Circularity</div>
       <div class="value" id="stat-ffe"></div>
-      <div class="sub">assets used in the new fitout</div>
+      <div class="sub">assets marked Retain</div>
     </div>
   </section>
 
@@ -581,7 +582,7 @@ function requestExport() {
           <svg width="20" height="10" viewBox="0 0 20 10"><rect x="0.5" y="0.5" width="19" height="9" rx="2" fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="4 2.5"/></svg>
           Market Avg
         </button>
-        <button id="export-btn" title="Request an export">
+        <button id="export-btn" disabled title="Exports coming soon">
           <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1v6M2.5 5l3 3 3-3M1 9.5h9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
           Export
         </button>
@@ -664,10 +665,6 @@ function requestExport() {
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="foot">
-      <div>v3.1 · Refit8</div>
     </div>
   </section>
 
@@ -1245,9 +1242,10 @@ metricBtns.forEach(b=>b.addEventListener("click", ()=>applyMetric(b.dataset.metr
 function renderStats(){
   // Stat tiles always reflect the full dataset — independent of category filter
   const rows = ROWS;
-  // Projected Waste Emissions: items sent to landfill (Dispose) only
-  const projWE = rows.filter(r => r.p === 'Dispose').reduce((s,r) => s + r.we, 0);
-  document.getElementById("stat-proj-we").innerHTML = Math.round(projWE).toLocaleString("en-US") + '<span class="unit">kgCO₂e</span>';
+  // Fitout Intensity: total fitout mass / Net Lettable Area (same NLA as the portal's app.js NLA_M2)
+  const NLA_M2 = 3700;
+  const fitoutKg = rows.reduce((s,r) => s + r.m, 0);
+  document.getElementById("stat-proj-we").innerHTML = (fitoutKg / NLA_M2).toFixed(1) + '<span class="unit">kg/m²</span>';
   // Defit Mass Diverted: % of non-Retain mass that is non-Dispose
   const nonRetainM = rows.filter(r => r.p !== 'Retain').reduce((s,r) => s + r.m, 0);
   const divertedM  = rows.filter(r => r.p !== 'Retain' && r.p !== 'Dispose').reduce((s,r) => s + r.m, 0);
@@ -1256,8 +1254,8 @@ function renderStats(){
   // Retained Services Mass: total mass of Services assets pathway-tagged Retain
   const retSvcM = rows.filter(r => r.p === 'Retain' && r.assetCat === 'Services').reduce((s,r) => s + r.m, 0);
   document.getElementById("stat-ret-svc").innerHTML = Math.round(retSvcM).toLocaleString("en-US") + '<span class="unit">kg</span>';
-  // Fitout Circularity: all assets tagged as going back into the new fitout
-  const fitoutCirc = rows.filter(r => r.reused).length;
+  // Fitout Circularity: all assets marked Retain (no separate "reused on site" mark yet)
+  const fitoutCirc = rows.filter(r => r.p === 'Retain').length;
   document.getElementById("stat-ffe").textContent = fitoutCirc + ' items';
 }
 

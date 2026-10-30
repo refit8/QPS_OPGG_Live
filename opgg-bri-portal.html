@@ -73,6 +73,7 @@
           <a onclick="goDashView('flow')">Material Pathway Flow</a>
           <a onclick="goDashView('pyr')">Recovery by Pathway</a>
           <a onclick="goDashView('outflow')">Material Outflow Impact</a>
+          <a onclick="goDashView('reuse')">On-Site Reuse</a>
         </div>
       </div>
     </div>
@@ -95,7 +96,7 @@
       <svg class="i" viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
       <span class="notif">2</span>
     </button>
-    <button class="btn-export">↑ Export Report</button>
+    <button class="btn-export" disabled title="Exports coming soon">↑ Export Report</button>
   </div>
 </nav>
 
@@ -128,7 +129,7 @@
     </div>
     <div class="hs-item">
       <div class="hs-val good" id="home-diversion">—</div>
-      <div class="hs-lbl">Diversion Rate</div>
+      <div class="hs-lbl">Diversion Rate*</div>
     </div>
     <div class="hs-item">
       <div class="hs-val" id="home-assets">—</div>
@@ -161,7 +162,7 @@
       <div class="hc-eyebrow">The Project</div>
       <h2 class="hc-title">QPS Headquarters Level 2</h2>
       <p class="hp-addr">📍 200 Roma Street, Brisbane City QLD 4000</p>
-      <p class="hc-body">This platform provides structured access to asset and built-form data, with insights on quantities, material composition, and sustainable pathways to guide reuse, recycling, and responsible decision-making.</p>
+      <p class="hc-body">This portal provides structured access to asset and built-form data, with insights on quantities, material composition, and sustainable pathways to guide reuse, recycling, and responsible decision-making.</p>
       <p class="hc-body">A digital twin of this fitout has been created using Lidar technology. Explore the 3D-replica of the site to find, dimension and quantify desired items.</p>
     </div>
     <div class="hp-photo">
@@ -194,26 +195,28 @@
       <div class="tl-step next gap">
         <span class="tl-node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h5"/></svg></span>
         <div class="tl-name">Final Audit &amp; Data Processing</div>
-        <div class="tl-date">Upcoming</div>
-        <span class="tl-state">Scheduled</span>
+        <!-- date hidden until confirmed: <div class="tl-date">DD / MM / YYYY</div> -->
+        <span class="tl-state">Upcoming</span>
       </div>
       <div class="tl-step">
         <span class="tl-node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17h2l1-9h12l1 9h2"/><path d="M8 17a2 2 0 1 0 4 0M13 17a2 2 0 1 0 4 0"/><path d="M12 3v5M9.5 5.5 12 8l2.5-2.5"/></svg></span>
         <div class="tl-name">C&amp;D Material Outflows</div>
-        <div class="tl-date">Upcoming</div>
-        <span class="tl-state">Scheduled</span>
+        <!-- date hidden until confirmed: <div class="tl-date">DD / MM / YYYY</div> -->
+        <span class="tl-state">Upcoming</span>
       </div>
       <div class="tl-step">
         <span class="tl-node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.9 8 10 4.6-1.1 8-5 8-10V6l-8-4Z"/><path d="m9 12 2 2 4-4"/></svg></span>
         <div class="tl-name">Project Close-Out &amp; Reporting</div>
-        <div class="tl-date">Upcoming</div>
-        <span class="tl-state">Scheduled</span>
+        <!-- date hidden until confirmed: <div class="tl-date">DD / MM / YYYY</div> -->
+        <span class="tl-state">Upcoming</span>
       </div>
     </div>
   </section>
 
-  <div class="disclaimer-bar" style="margin-top:14px">
-    <strong>Note:</strong> These are preliminary findings. The entire site has not yet been quantified, and the register reflects only the areas and items audited to date. Additional items and quantities can be added to suit how BVN would like to use the data, and the figures shown will update as the register grows.
+  <div class="disclaimer-bar" style="margin-top:14px;padding:20px 26px;font-size:16.5px;line-height:1.65">
+    <div style="font-size:19px;font-weight:700;color:var(--ink);margin-bottom:8px">Note: Initial Draft Only</div>
+    These are preliminary findings. The entire site has not yet been quantified, and the register reflects only the areas and items audited to date. Additional items and quantities can be added to suit how BVN would like to use the data, and the figures shown will update as the register grows. If an item, quantity or note needs further investigation, please let the Refit8 team know via <a onclick="goContact()" style="color:inherit;text-decoration:underline;cursor:pointer">Contact Us</a> or your Refit8 project contact.<br>
+    * Diversion rate is provisional and will be updated as the audit progresses.
   </div>
 
   <!-- ══ EXPLORE ══ -->
@@ -319,6 +322,7 @@
         <label>Enquiry type</label>
         <select id="cf-type">
           <option>Project data question</option>
+          <option>Flag an item for follow-up</option>
           <option>Report or export request</option>
           <option>New project enquiry</option>
           <option>Platform access</option>
@@ -327,7 +331,7 @@
       </div>
       <div class="cf-field"><label>Message</label><textarea id="cf-msg" placeholder="Tell us a little about what you need…"></textarea></div>
       <button class="hh-btn primary" style="border:none" onclick="sendContactEnquiry()">Send enquiry →</button>
-      <p style="font-size:12.5px;color:var(--ink-4);margin-top:12px">This opens a pre-written email in your mail app, ready to send to the Refit8 team.</p>
+      <p style="font-size:12.5px;color:var(--ink-4);margin-top:12px">This opens a pre-written email in your mail app, ready to send to the Refit8 team. When flagging an item, include its name or asset ID from the register so we can locate it.</p>
     </div>
 
     <div class="contact-card">
@@ -400,6 +404,7 @@
   <button class="dash-subtab" data-view="flow"    onclick="setDashView(this)">Material Pathway Flow</button>
   <button class="dash-subtab" data-view="pyr"     onclick="setDashView(this)">Recovery by Pathway</button>
   <button class="dash-subtab" data-view="outflow" onclick="setDashView(this)">Material Outflow Impact</button>
+  <button class="dash-subtab" data-view="reuse"   onclick="setDashView(this)">On-Site Reuse</button>
 </div>
 
 
@@ -519,6 +524,12 @@
     </div>
   </div>
 
+  <!-- ═══ Widget: On-Site Reuse spotlight (retained + starred assets) ═══ -->
+  <div class="r8-widget" id="ov-w-reuse">
+    <div class="r8-widget-open-bar"><span class="r8-widget-open-label">On-Site Reuse</span></div>
+    <div class="r8-widget-body spot-root" id="spot-root"></div>
+  </div>
+
 <!-- hidden: widgets 5 & 6 (carbon not in scope)
   <!- - ═══ Widget 5: Sustainability Impact ═══ - ->
   <div class="r8-widget" id="ov-w-sust">
@@ -611,7 +622,7 @@
           <div class="reg-sub">Every recorded asset across the project - switch views or use filters to browse select items.</div>
         </div>
         <div class="reg-actions">
-          <button class="reg-btn" onclick="document.querySelector('.btn-export').click()">
+          <button class="reg-btn" disabled title="Exports coming soon" onclick="document.querySelector('.btn-export').click()">
             <svg class="i" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             Export
           </button>
@@ -856,28 +867,121 @@
   </div>
 
   <!-- ══ FLOW BOARD ══ -->
-  <div class="ph-section" style="border-radius:22px;padding:28px 32px;text-align:center;">
-    <svg viewBox="0 0 360 240" width="360" height="240" style="max-width:100%;height:auto" role="img" aria-label="Generic closed-loop diagram of defit partners">
-      <defs>
-        <marker id="cl-arrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-          <path d="M0 0L10 5L0 10z" fill="#E8762B"/>
-        </marker>
-      </defs>
-      <g fill="none" stroke="#E8762B" stroke-width="2.5" stroke-linecap="round" marker-end="url(#cl-arrow)">
-        <path d="M148 52 A84 84 0 0 1 212 52"/>
-        <path d="M262 100 A84 84 0 0 1 262 140"/>
-        <path d="M212 188 A84 84 0 0 1 148 188"/>
-        <path d="M98 140 A84 84 0 0 1 98 100"/>
+  <div class="flow-board">
+    <div class="fb-source">
+      <div class="fbs-name">Olympic and Paralympic Games Accommodation</div>
+      <div class="fbs-loc">Brisbane City, QLD</div>
+      <div class="fbs-divider"></div>
+      <div class="fbs-val" id="fbs-total">—</div>
+      <div class="fbs-lbl">Audited Material</div>
+      <div class="fbs-sub" id="fbs-sub">—</div>
+    </div>
+  <div class="ph-section" style="border-radius:22px;padding:28px 32px;text-align:center;margin:0;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+    <svg viewBox="0 0 640 500" style="width:100%;max-width:640px;height:auto;font-family:inherit" role="img" aria-label="Defit pathways from QPS Headquarters: retain, adaptive reuse or refurbish, rehome, stewardship and recycle">
+      <defs><marker id="pw-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#E8762B"/></marker></defs>
+      <line x1="80" y1="40" x2="80" y2="72" stroke="#1E1B5C" stroke-width="4" stroke-linecap="round"/>
+      <rect x="30" y="70" width="100" height="390" rx="4" fill="#1E1B5C"/>
+      <rect x="42" y="88" width="12" height="14" rx="1.5" fill="#fff" opacity=".28"/>
+      <rect x="64" y="88" width="12" height="14" rx="1.5" fill="#fff" opacity=".28"/>
+      <rect x="86" y="88" width="12" height="14" rx="1.5" fill="#fff" opacity=".28"/>
+      <rect x="108" y="88" width="12" height="14" rx="1.5" fill="#fff" opacity=".28"/>
+      <rect x="42" y="116" width="12" height="14" rx="1.5" fill="#fff" opacity=".28"/>
+      <rect x="64" y="116" width="12" height="14" rx="1.5" fill="#fff" opacity=".28"/>
+      <rect x="86" y="116" width="12" height="14" rx="1.5" fill="#fff" opacity=".28"/>
+      <rect x="108" y="116" width="12" height="14" rx="1.5" fill="#fff" opacity=".28"/>
+      <rect x="42" y="144" width="12" height="14" rx="1.5" fill="#fff" opacity=".28"/>
+      <rect x="64" y="144" width="12" height="14" rx="1.5" fill="#fff" opacity=".28"/>
+      <rect x="86" y="144" width="12" height="14" rx="1.5" fill="#fff" opacity=".28"/>
+      <rect x="108" y="144" width="12" height="14" rx="1.5" fill="#fff" opacity=".28"/>
+      <rect x="42" y="172" width="12" height="14" rx="1.5" fill="#fff" opacity=".28"/>
+      <rect x="64" y="172" width="12" height="14" rx="1.5" fill="#fff" opacity=".28"/>
+      <rect x="86" y="172" width="12" height="14" rx="1.5" fill="#fff" opacity=".28"/>
+      <rect x="108" y="172" width="12" height="14" rx="1.5" fill="#fff" opacity=".28"/>
+      <rect x="42" y="200" width="12" height="14" rx="1.5" fill="#fff" opacity=".28"/>
+      <rect x="64" y="200" width="12" height="14" rx="1.5" fill="#fff" opacity=".28"/>
+      <rect x="86" y="200" width="12" height="14" rx="1.5" fill="#fff" opacity=".28"/>
+      <rect x="108" y="200" width="12" height="14" rx="1.5" fill="#fff" opacity=".28"/>
+      <rect x="42" y="228" width="12" height="14" rx="1.5" fill="#fff" opacity=".28"/>
+      <rect x="64" y="228" width="12" height="14" rx="1.5" fill="#fff" opacity=".28"/>
+      <rect x="86" y="228" width="12" height="14" rx="1.5" fill="#fff" opacity=".28"/>
+      <rect x="108" y="228" width="12" height="14" rx="1.5" fill="#fff" opacity=".28"/>
+      <rect x="42" y="256" width="12" height="14" rx="1.5" fill="#fff" opacity=".28"/>
+      <rect x="64" y="256" width="12" height="14" rx="1.5" fill="#fff" opacity=".28"/>
+      <rect x="86" y="256" width="12" height="14" rx="1.5" fill="#fff" opacity=".28"/>
+      <rect x="108" y="256" width="12" height="14" rx="1.5" fill="#fff" opacity=".28"/>
+      <rect x="42" y="284" width="12" height="14" rx="1.5" fill="#fff" opacity=".28"/>
+      <rect x="64" y="284" width="12" height="14" rx="1.5" fill="#fff" opacity=".28"/>
+      <rect x="86" y="284" width="12" height="14" rx="1.5" fill="#fff" opacity=".28"/>
+      <rect x="108" y="284" width="12" height="14" rx="1.5" fill="#fff" opacity=".28"/>
+      <rect x="42" y="312" width="12" height="14" rx="1.5" fill="#fff" opacity=".28"/>
+      <rect x="64" y="312" width="12" height="14" rx="1.5" fill="#fff" opacity=".28"/>
+      <rect x="86" y="312" width="12" height="14" rx="1.5" fill="#fff" opacity=".28"/>
+      <rect x="108" y="312" width="12" height="14" rx="1.5" fill="#fff" opacity=".28"/>
+      <rect x="42" y="340" width="12" height="14" rx="1.5" fill="#fff" opacity=".28"/>
+      <rect x="64" y="340" width="12" height="14" rx="1.5" fill="#fff" opacity=".28"/>
+      <rect x="86" y="340" width="12" height="14" rx="1.5" fill="#fff" opacity=".28"/>
+      <rect x="108" y="340" width="12" height="14" rx="1.5" fill="#fff" opacity=".28"/>
+      <rect x="42" y="368" width="12" height="14" rx="1.5" fill="#fff" opacity=".28"/>
+      <rect x="64" y="368" width="12" height="14" rx="1.5" fill="#fff" opacity=".28"/>
+      <rect x="86" y="368" width="12" height="14" rx="1.5" fill="#fff" opacity=".28"/>
+      <rect x="108" y="368" width="12" height="14" rx="1.5" fill="#fff" opacity=".28"/>
+      <rect x="42" y="396" width="12" height="14" rx="1.5" fill="#fff" opacity=".28"/>
+      <rect x="64" y="396" width="12" height="14" rx="1.5" fill="#fff" opacity=".28"/>
+      <rect x="86" y="396" width="12" height="14" rx="1.5" fill="#fff" opacity=".28"/>
+      <rect x="108" y="396" width="12" height="14" rx="1.5" fill="#fff" opacity=".28"/>
+      <rect x="42" y="424" width="12" height="14" rx="1.5" fill="#fff" opacity=".28"/>
+      <rect x="64" y="424" width="12" height="14" rx="1.5" fill="#fff" opacity=".28"/>
+      <rect x="86" y="424" width="12" height="14" rx="1.5" fill="#fff" opacity=".28"/>
+      <rect x="108" y="424" width="12" height="14" rx="1.5" fill="#fff" opacity=".28"/>
+      <text x="80" y="486" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1E1B5C">QPS Headquarters</text>
+      <g fill="none" stroke="#E8762B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#pw-arrow)">
+        <path d="M130 78 H180 Q206 78 206 99 Q206 120 180 120 H136"/>
+        <path d="M130 165 H316"/>
+        <path d="M350 198 V208 Q350 218 340 218 H136"/>
+        <path d="M130 262 H380"/>
+        <path d="M130 330 H522"/>
+        <path d="M130 380 H294"/>
+        <path d="M342 378 H565 V370"/>
+        <path d="M130 448 H394"/>
       </g>
+      <text x="218" y="103" text-anchor="start" font-size="12.5" font-weight="600" fill="#1E1B5C">Retain</text>
+      <text x="146" y="153" text-anchor="start" font-size="12.5" font-weight="600" fill="#1E1B5C">Adaptive Reuse / Refurbish</text>
+      <text x="146" y="250" text-anchor="start" font-size="12.5" font-weight="600" fill="#1E1B5C">Rehome</text>
+      <text x="146" y="318" text-anchor="start" font-size="12.5" font-weight="600" fill="#1E1B5C">Stewardship</text>
+      <text x="146" y="368" text-anchor="start" font-size="12.5" font-weight="600" fill="#1E1B5C">Recycle</text>
+      <text x="146" y="436" text-anchor="start" font-size="12.5" font-weight="600" fill="#1E1B5C">Dispose</text>
       <g fill="#1E1B5C">
-        <circle cx="180" cy="36" r="22"/>
-        <circle cx="280" cy="120" r="22"/>
-        <circle cx="180" cy="204" r="22"/>
-        <circle cx="80" cy="120" r="22"/>
+        <circle cx="350" cy="170" r="19"/>
+        <rect x="345" y="143" width="10" height="11" rx="2" transform="rotate(0 350 170)"/>
+        <rect x="345" y="143" width="10" height="11" rx="2" transform="rotate(45 350 170)"/>
+        <rect x="345" y="143" width="10" height="11" rx="2" transform="rotate(90 350 170)"/>
+        <rect x="345" y="143" width="10" height="11" rx="2" transform="rotate(135 350 170)"/>
+        <rect x="345" y="143" width="10" height="11" rx="2" transform="rotate(180 350 170)"/>
+        <rect x="345" y="143" width="10" height="11" rx="2" transform="rotate(225 350 170)"/>
+        <rect x="345" y="143" width="10" height="11" rx="2" transform="rotate(270 350 170)"/>
+        <rect x="345" y="143" width="10" height="11" rx="2" transform="rotate(315 350 170)"/>
       </g>
-      <circle cx="180" cy="120" r="34" fill="none" stroke="#1E1B5C" stroke-width="2" stroke-dasharray="4 5" opacity=".35"/>
+      <circle cx="350" cy="170" r="8" fill="#fff"/>
+      <polygon points="393,258 425,230 457,258" fill="#1E1B5C"/>
+      <rect x="402" y="258" width="46" height="34" fill="#1E1B5C"/>
+      <rect x="419" y="272" width="12" height="20" fill="#fff"/>
+      <path d="M535 366 V314 L555 326 V314 L575 326 V298 H593 V366 Z" fill="#1E1B5C"/>
+      <rect x="543" y="342" width="10" height="10" fill="#fff" opacity=".85"/>
+      <rect x="561" y="342" width="10" height="10" fill="#fff" opacity=".85"/>
+      <text x="565" y="286" text-anchor="middle" font-size="12" font-weight="600" fill="#1E1B5C">Manufacturer</text>
+      <path d="M320 402 C308 388 302 380 302 372 A18 18 0 0 1 338 372 C338 380 332 388 320 402 Z" fill="#1E1B5C"/>
+      <circle cx="320" cy="372" r="6.5" fill="#fff"/>
+      <text x="320" y="420" text-anchor="middle" font-size="12" font-weight="600" fill="#1E1B5C">Recycler</text>
+      <g fill="#1E1B5C">
+        <rect x="424" y="421" width="12" height="5" rx="1.5"/>
+        <rect x="411" y="426" width="38" height="6" rx="2"/>
+        <path d="M415 435 H445 L442 472 Q442 475 439 475 H421 Q418 475 418 472 Z"/>
+      </g>
+      <g stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".85"><path d="M425 442 V465"/><path d="M435 442 V465"/></g>
+      <text x="430" y="494" text-anchor="middle" font-size="12" font-weight="600" fill="#1E1B5C">Landfill</text>
     </svg>
     <p style="font-size:15.5px;color:var(--ink-3);margin-top:14px;">Network of defit partners to facilitate landfill diversion will be presented here</p>
+  </div>
   </div>
 
 

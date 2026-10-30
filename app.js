@@ -118,6 +118,7 @@ function toggleStar(id) {
   applySort();
   if (selIdx >= 0) selAsset(selIdx);
   syncStarBtn();
+  if (typeof renderSpotlight === 'function') renderSpotlight();
 }
 function toggleStarFirst() {
   starFirst = !starFirst;
@@ -604,6 +605,59 @@ function setNav(el) {
   }
 }
 
+/* ── On-Site Reuse spotlight: Retain assets that are starred (stars are per-browser) ── */
+let spotMetric = 'kg';
+function spotItems() {
+  return ASSETS.filter(a => a.pw === 'Retain' && !a.excluded && isStarred(a));
+}
+function spotSetMetric(m) { spotMetric = m; renderSpotlight(); }
+function spotScroll(dir) {
+  const t = document.getElementById('spot-track');
+  if (t) t.scrollBy({ left: dir * (t.clientWidth * 0.8), behavior: 'smooth' });
+}
+function spotUnit(a) { return a.unit.replace(/\s*\(.*\)/, '').toLowerCase() || 'units'; }
+function renderSpotlight() {
+  const root = document.getElementById('spot-root');
+  if (!root) return;
+  const items = spotItems();
+  const banner = '<div class="interact-banner"><span class="ib-tag">Interactive</span><span class="ib-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11.5V5.5a1.5 1.5 0 0 1 3 0V11m0-1.5a1.5 1.5 0 0 1 3 0V11m0 .5a1.5 1.5 0 0 1 3 0V13m0 .5a1.5 1.5 0 0 1 3 0v3.5a6 6 0 0 1-6 6h-2.5a6 6 0 0 1-4.8-2.4L4.5 16.5a1.6 1.6 0 0 1 2.5-2L9 17"/></svg></span><span><b>Browse</b> the retained assets with the arrows or by scrolling, and use the <b>Mass / Quantity</b> toggle to change the chart. The spotlight shows Retain assets <b>starred</b> in the Asset Register &mdash; stars are saved in your own browser, so this is a personal view.</span></div>';
+    if (!items.length) {
+    root.innerHTML = banner + '<div class="spot-empty"><b>No retained assets spotlighted yet</b>' +
+      'Star an asset with the Retain pathway in the Asset Register and it will be featured here.</div>';
+    return;
+  }
+  const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
+  const totalKg = items.reduce((t, a) => t + a.kg, 0);
+  const cards = items.map(a =>
+    '<div class="spot-card">' +
+      '<div class="spot-img">' + (a.imageUrl ? '<img src="' + esc(a.thumbUrl || a.imageUrl) + '" loading="lazy" alt="">' : '<span>No photo</span>') + '</div>' +
+      '<div class="spot-info"><div class="spot-name" title="' + esc(a.n) + '">' + esc(a.n) + '</div>' +
+      '<div class="spot-meta">' + fmt(a.qty) + ' ' + esc(spotUnit(a)) + ' &middot; ' + fmtWt(a.kg) + '</div>' +
+      (a.mat ? '<div class="spot-mat">' + esc(a.mat) + '</div>' : '') + '</div>' +
+    '</div>').join('');
+  const byKg = spotMetric === 'kg';
+  const sorted = items.slice().sort((x, y) => byKg ? y.kg - x.kg : y.qty - x.qty);
+  const max = Math.max(...sorted.map(a => byKg ? a.kg : a.qty)) || 1;
+  const bars = sorted.map(a => {
+    const v = byKg ? a.kg : a.qty;
+    const lbl = byKg ? fmtWt(a.kg) : fmt(a.qty) + ' ' + esc(spotUnit(a));
+    return '<div class="spot-bar-row"><span class="spot-bar-name" title="' + esc(a.n) + '">' + esc(a.n) + '</span>' +
+      '<span class="spot-bar-track"><span class="spot-bar-fill" style="width:' + Math.max(2, v / max * 100).toFixed(1) + '%"></span></span>' +
+      '<span class="spot-bar-val">' + lbl + '</span></div>';
+  }).join('');
+  root.innerHTML = banner +
+    '<div class="spot-head"><div><div class="hc-eyebrow">Retained on site</div>' +
+      '<h3 class="hc-title" style="font-size:22px;margin-bottom:2px">Spotlight</h3>' +
+      '<p class="spot-sub">' + items.length + ' retained asset' + (items.length !== 1 ? 's' : '') + ' &middot; ' + fmtWt(totalKg) + ' kept in the building</p></div>' +
+      '<div class="spot-arrows"><button onclick="spotScroll(-1)" aria-label="Previous">&#8249;</button><button onclick="spotScroll(1)" aria-label="Next">&#8250;</button></div></div>' +
+    '<div class="spot-track" id="spot-track">' + cards + '</div>' +
+    '<div class="spot-chart"><div class="spot-chart-hd"><b>Retained ' + (byKg ? 'mass' : 'quantity') + '</b>' +
+      '<span class="spot-toggle"><button class="' + (byKg ? 'on' : '') + '" onclick="spotSetMetric(\'kg\')">Mass</button>' +
+      '<button class="' + (byKg ? '' : 'on') + '" onclick="spotSetMetric(\'qty\')">Quantity</button></span></div>' + bars +
+      (byKg ? '' : '<p class="spot-note">Quantities use each asset&rsquo;s own unit (count, m&sup2;, m), so bar lengths are not directly comparable.</p>') +
+    '</div>';
+}
+
 /* ── Dashboard sub-nav ── */
 const DASH_VIEWS = { flow: 'ov-w-flow', pyr: 'ov-w-pyr', outflow: 'ov-w-outflow', sust: 'ov-w-sust', reuse: 'ov-w-reuse' };
 function setDashView(el) {
@@ -826,10 +880,19 @@ function renderOverviewMinis() {
 
 /* ── Pathways tab: flow board + project team ── */
 async function initPathwaysFlow() {
+  if (!ASSETS.length) return;
   let partners = [];
   try {
     partners = await fetchJSON('data/partners.json');
   } catch (e) { console.error('Failed to load partners.json:', e); return; }
+
+  const assets = statsAssets();
+  const totalKg  = assets.reduce((s, a) => s + (a.kg || 0), 0);
+  const retainKg = assets.filter(a => a.pw === 'Retain').reduce((s, a) => s + (a.kg || 0), 0);
+
+  const set = (id, h) => { const e = document.getElementById(id); if (e) e.innerHTML = h; };
+  set('fbs-total', (totalKg / 1000).toFixed(1) + '<span class="u">tonnes</span>');
+  set('fbs-sub', fmtWt(totalKg - retainKg) + ' leaves the building through the recovery network — ' + fmtWt(retainKg) + ' never leaves at all.');
 
   const team = document.getElementById('fb-team');
   if (team) {
@@ -1201,7 +1264,7 @@ function renderSiteFooters() {
   const year = new Date().getFullYear();
   const html =
     '<div class="collective"><div class="collective-inner">' +
-      '<div class="collective-hd"><h3>Project Stakeholders</h3><span>Partners and specialists delivering this project</span></div>' +
+      '<div class="collective-hd"><h3>Project Stakeholders</h3><span>Partners and specialists supporting this project</span></div>' +
       '<div class="collective-grid">' + tiles + '</div>' +
     '</div></div>' +
     '<footer class="r8-footer"><div class="r8-footer-inner">' +
@@ -1283,6 +1346,7 @@ async function loadData() {
     initOverviewStats();
     initHomeStats();
     renderOverviewMinis();
+    renderSpotlight();
     renderALDOverviewMini();
     initPathwaysFlow();
     initRegisterKPIs();

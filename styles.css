@@ -311,6 +311,7 @@ nav.topnav {
   font-family: var(--font);
 }
 .btn-export:hover { background: var(--orange-h); }
+.btn-export:disabled, .btn-export:disabled:hover { background: var(--grey-300); color: #fff; cursor: not-allowed; }
 
 /* ── Compact banner state — applied once the user scrolls the active
      view or navigates to another page/tab; reverts nav.topnav to its
@@ -1012,6 +1013,39 @@ svg.i { width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2;stro
 
 /* Iframe inside widget */
 .r8-widget-body { flex: 1; position: relative; }
+/* ── On-Site Reuse spotlight ── */
+.spot-root { padding: 26px 30px 30px; }
+.spot-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; margin-bottom: 16px; }
+.interact-banner { display: flex; align-items: center; gap: 12px; background: rgba(232,118,43,0.08); border: 1px solid rgba(232,118,43,0.25); border-radius: 12px; padding: 11px 16px; margin: 0 0 18px; font-size: 14.5px; color: var(--ink-2); line-height: 1.5; }
+.interact-banner b { color: var(--ink); font-weight: 600; }
+.interact-banner .ib-tag { font-family: 'Chivo Mono', monospace; font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: #fff; background: var(--orange); border-radius: 999px; padding: 4px 11px; flex-shrink: 0; }
+.interact-banner .ib-icon { flex-shrink: 0; color: var(--orange); display: flex; }
+.spot-sub { font-size: 15px; color: var(--ink-3); }
+.spot-arrows { display: flex; gap: 8px; }
+.spot-arrows button { width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--border-2); background: var(--white); font-size: 22px; line-height: 1; color: var(--navy); cursor: pointer; }
+.spot-arrows button:hover { border-color: var(--navy); }
+.spot-track { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; scrollbar-width: thin; }
+.spot-card { flex: 0 0 240px; scroll-snap-align: start; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; background: var(--white); }
+.spot-img { height: 150px; background: var(--surface); display: flex; align-items: center; justify-content: center; color: var(--ink-4); font-size: 13px; }
+.spot-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.spot-info { padding: 12px 14px 14px; }
+.spot-name { font-size: 16px; font-weight: 700; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.spot-meta { font-size: 14px; color: var(--ink-2); margin-top: 3px; }
+.spot-mat { font-size: 12.5px; color: var(--ink-4); margin-top: 3px; }
+.spot-chart { margin-top: 26px; border-top: 1px solid var(--border); padding-top: 20px; }
+.spot-chart-hd { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; font-size: 16px; color: var(--ink); }
+.spot-toggle { display: inline-flex; border: 1px solid var(--border-2); border-radius: 999px; overflow: hidden; }
+.spot-toggle button { border: none; background: var(--white); padding: 6px 16px; font-size: 13.5px; font-weight: 600; color: var(--ink-3); cursor: pointer; }
+.spot-toggle button.on { background: var(--navy); color: #fff; }
+.spot-bar-row { display: grid; grid-template-columns: 220px 1fr 110px; align-items: center; gap: 12px; margin-bottom: 8px; }
+.spot-bar-name { font-size: 14px; color: var(--ink-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.spot-bar-track { height: 14px; background: var(--navy-dim); border-radius: 7px; overflow: hidden; }
+.spot-bar-fill { display: block; height: 100%; background: var(--orange); border-radius: 7px; }
+.spot-bar-val { font-size: 13.5px; font-weight: 600; color: var(--ink); text-align: right; }
+.spot-note { font-size: 12.5px; color: var(--ink-4); margin-top: 8px; }
+.spot-empty { text-align: center; padding: 56px 20px; color: var(--ink-3); font-size: 15px; line-height: 1.6; }
+.spot-empty b { display: block; font-size: 18px; color: var(--ink); margin-bottom: 6px; }
+@media (max-width: 700px) { .spot-bar-row { grid-template-columns: 1fr 90px; } .spot-bar-track { grid-column: 1 / -1; order: 3; } }
 .r8-widget-body iframe {
   display: block;
   width: 100%;
@@ -1422,6 +1456,7 @@ svg.i { width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2;stro
   transition: all .12s;
 }
 .reg-btn:hover { border-color: var(--navy); color: var(--navy); }
+.reg-btn:disabled, .reg-btn:disabled:hover { opacity: .45; cursor: not-allowed; border-color: var(--border-2); color: var(--ink-2); }
 
 .reg-views { display: flex; gap: 2px; padding: 12px 24px 0; border-bottom: 1px solid var(--border); flex-shrink: 0; }
 .reg-view-tab {

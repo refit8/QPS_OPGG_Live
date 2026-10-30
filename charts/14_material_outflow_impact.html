@@ -36,6 +36,22 @@ function loadJSONWithFallback(url, embeddedId) {
  * ========================================================================= */
 
 .wrap{ padding-bottom:16px !important; }
+/* ── Interactive banner (prominent, above chart body) ── */
+.interact-banner {
+  display: flex; align-items: center; gap: 12px;
+  background: rgba(232,118,43,0.08); border: 1px solid rgba(232,118,43,0.25);
+  border-radius: 12px; padding: 11px 16px; margin: 4px 0 14px;
+  font-family: "Geist", system-ui, sans-serif; font-size: 14px;
+  color: var(--text-dim); line-height: 1.5;
+}
+.interact-banner b { color: var(--text); font-weight: 600; }
+.interact-banner .ib-tag {
+  font-family: "Chivo Mono", monospace; font-size: 10.5px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .12em; color: #ffffff;
+  background: var(--accent); border-radius: 999px; padding: 4px 11px; flex-shrink: 0;
+}
+.interact-banner .ib-icon { flex-shrink: 0; color: var(--accent); display: flex; }
+
 
 .dual-row{ display:flex; gap:20px; align-items:flex-start; }
 .dual-row .chart{ flex:1; min-width:0; }
@@ -131,7 +147,7 @@ function loadJSONWithFallback(url, embeddedId) {
   <section class="pagehead">
     <div>
       <h1>Material Outflow Impact</h1>
-      <p>The material presence in each of the defined pathways, by mass or waste emissions.</p>
+      <p>The material presence in each of the defined pathways, by mass.</p>
     </div>
     <div class="meta">
       <div><b>Waste Emissions</b> · NGAF, UK DESNZ</div>
@@ -139,15 +155,17 @@ function loadJSONWithFallback(url, embeddedId) {
     </div>
   </section>
 
+  <div class="interact-banner">
+      <span class="ib-tag">Interactive</span>
+      <span class="ib-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11.5V5.5a1.5 1.5 0 0 1 3 0V11m0-1.5a1.5 1.5 0 0 1 3 0V11m0 .5a1.5 1.5 0 0 1 3 0V13m0 .5a1.5 1.5 0 0 1 3 0v3.5a6 6 0 0 1-6 6h-2.5a6 6 0 0 1-4.8-2.4L4.5 16.5a1.6 1.6 0 0 1 2.5-2L9 17"/></svg></span>
+      <span><b>Hover</b> any tile to see its material breakdown.</span>
+  </div>
+
   <div class="dual-row">
 
     <section class="chart">
       <div class="chart-head">
         <div class="chart-title">Outflow by Pathway</div>
-        <div class="mini-seg" id="metric-toggle">
-          <button class="active" data-metric="mass">Mass</button>
-          <button data-metric="we">Emissions</button>
-        </div>
       </div>
       <div class="panel-sub" id="tree-sub">All diverted + disposed material — Retain excluded.</div>
       <div class="treemap-wrap" id="treemap"></div>
