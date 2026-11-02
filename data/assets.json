@@ -1515,11 +1515,1228 @@
     "pathwayConfirmed": null
   },
   {
-    "id": "ee8a209a-fb9d-4079-b3f5-7b92bb23179c",
-    "title": "Meeting Chairs",
-    "imageUrl": "data/images/images_assets/New Asset - 30.png",
+    "id": "0f55b1c4-9921-449c-a46e-f38479072b8e",
+    "title": "Task chair – black mesh back, upholstered seat (T1)",
+    "imageUrl": "data/images/images_assets/Seating/T1_1.jpg",
     "images": [
-      "data/images/images_assets/New Asset - 30.png"
+      "data/images/images_assets/Seating/T1_1.jpg",
+      "data/images/images_assets/Seating/T1_2.jpg",
+      "data/images/images_assets/Seating/T1_3.jpg"
+    ],
+    "category": "FF&E",
+    "unit": "Count",
+    "quantity": 133,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": "Polymer: Thermoplastic 1-6",
+    "weight": {
+      "perUnit": 14,
+      "total": 1862
+    },
+    "pathway": {
+      "suggested": "Reuse",
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": "PHQ Level 2",
+    "notes": {
+      "audit": "Black nylon mesh backrest, upholstered seat (black, blue, red or patterned), height-adjustable arms on most, black 5-star castor base. Most common workstation chair.\nSeating register code T1 (Task chair). 133 items counted from the 3D walkthrough, 113 seen in 2+ photos. Example photos: 00014.jpg, 00031.jpg, 00058.jpg, 00075.jpg, 00076.jpg, 00077.jpg.\nWeight per unit carried over from 'Task Chairs (various)' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "seat-t2",
+    "title": "Task chair – fully upholstered fabric back (T2)",
+    "imageUrl": "data/images/images_assets/Seating/T2_1.jpg",
+    "images": [
+      "data/images/images_assets/Seating/T2_1.jpg",
+      "data/images/images_assets/Seating/T2_2.jpg",
+      "data/images/images_assets/Seating/T2_3.jpg"
+    ],
+    "category": "FF&E",
+    "unit": "Count",
+    "quantity": 94,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": "Polymer: Thermoplastic 1-6",
+    "weight": {
+      "perUnit": 14,
+      "total": 1316
+    },
+    "pathway": {
+      "suggested": "Reuse",
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": "PHQ Level 2",
+    "notes": {
+      "audit": "Ergonomic task chair with upholstered fabric back and seat (black, red, blue, navy, purple), gas lift, 5-star castor base; some with arms.\nSeating register code T2 (Task chair). 94 items counted from the 3D walkthrough, 83 seen in 2+ photos. Example photos: 00053.jpg, 00054.jpg, 00094.jpg, 00095.jpg, 00109.jpg, 00110.jpg.\nWeight per unit carried over from 'Task Chairs (various)' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "seat-t3",
+    "title": "Task chair – mesh back with headrest (T3)",
+    "imageUrl": "data/images/images_assets/Seating/T3_1.jpg",
+    "images": [
+      "data/images/images_assets/Seating/T3_1.jpg",
+      "data/images/images_assets/Seating/T3_2.jpg",
+      "data/images/images_assets/Seating/T3_3.jpg"
+    ],
+    "category": "FF&E",
+    "unit": "Count",
+    "quantity": 5,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": "Polymer: Thermoplastic 1-6",
+    "weight": {
+      "perUnit": 14,
+      "total": 70
+    },
+    "pathway": {
+      "suggested": "Reuse",
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": "PHQ Level 2",
+    "notes": {
+      "audit": "High mesh back with integrated headrest, adjustable arms, 5-star base.\nSeating register code T3 (Task chair). 5 items counted from the 3D walkthrough, 5 seen in 2+ photos. Example photos: 01686.jpg, 01687.jpg, 01688.jpg, 01775.jpg, 01796.jpg, 01797.jpg.\nWeight per unit carried over from 'Task Chairs (various)' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "seat-t4",
+    "title": "Task chair – white frame mesh back (T4)",
+    "imageUrl": "data/images/images_assets/Seating/T4_1.jpg",
+    "images": [
+      "data/images/images_assets/Seating/T4_1.jpg",
+      "data/images/images_assets/Seating/T4_2.jpg",
+      "data/images/images_assets/Seating/T4_3.jpg"
+    ],
+    "category": "FF&E",
+    "unit": "Count",
+    "quantity": 1,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": "Polymer: Thermoplastic 1-6",
+    "weight": {
+      "perUnit": 14,
+      "total": 14
+    },
+    "pathway": {
+      "suggested": "Reuse",
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": "PHQ Level 2",
+    "notes": {
+      "audit": "White plastic frame with mesh back, black seat, polished 5-star base.\nSeating register code T4 (Task chair). 1 items counted from the 3D walkthrough, 1 seen in 2+ photos. Example photos: 00580.jpg, 00697.jpg, 00698.jpg, 00702.jpg.\nWeight per unit carried over from 'Task Chairs (various)' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "seat-t5",
+    "title": "Task chair – orange upholstered back (T5)",
+    "imageUrl": "data/images/images_assets/Seating/T5_1.jpg",
+    "images": [
+      "data/images/images_assets/Seating/T5_1.jpg",
+      "data/images/images_assets/Seating/T5_2.jpg",
+      "data/images/images_assets/Seating/T5_3.jpg"
+    ],
+    "category": "FF&E",
+    "unit": "Count",
+    "quantity": 3,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": "Polymer: Thermoplastic 1-6",
+    "weight": {
+      "perUnit": 14,
+      "total": 42
+    },
+    "pathway": {
+      "suggested": "Reuse",
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": "PHQ Level 2",
+    "notes": {
+      "audit": "Orange fabric upholstered back and seat on black shell, 5-star base.\nSeating register code T5 (Task chair). 3 items counted from the 3D walkthrough, 3 seen in 2+ photos. Example photos: 00109.jpg, 00252.jpg, 00253.jpg, 00254.jpg, 00255.jpg, 00256.jpg.\nWeight per unit carried over from 'Task Chairs (various)' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "seat-t6",
+    "title": "Task chair – red mesh back, red seat (T6)",
+    "imageUrl": "data/images/images_assets/Seating/T6_1.jpg",
+    "images": [
+      "data/images/images_assets/Seating/T6_1.jpg",
+      "data/images/images_assets/Seating/T6_2.jpg",
+      "data/images/images_assets/Seating/T6_3.jpg"
+    ],
+    "category": "FF&E",
+    "unit": "Count",
+    "quantity": 8,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": "Polymer: Thermoplastic 1-6",
+    "weight": {
+      "perUnit": 14,
+      "total": 112
+    },
+    "pathway": {
+      "suggested": "Reuse",
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": "PHQ Level 2",
+    "notes": {
+      "audit": "Red mesh/fabric back, red upholstered seat, black frame, chrome 5-star base, arms.\nSeating register code T6 (Task chair). 8 items counted from the 3D walkthrough, 8 seen in 2+ photos. Example photos: 02272.jpg, 02273.jpg, 02300.jpg, 02301.jpg, 02302.jpg, 02303.jpg.\nWeight per unit carried over from 'Task Chairs (various)' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "seat-t7",
+    "title": "Draughting / drafting chair (T7)",
+    "imageUrl": "data/images/images_assets/Seating/T7_1.jpg",
+    "images": [
+      "data/images/images_assets/Seating/T7_1.jpg",
+      "data/images/images_assets/Seating/T7_2.jpg",
+      "data/images/images_assets/Seating/T7_3.jpg"
+    ],
+    "category": "FF&E",
+    "unit": "Count",
+    "quantity": 3,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": "Polymer: Thermoplastic 1-6",
+    "weight": {
+      "perUnit": 14,
+      "total": 42
+    },
+    "pathway": {
+      "suggested": "Reuse",
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": "PHQ Level 2",
+    "notes": {
+      "audit": "Raised drafting chair (black vinyl/fabric seat) with foot ring.\nSeating register code T7 (Task chair). 3 items counted from the 3D walkthrough, 3 seen in 2+ photos. Example photos: 02425.jpg, 02426.jpg, 02427.jpg, 02428.jpg, 02429.jpg, 02430.jpg.\nWeight per unit carried over from 'Task Chairs (various)' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "seat-t8",
+    "title": "Task chair – lime back, grey seat (T8)",
+    "imageUrl": "data/images/images_assets/Seating/T8_1.jpg",
+    "images": [
+      "data/images/images_assets/Seating/T8_1.jpg",
+      "data/images/images_assets/Seating/T8_2.jpg",
+      "data/images/images_assets/Seating/T8_3.jpg"
+    ],
+    "category": "FF&E",
+    "unit": "Count",
+    "quantity": 1,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": "Polymer: Thermoplastic 1-6",
+    "weight": {
+      "perUnit": 14,
+      "total": 14
+    },
+    "pathway": {
+      "suggested": "Reuse",
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": "PHQ Level 2",
+    "notes": {
+      "audit": "Lime-green upholstered back, grey fabric seat, adjustable arms.\nSeating register code T8 (Task chair). 1 items counted from the 3D walkthrough, 1 seen in 2+ photos. Example photos: 01230.jpg, 01232.jpg, 01526.jpg.\nWeight per unit carried over from 'Task Chairs (various)' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "seat-t9",
+    "title": "Task chair – olive green upholstered (T9)",
+    "imageUrl": "data/images/images_assets/Seating/T9_1.jpg",
+    "images": [
+      "data/images/images_assets/Seating/T9_1.jpg",
+      "data/images/images_assets/Seating/T9_2.jpg",
+      "data/images/images_assets/Seating/T9_3.jpg"
+    ],
+    "category": "FF&E",
+    "unit": "Count",
+    "quantity": 5,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": "Polymer: Thermoplastic 1-6",
+    "weight": {
+      "perUnit": 14,
+      "total": 70
+    },
+    "pathway": {
+      "suggested": "Reuse",
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": "PHQ Level 2",
+    "notes": {
+      "audit": "Olive-green upholstered back and seat with black loop arms, 5-star base.\nSeating register code T9 (Task chair). 5 items counted from the 3D walkthrough, 5 seen in 2+ photos. Example photos: 01086.jpg, 01087.jpg, 01088.jpg, 01089.jpg, 01090.jpg, 01415.jpg.\nWeight per unit carried over from 'Task Chairs (various)' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "seat-e1",
+    "title": "Executive soft-pad chair – black leather, chrome (E1)",
+    "imageUrl": "data/images/images_assets/Seating/E1_1.jpg",
+    "images": [
+      "data/images/images_assets/Seating/E1_1.jpg",
+      "data/images/images_assets/Seating/E1_2.jpg",
+      "data/images/images_assets/Seating/E1_3.jpg"
+    ],
+    "category": "FF&E",
+    "unit": "Count",
+    "quantity": 10,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": "Polymer: Thermoplastic 1-6",
+    "weight": {
+      "perUnit": 14,
+      "total": 140
+    },
+    "pathway": {
+      "suggested": "Reuse",
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": "PHQ Level 2",
+    "notes": {
+      "audit": "Ribbed black leather soft-pad seat/back, polished aluminium arms and 5-star base (Eames-style).\nSeating register code E1 (Executive chair). 10 items counted from the 3D walkthrough, 10 seen in 2+ photos. Example photos: 00802.jpg, 00803.jpg, 00804.jpg, 00805.jpg, 00806.jpg, 00807.jpg.\nWeight per unit carried over from 'Task Chairs (various)' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "seat-e2",
+    "title": "Executive high-back chair – black leather (E2)",
+    "imageUrl": "data/images/images_assets/Seating/E2_1.jpg",
+    "images": [
+      "data/images/images_assets/Seating/E2_1.jpg",
+      "data/images/images_assets/Seating/E2_2.jpg",
+      "data/images/images_assets/Seating/E2_3.jpg"
+    ],
+    "category": "FF&E",
+    "unit": "Count",
+    "quantity": 2,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": "Polymer: Thermoplastic 1-6",
+    "weight": {
+      "perUnit": 14,
+      "total": 28
+    },
+    "pathway": {
+      "suggested": "Reuse",
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": "PHQ Level 2",
+    "notes": {
+      "audit": "High-back padded black leather executive chair with arms.\nSeating register code E2 (Executive chair). 2 items counted from the 3D walkthrough, 2 seen in 2+ photos. Example photos: 00802.jpg, 00812.jpg, 00813.jpg, 00962.jpg, 00963.jpg, 00964.jpg.\nWeight per unit carried over from 'Task Chairs (various)' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "5b6723a2-9672-4895-b535-ee1c00a6d4e6",
+    "title": "Visitor chair – cantilever sled base, black (V1)",
+    "imageUrl": "data/images/images_assets/Seating/V1_1.jpg",
+    "images": [
+      "data/images/images_assets/Seating/V1_1.jpg",
+      "data/images/images_assets/Seating/V1_2.jpg",
+      "data/images/images_assets/Seating/V1_3.jpg"
+    ],
+    "category": "FF&E",
+    "unit": "Count",
+    "quantity": 28,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": null,
+    "weight": {
+      "perUnit": 14,
+      "total": 392
+    },
+    "pathway": {
+      "suggested": "Rehome",
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": "PHQ Level 2",
+    "notes": {
+      "audit": "Black upholstered or mesh back and seat on chrome/black cantilever sled frame; many with arms.\nSeating register code V1 (Visitor / meeting chair). 28 items counted from the 3D walkthrough, 26 seen in 2+ photos. Example photos: 00848.jpg, 00849.jpg, 00850.jpg, 00851.jpg, 00852.jpg, 00853.jpg.\nWeight per unit carried over from 'Conference Chairs' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "seat-v2",
+    "title": "Visitor chair – black mesh back, 4-leg, armless (V2)",
+    "imageUrl": "data/images/images_assets/Seating/V2_1.jpg",
+    "images": [
+      "data/images/images_assets/Seating/V2_1.jpg",
+      "data/images/images_assets/Seating/V2_2.jpg",
+      "data/images/images_assets/Seating/V2_3.jpg"
+    ],
+    "category": "FF&E",
+    "unit": "Count",
+    "quantity": 6,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": null,
+    "weight": {
+      "perUnit": 14,
+      "total": 84
+    },
+    "pathway": {
+      "suggested": "Rehome",
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": "PHQ Level 2",
+    "notes": {
+      "audit": "Black mesh back, black upholstered seat, black 4-leg steel frame.\nSeating register code V2 (Visitor / meeting chair). 6 items counted from the 3D walkthrough, 6 seen in 2+ photos. Example photos: 02530.jpg, 02531.jpg, 02532.jpg, 03052.jpg, 03053.jpg, 03054.jpg.\nWeight per unit carried over from 'Conference Chairs' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "seat-v3b",
+    "title": "Visitor armchair – beige fabric, black steel frame (V3B)",
+    "imageUrl": "data/images/images_assets/Seating/V3B_1.jpg",
+    "images": [
+      "data/images/images_assets/Seating/V3B_1.jpg",
+      "data/images/images_assets/Seating/V3B_2.jpg",
+      "data/images/images_assets/Seating/V3B_3.jpg"
+    ],
+    "category": "FF&E",
+    "unit": "Count",
+    "quantity": 25,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": null,
+    "weight": {
+      "perUnit": 14,
+      "total": 350
+    },
+    "pathway": {
+      "suggested": "Rehome",
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": "PHQ Level 2",
+    "notes": {
+      "audit": "Beige/oatmeal fabric seat and back, black tubular steel frame with arms.\nSeating register code V3B (Visitor / meeting chair). 25 items counted from the 3D walkthrough, 23 seen in 2+ photos. Example photos: 01187.jpg, 01188.jpg, 01189.jpg, 01190.jpg, 01225.jpg, 01226.jpg.\nWeight per unit carried over from 'Conference Chairs' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "seat-v3r",
+    "title": "Visitor armchair – red fabric, black steel frame (V3R)",
+    "imageUrl": "data/images/images_assets/Seating/V3R_1.jpg",
+    "images": [
+      "data/images/images_assets/Seating/V3R_1.jpg",
+      "data/images/images_assets/Seating/V3R_2.jpg",
+      "data/images/images_assets/Seating/V3R_3.jpg"
+    ],
+    "category": "FF&E",
+    "unit": "Count",
+    "quantity": 8,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": null,
+    "weight": {
+      "perUnit": 14,
+      "total": 112
+    },
+    "pathway": {
+      "suggested": "Rehome",
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": "PHQ Level 2",
+    "notes": {
+      "audit": "As V3B in red/burgundy fabric.\nSeating register code V3R (Visitor / meeting chair). 8 items counted from the 3D walkthrough, 6 seen in 2+ photos. Example photos: 01133.jpg, 01134.jpg, 01135.jpg, 01136.jpg, 01983.jpg, 01984.jpg.\nWeight per unit carried over from 'Conference Chairs' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "seat-v3u",
+    "title": "Visitor armchair – blue fabric, black steel frame (V3U)",
+    "imageUrl": "data/images/images_assets/Seating/V3U_1.jpg",
+    "images": [
+      "data/images/images_assets/Seating/V3U_1.jpg",
+      "data/images/images_assets/Seating/V3U_2.jpg"
+    ],
+    "category": "FF&E",
+    "unit": "Count",
+    "quantity": 4,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": null,
+    "weight": {
+      "perUnit": 14,
+      "total": 56
+    },
+    "pathway": {
+      "suggested": "Rehome",
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": "PHQ Level 2",
+    "notes": {
+      "audit": "As V3B in royal-blue fabric.\nSeating register code V3U (Visitor / meeting chair). 4 items counted from the 3D walkthrough, 3 seen in 2+ photos. Example photos: 03015.jpg, 03016.jpg, 03118.jpg, 03119.jpg, 03120.jpg, 03121.jpg.\nWeight per unit carried over from 'Conference Chairs' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "seat-v4",
+    "title": "Meeting chair – black mesh back, red seat, sled base (V4)",
+    "imageUrl": "data/images/images_assets/Seating/V4_1.jpg",
+    "images": [
+      "data/images/images_assets/Seating/V4_1.jpg",
+      "data/images/images_assets/Seating/V4_2.jpg",
+      "data/images/images_assets/Seating/V4_3.jpg"
+    ],
+    "category": "FF&E",
+    "unit": "Count",
+    "quantity": 15,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": null,
+    "weight": {
+      "perUnit": 14,
+      "total": 210
+    },
+    "pathway": {
+      "suggested": "Rehome",
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": "PHQ Level 2",
+    "notes": {
+      "audit": "Black mesh back, red upholstered seat, black sled base; some with arms.\nSeating register code V4 (Visitor / meeting chair). 15 items counted from the 3D walkthrough, 14 seen in 2+ photos. Example photos: 02650.jpg, 02651.jpg, 02652.jpg, 02653.jpg, 02654.jpg, 02655.jpg.\nWeight per unit carried over from 'Conference Chairs' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "ee8a209a-fb9d-4079-b3f5-7b92bb23179c",
+    "title": "Meeting armchair – black, 4-leg, loop arms (V5)",
+    "imageUrl": "data/images/images_assets/Seating/V5_1.jpg",
+    "images": [
+      "data/images/images_assets/Seating/V5_1.jpg",
+      "data/images/images_assets/Seating/V5_2.jpg",
+      "data/images/images_assets/Seating/V5_3.jpg"
+    ],
+    "category": "FF&E",
+    "unit": "Count",
+    "quantity": 18,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": null,
+    "weight": {
+      "perUnit": 14,
+      "total": 252
+    },
+    "pathway": {
+      "suggested": "Rehome",
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": "PHQ Level 2",
+    "notes": {
+      "audit": "Black upholstered/mesh back and seat, black 4-leg frame with loop arms.\nSeating register code V5 (Visitor / meeting chair). 18 items counted from the 3D walkthrough, 17 seen in 2+ photos. Example photos: 02531.jpg, 02622.jpg, 02623.jpg, 03098.jpg, 03099.jpg, 03113.jpg.\nWeight per unit carried over from 'Conference Chairs' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "seat-v7",
+    "title": "Meeting chair – black mesh back, blue seat (V7)",
+    "imageUrl": "data/images/images_assets/Seating/V7_1.jpg",
+    "images": [
+      "data/images/images_assets/Seating/V7_1.jpg",
+      "data/images/images_assets/Seating/V7_2.jpg",
+      "data/images/images_assets/Seating/V7_3.jpg"
+    ],
+    "category": "FF&E",
+    "unit": "Count",
+    "quantity": 9,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": null,
+    "weight": {
+      "perUnit": 14,
+      "total": 126
+    },
+    "pathway": {
+      "suggested": "Rehome",
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": "PHQ Level 2",
+    "notes": {
+      "audit": "Black mesh back, blue upholstered seat, black frame (boardroom set).\nSeating register code V7 (Visitor / meeting chair). 9 items counted from the 3D walkthrough, 8 seen in 2+ photos. Example photos: 03327.jpg, 03328.jpg, 03329.jpg, 03330.jpg, 03331.jpg, 03332.jpg.\nWeight per unit carried over from 'Conference Chairs' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "seat-v8",
+    "title": "Visitor chair – rounded black back, chrome sled (V8)",
+    "imageUrl": "data/images/images_assets/Seating/V8_1.jpg",
+    "images": [
+      "data/images/images_assets/Seating/V8_1.jpg",
+      "data/images/images_assets/Seating/V8_2.jpg"
+    ],
+    "category": "FF&E",
+    "unit": "Count",
+    "quantity": 2,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": null,
+    "weight": {
+      "perUnit": 14,
+      "total": 28
+    },
+    "pathway": {
+      "suggested": "Rehome",
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": "PHQ Level 2",
+    "notes": {
+      "audit": "Rounded black upholstered back, chrome sled base.\nSeating register code V8 (Visitor / meeting chair). 2 items counted from the 3D walkthrough, 1 seen in 2+ photos. Example photos: 02813.jpg, 03037.jpg, 03038.jpg, 03039.jpg.\nWeight per unit carried over from 'Conference Chairs' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "seat-v9",
+    "title": "Sled chair – green/grey fabric, chrome (V9)",
+    "imageUrl": "data/images/images_assets/Seating/V9_1.jpg",
+    "images": [
+      "data/images/images_assets/Seating/V9_1.jpg",
+      "data/images/images_assets/Seating/V9_2.jpg",
+      "data/images/images_assets/Seating/V9_3.jpg"
+    ],
+    "category": "FF&E",
+    "unit": "Count",
+    "quantity": 2,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": null,
+    "weight": {
+      "perUnit": 14,
+      "total": 28
+    },
+    "pathway": {
+      "suggested": "Rehome",
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": "PHQ Level 2",
+    "notes": {
+      "audit": "Green or grey fabric seat and back, chrome sled frame.\nSeating register code V9 (Visitor / meeting chair). 2 items counted from the 3D walkthrough, 2 seen in 2+ photos. Example photos: 00526.jpg, 00527.jpg, 00648.jpg, 00650.jpg, 00651.jpg.\nWeight per unit carried over from 'Conference Chairs' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "seat-v10",
+    "title": "Visitor armchair – green fabric, sled base (V10)",
+    "imageUrl": "data/images/images_assets/Seating/V10_1.jpg",
+    "images": [
+      "data/images/images_assets/Seating/V10_1.jpg",
+      "data/images/images_assets/Seating/V10_2.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -1542,9 +2759,1105 @@
       "partners": [],
       "partnersSupplementary": []
     },
-    "location": null,
+    "location": "PHQ Level 2",
     "notes": {
-      "audit": null,
+      "audit": "Green upholstered seat/back, black sled base with arms.\nSeating register code V10 (Visitor / meeting chair). 1 items counted from the 3D walkthrough, 1 seen in 2+ photos. Example photos: 01409.jpg, 02119.jpg, 02120.jpg.\nWeight per unit carried over from 'Conference Chairs' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "seat-m1",
+    "title": "Tub armchair – timber bentwood arms, red (M1)",
+    "imageUrl": "data/images/images_assets/Seating/M1_1.jpg",
+    "images": [
+      "data/images/images_assets/Seating/M1_1.jpg",
+      "data/images/images_assets/Seating/M1_2.jpg",
+      "data/images/images_assets/Seating/M1_3.jpg"
+    ],
+    "category": "FF&E",
+    "unit": "Count",
+    "quantity": 17,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": null,
+    "weight": {
+      "perUnit": 14,
+      "total": 238
+    },
+    "pathway": {
+      "suggested": "Rehome",
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": "PHQ Level 2",
+    "notes": {
+      "audit": "Timber frame with curved bentwood arms, red fabric seat and back.\nSeating register code M1 (Visitor / meeting chair). 17 items counted from the 3D walkthrough, 17 seen in 2+ photos. Example photos: 01235.jpg, 01258.jpg, 01515.jpg, 01516.jpg, 01517.jpg, 01532.jpg.\nWeight per unit carried over from 'Conference Chairs' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "seat-m2",
+    "title": "Side chair – timber frame, red fabric (M2)",
+    "imageUrl": "data/images/images_assets/Seating/M2_1.jpg",
+    "images": [
+      "data/images/images_assets/Seating/M2_1.jpg",
+      "data/images/images_assets/Seating/M2_2.jpg",
+      "data/images/images_assets/Seating/M2_3.jpg"
+    ],
+    "category": "FF&E",
+    "unit": "Count",
+    "quantity": 6,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": null,
+    "weight": {
+      "perUnit": 14,
+      "total": 84
+    },
+    "pathway": {
+      "suggested": "Rehome",
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": "PHQ Level 2",
+    "notes": {
+      "audit": "Timber frame side chair with red fabric seat and back.\nSeating register code M2 (Visitor / meeting chair). 6 items counted from the 3D walkthrough, 6 seen in 2+ photos. Example photos: 01258.jpg, 01269.jpg, 01270.jpg, 01508.jpg, 01509.jpg, 01510.jpg.\nWeight per unit carried over from 'Conference Chairs' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "seat-m3",
+    "title": "Side chair – burgundy fabric, dark steel frame (M3)",
+    "imageUrl": "data/images/images_assets/Seating/M3_1.jpg",
+    "images": [
+      "data/images/images_assets/Seating/M3_1.jpg",
+      "data/images/images_assets/Seating/M3_2.jpg",
+      "data/images/images_assets/Seating/M3_3.jpg"
+    ],
+    "category": "FF&E",
+    "unit": "Count",
+    "quantity": 18,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": null,
+    "weight": {
+      "perUnit": 14,
+      "total": 252
+    },
+    "pathway": {
+      "suggested": "Rehome",
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": "PHQ Level 2",
+    "notes": {
+      "audit": "Armless side chair, burgundy fabric, dark tubular steel frame.\nSeating register code M3 (Visitor / meeting chair). 18 items counted from the 3D walkthrough, 17 seen in 2+ photos. Example photos: 00608.jpg, 00609.jpg, 00610.jpg, 00627.jpg, 00628.jpg, 00629.jpg.\nWeight per unit carried over from 'Conference Chairs' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "seat-m4",
+    "title": "Side chair – timber, patterned fabric (M4)",
+    "imageUrl": "data/images/images_assets/Seating/M4_1.jpg",
+    "images": [
+      "data/images/images_assets/Seating/M4_1.jpg"
+    ],
+    "category": "FF&E",
+    "unit": "Count",
+    "quantity": 1,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": null,
+    "weight": {
+      "perUnit": 14,
+      "total": 14
+    },
+    "pathway": {
+      "suggested": "Rehome",
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": "PHQ Level 2",
+    "notes": {
+      "audit": "Timber frame side chair with patterned fabric.\nSeating register code M4 (Visitor / meeting chair). 1 items counted from the 3D walkthrough, 1 seen in 2+ photos. Example photos: 03889.jpg, 03972.jpg.\nWeight per unit carried over from 'Conference Chairs' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "seat-m5",
+    "title": "Side chair – olive patterned fabric (M5)",
+    "imageUrl": "data/images/images_assets/Seating/M5_1.jpg",
+    "images": [
+      "data/images/images_assets/Seating/M5_1.jpg",
+      "data/images/images_assets/Seating/M5_2.jpg",
+      "data/images/images_assets/Seating/M5_3.jpg"
+    ],
+    "category": "FF&E",
+    "unit": "Count",
+    "quantity": 2,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": null,
+    "weight": {
+      "perUnit": 14,
+      "total": 28
+    },
+    "pathway": {
+      "suggested": "Rehome",
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": "PHQ Level 2",
+    "notes": {
+      "audit": "Olive patterned fabric seat/back, black frame.\nSeating register code M5 (Visitor / meeting chair). 2 items counted from the 3D walkthrough, 2 seen in 2+ photos. Example photos: 04099.jpg, 04100.jpg, 04101.jpg, 04373.jpg, 04374.jpg, 04375.jpg.\nWeight per unit carried over from 'Conference Chairs' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "seat-b1",
+    "title": "Stacking chair – red polypropylene shell, chrome legs (B1)",
+    "imageUrl": "data/images/images_assets/Seating/B1_1.jpg",
+    "images": [
+      "data/images/images_assets/Seating/B1_1.jpg",
+      "data/images/images_assets/Seating/B1_2.jpg",
+      "data/images/images_assets/Seating/B1_3.jpg"
+    ],
+    "category": "FF&E",
+    "unit": "Count",
+    "quantity": 14,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": "Metal: Ferrous",
+    "weight": {
+      "perUnit": 5,
+      "total": 70
+    },
+    "pathway": {
+      "suggested": "Rehome",
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": "PHQ Level 2",
+    "notes": {
+      "audit": "Red moulded shell on chrome 4-leg frame (breakout/lunch).\nSeating register code B1 (Breakout chair). 14 items counted from the 3D walkthrough, 13 seen in 2+ photos. Example photos: 04111.jpg, 04112.jpg, 04113.jpg, 04114.jpg, 04115.jpg, 04116.jpg.\nWeight per unit carried over from 'Breakout Chairs (various)' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "acc6aab3-0aa9-45d5-b80c-9e4b56ae36e1",
+    "title": "Shell chair – black shell, timber legs (B2)",
+    "imageUrl": "data/images/images_assets/Seating/B2_1.jpg",
+    "images": [
+      "data/images/images_assets/Seating/B2_1.jpg",
+      "data/images/images_assets/Seating/B2_2.jpg",
+      "data/images/images_assets/Seating/B2_3.jpg"
+    ],
+    "category": "FF&E",
+    "unit": "Count",
+    "quantity": 18,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": "Metal: Ferrous",
+    "weight": {
+      "perUnit": 5,
+      "total": 90
+    },
+    "pathway": {
+      "suggested": "Rehome",
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": "PHQ Level 2",
+    "notes": {
+      "audit": "Black moulded shell (some with cushion) on timber 4-leg base.\nSeating register code B2 (Breakout chair). 18 items counted from the 3D walkthrough, 17 seen in 2+ photos. Example photos: 01199.jpg, 01200.jpg, 04122.jpg, 04123.jpg, 04124.jpg, 04125.jpg.\nWeight per unit carried over from 'Breakout Chairs (various)' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "seat-b3",
+    "title": "Stacking chair – lime green plastic (B3)",
+    "imageUrl": "data/images/images_assets/Seating/B3_1.jpg",
+    "images": [
+      "data/images/images_assets/Seating/B3_1.jpg",
+      "data/images/images_assets/Seating/B3_2.jpg",
+      "data/images/images_assets/Seating/B3_3.jpg"
+    ],
+    "category": "FF&E",
+    "unit": "Count",
+    "quantity": 2,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": "Metal: Ferrous",
+    "weight": {
+      "perUnit": 5,
+      "total": 10
+    },
+    "pathway": {
+      "suggested": "Rehome",
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": "PHQ Level 2",
+    "notes": {
+      "audit": "One-piece lime-green polypropylene stacking chair.\nSeating register code B3 (Breakout chair). 2 items counted from the 3D walkthrough, 2 seen in 2+ photos. Example photos: 01116.jpg, 01121.jpg, 01122.jpg, 01390.jpg, 01391.jpg, 01392.jpg.\nWeight per unit carried over from 'Breakout Chairs (various)' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "seat-b4",
+    "title": "Stacking chair – navy fabric, black frame (B4)",
+    "imageUrl": "data/images/images_assets/Seating/B4_1.jpg",
+    "images": [
+      "data/images/images_assets/Seating/B4_1.jpg",
+      "data/images/images_assets/Seating/B4_2.jpg",
+      "data/images/images_assets/Seating/B4_3.jpg"
+    ],
+    "category": "FF&E",
+    "unit": "Count",
+    "quantity": 2,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": "Metal: Ferrous",
+    "weight": {
+      "perUnit": 5,
+      "total": 10
+    },
+    "pathway": {
+      "suggested": "Rehome",
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": "PHQ Level 2",
+    "notes": {
+      "audit": "Navy fabric seat and back, black steel frame, armless.\nSeating register code B4 (Breakout chair). 2 items counted from the 3D walkthrough, 2 seen in 2+ photos. Example photos: 00653.jpg, 00698.jpg, 00699.jpg, 00700.jpg, 00701.jpg, 03855.jpg.\nWeight per unit carried over from 'Breakout Chairs (various)' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "seat-st",
+    "title": "Stool – black round seat (ST)",
+    "imageUrl": "data/images/images_assets/Seating/ST_1.jpg",
+    "images": [
+      "data/images/images_assets/Seating/ST_1.jpg",
+      "data/images/images_assets/Seating/ST_2.jpg"
+    ],
+    "category": "FF&E",
+    "unit": "Count",
+    "quantity": 1,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": "Metal: Ferrous",
+    "weight": {
+      "perUnit": 5,
+      "total": 5
+    },
+    "pathway": {
+      "suggested": "Rehome",
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": "PHQ Level 2",
+    "notes": {
+      "audit": "Low stool with round black seat.\nSeating register code ST (Breakout chair). 1 items counted from the 3D walkthrough, 1 seen in 2+ photos. Example photos: 03580.jpg, 03581.jpg.\nWeight per unit carried over from 'Breakout Chairs (various)' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "c4e92b7b-2966-4ac3-880f-61224f179b91",
+    "title": "Sofa 2-seat – red fabric (S1)",
+    "imageUrl": "data/images/images_assets/Seating/S1_1.jpg",
+    "images": [
+      "data/images/images_assets/Seating/S1_1.jpg",
+      "data/images/images_assets/Seating/S1_2.jpg"
+    ],
+    "category": "FF&E",
+    "unit": "Count",
+    "quantity": 4,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": null,
+    "weight": {
+      "perUnit": 20,
+      "total": 80
+    },
+    "pathway": {
+      "suggested": "Rehome",
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": "PHQ Level 2",
+    "notes": {
+      "audit": "Red/burgundy fabric two-seat sofa, block arms (paired with S1A in offices).\nSeating register code S1 (Sofa / lounge). 4 items counted from the 3D walkthrough, 4 seen in 2+ photos. Example photos: 00388.jpg, 00389.jpg, 03420.jpg, 03531.jpg, 03532.jpg, 03533.jpg.\nWeight per unit carried over from 'Lounge Chair (various)' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "seat-s1a",
+    "title": "Armchair – red fabric (matching S1) (S1A)",
+    "imageUrl": "data/images/images_assets/Seating/S1A_1.jpg",
+    "images": [
+      "data/images/images_assets/Seating/S1A_1.jpg",
+      "data/images/images_assets/Seating/S1A_2.jpg"
+    ],
+    "category": "FF&E",
+    "unit": "Count",
+    "quantity": 4,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": null,
+    "weight": {
+      "perUnit": 20,
+      "total": 80
+    },
+    "pathway": {
+      "suggested": "Rehome",
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": "PHQ Level 2",
+    "notes": {
+      "audit": "Single-seat red fabric block-arm armchair, matches S1.\nSeating register code S1A (Sofa / lounge). 4 items counted from the 3D walkthrough, 4 seen in 2+ photos. Example photos: 00109.jpg, 00110.jpg, 00399.jpg, 03480.jpg, 03530.jpg, 03532.jpg.\nWeight per unit carried over from 'Lounge Chair (various)' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "seat-l1",
+    "title": "Tub chair – red fabric (L1)",
+    "imageUrl": "data/images/images_assets/Seating/L1_1.jpg",
+    "images": [
+      "data/images/images_assets/Seating/L1_1.jpg",
+      "data/images/images_assets/Seating/L1_2.jpg",
+      "data/images/images_assets/Seating/L1_3.jpg"
+    ],
+    "category": "FF&E",
+    "unit": "Count",
+    "quantity": 3,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": null,
+    "weight": {
+      "perUnit": 20,
+      "total": 60
+    },
+    "pathway": {
+      "suggested": "Rehome",
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": "PHQ Level 2",
+    "notes": {
+      "audit": "Rounded red fabric tub chair.\nSeating register code L1 (Sofa / lounge). 3 items counted from the 3D walkthrough, 2 seen in 2+ photos. Example photos: 03558.jpg, 03559.jpg, 03560.jpg, 03561.jpg, 03562.jpg, 03827.jpg.\nWeight per unit carried over from 'Lounge Chair (various)' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "seat-l2",
+    "title": "Lounge chair – teal fabric (L2)",
+    "imageUrl": "data/images/images_assets/Seating/L2_1.jpg",
+    "images": [
+      "data/images/images_assets/Seating/L2_1.jpg",
+      "data/images/images_assets/Seating/L2_2.jpg",
+      "data/images/images_assets/Seating/L2_3.jpg"
+    ],
+    "category": "FF&E",
+    "unit": "Count",
+    "quantity": 4,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": null,
+    "weight": {
+      "perUnit": 20,
+      "total": 80
+    },
+    "pathway": {
+      "suggested": "Rehome",
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": "PHQ Level 2",
+    "notes": {
+      "audit": "Teal fabric lounge/tub chair with sculpted back.\nSeating register code L2 (Sofa / lounge). 4 items counted from the 3D walkthrough, 4 seen in 2+ photos. Example photos: 00523.jpg, 00524.jpg, 00652.jpg, 00653.jpg, 00654.jpg, 00655.jpg.\nWeight per unit carried over from 'Lounge Chair (various)' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "seat-l3",
+    "title": "Lounge armchair – charcoal fabric (L3)",
+    "imageUrl": "data/images/images_assets/Seating/L3_1.jpg",
+    "images": [
+      "data/images/images_assets/Seating/L3_1.jpg",
+      "data/images/images_assets/Seating/L3_2.jpg",
+      "data/images/images_assets/Seating/L3_3.jpg"
+    ],
+    "category": "FF&E",
+    "unit": "Count",
+    "quantity": 2,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": null,
+    "weight": {
+      "perUnit": 20,
+      "total": 40
+    },
+    "pathway": {
+      "suggested": "Rehome",
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": "PHQ Level 2",
+    "notes": {
+      "audit": "Charcoal fabric lounge armchair with scatter cushion.\nSeating register code L3 (Sofa / lounge). 2 items counted from the 3D walkthrough, 2 seen in 2+ photos. Example photos: 00795.jpg, 00796.jpg, 00797.jpg, 00798.jpg, 00799.jpg, 00800.jpg.\nWeight per unit carried over from 'Lounge Chair (various)' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "seat-s2",
+    "title": "Sofa 2-seat – black leather (S2)",
+    "imageUrl": "data/images/images_assets/Seating/S2_1.jpg",
+    "images": [
+      "data/images/images_assets/Seating/S2_1.jpg",
+      "data/images/images_assets/Seating/S2_2.jpg",
+      "data/images/images_assets/Seating/S2_3.jpg"
+    ],
+    "category": "FF&E",
+    "unit": "Count",
+    "quantity": 2,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": null,
+    "weight": {
+      "perUnit": 20,
+      "total": 40
+    },
+    "pathway": {
+      "suggested": "Rehome",
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": "PHQ Level 2",
+    "notes": {
+      "audit": "Black leather two-seat sofa.\nSeating register code S2 (Sofa / lounge). 2 items counted from the 3D walkthrough, 1 seen in 2+ photos. Example photos: 00255.jpg, 01684.jpg, 01764.jpg, 01775.jpg, 01776.jpg, 01777.jpg.\nWeight per unit carried over from 'Lounge Chair (various)' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "seat-s3",
+    "title": "Sofa 2-seat – teal/blue fabric (S3)",
+    "imageUrl": "data/images/images_assets/Seating/S3_1.jpg",
+    "images": [
+      "data/images/images_assets/Seating/S3_1.jpg",
+      "data/images/images_assets/Seating/S3_2.jpg"
+    ],
+    "category": "FF&E",
+    "unit": "Count",
+    "quantity": 1,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": null,
+    "weight": {
+      "perUnit": 20,
+      "total": 20
+    },
+    "pathway": {
+      "suggested": "Rehome",
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": "PHQ Level 2",
+    "notes": {
+      "audit": "Teal-blue fabric two-seat sofa.\nSeating register code S3 (Sofa / lounge). 1 items counted from the 3D walkthrough, 1 seen in 2+ photos. Example photos: 00424.jpg, 00426.jpg, 00427.jpg, 00428.jpg.\nWeight per unit carried over from 'Lounge Chair (various)' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "seat-s5",
+    "title": "Sofa – floral tapestry fabric (S5)",
+    "imageUrl": "data/images/images_assets/Seating/S5_1.jpg",
+    "images": [
+      "data/images/images_assets/Seating/S5_1.jpg",
+      "data/images/images_assets/Seating/S5_2.jpg",
+      "data/images/images_assets/Seating/S5_3.jpg"
+    ],
+    "category": "FF&E",
+    "unit": "Count",
+    "quantity": 2,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": null,
+    "weight": {
+      "perUnit": 20,
+      "total": 40
+    },
+    "pathway": {
+      "suggested": "Rehome",
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": "PHQ Level 2",
+    "notes": {
+      "audit": "Floral/tapestry fabric sofa with rolled arms.\nSeating register code S5 (Sofa / lounge). 2 items counted from the 3D walkthrough, 2 seen in 2+ photos. Example photos: 02676.jpg, 02677.jpg, 02678.jpg, 02679.jpg, 02680.jpg, 02681.jpg.\nWeight per unit carried over from 'Lounge Chair (various)' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": "estimate",
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "seat-unk",
+    "title": "Seating – unidentified (image quality)",
+    "imageUrl": "data/images/images_assets/Seating/UNK_1.jpg",
+    "images": [
+      "data/images/images_assets/Seating/UNK_1.jpg",
+      "data/images/images_assets/Seating/UNK_2.jpg",
+      "data/images/images_assets/Seating/UNK_3.jpg"
+    ],
+    "category": "FF&E",
+    "unit": "Count",
+    "quantity": 40,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": "Polymer: Thermoplastic 1-6",
+    "weight": {
+      "perUnit": 14,
+      "total": 560
+    },
+    "pathway": {
+      "suggested": "Reuse",
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": "PHQ Level 2",
+    "notes": {
+      "audit": "Detected as seating in 2+ photos but too dark/occluded to assign a model.\nSeating register code ? (Unidentified). 40 items counted from the 3D walkthrough, 20 seen in 2+ photos. Example photos: 00135.jpg, 00136.jpg, 00138.jpg, 00167.jpg, 00168.jpg, 00439.jpg.\nWeight per unit carried over from 'Task Chairs (various)' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
       "workshop": null
     },
     "embodiedCarbon": {
@@ -2957,66 +5270,6 @@
     "pathwayConfirmed": null
   },
   {
-    "id": "acc6aab3-0aa9-45d5-b80c-9e4b56ae36e1",
-    "title": "Breakout Chairs (various)",
-    "imageUrl": "data/images/images_assets/New Asset - 53.png",
-    "images": [
-      "data/images/images_assets/New Asset - 53.png",
-      "data/images/images_assets/Breakout Chairs - Textile - 2.jpg",
-      "data/images/images_assets/Breakout Chairs - Textile - 3.png",
-      "data/images/images_assets/Breakout Chairs (various) - 4.png",
-      "data/images/images_assets/Breakout Chairs (various) - 5.jpg"
-    ],
-    "category": "FF&E",
-    "unit": "Count",
-    "quantity": 30,
-    "manufacturer": null,
-    "supplier": null,
-    "dimensions": {
-      "height": null,
-      "depth": null,
-      "width": null
-    },
-    "primaryMaterialStream": "Metal: Ferrous",
-    "weight": {
-      "perUnit": 5,
-      "total": 150
-    },
-    "pathway": {
-      "suggested": "Rehome",
-      "suggestedId": null,
-      "partners": [],
-      "partnersSupplementary": []
-    },
-    "location": "1",
-    "notes": {
-      "audit": "Textile padding in grey",
-      "workshop": null
-    },
-    "embodiedCarbon": {
-      "perUnit": null,
-      "ecSource": "estimate",
-      "total": null
-    },
-    "wasteEmissions": {
-      "factor": null,
-      "efSource": null,
-      "potential": null
-    },
-    "pathwayNotes": {
-      "retain": null,
-      "reuse": null,
-      "adaptiveReuse": null,
-      "refurbish": null,
-      "recycle": null,
-      "disposal": null,
-      "rehome": null,
-      "remanufacture": null,
-      "stewardship": null
-    },
-    "pathwayConfirmed": null
-  },
-  {
     "id": "944ca922-b810-4dcf-9875-3db233bc2892",
     "title": "Door - Solid Core with Vent",
     "imageUrl": "data/images/images_assets/New Asset - 54.png",
@@ -3300,62 +5553,6 @@
     "pathwayConfirmed": null
   },
   {
-    "id": "0f55b1c4-9921-449c-a46e-f38479072b8e",
-    "title": "Task Chairs (various)",
-    "imageUrl": "data/images/images_assets/New Asset - 28.jpg",
-    "images": [
-      "data/images/images_assets/New Asset - 28.jpg"
-    ],
-    "category": "FF&E",
-    "unit": "Count",
-    "quantity": 200,
-    "manufacturer": null,
-    "supplier": null,
-    "dimensions": {
-      "height": null,
-      "depth": null,
-      "width": null
-    },
-    "primaryMaterialStream": "Polymer: Thermoplastic 1-6",
-    "weight": {
-      "perUnit": 14,
-      "total": 2800
-    },
-    "pathway": {
-      "suggested": "Reuse",
-      "suggestedId": null,
-      "partners": [],
-      "partnersSupplementary": []
-    },
-    "location": null,
-    "notes": {
-      "audit": null,
-      "workshop": null
-    },
-    "embodiedCarbon": {
-      "perUnit": null,
-      "ecSource": "estimate",
-      "total": null
-    },
-    "wasteEmissions": {
-      "factor": null,
-      "efSource": null,
-      "potential": null
-    },
-    "pathwayNotes": {
-      "retain": null,
-      "reuse": null,
-      "adaptiveReuse": null,
-      "refurbish": null,
-      "recycle": null,
-      "disposal": null,
-      "rehome": null,
-      "remanufacture": null,
-      "stewardship": null
-    },
-    "pathwayConfirmed": null
-  },
-  {
     "id": "ae069d66-8006-43d3-8e7a-9a2415686a15",
     "title": "Lockers - Beige",
     "imageUrl": "data/images/images_assets/Lockers - Beige - 4.jpg",
@@ -3504,62 +5701,6 @@
     "location": null,
     "notes": {
       "audit": "The standard door dimension is approximately 0.8m x 2.0m",
-      "workshop": null
-    },
-    "embodiedCarbon": {
-      "perUnit": null,
-      "ecSource": "estimate",
-      "total": null
-    },
-    "wasteEmissions": {
-      "factor": null,
-      "efSource": null,
-      "potential": null
-    },
-    "pathwayNotes": {
-      "retain": null,
-      "reuse": null,
-      "adaptiveReuse": null,
-      "refurbish": null,
-      "recycle": null,
-      "disposal": null,
-      "rehome": null,
-      "remanufacture": null,
-      "stewardship": null
-    },
-    "pathwayConfirmed": null
-  },
-  {
-    "id": "c4e92b7b-2966-4ac3-880f-61224f179b91",
-    "title": "Lounge Chair (various)",
-    "imageUrl": "data/images/images_assets/New Asset - 56.png",
-    "images": [
-      "data/images/images_assets/New Asset - 56.png"
-    ],
-    "category": "FF&E",
-    "unit": "Count",
-    "quantity": 1,
-    "manufacturer": null,
-    "supplier": null,
-    "dimensions": {
-      "height": null,
-      "depth": null,
-      "width": null
-    },
-    "primaryMaterialStream": null,
-    "weight": {
-      "perUnit": 20,
-      "total": 20
-    },
-    "pathway": {
-      "suggested": "Rehome",
-      "suggestedId": null,
-      "partners": [],
-      "partnersSupplementary": []
-    },
-    "location": null,
-    "notes": {
-      "audit": null,
       "workshop": null
     },
     "embodiedCarbon": {
@@ -4230,62 +6371,6 @@
     "weight": {
       "perUnit": 80,
       "total": 80
-    },
-    "pathway": {
-      "suggested": "Rehome",
-      "suggestedId": null,
-      "partners": [],
-      "partnersSupplementary": []
-    },
-    "location": null,
-    "notes": {
-      "audit": null,
-      "workshop": null
-    },
-    "embodiedCarbon": {
-      "perUnit": null,
-      "ecSource": "estimate",
-      "total": null
-    },
-    "wasteEmissions": {
-      "factor": null,
-      "efSource": null,
-      "potential": null
-    },
-    "pathwayNotes": {
-      "retain": null,
-      "reuse": null,
-      "adaptiveReuse": null,
-      "refurbish": null,
-      "recycle": null,
-      "disposal": null,
-      "rehome": null,
-      "remanufacture": null,
-      "stewardship": null
-    },
-    "pathwayConfirmed": null
-  },
-  {
-    "id": "5b6723a2-9672-4895-b535-ee1c00a6d4e6",
-    "title": "Conference Chairs",
-    "imageUrl": "data/images/images_assets/New Asset - 40.jpg",
-    "images": [
-      "data/images/images_assets/New Asset - 40.jpg"
-    ],
-    "category": "FF&E",
-    "unit": "Count",
-    "quantity": 7,
-    "manufacturer": null,
-    "supplier": null,
-    "dimensions": {
-      "height": null,
-      "depth": null,
-      "width": null
-    },
-    "primaryMaterialStream": null,
-    "weight": {
-      "perUnit": 14,
-      "total": 98
     },
     "pathway": {
       "suggested": "Rehome",
