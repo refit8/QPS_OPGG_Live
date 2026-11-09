@@ -148,7 +148,7 @@ def main():
         page.evaluate(
             """async ([n])=>{
               const raw=await (await fetch('data/assets.json')).json();
-              const all=Array.isArray(raw)?raw:raw.assets;
+              const all=(Array.isArray(raw)?raw:raw.assets).filter(a=>a.category!=='Out-of-Scope');   // Out-of-Scope items are not counted or ranked
               const rows=[...all].sort((a,b)=>b.weight.total-a.weight.total).slice(0,n);
               const esc=s=>String(s??'').replace(/&/g,'&amp;').replace(/</g,'&lt;');
               const tr=rows.map(a=>`<tr><td>${esc(a.title)}</td><td>${esc(a.category)}</td><td>${esc(a.primaryMaterialStream)}</td><td style="text-align:right">${a.quantity} ${esc(a.unit)}</td><td style="text-align:right">${a.weight.total.toLocaleString()}</td><td>${esc(a.pathway.suggested)}</td></tr>`).join('');

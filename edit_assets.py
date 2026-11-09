@@ -206,7 +206,7 @@ def blank_asset(new_id):
         "pathway": {"suggested": None, "suggestedId": None, "partners": [], "partnersSupplementary": []},
         "location": None,
         "notes": {"audit": None, "workshop": None},
-        "embodiedCarbon": {"perUnit": None, "ecSource": "estimate", "total": None},
+        "embodiedCarbon": {"perUnit": None, "ecSource": None, "total": None},
         "wasteEmissions": {"factor": None, "efSource": None, "potential": None},
         "pathwayNotes": {
             "retain": None, "reuse": None, "adaptiveReuse": None,
@@ -361,6 +361,7 @@ HTML = r"""<!DOCTYPE html>
   <header>
     <h1>OPGG BRI Asset Editor</h1>
     <p id="count-label">Loading…</p>
+    <p style="margin-top:6px"><a href="/review" style="font-size:12px;color:#e85d26;text-decoration:none;font-weight:600">Review submissions →</a></p>
   </header>
   <div id="search-wrap">
     <input id="search" type="text" placeholder="Search title, material, pathway…">
@@ -423,7 +424,7 @@ HTML = r"""<!DOCTYPE html>
         <div class="field">
           <label>Category</label>
           <select id="f-category">
-            <option>Built Form</option><option>FF&E</option><option>Services</option><option>Construction Waste</option>
+            <option>Built Form</option><option>FF&E</option><option>Services</option><option>Construction Waste</option><option>Out-of-Scope</option>
           </select>
         </div>
         <div class="field">
@@ -479,7 +480,7 @@ HTML = r"""<!DOCTYPE html>
         <div class="field"><label>EC Total (kgCO₂e) <em style="font-weight:400;color:#aaa">auto</em></label><input id="f-ec-total" class="calc" readonly></div>
         <div class="field">
           <label>EC Source</label>
-          <input id="f-ec-src" type="text" placeholder="estimate">
+          <input id="f-ec-src" type="text">
         </div>
         <div class="field"><label>WE Factor</label><input id="f-we-factor" type="number" step="any" oninput="recalc()"></div>
         <div class="field"><label>WE Potential (kgCO₂e) <em style="font-weight:400;color:#aaa">auto</em></label><input id="f-we-pot" class="calc" readonly></div>
@@ -669,7 +670,7 @@ function populateEditor(a) {
   // EC
   const ec = a.embodiedCarbon || {};
   setVal('f-ec-per', ec.perUnit);
-  setVal('f-ec-src', ec.ecSource || 'estimate');
+  setVal('f-ec-src', ec.ecSource || '');
 
   // WE
   const we = a.wasteEmissions || {};
@@ -1018,6 +1019,10 @@ fetchList();
 @app.route("/")
 def index():
     return HTML
+
+# Reviewer submissions (tick/cross screen) live in review_tool.py → http://localhost:5001/review
+import review_tool
+review_tool.register(app, load, save, DATA)
 
 # ── Launch ────────────────────────────────────────────────────────────────────
 if __name__ == "__main__":

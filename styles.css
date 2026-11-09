@@ -597,6 +597,7 @@ table.t td { padding: 9px 12px; font-size: 15px; vertical-align: middle; }
 .c-ffe       { background: #ede9fe; color: #5b21b6; }
 .c-services  { background: #e0f2fe; color: #0369a1; }
 .c-tradewaste { background: #fee2e2; color: #991b1b; }
+.c-oos        { background: #e5e5e5; color: #404040; }
 /* ALD Report origin tags */
 .c-ald-defit { background: var(--orange-dim); color: var(--orange); }
 .c-ald-trade { background: #e0f2fe; color: #0369a1; }

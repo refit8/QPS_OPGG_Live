@@ -1,0 +1,86 @@
+{
+  "appliedAt": "2026-11-06T14:40:50",
+  "sources": [
+    "review_2026-11-06_1356.json"
+  ],
+  "backup": "C:\\Users\\willa\\CodeDev\\opgg-bri-pilot\\review\\backups\\assets_before_review_2026-11-06_144050.json",
+  "accepted": [
+    {
+      "id": "eb0cc47c-2276-451f-b63d-1bef29f5dbfa",
+      "title": "Recessed Troffer Light",
+      "field": "pathway.partners",
+      "old": [],
+      "new": [
+        "ddd"
+      ],
+      "current": []
+    }
+  ],
+  "rejected": [
+    {
+      "id": "8a368c63-265c-4759-955d-2b44ae692daa",
+      "title": "Desk - Corner Square",
+      "field": "notes.workshop",
+      "old": null,
+      "new": "werqe",
+      "current": null
+    },
+    {
+      "id": "2eb2039b-eb5e-42fa-b7c5-0cd92d642059",
+      "title": "Workstation Partition",
+      "field": "pathway.suggested",
+      "old": "Recycle",
+      "new": "Reuse",
+      "current": "Recycle"
+    },
+    {
+      "id": "2eb2039b-eb5e-42fa-b7c5-0cd92d642059",
+      "title": "Workstation Partition",
+      "field": "pathway.partners",
+      "old": [
+        "Infrabuild"
+      ],
+      "new": [
+        "Home"
+      ],
+      "current": [
+        "Infrabuild"
+      ]
+    },
+    {
+      "id": "2eb2039b-eb5e-42fa-b7c5-0cd92d642059",
+      "title": "Workstation Partition",
+      "field": "notes.workshop",
+      "old": null,
+      "new": "This we want to ship back home",
+      "current": null
+    }
+  ],
+  "starredByReviewers": [
+    {
+      "id": "a2ae896d-b985-4984-a8c3-cb25f8d24ce2",
+      "title": "Carpet Tile - Grey",
+      "quantity": 3214,
+      "unit": "Area (m2)"
+    },
+    {
+      "id": "dbe0ccb7-f35d-4e56-ab9f-d511e9b11edd",
+      "title": "Ceiling Tile",
+      "quantity": 3061.04,
+      "unit": "Area (m2)"
+    },
+    {
+      "id": "2eb2039b-eb5e-42fa-b7c5-0cd92d642059",
+      "title": "Workstation Partition",
+      "quantity": 496,
+      "unit": "Linear Metre (m)"
+    },
+    {
+      "id": "305053ae-f6b1-404d-90a6-d47186e6b6fb",
+      "title": "Workstation Pod - Desk Left",
+      "quantity": 163,
+      "unit": "Count"
+    }
+  ],
+  "skipped": []
+}

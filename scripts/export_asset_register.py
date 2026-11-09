@@ -51,14 +51,19 @@ for row in ws.iter_rows(min_row=2, min_col=5, max_col=6):
         cell.number_format = "#,##0.0##" if cell.column == 6 else "#,##0.##"
 
 about = wb.create_sheet("About")
+# Out-of-Scope assets stay listed on the register sheet but are not counted anywhere
+oos_n = sum(1 for a in assets if a["category"] == "Out-of-Scope")
 rows = [
     ("Olympic and Paralympic Games Accommodation Level 13: Asset Register", ""),
     ("Generated", date.today().isoformat()),
-    ("Assets", len(assets)),
+    ("Assets", len(assets) - oos_n),
     ("Source", "Olympic and Paralympic Games Accommodation portal (data/assets.json)"),
     ("Notes", "Photos and estimated emissions values are excluded. "
               "View the portal for the latest data, images and interactive charts."),
 ]
+if oos_n:
+    rows.insert(3, ("Out-of-scope", f"{oos_n} further item(s) are listed on the register sheet for completeness "
+                                    "but are excluded from all counts and totals."))
 for r in rows:
     about.append(r)
 about["A1"].font = Font(bold=True, size=14)

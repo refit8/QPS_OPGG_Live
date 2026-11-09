@@ -1,5 +1,16 @@
 [
   {
+    "name": "ACE",
+    "featured": false,
+    "role": "Recycle",
+    "itemMain": null,
+    "materialMain": null,
+    "location": null,
+    "logo": "ace_logo.png",
+    "hover_display": null,
+    "oversight": false
+  },
+  {
     "name": "ALD",
     "featured": true,
     "role": "Recycle",
@@ -8,6 +19,17 @@
     "location": null,
     "logo": "ALD_logo.png",
     "hover_display": "materialMain",
+    "oversight": false
+  },
+  {
+    "name": "BMI",
+    "featured": false,
+    "role": "Dispose",
+    "itemMain": null,
+    "materialMain": null,
+    "location": null,
+    "logo": "bmi_logo.png",
+    "hover_display": null,
     "oversight": false
   },
   {
@@ -30,6 +52,17 @@
     "location": null,
     "logo": "infrabuild_logo.png",
     "hover_display": "materialMain",
+    "oversight": false
+  },
+  {
+    "name": "Loop",
+    "featured": false,
+    "role": "Rehome",
+    "itemMain": null,
+    "materialMain": null,
+    "location": null,
+    "logo": "loop_logo.png",
+    "hover_display": null,
     "oversight": false
   },
   {
@@ -66,7 +99,7 @@
     "oversight": false
   },
   {
-    "name": "Redirect",
+    "name": "ReDirect",
     "featured": false,
     "role": "Recycle",
     "itemMain": "Timber Floor-to-Ceiling Screen (standard)",
@@ -77,7 +110,7 @@
     "oversight": false
   },
   {
-    "name": "Regyp",
+    "name": "REGYP",
     "featured": false,
     "role": "Recycle",
     "itemMain": "Plasterboard Partition Wall",
@@ -88,7 +121,7 @@
     "oversight": false
   },
   {
-    "name": "Relove",
+    "name": "ReLove",
     "featured": false,
     "role": "Rehome",
     "itemMain": "Workstation Tabletops",
@@ -117,6 +150,17 @@
     "materialMain": "Polymer: Thermoplastic 1-6",
     "location": null,
     "logo": "tra_logo.png",
+    "hover_display": null,
+    "oversight": false
+  },
+  {
+    "name": "Wanless",
+    "featured": false,
+    "role": "Dispose",
+    "itemMain": null,
+    "materialMain": null,
+    "location": null,
+    "logo": "wanless_logo.png",
     "hover_display": null,
     "oversight": false
   },

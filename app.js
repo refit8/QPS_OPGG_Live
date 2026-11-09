@@ -1,5 +1,9 @@
 /* fetchJSON helper */
 function fetchJSON(url) {
+  /* Review package: data is embedded (package-data.js) because browsers block fetch() on file:// */
+  if (window.R8_EMBEDDED && Object.prototype.hasOwnProperty.call(window.R8_EMBEDDED, url)) {
+    return Promise.resolve(JSON.parse(JSON.stringify(window.R8_EMBEDDED[url])));
+  }
   return fetch(url).then(function(r){
     if (!r.ok) throw new Error('HTTP ' + r.status);
     return r.json();
@@ -32,14 +36,15 @@ const PW = {
 };
 
 /* ── Category → CSS class / display label ── */
-const TAG  = { builtform:'c-builtform', ffe:'c-ffe', services:'c-services', tradewaste:'c-tradewaste' };
-const TAGL = { builtform:'Built Form',  ffe:'FF&E',  services:'Services',   tradewaste:'Construction Waste'  };
+const TAG  = { builtform:'c-builtform', ffe:'c-ffe', services:'c-services', tradewaste:'c-tradewaste', oos:'c-oos' };
+const TAGL = { builtform:'Built Form',  ffe:'FF&E',  services:'Services',   tradewaste:'Construction Waste', oos:'Out-of-Scope'  };
 
 function catTag(cat) {
   if (cat === 'Built Form')  return 'builtform';
   if (cat === 'FF&E')        return 'ffe';
   if (cat === 'Services')    return 'services';
   if (cat === 'Construction Waste') return 'tradewaste';
+  if (cat === 'Out-of-Scope')       return 'oos';
   return 'builtform';
 }
 
@@ -70,7 +75,7 @@ function normaliseAsset(r) {
     pNotes:   r.pathwayNotes || {},
     confirmed: (typeof r.pathwayConfirmed === 'boolean') ? r.pathwayConfirmed : null,
     reused:   r.intoNewFitout === true,
-    excluded: r.excludeFromStats === true,
+    excluded: r.excludeFromStats === true || r.category === 'Out-of-Scope',
   };
 }
 
@@ -89,7 +94,7 @@ let activeQuickView = 'all';
 
 function fmt(n)    { return Math.round(n).toLocaleString(); }
 function fmtWt(kg) { return kg >= 1000 ? (kg/1000).toFixed(1)+'t' : fmt(kg)+'kg'; }
-function maxKg()   { return Math.max(...ASSETS.map(a => a.kg || 0)); }
+function maxKg()   { return Math.max(...statsAssets().map(a => a.kg || 0)); }   /* in-scope only, so an Out-of-Scope item can't squash every bar */
 
 /* ── Starred assets: per-browser favourites (localStorage, keyed by asset id) ──
    "Starred first" toggle floats starred rows above the rest under any sort.
@@ -119,6 +124,7 @@ function toggleStar(id) {
   if (selIdx >= 0) selAsset(selIdx);
   syncStarBtn();
   if (typeof renderSpotlight === 'function') renderSpotlight();
+  if (window.R8Review) R8Review.onStarChange();   /* review package only */
 }
 function toggleStarFirst() {
   starFirst = !starFirst;
@@ -222,7 +228,7 @@ function renderAll() {
   const cols = orderedRegColumns();
   document.getElementById('tbody').innerHTML = filtered.map((a, i) => {
     const idx = ASSETS.indexOf(a);
-    const pct = a.kg ? Math.round(a.kg / mx * 100) : 0;
+    const pct = a.kg ? Math.min(100, Math.round(a.kg / mx * 100)) : 0;
     const tds = cols.map(c => `<td>${c.cell(a, {pct})}</td>`).join('');
     const next = filtered[i + 1];
     const cls = (starFirst && isStarred(a) && next && !isStarred(next)) ? ' class="star-end"' : '';
@@ -249,6 +255,7 @@ function renderAll() {
   document.getElementById('cnt').textContent = 'Showing ' + filtered.length + ' of ' + ASSETS.length + ' assets';
   const rc = document.getElementById('regCount');
   if (rc) rc.textContent = filtered.length + ' records';
+  if (window.R8Review) R8Review.afterRender();   /* review package only */
 }
 
 /* ── Pathway Board (kanban by pathway) ── */
@@ -259,11 +266,12 @@ function renderBoard() {
   filtered.forEach(a => { (groups[a.pw] = groups[a.pw] || []).push(a); });
   c.innerHTML = Object.keys(PW).filter(pw => groups[pw] && groups[pw].length).map(pw => {
     const items = groups[pw];
-    const kg = items.reduce((s, a) => s + (a.kg || 0), 0);
+    const counted = items.filter(a => a.cat !== 'Out-of-Scope');   /* Out-of-Scope cards still show, but never count towards a column total */
+    const kg = counted.reduce((s, a) => s + (a.kg || 0), 0);
     return `<div class="b-col">
       <div class="b-col-hd">
         <span class="pw-badge ${PW[pw]||''}">${pw}</span>
-        <span class="bc-count">${items.length}</span>
+        <span class="bc-count">${counted.length}</span>
         <span class="bc-kg">· ${fmtWt(kg)}</span>
       </div>
       <div class="b-cards">` + items.map(a => {
@@ -706,11 +714,6 @@ function selAsset(idx) {
 
   const a  = ASSETS[idx];
   const tc = TAG[a.tag] || '';
-  const ecVal = a.ec !== 0
-    ? (a.ec < 0
-        ? '<span style="color:#16a34a">' + Math.round(a.ec) + ' kgCO2e</span>'
-        : Math.round(a.ec) + ' kgCO2e')
-    : '&#8212;';
 
   const confirmedBadge = p => '<span style="display:inline-block;background:#d1fae5;color:#065f46;border-radius:4px;padding:2px 7px;font-size:13.8px;margin:2px 2px 0 0">' + p + '</span>';
   const suppBadge      = p => '<span style="display:inline-block;background:var(--orange-dim);color:var(--orange);border-radius:4px;padding:2px 7px;font-size:13.8px;margin:2px 2px 0 0">' + p + '</span>';
@@ -746,12 +749,10 @@ function selAsset(idx) {
     '<div class="dfact"><div class="fl">Quantity</div><div class="fv">' + (a.qty||0).toLocaleString() + '</div></div>' +
     '<div class="dfact"><div class="fl">Unit</div><div class="fv" style="font-size: 13.8px;font-family:var(--font)">' + a.unit + '</div></div>' +
     '<div class="dfact"><div class="fl">Total Weight</div><div class="fv">' + fmtWt(a.kg) + '</div></div>' +
-    '<div class="dfact"><div class="fl">Embodied Carbon</div><div class="fv">' + ecVal + '</div></div>' +
     '<div class="dfact" style="grid-column:1/-1"><div class="fl">Material Stream</div><div class="fv" style="font-size: 13.8px;font-family:var(--font)">' + (a.mat||'&#8212;') + '</div></div>' +
     (a.mfr ? '<div class="dfact"><div class="fl">Manufacturer</div><div class="fv" style="font-size: 13.8px">' + a.mfr + '</div></div>' : '') +
     (a.sup ? '<div class="dfact"><div class="fl">Supplier</div><div class="fv" style="font-size: 13.8px">' + a.sup + '</div></div>' : '') +
     (a.loc ? '<div class="dfact" style="grid-column:1/-1"><div class="fl">Location</div><div class="fv" style="font-size: 13.8px">' + a.loc + '</div></div>' : '') +
-    '<div class="dfact"><div class="fl">Pathway Confirmed</div><div class="fv" style="font-size: 13.8px;font-family:var(--font);color:' + (a.confirmed===true?'#16a34a':a.confirmed===false?'#dc2626':'var(--ink-4)') + '">' + (a.confirmed===true?'Confirmed':a.confirmed===false?'Not Confirmed':'Pending') + '</div></div>' +
     '<div class="dfact" style="grid-column:1/-1"><div class="fl">Pathway Partners</div><div class="fv">' + partnersHtml + '</div></div>' +
   '</div>' +
   (function(){
@@ -766,6 +767,7 @@ function selAsset(idx) {
   })();
 
   document.getElementById('detailInner').innerHTML = html;
+  if (window.R8Review) R8Review.decorate(idx);   /* review package only */
 }
 
 /* ── Swap the main detail photo when a gallery thumbnail is clicked ── */
@@ -781,12 +783,14 @@ function setDetailImg(assetIdx, i) {
   document.querySelectorAll('.d-img-thumb').forEach((t, ti) => t.classList.toggle('active', ti === i));
 }
 
+/* ── Out-of-Scope assets are listed in the asset register only (so the client can see they were identified)
+   and are left out of EVERY total, chart and calculation. Charts apply the same rule in their own filters. ── */
 /* ── Construction Waste is a separate material stream (tracked outside the fitout defit dataset).
    Assets flagged excludeFromStats in assets.json (e.g. Perimeter Blinds, pending base-build confirmation)
    stay in the register but are likewise left out of every total.
    Excluded from every KPI / chart total below; shown only in the (currently removed) ALD Report tab. ── */
 function statsAssets() {
-  return ASSETS.filter(a => a.cat !== 'Construction Waste' && !a.excluded);
+  return ASSETS.filter(a => a.cat !== 'Construction Waste' && a.cat !== 'Out-of-Scope' && !a.excluded);
 }
 
 /* ── KPI computations (shared) ── */
@@ -911,7 +915,7 @@ function initHomeStats() {
   const s   = computeStats();
   const set = (id, html) => { const e = document.getElementById(id); if (e) e.innerHTML = html; };
   set('home-total-wt',  (s.totalKg / 1000).toFixed(1) + '<span class="hs-unit">tonnes</span>');
-  set('home-diversion', s.divRate.toFixed(1) + '<span class="hs-unit">%</span>');
+  // home-diversion shows the fixed project target (90%, set in opgg-bri-portal.html), not the live planned rate
   set('home-assets',    new Set(statsAssets().map(a => a.n.replace(/\s*\(R\)\s*/i,'').trim())).size);
   set('home-nla',       NLA_M2.toLocaleString() + '<span class="hs-unit">m²</span>');
 }
@@ -1111,6 +1115,7 @@ function r8fitIframe(iframe, lbId, minH) {
   if (!iframe) return;
   var lb = document.getElementById(lbId);
   iframe.style.height = (minH || 900) + 'px';
+  iframe.dataset.minH = minH || 200;
   function measure() {
     try {
       var doc = iframe.contentDocument || iframe.contentWindow.document;
@@ -1140,6 +1145,18 @@ function r8fitIframe(iframe, lbId, minH) {
     } catch(e) {}
   });
 }
+
+/* Height reported by a chart page via postMessage. The direct measurement above is blocked by the browser
+   when the portal is opened from disk (file://, e.g. the offline review package), because each file counts
+   as a different origin. The package build adds a small sender script to its chart pages; on the live site
+   no chart sends this message, so this listener never fires there. */
+window.addEventListener('message', function(e) {
+  var d = e.data;
+  if (!d || d.type !== 'r8-chart-height' || !(d.height > 100)) return;
+  document.querySelectorAll('iframe').forEach(function(f) {
+    if (f.contentWindow === e.source) f.style.height = (Math.max(d.height, +f.dataset.minH || 200) + 16) + 'px';
+  });
+});
 
 function remeasureOverviewIframes() {
   ['fr-flow','fr-pyr','fr-outflow','fr-sust','fr-reuse'].forEach(function(id) {
@@ -1341,6 +1358,7 @@ initSplash();
 async function loadData() {
   try {
     const raw = await fetchJSON('data/assets.json');
+    if (window.R8Review) R8Review.applyToRaw(raw);   /* review package only: lay reviewer edits over the data */
     ASSETS   = raw.map(normaliseAsset);
     filtered = [...ASSETS];
     initOverviewStats();
