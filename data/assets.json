@@ -8302,8 +8302,10 @@
   {
     "id": "ce0e7cba-8b7f-4706-b7d7-b1a8ea3db81f",
     "title": "ZIP Tap - 2-in-1",
-    "imageUrl": null,
-    "images": [],
+    "imageUrl": "data/images/images_assets/ZIP Tap - 2-in-1.png",
+    "images": [
+      "data/images/images_assets/ZIP Tap - 2-in-1.png"
+    ],
     "category": "Services",
     "unit": "Count",
     "quantity": 1,
@@ -8834,12 +8836,15 @@
       "suggested": "Retain",
       "suggestedId": null,
       "partners": [],
-      "partnersSupplementary": []
+      "partnersSupplementary": [
+        "ALD",
+        "JR Hammer"
+      ]
     },
     "location": null,
     "notes": {
       "audit": null,
-      "workshop": "Cable removed during strip-out to be recycled (ALD)"
+      "workshop": "Cable removed during strip-out to be recycled (ALD)."
     },
     "embodiedCarbon": {
       "perUnit": null,
@@ -8852,11 +8857,11 @@
       "potential": null
     },
     "pathwayNotes": {
-      "retain": "Live cabling is retained in place. Cable removed during strip-out is to be isolated and disconnected from all equipment first, stripped of fittings, consolidated in the cable bin and recycled via pathway partner.",
+      "retain": "Live cabling is retained in place. Cable removed during strip-out is to be isolated and disconnected from all equipment first, stripped of fittings, consolidated in the cable bin and recycled via supplementary pathway partner.",
       "reuse": null,
       "adaptiveReuse": null,
       "refurbish": null,
-      "recycle": null,
+      "recycle": "Redundant data and electrical cables to be isolated and made safe then placed in cable bin for recycling via pathway partner.",
       "disposal": null,
       "rehome": null,
       "remanufacture": null,
@@ -9272,8 +9277,10 @@
   {
     "id": "14ebe09a-e207-4204-a9a9-ddee46ad885d",
     "title": "Door Jamb - Glass Pane",
-    "imageUrl": null,
-    "images": [],
+    "imageUrl": "data/images/images_assets/Door Jamb - Glass Pane.png",
+    "images": [
+      "data/images/images_assets/Door Jamb - Glass Pane.png"
+    ],
     "category": "Built Form",
     "unit": "Count",
     "quantity": 1,
@@ -10380,8 +10387,10 @@
   {
     "id": "1fd30c11-e850-4026-ba3b-753820f0a142",
     "title": "Wall Stud and Track",
-    "imageUrl": null,
-    "images": [],
+    "imageUrl": "data/images/images_assets/Wall Stud and Track.png",
+    "images": [
+      "data/images/images_assets/Wall Stud and Track.png"
+    ],
     "category": "Built Form",
     "unit": "Linear Metre (m)",
     "quantity": 1,
@@ -10436,8 +10445,10 @@
   {
     "id": "9f294591-e107-442b-ad78-1f6bac94a995",
     "title": "Wall Insulation Batts",
-    "imageUrl": null,
-    "images": [],
+    "imageUrl": "data/images/images_assets/Wall Insulation Batts.png",
+    "images": [
+      "data/images/images_assets/Wall Insulation Batts.png"
+    ],
     "category": "Built Form",
     "unit": "Volume (m3)",
     "quantity": 1,
@@ -10463,7 +10474,7 @@
     },
     "location": null,
     "notes": {
-      "audit": "Confirm insulation type and if possible to remanufacture through Planet Protector's Jeanius product",
+      "audit": "Confirm insulation type and if possible to remanufacture through Planet Protector's Jeanius product. Insulation to be removed and bagged for bailing. Upcycled via pathway partner into new polyester materials.",
       "workshop": null
     },
     "embodiedCarbon": {
@@ -10782,8 +10793,10 @@
   {
     "id": "74ecacfe-e0ec-421c-a124-c0bb72f54724",
     "title": "HVAC Ducting - Rigid",
-    "imageUrl": null,
-    "images": [],
+    "imageUrl": "data/images/images_assets/HVAC Ducting - Rigid.png",
+    "images": [
+      "data/images/images_assets/HVAC Ducting - Rigid.png"
+    ],
     "category": "Out-of-Scope",
     "unit": "Linear Metre (m)",
     "quantity": 1,
@@ -10807,7 +10820,7 @@
     },
     "location": null,
     "notes": {
-      "audit": null,
+      "audit": "Image is from a previous audit as no access to ceiling services",
       "workshop": "If any redundant mech services, update pathway accordingly and change from out-of-scope to services"
     },
     "embodiedCarbon": {
@@ -10836,8 +10849,10 @@
   {
     "id": "9f7a3550-4695-4cac-83a0-7a3ed07d2923",
     "title": "HVAC Ducting - Flexible",
-    "imageUrl": null,
-    "images": [],
+    "imageUrl": "data/images/images_assets/HVAC Ducting - Flexible.png",
+    "images": [
+      "data/images/images_assets/HVAC Ducting - Flexible.png"
+    ],
     "category": "Out-of-Scope",
     "unit": "Linear Metre (m)",
     "quantity": 1,
@@ -10861,7 +10876,7 @@
     },
     "location": null,
     "notes": {
-      "audit": null,
+      "audit": "Image is from a previous audit as no access to ceiling services",
       "workshop": "If any redundant mech services, update pathway accordingly and change from out-of-scope to services"
     },
     "embodiedCarbon": {
@@ -10890,8 +10905,10 @@
   {
     "id": "829d0abc-a91e-4256-8a49-32b4c98d42fb",
     "title": "Blinds - Perimeter",
-    "imageUrl": null,
-    "images": [],
+    "imageUrl": "data/images/images_assets/Blinds - Perimeter.png",
+    "images": [
+      "data/images/images_assets/Blinds - Perimeter.png"
+    ],
     "category": "Out-of-Scope",
     "unit": "Linear Metre (m)",
     "quantity": 1,
