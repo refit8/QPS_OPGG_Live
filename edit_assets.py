@@ -203,7 +203,7 @@ def blank_asset(new_id):
         "dimensions": {"height": None, "depth": None, "width": None},
         "primaryMaterialStream": None,
         "weight": {"perUnit": None, "total": None},
-        "pathway": {"suggested": None, "suggestedId": None, "partners": [], "partnersSupplementary": []},
+        "pathway": {"suggested": None, "partners": [], "partnersSupplementary": []},
         "location": None,
         "notes": {"audit": None, "workshop": None},
         "embodiedCarbon": {"perUnit": None, "ecSource": None, "total": None},
@@ -213,7 +213,6 @@ def blank_asset(new_id):
             "refurbish": None, "recycle": None, "disposal": None,
             "rehome": None, "remanufacture": None, "stewardship": None,
         },
-        "pathwayConfirmed": None,
     }
 
 # ── Frontend (inline HTML) ────────────────────────────────────────────────────

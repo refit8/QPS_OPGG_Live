@@ -15,13 +15,43 @@ from flask import jsonify, request
 
 # Fields a reviewer is allowed to change (anything else in a file is ignored and flagged)
 FIELDS = {
+    "quantity":                      "Quantity",
+    "location":                      "Location",
+    "manufacturer":                  "Manufacturer",
+    "supplier":                      "Supplier",
+    "primaryMaterialStream":         "Primary material stream",
     "pathway.suggested":             "Pathway",
     "pathway.partners":              "Primary partner(s)",
     "pathway.partnersSupplementary": "Supplementary partner(s)",
+    "weight.perUnit":                "Weight per unit (kg)",
     "notes.workshop":                "Workshop notes",
-    "manufacturer":                  "Manufacturer",
-    "supplier":                      "Supplier",
+    "pathwayNotes.retain":           "Pathway note: Retain",
+    "pathwayNotes.reuse":            "Pathway note: Reuse",
+    "pathwayNotes.adaptiveReuse":    "Pathway note: Adaptive Reuse",
+    "pathwayNotes.refurbish":        "Pathway note: Refurbish",
+    "pathwayNotes.recycle":          "Pathway note: Recycle",
+    "pathwayNotes.disposal":         "Pathway note: Dispose",
+    "pathwayNotes.rehome":           "Pathway note: Rehome",
+    "pathwayNotes.remanufacture":    "Pathway note: Remanufacture",
+    "pathwayNotes.stewardship":      "Pathway note: Stewardship",
 }
+NUMBER_FIELDS = {"quantity", "weight.perUnit"}
+REQUIRED_FIELDS = set()
+CATEGORIES = {"Built Form", "FF&E", "Services", "Construction Waste", "Out-of-Scope"}
+UNITS = {"Count", "Mass (kg)", "Area (m2)", "Linear Metre (m)", "Volume (m3)"}
+# Totals are calculated from these, exactly as the owner's editor (edit_assets.py recalc) does
+TOTAL_INPUTS = {"quantity", "weight.perUnit"}
+
+
+def recalc_totals(a):
+    q = float(a.get("quantity") or 0)
+    wp = float(get_path(a, "weight.perUnit") or 0)
+    ep = float(get_path(a, "embodiedCarbon.perUnit") or 0)
+    wf = float(get_path(a, "wasteEmissions.factor") or 0)
+    wt = q * wp
+    set_path(a, "weight.total", round(wt, 4) if wt else None)
+    set_path(a, "embodiedCarbon.total", round(q * ep, 4) if q * ep else None)
+    set_path(a, "wasteEmissions.potential", round(wf * wt, 6) if wf * wt else None)
 LIST_FIELDS = {"pathway.partners", "pathway.partnersSupplementary"}
 PATHWAYS = {"Retain", "Reuse", "Adaptive Reuse", "Refurbish", "Remanufacture",
             "Rehome", "Stewardship", "Recycle", "Dispose"}
@@ -50,8 +80,19 @@ def valid_value(field, val):
     if field in LIST_FIELDS:
         if not isinstance(val, list) or not all(isinstance(x, str) and x.strip() for x in val):
             return "expected a list of names"
+    elif field in NUMBER_FIELDS:
+        if val is not None and (isinstance(val, bool) or not isinstance(val, (int, float))):
+            return "expected a number"
+        if val is not None and field == "quantity" and val < 0:
+            return "quantity cannot be negative"
     elif val is not None and not isinstance(val, str):
         return "expected text"
+    if field in REQUIRED_FIELDS and (val is None or str(val).strip() == ""):
+        return "cannot be blank"
+    if field == "category" and val not in CATEGORIES:
+        return f"'{val}' is not a known category"
+    if field == "unit" and val is not None and val not in UNITS:
+        return f"'{val}' is not a known unit"
     if field == "pathway.suggested" and val is not None and val not in PATHWAYS:
         return f"'{val}' is not a known pathway"
     return None
@@ -137,7 +178,7 @@ def register(app, load, save, data_path: Path):
                         "title": (a or {}).get("title") or c.get("title") or "(unknown asset)",
                         "sources": [name], "image": None, "current": None, "status": "clean", "message": None}
                 if field not in FIELDS:
-                    item.update(status="invalid", message="This field is not editable by reviewers, so it is ignored.")
+                    item.update(status="invalid", message="This field is fixed (not editable), so it is ignored.")
                 elif a is None:
                     item.update(status="invalid", message="This asset no longer exists in your data.")
                 else:
@@ -229,6 +270,8 @@ def register(app, load, save, data_path: Path):
             elif isinstance(val, str) and val.strip() == "":
                 val = None
             set_path(by_id[c["id"]], c["field"], val)
+        for aid in {c["id"] for c in accepted if c["field"] in TOTAL_INPUTS}:
+            recalc_totals(by_id[aid])
         if accepted:
             save(assets)
 

@@ -5,6 +5,7 @@ double-clicking, with no Python, server or internet needed for the portal itself
     python scripts/build_review_package.py                  # web-sized images, version = today + letter
     python scripts/build_review_package.py --images full    # original images (very large)
     python scripts/build_review_package.py --zip            # also write a .zip next to the folder
+    python scripts/build_review_package.py --view-only --zip  # read-only copy: no editing UI, no export
     python scripts/build_review_package.py --version 2026-11-12-a --max-edge 1200
 
 What it does
@@ -277,11 +278,14 @@ def main():
     ap.add_argument("--images", choices=["web", "full"], default="web")
     ap.add_argument("--max-edge", type=int, default=1400, help="longest image edge in px for --images web")
     ap.add_argument("--zip", action="store_true", help="also create a .zip of the package")
+    ap.add_argument("--view-only", action="store_true",
+                    help="read-only offline copy: no review-config.js / review.js, so no editing or export UI")
     args = ap.parse_args()
 
     today = datetime.date.today().isoformat()
     version = args.version or next_version(today)
-    out = Path(args.out) if args.out else ROOT / "dist" / f"review_package_{version}"
+    prefix = "view_package_" if args.view_only else "review_package_"
+    out = Path(args.out) if args.out else ROOT / "dist" / f"{prefix}{version}"
     if out.exists():
         sys.exit(f"Output folder already exists: {out}\nPick another --version/--out, or delete it first.")
 
@@ -294,10 +298,11 @@ def main():
     print(f"Building review package {version} -> {out}")
 
     # ── portal files ──
-    for f in ("app.js", "styles.css", "review.js", "index.html"):
+    for f in ("app.js", "styles.css", "index.html") + (() if args.view_only else ("review.js",)):
         shutil.copy2(ROOT / f, out / f)
     html = localise_portal_html((ROOT / "opgg-bri-portal.html").read_text(encoding="utf-8"))
-    tag ='<script src="review-config.js"></script>\n<script src="package-data.js"></script>\n<script src="review.js" defer></script>\n'
+    tag = '<script src="package-data.js"></script>\n' if args.view_only else (
+        '<script src="review-config.js"></script>\n<script src="package-data.js"></script>\n<script src="review.js" defer></script>\n')
     needle = '<script src="app.js" defer></script>'
     assert html.count(needle) == 1, "could not find the app.js script tag in opgg-bri-portal.html"
     (out / "opgg-bri-portal.html").write_text(html.replace(needle, tag + needle), encoding="utf-8")
@@ -328,9 +333,10 @@ def main():
         + json.dumps(emb, ensure_ascii=False) + ";\n", encoding="utf-8")
     cfg = {"enabled": True, "baseVersion": version, "assetsHash": ahash,
            "builtAt": datetime.datetime.now().isoformat(timespec="seconds"), "editableFields": FIELDS}
-    (out / "review-config.js").write_text(
-        "/* Review mode switch (generated). Delete this file to turn review mode off. */\nwindow.R8_REVIEW = "
-        + json.dumps(cfg, indent=2) + ";\n", encoding="utf-8")
+    if not args.view_only:
+        (out / "review-config.js").write_text(
+            "/* Review mode switch (generated). Delete this file to turn review mode off. */\nwindow.R8_REVIEW = "
+            + json.dumps(cfg, indent=2) + ";\n", encoding="utf-8")
 
     # ── images used by the register ──
     paths = sorted({p for a in assets for p in ([a.get("imageUrl")] + (a.get("images") or [])) if p})
@@ -348,7 +354,19 @@ def main():
           + (f", {missing} missing" if missing else ""))
 
     # ── instructions + base snapshot ──
-    (out / "README - START HERE.txt").write_text(
+    readme_view = f"""OPGG-BRI PORTAL: OFFLINE VIEWER  (data version {version})
+==============================================================
+
+HOW TO OPEN
+  1. If this came as a zip, right-click it and choose Extract All first. Do not run it from inside the zip.
+  2. Double-click  index.html  (or opgg-bri-portal.html). It opens in your browser. Chrome or Edge is best.
+     No installation and no internet connection are needed.
+  3. Keep the folder where it is. Do not rename or move files inside it.
+
+This is a read-only copy. Browse the Asset Register, charts and reports. Starring an asset is saved
+in your own browser only.
+"""
+    (out / "README - START HERE.txt").write_text(readme_view if args.view_only else
 f"""OPGG-BRI PORTAL: REVIEW PACKAGE  (version {version})
 ==============================================================
 
@@ -387,13 +405,15 @@ NOTES
 """, encoding="utf-8")
     snap = ROOT / "review" / "bases"
     snap.mkdir(parents=True, exist_ok=True)
-    (snap / f"{version}.json").write_bytes(raw)
+    if not args.view_only:
+        (snap / f"{version}.json").write_bytes(raw)
 
     copy_referenced(out, max_edge)
     verify_package(out)
     size = sum(f.stat().st_size for f in out.rglob("*") if f.is_file())
     print(f"Package size: {size/1e6:.0f} MB   data hash: {ahash}")
-    print(f"Base snapshot saved: {snap / (version + '.json')}")
+    if not args.view_only:
+        print(f"Base snapshot saved: {snap / (version + '.json')}")
     if args.zip:
         zp = out.with_suffix(".zip")
         with zipfile.ZipFile(zp, "w", zipfile.ZIP_DEFLATED) as z:

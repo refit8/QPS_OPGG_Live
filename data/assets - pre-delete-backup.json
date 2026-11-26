@@ -2,21 +2,21 @@
   {
     "id": "2eb2039b-eb5e-42fa-b7c5-0cd92d642059",
     "title": "Workstation Partition",
-    "imageUrl": "data/images/images_assets/Workstation Partitio - 1.jpg",
+    "imageUrl": "data/images/images_assets/Workstation Partition - 1.jpg",
     "images": [
-      "data/images/images_assets/Workstation Partitio - 1.jpg",
-      "data/images/images_assets/Workstation Partitio - 2.jpg",
-      "data/images/images_assets/Workstation Partitio - 3.jpg",
-      "data/images/images_assets/Workstation Partitio - 4.jpg",
-      "data/images/images_assets/Workstation Partitio - 5.jpg",
-      "data/images/images_assets/Workstation Partitio - 6.png",
-      "data/images/images_assets/Workstation Partitio - 7.png",
-      "data/images/images_assets/Workstation Partitio - 8.png",
-      "data/images/images_assets/Workstation Partitio - 9.png",
-      "data/images/images_assets/Workstation Partitio - 10.png",
-      "data/images/images_assets/Workstation Partitio - 11.png",
-      "data/images/images_assets/Workstation Partitio - 12.png",
-      "data/images/images_assets/Workstation Partitio - 13.jpg"
+      "data/images/images_assets/Workstation Partition - 1.jpg",
+      "data/images/images_assets/Workstation Partition - 2.jpg",
+      "data/images/images_assets/Workstation Partition - 3.jpg",
+      "data/images/images_assets/Workstation Partition - 4.jpg",
+      "data/images/images_assets/Workstation Partition - 5.jpg",
+      "data/images/images_assets/Workstation Partition - 6.png",
+      "data/images/images_assets/Workstation Partition - 7.png",
+      "data/images/images_assets/Workstation Partition - 8.png",
+      "data/images/images_assets/Workstation Partition - 9.png",
+      "data/images/images_assets/Workstation Partition - 10.png",
+      "data/images/images_assets/Workstation Partition - 11.png",
+      "data/images/images_assets/Workstation Partition - 12.png",
+      "data/images/images_assets/Workstation Partition - 13.jpg"
     ],
     "category": "Built Form",
     "unit": "Linear Metre (m)",
@@ -133,13 +133,13 @@
   {
     "id": "eb0cc47c-2276-451f-b63d-1bef29f5dbfa",
     "title": "Recessed Troffer Light",
-    "imageUrl": "data/images/images_assets/Recessed Troffer Lig - 1.jpg",
+    "imageUrl": "data/images/images_assets/Recessed Troffer Light - 1.jpg",
     "images": [
-      "data/images/images_assets/Recessed Troffer Lig - 1.jpg",
-      "data/images/images_assets/Recessed Troffer Lig - 2.png",
-      "data/images/images_assets/Recessed Troffer Lig - 3.png",
-      "data/images/images_assets/Recessed Troffer Lig - 4.jpg",
-      "data/images/images_assets/Recessed Troffer Lig - 6.jpg"
+      "data/images/images_assets/Recessed Troffer Light - 1.jpg",
+      "data/images/images_assets/Recessed Troffer Light - 2.png",
+      "data/images/images_assets/Recessed Troffer Light - 3.png",
+      "data/images/images_assets/Recessed Troffer Light - 4.jpg",
+      "data/images/images_assets/Recessed Troffer Light - 5.jpg"
     ],
     "category": "Services",
     "unit": "Count",
@@ -214,7 +214,7 @@
       "total": 0.2
     },
     "pathway": {
-      "suggested": null,
+      "suggested": "Retain",
       "suggestedId": null,
       "partners": [],
       "partnersSupplementary": []
@@ -310,13 +310,13 @@
   },
   {
     "id": "4e287bba-b3d4-485e-9dc4-87620d558ab2",
-    "title": "Louvre-faced Air Diffuser",
-    "imageUrl": "data/images/images_assets/Mechanical Air Diffu - 1.png",
+    "title": "Air Diffuser - Louvre-faced",
+    "imageUrl": "data/images/images_assets/Air Diffuser - Louvre - 1.png",
     "images": [
-      "data/images/images_assets/Mechanical Air Diffu - 1.png",
-      "data/images/images_assets/Mechanical Air Diffu - 2.jpg",
-      "data/images/images_assets/Mechanical Air Diffu - 3.jpg",
-      "data/images/images_assets/Mechanical Air Diffu - 4.png"
+      "data/images/images_assets/Air Diffuser - Louvre - 1.png",
+      "data/images/images_assets/Air Diffuser - Louvre - 2.jpg",
+      "data/images/images_assets/Air Diffuser - Louvre - 3.jpg",
+      "data/images/images_assets/Air Diffuser - Louvre - 4.png"
     ],
     "category": "Services",
     "unit": "Count",
@@ -428,10 +428,10 @@
   {
     "id": "37f7162d-3bcd-4b64-906c-6c2a743bb636",
     "title": "Exit Sign - Double-sided",
-    "imageUrl": "data/images/images_assets/Exit Sign - Double-s - 1.png",
+    "imageUrl": "data/images/images_assets/Exit Sign - Double-sid - 1.png",
     "images": [
-      "data/images/images_assets/Exit Sign - Double-s - 1.png",
-      "data/images/images_assets/Exit Sign - Double-s - 2.jpg"
+      "data/images/images_assets/Exit Sign - Double-sid - 1.png",
+      "data/images/images_assets/Exit Sign - Double-sid - 2.jpg"
     ],
     "category": "Services",
     "unit": "Count",
@@ -543,10 +543,10 @@
   {
     "id": "ff45ed46-9377-46b8-b786-5557a8cbacf9",
     "title": "Photoelectric Smoke Sensor",
-    "imageUrl": "data/images/images_assets/Photoelectric Smoke - 1.png",
+    "imageUrl": "data/images/images_assets/Photoelectric Smoke Se - 1.png",
     "images": [
-      "data/images/images_assets/Photoelectric Smoke - 1.png",
-      "data/images/images_assets/Photoelectric Smoke - 2.jpg"
+      "data/images/images_assets/Photoelectric Smoke Se - 1.png",
+      "data/images/images_assets/Photoelectric Smoke Se - 2.jpg"
     ],
     "category": "Services",
     "unit": "Count",
@@ -663,10 +663,10 @@
   {
     "id": "d562bbd7-bad9-4b8d-807c-a12c8a9d33f3",
     "title": "Recessed Troffer Light - Half",
-    "imageUrl": "data/images/images_assets/Recessed Troffer Lig (2) - 1.png",
+    "imageUrl": "data/images/images_assets/Recessed Troffer Light - H - 1.png",
     "images": [
-      "data/images/images_assets/Recessed Troffer Lig (2) - 1.png",
-      "data/images/images_assets/Recessed Troffer Lig (2) - 2.jpg"
+      "data/images/images_assets/Recessed Troffer Light - H - 1.png",
+      "data/images/images_assets/Recessed Troffer Light - H - 2.jpg"
     ],
     "category": "Services",
     "unit": "Count",
@@ -723,7 +723,7 @@
     "imageUrl": "data/images/images_assets/Network Antenna - 1.png",
     "images": [
       "data/images/images_assets/Network Antenna - 1.png",
-      "data/images/images_assets/Network Antenna - 3.png"
+      "data/images/images_assets/Network Antenna - 2.png"
     ],
     "category": "Services",
     "unit": "Count",
@@ -840,15 +840,15 @@
   {
     "id": "744da100-c391-4812-88e3-aab7b71b98ef",
     "title": "Glass Partition - Reflective",
-    "imageUrl": "data/images/images_assets/Glass Partition - Re - 1.png",
+    "imageUrl": "data/images/images_assets/Glass Partition - Refl - 1.png",
     "images": [
-      "data/images/images_assets/Glass Partition - Re - 1.png",
-      "data/images/images_assets/Glass Partition - Re - 2.png",
-      "data/images/images_assets/Glass Partition - Re - 3.png",
-      "data/images/images_assets/Glass Partition - Re - 4.png",
-      "data/images/images_assets/Glass Partition - Re - 5.png",
-      "data/images/images_assets/Glass Partition - Re - 6.png",
-      "data/images/images_assets/Glass Partition - Re - 7.png"
+      "data/images/images_assets/Glass Partition - Refl - 1.png",
+      "data/images/images_assets/Glass Partition - Refl - 2.png",
+      "data/images/images_assets/Glass Partition - Refl - 3.png",
+      "data/images/images_assets/Glass Partition - Refl - 4.png",
+      "data/images/images_assets/Glass Partition - Refl - 5.png",
+      "data/images/images_assets/Glass Partition - Refl - 6.png",
+      "data/images/images_assets/Glass Partition - Refl - 7.png"
     ],
     "category": "Built Form",
     "unit": "Area (m2)",
@@ -905,9 +905,9 @@
   {
     "id": "6fade5fd-9619-4e78-acc0-2a7a9c623486",
     "title": "Whiteboard - Wall-mounted",
-    "imageUrl": "data/images/images_assets/Whiteboard - Wall-mo - 1.png",
+    "imageUrl": "data/images/images_assets/Whiteboard - Wall-moun - 1.png",
     "images": [
-      "data/images/images_assets/Whiteboard - Wall-mo - 1.png"
+      "data/images/images_assets/Whiteboard - Wall-moun - 1.png"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -1025,7 +1025,7 @@
     "images": [
       "data/images/images_assets/Printer - 1.png",
       "data/images/images_assets/Printer - 2.png",
-      "data/images/images_assets/Printer - 4.jpg"
+      "data/images/images_assets/Printer - 3.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -1195,16 +1195,16 @@
   {
     "id": "d933b935-139e-40c1-99d1-d26d8dd43856",
     "title": "Kitchen Appliances (various)",
-    "imageUrl": "data/images/images_assets/Kitchen Appliances ( - 1.png",
+    "imageUrl": "data/images/images_assets/Kitchen Appliances - 1.png",
     "images": [
-      "data/images/images_assets/Kitchen Appliances ( - 1.png",
-      "data/images/images_assets/Kitchen Appliances ( - 2.png",
-      "data/images/images_assets/Kitchen Appliances ( - 3.png",
-      "data/images/images_assets/Kitchen Appliances ( - 4.png",
-      "data/images/images_assets/Kitchen Appliances ( - 5.png",
-      "data/images/images_assets/Kitchen Appliances ( - 6.jpg",
-      "data/images/images_assets/Kitchen Appliances ( - 7.png",
-      "data/images/images_assets/Kitchen Appliances ( - 8.jpg"
+      "data/images/images_assets/Kitchen Appliances - 1.png",
+      "data/images/images_assets/Kitchen Appliances - 2.png",
+      "data/images/images_assets/Kitchen Appliances - 3.png",
+      "data/images/images_assets/Kitchen Appliances - 4.png",
+      "data/images/images_assets/Kitchen Appliances - 5.png",
+      "data/images/images_assets/Kitchen Appliances - 6.jpg",
+      "data/images/images_assets/Kitchen Appliances - 7.png",
+      "data/images/images_assets/Kitchen Appliances - 8.jpg"
     ],
     "category": "Built Form",
     "unit": "Count",
@@ -1260,11 +1260,11 @@
   {
     "id": "a31d5a6e-ab5e-443a-ab5c-10421c836be9",
     "title": "Refrigerator - Full-height (multiple)",
-    "imageUrl": "data/images/images_assets/Refrigerator - Full - 1.png",
+    "imageUrl": "data/images/images_assets/Refrigerator - Full-he - 1.png",
     "images": [
-      "data/images/images_assets/Refrigerator - Full - 1.png",
-      "data/images/images_assets/Refrigerator - Full - 2.png",
-      "data/images/images_assets/Refrigerator - Full - 3.png"
+      "data/images/images_assets/Refrigerator - Full-he - 1.png",
+      "data/images/images_assets/Refrigerator - Full-he - 2.png",
+      "data/images/images_assets/Refrigerator - Full-he - 3.png"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -1439,9 +1439,9 @@
   {
     "id": "d3fe8406-1c23-4f44-b0ee-474de7cadd3c",
     "title": "Telephone - Wall-mounted",
-    "imageUrl": "data/images/images_assets/Telephone - Wall-mou - 1.png",
+    "imageUrl": "data/images/images_assets/Telephone - Wall-mount - 1.png",
     "images": [
-      "data/images/images_assets/Telephone - Wall-mou - 1.png"
+      "data/images/images_assets/Telephone - Wall-mount - 1.png"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -1495,71 +1495,13 @@
     "pathwayConfirmed": null
   },
   {
-    "id": "d217d6be-16d5-46fc-a373-df15ef2763d6",
-    "title": "Table - Meeting",
-    "imageUrl": "data/images/images_assets/Table - Meeting - 1.png",
-    "images": [
-      "data/images/images_assets/Table - Meeting - 1.png"
-    ],
-    "category": "FF&E",
-    "unit": "Count",
-    "quantity": 1,
-    "manufacturer": null,
-    "supplier": null,
-    "dimensions": {
-      "height": null,
-      "depth": null,
-      "width": null
-    },
-    "primaryMaterialStream": "Wood: Particleboard",
-    "weight": {
-      "perUnit": 30,
-      "total": 30
-    },
-    "pathway": {
-      "suggested": "Rehome",
-      "suggestedId": null,
-      "partners": [
-        "Loop"
-      ],
-      "partnersSupplementary": []
-    },
-    "location": null,
-    "notes": {
-      "audit": null,
-      "workshop": null
-    },
-    "embodiedCarbon": {
-      "perUnit": null,
-      "ecSource": null,
-      "total": null
-    },
-    "wasteEmissions": {
-      "factor": null,
-      "efSource": null,
-      "potential": null
-    },
-    "pathwayNotes": {
-      "retain": null,
-      "reuse": null,
-      "adaptiveReuse": null,
-      "refurbish": null,
-      "recycle": null,
-      "disposal": null,
-      "rehome": "Unscrew or unclip tops from their bases (or lift out whole where free-standing), keep fixings with each table and protect edges and corners. Allocate to the pathway partner for rehoming. Clean, wrap corners, stack tops flat and bases together, and label by type for collection.",
-      "remanufacture": null,
-      "stewardship": null
-    },
-    "pathwayConfirmed": null
-  },
-  {
     "id": "0f55b1c4-9921-449c-a46e-f38479072b8e",
-    "title": "Task chair – black mesh back, upholstered seat (T1)",
-    "imageUrl": "data/images/images_assets/Task chair - black m - 1.jpg",
+    "title": "Task Chair - Swivel, Mesh Back, black (T1)",
+    "imageUrl": "data/images/images_assets/Task Chair - Swivel, M (T1) - 1.jpg",
     "images": [
-      "data/images/images_assets/Task chair - black m - 1.jpg",
-      "data/images/images_assets/Task chair - black m - 2.jpg",
-      "data/images/images_assets/Task chair - black m - 3.jpg"
+      "data/images/images_assets/Task Chair - Swivel, M (T1) - 1.jpg",
+      "data/images/images_assets/Task Chair - Swivel, M (T1) - 2.jpg",
+      "data/images/images_assets/Task Chair - Swivel, M (T1) - 3.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -1571,7 +1513,7 @@
       "depth": null,
       "width": null
     },
-    "primaryMaterialStream": "Polymer: Thermoplastic 1-6",
+    "primaryMaterialStream": "Polymer: Thermoplastic 7",
     "weight": {
       "perUnit": 14,
       "total": 1862
@@ -1585,9 +1527,9 @@
       ],
       "partnersSupplementary": []
     },
-    "location": "PHQ Level 2",
+    "location": null,
     "notes": {
-      "audit": "Black nylon mesh backrest, upholstered seat (black, blue, red or patterned), height-adjustable arms on most, black 5-star castor base. Most common workstation chair.\nSeating register code T1 (Task chair). 133 items counted from the 3D walkthrough, 113 seen in 2+ photos. Example photos: 00014.jpg, 00031.jpg, 00058.jpg, 00075.jpg, 00076.jpg, 00077.jpg.\nWeight per unit carried over from 'Task Chairs (various)' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
+      "audit": "Black nylon mesh backrest, upholstered seat (black, blue, red or patterned), height-adjustable arms on most, black 5-star castor base. Most common workstation chair.",
       "workshop": null
     },
     "embodiedCarbon": {
@@ -1615,12 +1557,11 @@
   },
   {
     "id": "seat-t2",
-    "title": "Task chair – fully upholstered fabric back (T2)",
-    "imageUrl": "data/images/images_assets/Task chair - fully u - 1.jpg",
+    "title": "Task Chair - Swivel, Upholstered, Armless, red (T2)",
+    "imageUrl": "data/images/images_assets/Task Chair - Swivel, U (T2) - 1.jpg",
     "images": [
-      "data/images/images_assets/Task chair - fully u - 1.jpg",
-      "data/images/images_assets/Task chair - fully u - 2.jpg",
-      "data/images/images_assets/Task chair - fully u - 3.jpg"
+      "data/images/images_assets/Task Chair - Swivel, U (T2) - 1.jpg",
+      "data/images/images_assets/Task Chair - Swivel, U (T2) - 2.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -1676,12 +1617,12 @@
   },
   {
     "id": "seat-t3",
-    "title": "Task chair – mesh back with headrest (T3)",
-    "imageUrl": "data/images/images_assets/Task chair - mesh ba - 1.jpg",
+    "title": "Task Chair - Swivel, Mesh Back with Headrest (T3)",
+    "imageUrl": "data/images/images_assets/Task Chair - Swivel, M (T3) - 1.jpg",
     "images": [
-      "data/images/images_assets/Task chair - mesh ba - 1.jpg",
-      "data/images/images_assets/Task chair - mesh ba - 2.jpg",
-      "data/images/images_assets/Task chair - mesh ba - 3.jpg"
+      "data/images/images_assets/Task Chair - Swivel, M (T3) - 1.jpg",
+      "data/images/images_assets/Task Chair - Swivel, M (T3) - 2.jpg",
+      "data/images/images_assets/Task Chair - Swivel, M (T3) - 3.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -1707,9 +1648,9 @@
       ],
       "partnersSupplementary": []
     },
-    "location": "PHQ Level 2",
+    "location": null,
     "notes": {
-      "audit": "High mesh back with integrated headrest, adjustable arms, 5-star base.\nSeating register code T3 (Task chair). 5 items counted from the 3D walkthrough, 5 seen in 2+ photos. Example photos: 01686.jpg, 01687.jpg, 01688.jpg, 01775.jpg, 01796.jpg, 01797.jpg.\nWeight per unit carried over from 'Task Chairs (various)' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
+      "audit": "High mesh back with integrated headrest, adjustable arms, 5-star base.",
       "workshop": null
     },
     "embodiedCarbon": {
@@ -1737,11 +1678,11 @@
   },
   {
     "id": "seat-t4",
-    "title": "Task chair – white frame mesh back (T4)",
-    "imageUrl": "data/images/images_assets/Task chair - white f - 1.jpg",
+    "title": "Task Chair - Swivel, Mesh Back, white (T4)",
+    "imageUrl": "data/images/images_assets/Task Chair - Swivel, M (T4) - 1.jpg",
     "images": [
-      "data/images/images_assets/Task chair - white f - 1.jpg",
-      "data/images/images_assets/Task chair - white f - 2.jpg"
+      "data/images/images_assets/Task Chair - Swivel, M (T4) - 1.jpg",
+      "data/images/images_assets/Task Chair - Swivel, M (T4) - 2.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -1753,7 +1694,7 @@
       "depth": null,
       "width": null
     },
-    "primaryMaterialStream": "Polymer: Thermoplastic 1-6",
+    "primaryMaterialStream": "Polymer: Thermoplastic 7",
     "weight": {
       "perUnit": 14,
       "total": 14
@@ -1767,9 +1708,9 @@
       ],
       "partnersSupplementary": []
     },
-    "location": "PHQ Level 2",
+    "location": null,
     "notes": {
-      "audit": "White plastic frame with mesh back, black seat, polished 5-star base.\nSeating register code T4 (Task chair). 1 items counted from the 3D walkthrough, 1 seen in 2+ photos. Example photos: 00580.jpg, 00697.jpg, 00698.jpg, 00702.jpg.\nWeight per unit carried over from 'Task Chairs (various)' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
+      "audit": "White plastic frame with mesh back, black seat, polished 5-star base.",
       "workshop": null
     },
     "embodiedCarbon": {
@@ -1797,11 +1738,10 @@
   },
   {
     "id": "seat-t5",
-    "title": "Task chair – orange upholstered back (T5)",
-    "imageUrl": "data/images/images_assets/Task chair - orange - 1.jpg",
+    "title": "Task Chair - Swivel, Upholstered, Armless, orange (T5)",
+    "imageUrl": "data/images/images_assets/Task Chair - Swivel, U (T5) - 1.jpg",
     "images": [
-      "data/images/images_assets/Task chair - orange - 1.jpg",
-      "data/images/images_assets/Task chair - orange - 2.jpg"
+      "data/images/images_assets/Task Chair - Swivel, U (T5) - 1.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -1827,9 +1767,9 @@
       ],
       "partnersSupplementary": []
     },
-    "location": "PHQ Level 2",
+    "location": null,
     "notes": {
-      "audit": "Orange fabric upholstered back and seat on black shell, 5-star base.\nSeating register code T5 (Task chair). 3 items counted from the 3D walkthrough, 3 seen in 2+ photos. Example photos: 00109.jpg, 00252.jpg, 00253.jpg, 00254.jpg, 00255.jpg, 00256.jpg.\nWeight per unit carried over from 'Task Chairs (various)' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
+      "audit": "Orange fabric upholstered back and seat on black shell, 5-star base.",
       "workshop": null
     },
     "embodiedCarbon": {
@@ -1857,12 +1797,12 @@
   },
   {
     "id": "seat-t6",
-    "title": "Task chair – red mesh back, red seat (T6)",
-    "imageUrl": "data/images/images_assets/Task chair - red mes - 1.jpg",
+    "title": "Task Chair - Swivel, Upholstered, red with chrome legs (T6)",
+    "imageUrl": "data/images/images_assets/Task Chair - Swivel, U (T6) - 1.jpg",
     "images": [
-      "data/images/images_assets/Task chair - red mes - 1.jpg",
-      "data/images/images_assets/Task chair - red mes - 2.jpg",
-      "data/images/images_assets/Task chair - red mes - 3.jpg"
+      "data/images/images_assets/Task Chair - Swivel, U (T6) - 1.jpg",
+      "data/images/images_assets/Task Chair - Swivel, U (T6) - 2.jpg",
+      "data/images/images_assets/Task Chair - Swivel, U (T6) - 3.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -1888,9 +1828,9 @@
       ],
       "partnersSupplementary": []
     },
-    "location": "PHQ Level 2",
+    "location": null,
     "notes": {
-      "audit": "Red mesh/fabric back, red upholstered seat, black frame, chrome 5-star base, arms.\nSeating register code T6 (Task chair). 8 items counted from the 3D walkthrough, 8 seen in 2+ photos. Example photos: 02272.jpg, 02273.jpg, 02300.jpg, 02301.jpg, 02302.jpg, 02303.jpg.\nWeight per unit carried over from 'Task Chairs (various)' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
+      "audit": "Red mesh/fabric back, red upholstered seat, black frame, chrome 5-star base, arms.",
       "workshop": null
     },
     "embodiedCarbon": {
@@ -1918,12 +1858,11 @@
   },
   {
     "id": "seat-t8",
-    "title": "Task chair – lime back, grey seat (T8)",
-    "imageUrl": "data/images/images_assets/Task chair - lime ba - 1.jpg",
+    "title": "Task Chair - Swivel, Upholstered, lime (T8)",
+    "imageUrl": "data/images/images_assets/Task Chair - Swivel, U (T8) - 1.jpg",
     "images": [
-      "data/images/images_assets/Task chair - lime ba - 1.jpg",
-      "data/images/images_assets/Task chair - lime ba - 2.jpg",
-      "data/images/images_assets/Task chair - lime ba - 3.jpg"
+      "data/images/images_assets/Task Chair - Swivel, U (T8) - 1.jpg",
+      "data/images/images_assets/Task Chair - Swivel, U (T8) - 2.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -1949,9 +1888,9 @@
       ],
       "partnersSupplementary": []
     },
-    "location": "PHQ Level 2",
+    "location": null,
     "notes": {
-      "audit": "Lime-green upholstered back, grey fabric seat, adjustable arms.\nSeating register code T8 (Task chair). 1 items counted from the 3D walkthrough, 1 seen in 2+ photos. Example photos: 01230.jpg, 01232.jpg, 01526.jpg.\nWeight per unit carried over from 'Task Chairs (various)' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
+      "audit": "Lime-green upholstered back, grey fabric seat, adjustable arms.",
       "workshop": null
     },
     "embodiedCarbon": {
@@ -1979,12 +1918,11 @@
   },
   {
     "id": "seat-t9",
-    "title": "Task chair – olive green upholstered (T9)",
-    "imageUrl": "data/images/images_assets/Task chair - olive g - 1.jpg",
+    "title": "Task chair - Swivel, Upholstered, olive (T9)",
+    "imageUrl": "data/images/images_assets/Task chair - Swivel, U (T9) - 1.jpg",
     "images": [
-      "data/images/images_assets/Task chair - olive g - 1.jpg",
-      "data/images/images_assets/Task chair - olive g - 2.jpg",
-      "data/images/images_assets/Task chair - olive g - 3.jpg"
+      "data/images/images_assets/Task chair - Swivel, U (T9) - 1.jpg",
+      "data/images/images_assets/Task chair - Swivel, U (T9) - 2.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -2010,9 +1948,9 @@
       ],
       "partnersSupplementary": []
     },
-    "location": "PHQ Level 2",
+    "location": null,
     "notes": {
-      "audit": "Olive-green upholstered back and seat with black loop arms, 5-star base.\nSeating register code T9 (Task chair). 5 items counted from the 3D walkthrough, 5 seen in 2+ photos. Example photos: 01086.jpg, 01087.jpg, 01088.jpg, 01089.jpg, 01090.jpg, 01415.jpg.\nWeight per unit carried over from 'Task Chairs (various)' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
+      "audit": "Olive-green upholstered back and seat with black loop arms, 5-star base.",
       "workshop": null
     },
     "embodiedCarbon": {
@@ -2040,11 +1978,11 @@
   },
   {
     "id": "seat-e1",
-    "title": "Meeting Chair – swivel base, black leather, chrome (E1)",
-    "imageUrl": "data/images/images_assets/Executive soft-pad c - 1.jpg",
+    "title": "Meeting Chair - Swivel, Chrome Base, Black Leather (E1)",
+    "imageUrl": "data/images/images_assets/Meeting Chair - Swivel (E1) - 1.jpg",
     "images": [
-      "data/images/images_assets/Executive soft-pad c - 1.jpg",
-      "data/images/images_assets/Executive soft-pad c - 2.jpg"
+      "data/images/images_assets/Meeting Chair - Swivel (E1) - 1.jpg",
+      "data/images/images_assets/Meeting Chair - Swivel (E1) - 2.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -2100,12 +2038,11 @@
   },
   {
     "id": "seat-e2",
-    "title": "Task Chair – executive black leather (E2)",
-    "imageUrl": "data/images/images_assets/Executive high-back - 1.jpg",
+    "title": "Task Chair - Executive, leather black (E2)",
+    "imageUrl": "data/images/images_assets/Task Chair - Executive (E2) - 1.jpg",
     "images": [
-      "data/images/images_assets/Executive high-back - 1.jpg",
-      "data/images/images_assets/Executive high-back - 2.jpg",
-      "data/images/images_assets/Executive high-back - 3.jpg"
+      "data/images/images_assets/Task Chair - Executive (E2) - 1.jpg",
+      "data/images/images_assets/Task Chair - Executive (E2) - 2.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -2117,7 +2054,7 @@
       "depth": null,
       "width": null
     },
-    "primaryMaterialStream": "Polymer: Thermoplastic 1-6",
+    "primaryMaterialStream": "Polymer: Thermoplastic 7",
     "weight": {
       "perUnit": 14,
       "total": 28
@@ -2131,9 +2068,9 @@
       ],
       "partnersSupplementary": []
     },
-    "location": "PHQ Level 2",
+    "location": null,
     "notes": {
-      "audit": "High-back padded black leather executive chair with arms.\nSeating register code E2 (Executive chair). 2 items counted from the 3D walkthrough, 2 seen in 2+ photos. Example photos: 00802.jpg, 00812.jpg, 00813.jpg, 00962.jpg, 00963.jpg, 00964.jpg.\nWeight per unit carried over from 'Task Chairs (various)' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
+      "audit": "High-back padded black leather executive chair with arms.",
       "workshop": null
     },
     "embodiedCarbon": {
@@ -2161,12 +2098,12 @@
   },
   {
     "id": "5b6723a2-9672-4895-b535-ee1c00a6d4e6",
-    "title": "Visitor chair – cantilever sled base, black (V1)",
-    "imageUrl": "data/images/images_assets/Visitor chair - cant - 1.jpg",
+    "title": "Meeting Chair - Cantilever Sled, Black (V1)",
+    "imageUrl": "data/images/images_assets/Meeting Chair - Cantil (V1) - 1.jpg",
     "images": [
-      "data/images/images_assets/Visitor chair - cant - 1.jpg",
-      "data/images/images_assets/Visitor chair - cant - 2.jpg",
-      "data/images/images_assets/Visitor chair - cant - 3.jpg"
+      "data/images/images_assets/Meeting Chair - Cantil (V1) - 1.jpg",
+      "data/images/images_assets/Meeting Chair - Cantil (V1) - 2.jpg",
+      "data/images/images_assets/Meeting Chair - Cantil (V1) - 3.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -2222,12 +2159,12 @@
   },
   {
     "id": "seat-v2",
-    "title": "Visitor chair – black mesh back, 4-leg, armless (V2)",
-    "imageUrl": "data/images/images_assets/Visitor chair - blac - 1.jpg",
+    "title": "Visitor Chair - Sled, Mesh Back, grey (V2)",
+    "imageUrl": "data/images/images_assets/Visitor Chair - Sled (V2) - 1.jpg",
     "images": [
-      "data/images/images_assets/Visitor chair - blac - 1.jpg",
-      "data/images/images_assets/Visitor chair - blac - 2.jpg",
-      "data/images/images_assets/Visitor chair - blac - 3.jpg"
+      "data/images/images_assets/Visitor Chair - Sled (V2) - 1.jpg",
+      "data/images/images_assets/Visitor Chair - Sled (V2) - 2.jpg",
+      "data/images/images_assets/Visitor Chair - Sled (V2) - 3.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -2253,9 +2190,9 @@
       ],
       "partnersSupplementary": []
     },
-    "location": "PHQ Level 2",
+    "location": null,
     "notes": {
-      "audit": "Black mesh back, black upholstered seat, black 4-leg steel frame.\nSeating register code V2 (Visitor / meeting chair). 6 items counted from the 3D walkthrough, 6 seen in 2+ photos. Example photos: 02530.jpg, 02531.jpg, 02532.jpg, 03052.jpg, 03053.jpg, 03054.jpg.\nWeight per unit carried over from 'Conference Chairs' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
+      "audit": "Black mesh back, black upholstered seat, black 4-leg steel frame.",
       "workshop": null
     },
     "embodiedCarbon": {
@@ -2283,16 +2220,15 @@
   },
   {
     "id": "seat-v3b",
-    "title": "Visitor armchair – beige fabric, black steel frame (V3B)",
-    "imageUrl": "data/images/images_assets/Visitor armchair - b (V3B) - 1.jpg",
+    "title": "Breakout Chair - Upholstered, grey (V3B)",
+    "imageUrl": "data/images/images_assets/Breakout Chair - Uphol (V3B) - 1.jpg",
     "images": [
-      "data/images/images_assets/Visitor armchair - b (V3B) - 1.jpg",
-      "data/images/images_assets/Visitor armchair - b (V3B) - 2.jpg",
-      "data/images/images_assets/Visitor armchair - b (V3B) - 3.jpg"
+      "data/images/images_assets/Breakout Chair - Uphol (V3B) - 1.jpg",
+      "data/images/images_assets/Breakout Chair - Uphol (V3B) - 2.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
-    "quantity": 25,
+    "quantity": 12,
     "manufacturer": null,
     "supplier": null,
     "dimensions": {
@@ -2300,10 +2236,10 @@
       "depth": null,
       "width": null
     },
-    "primaryMaterialStream": null,
+    "primaryMaterialStream": "Metal: Ferrous",
     "weight": {
       "perUnit": 14,
-      "total": 350
+      "total": 168
     },
     "pathway": {
       "suggested": "Rehome",
@@ -2314,9 +2250,9 @@
       ],
       "partnersSupplementary": []
     },
-    "location": "PHQ Level 2",
+    "location": "Meals",
     "notes": {
-      "audit": "Beige/oatmeal fabric seat and back, black tubular steel frame with arms.\nSeating register code V3B (Visitor / meeting chair). 25 items counted from the 3D walkthrough, 23 seen in 2+ photos. Example photos: 01187.jpg, 01188.jpg, 01189.jpg, 01190.jpg, 01225.jpg, 01226.jpg.\nWeight per unit carried over from 'Conference Chairs' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
+      "audit": "Beige/oatmeal fabric seat and back, black tubular steel frame with arms.",
       "workshop": null
     },
     "embodiedCarbon": {
@@ -2344,16 +2280,15 @@
   },
   {
     "id": "seat-v3r",
-    "title": "Visitor armchair – red fabric, black steel frame (V3R)",
-    "imageUrl": "data/images/images_assets/Visitor armchair - r - 1.jpg",
+    "title": "Visitor Chair - Sled, red (V3R)",
+    "imageUrl": "data/images/images_assets/Visitor Chair - Sled (V3R) - 1.jpg",
     "images": [
-      "data/images/images_assets/Visitor armchair - r - 1.jpg",
-      "data/images/images_assets/Visitor armchair - r - 2.jpg",
-      "data/images/images_assets/Visitor armchair - r - 3.jpg"
+      "data/images/images_assets/Visitor Chair - Sled (V3R) - 1.jpg",
+      "data/images/images_assets/Visitor Chair - Sled (V3R) - 2.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
-    "quantity": 8,
+    "quantity": 4,
     "manufacturer": null,
     "supplier": null,
     "dimensions": {
@@ -2361,10 +2296,10 @@
       "depth": null,
       "width": null
     },
-    "primaryMaterialStream": null,
+    "primaryMaterialStream": "Metal: Ferrous",
     "weight": {
       "perUnit": 14,
-      "total": 112
+      "total": 56
     },
     "pathway": {
       "suggested": "Rehome",
@@ -2375,7 +2310,7 @@
       ],
       "partnersSupplementary": []
     },
-    "location": "PHQ Level 2",
+    "location": null,
     "notes": {
       "audit": "As V3B in red/burgundy fabric.\nSeating register code V3R (Visitor / meeting chair). 8 items counted from the 3D walkthrough, 6 seen in 2+ photos. Example photos: 01133.jpg, 01134.jpg, 01135.jpg, 01136.jpg, 01983.jpg, 01984.jpg.\nWeight per unit carried over from 'Conference Chairs' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
       "workshop": null
@@ -2405,11 +2340,11 @@
   },
   {
     "id": "seat-v3u",
-    "title": "Visitor armchair – blue fabric, black steel frame (V3U)",
-    "imageUrl": "data/images/images_assets/Visitor armchair - b (V3U) - 1.jpg",
+    "title": "Visitor Chair - Upholstered, blue (V3U)",
+    "imageUrl": "data/images/images_assets/Visitor Chair - Uphols (V3U) - 1.jpg",
     "images": [
-      "data/images/images_assets/Visitor armchair - b (V3U) - 1.jpg",
-      "data/images/images_assets/Visitor armchair - b (V3U) - 2.jpg"
+      "data/images/images_assets/Visitor Chair - Uphols (V3U) - 1.jpg",
+      "data/images/images_assets/Visitor Chair - Uphols (V3U) - 2.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -2421,7 +2356,7 @@
       "depth": null,
       "width": null
     },
-    "primaryMaterialStream": null,
+    "primaryMaterialStream": "Polymer: Thermoplastic 7",
     "weight": {
       "perUnit": 14,
       "total": 56
@@ -2435,9 +2370,9 @@
       ],
       "partnersSupplementary": []
     },
-    "location": "PHQ Level 2",
+    "location": null,
     "notes": {
-      "audit": "As V3B in royal-blue fabric.\nSeating register code V3U (Visitor / meeting chair). 4 items counted from the 3D walkthrough, 3 seen in 2+ photos. Example photos: 03015.jpg, 03016.jpg, 03118.jpg, 03119.jpg, 03120.jpg, 03121.jpg.\nWeight per unit carried over from 'Conference Chairs' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
+      "audit": "As V3B in royal-blue fabric.",
       "workshop": null
     },
     "embodiedCarbon": {
@@ -2465,11 +2400,11 @@
   },
   {
     "id": "seat-v4",
-    "title": "Breakout Chair – Sled base red seat (V4)",
-    "imageUrl": "data/images/images_assets/Meeting chair - blac (V4) - 3.jpg",
+    "title": "Breakout Chair - Sled, Mesh Fabric, Red Seat (V4)",
+    "imageUrl": "data/images/images_assets/Breakout Chair - Sled (V4) - 1.jpg",
     "images": [
-      "data/images/images_assets/Meeting chair - blac (V4) - 3.jpg",
-      "data/images/images_assets/Meeting chair - blac (V4) - 1.jpg"
+      "data/images/images_assets/Breakout Chair - Sled (V4) - 1.jpg",
+      "data/images/images_assets/Breakout Chair - Sled (V4) - 2.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -2525,12 +2460,12 @@
   },
   {
     "id": "ee8a209a-fb9d-4079-b3f5-7b92bb23179c",
-    "title": "Breakout Chair – 4-leg, Stackable, black (V5)",
-    "imageUrl": "data/images/images_assets/Meeting armchair - b - 1.jpg",
+    "title": "Breakout Chair - Stackable, Black (V5)",
+    "imageUrl": "data/images/images_assets/Breakout Chair - Stack (V5) - 1.jpg",
     "images": [
-      "data/images/images_assets/Meeting armchair - b - 1.jpg",
-      "data/images/images_assets/Meeting armchair - b - 2.jpg",
-      "data/images/images_assets/Meeting armchair - b - 3.jpg"
+      "data/images/images_assets/Breakout Chair - Stack (V5) - 1.jpg",
+      "data/images/images_assets/Breakout Chair - Stack (V5) - 2.jpg",
+      "data/images/images_assets/Breakout Chair - Stack (V5) - 3.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -2542,7 +2477,7 @@
       "depth": null,
       "width": null
     },
-    "primaryMaterialStream": null,
+    "primaryMaterialStream": "Polymer: Thermoplastic 1-6",
     "weight": {
       "perUnit": 14,
       "total": 252
@@ -2556,7 +2491,7 @@
       ],
       "partnersSupplementary": []
     },
-    "location": "PHQ Level 2",
+    "location": null,
     "notes": {
       "audit": "Black upholstered/mesh back and seat, black 4-leg frame with loop arms.\nSeating register code V5 (Visitor / meeting chair). 18 items counted from the 3D walkthrough, 17 seen in 2+ photos. Example photos: 02531.jpg, 02622.jpg, 02623.jpg, 03098.jpg, 03099.jpg, 03113.jpg.\nWeight per unit carried over from 'Conference Chairs' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
       "workshop": null
@@ -2586,11 +2521,11 @@
   },
   {
     "id": "seat-v7",
-    "title": "Meeting Chair – Swivel base, Mesh back, blue seat (V7)",
-    "imageUrl": "data/images/images_assets/Meeting chair - blac (V7) - 2.jpg",
+    "title": "Meeting Chair - Swivel Base, Mesh Back (V7)",
+    "imageUrl": "data/images/images_assets/Meeting Chair - Swivel (V7) - 1.jpg",
     "images": [
-      "data/images/images_assets/Meeting chair - blac (V7) - 2.jpg",
-      "data/images/images_assets/Meeting chair - blac (V7) - 3.jpg"
+      "data/images/images_assets/Meeting Chair - Swivel (V7) - 1.jpg",
+      "data/images/images_assets/Meeting Chair - Swivel (V7) - 2.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -2602,7 +2537,7 @@
       "depth": null,
       "width": null
     },
-    "primaryMaterialStream": null,
+    "primaryMaterialStream": "Polymer: Thermoplastic 7",
     "weight": {
       "perUnit": 14,
       "total": 126
@@ -2645,73 +2580,13 @@
     "pathwayConfirmed": null
   },
   {
-    "id": "seat-v8",
-    "title": "Visitor chair – rounded black back, chrome sled (V8)",
-    "imageUrl": "data/images/images_assets/Visitor chair - roun - 1.jpg",
-    "images": [
-      "data/images/images_assets/Visitor chair - roun - 1.jpg",
-      "data/images/images_assets/Visitor chair - roun - 2.jpg"
-    ],
-    "category": "FF&E",
-    "unit": "Count",
-    "quantity": 2,
-    "manufacturer": null,
-    "supplier": null,
-    "dimensions": {
-      "height": null,
-      "depth": null,
-      "width": null
-    },
-    "primaryMaterialStream": null,
-    "weight": {
-      "perUnit": 14,
-      "total": 28
-    },
-    "pathway": {
-      "suggested": "Rehome",
-      "suggestedId": null,
-      "partners": [
-        "PIF",
-        "ReLove"
-      ],
-      "partnersSupplementary": []
-    },
-    "location": "PHQ Level 2",
-    "notes": {
-      "audit": "Rounded black upholstered back, chrome sled base.\nSeating register code V8 (Visitor / meeting chair). 2 items counted from the 3D walkthrough, 1 seen in 2+ photos. Example photos: 02813.jpg, 03037.jpg, 03038.jpg, 03039.jpg.\nWeight per unit carried over from 'Conference Chairs' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
-      "workshop": null
-    },
-    "embodiedCarbon": {
-      "perUnit": null,
-      "ecSource": null,
-      "total": null
-    },
-    "wasteEmissions": {
-      "factor": null,
-      "efSource": null,
-      "potential": null
-    },
-    "pathwayNotes": {
-      "retain": null,
-      "reuse": null,
-      "adaptiveReuse": null,
-      "refurbish": null,
-      "recycle": null,
-      "disposal": null,
-      "rehome": "Lift out by hand (no fixings), wipe down, and check the frame, mechanisms (gas lift, castors where fitted) and upholstery for damage. Allocate to the pathway partner for rehoming. Clean, protect upholstery, stack safely and label by model so partners can collect in lots.",
-      "remanufacture": null,
-      "stewardship": null
-    },
-    "pathwayConfirmed": null
-  },
-  {
     "id": "seat-v9",
-    "title": "Sled chair – green/grey fabric, chrome (V9)",
-    "imageUrl": "data/images/images_assets/Sled chair - greengr - 1.jpg",
+    "title": "Breakout Chair - Sled, Grey Upholstered (V9)",
+    "imageUrl": "data/images/images_assets/Breakout Chair - Sled (V9) - 1.jpg",
     "images": [
-      "data/images/images_assets/Sled chair - greengr - 1.jpg",
+      "data/images/images_assets/Breakout Chair - Sled (V9) - 1.jpg",
       "data/images/images_assets/Sled chair - greengr - 2.jpg",
-      "data/images/images_assets/Sled chair - greengr - 3.jpg"
+      "data/images/images_assets/Breakout Chair - Sled (V9) - 2.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -2767,11 +2642,11 @@
   },
   {
     "id": "seat-v10",
-    "title": "Visitor armchair – green fabric, sled base (V10)",
-    "imageUrl": "data/images/images_assets/Visitor armchair - g - 1.jpg",
+    "title": "Visitor Chair - Sled, green (V10)",
+    "imageUrl": "data/images/images_assets/Visitor Chair - Sled (V10) - 1.jpg",
     "images": [
-      "data/images/images_assets/Visitor armchair - g - 1.jpg",
-      "data/images/images_assets/Visitor armchair - g - 2.jpg"
+      "data/images/images_assets/Visitor Chair - Sled (V10) - 1.jpg",
+      "data/images/images_assets/Visitor Chair - Sled (V10) - 2.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -2783,7 +2658,7 @@
       "depth": null,
       "width": null
     },
-    "primaryMaterialStream": null,
+    "primaryMaterialStream": "Metal: Ferrous",
     "weight": {
       "perUnit": 14,
       "total": 14
@@ -2797,9 +2672,9 @@
       ],
       "partnersSupplementary": []
     },
-    "location": "PHQ Level 2",
+    "location": null,
     "notes": {
-      "audit": "Green upholstered seat/back, black sled base with arms.\nSeating register code V10 (Visitor / meeting chair). 1 items counted from the 3D walkthrough, 1 seen in 2+ photos. Example photos: 01409.jpg, 02119.jpg, 02120.jpg.\nWeight per unit carried over from 'Conference Chairs' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
+      "audit": "Green upholstered seat/back, black sled base with arms.",
       "workshop": null
     },
     "embodiedCarbon": {
@@ -2827,12 +2702,12 @@
   },
   {
     "id": "seat-m1",
-    "title": "Tub armchair – timber bentwood arms, red (M1)",
-    "imageUrl": "data/images/images_assets/Tub armchair - timbe - 1.jpg",
+    "title": "Visitor Chair - Wrap-around Arms, timber with red upholstery (M1)",
+    "imageUrl": "data/images/images_assets/Visitor Chair - Wrap-a (M1) - 1.jpg",
     "images": [
-      "data/images/images_assets/Tub armchair - timbe - 1.jpg",
-      "data/images/images_assets/Tub armchair - timbe - 2.jpg",
-      "data/images/images_assets/Tub armchair - timbe - 3.jpg"
+      "data/images/images_assets/Visitor Chair - Wrap-a (M1) - 1.jpg",
+      "data/images/images_assets/Visitor Chair - Wrap-a (M1) - 2.jpg",
+      "data/images/images_assets/Visitor Chair - Wrap-a (M1) - 3.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -2844,7 +2719,7 @@
       "depth": null,
       "width": null
     },
-    "primaryMaterialStream": null,
+    "primaryMaterialStream": "Wood: Solid Timber",
     "weight": {
       "perUnit": 14,
       "total": 238
@@ -2858,9 +2733,9 @@
       ],
       "partnersSupplementary": []
     },
-    "location": "PHQ Level 2",
+    "location": null,
     "notes": {
-      "audit": "Timber frame with curved bentwood arms, red fabric seat and back.\nSeating register code M1 (Visitor / meeting chair). 17 items counted from the 3D walkthrough, 17 seen in 2+ photos. Example photos: 01235.jpg, 01258.jpg, 01515.jpg, 01516.jpg, 01517.jpg, 01532.jpg.\nWeight per unit carried over from 'Conference Chairs' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
+      "audit": "Timber frame with curved bentwood arms, red fabric seat and back. Some have black metal frame",
       "workshop": null
     },
     "embodiedCarbon": {
@@ -2888,12 +2763,11 @@
   },
   {
     "id": "seat-m2",
-    "title": "Side chair – timber frame, red fabric (M2)",
-    "imageUrl": "data/images/images_assets/Side chair - timber - 1.jpg",
+    "title": "Breakout Chair - 4-leg Timber, Red Upholstered (M2)",
+    "imageUrl": "data/images/images_assets/Breakout Chair - 4-leg (M2) - 1.jpg",
     "images": [
-      "data/images/images_assets/Side chair - timber - 1.jpg",
-      "data/images/images_assets/Side chair - timber - 2.jpg",
-      "data/images/images_assets/Side chair - timber - 3.jpg"
+      "data/images/images_assets/Breakout Chair - 4-leg (M2) - 1.jpg",
+      "data/images/images_assets/Breakout Chair - 4-leg (M2) - 2.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -2949,12 +2823,12 @@
   },
   {
     "id": "seat-m3",
-    "title": "Breakout Chair – Stackable, burgundy seat, steel frame (M3)",
-    "imageUrl": "data/images/images_assets/Side chair - burgund - 1.jpg",
+    "title": "Breakout Chair - Stackable, Burgundy Seat, Steel Frame (M3)",
+    "imageUrl": "data/images/images_assets/Breakout Chair - Stack (M3) - 1.jpg",
     "images": [
-      "data/images/images_assets/Side chair - burgund - 1.jpg",
-      "data/images/images_assets/Side chair - burgund - 2.jpg",
-      "data/images/images_assets/Side chair - burgund - 3.jpg"
+      "data/images/images_assets/Breakout Chair - Stack (M3) - 1.jpg",
+      "data/images/images_assets/Breakout Chair - Stack (M3) - 2.jpg",
+      "data/images/images_assets/Breakout Chair - Stack (M3) - 3.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -2966,7 +2840,7 @@
       "depth": null,
       "width": null
     },
-    "primaryMaterialStream": null,
+    "primaryMaterialStream": "Metal: Ferrous",
     "weight": {
       "perUnit": 14,
       "total": 252
@@ -3009,72 +2883,13 @@
     "pathwayConfirmed": null
   },
   {
-    "id": "seat-m4",
-    "title": "Side chair – timber, patterned fabric (M4)",
-    "imageUrl": "data/images/images_assets/Side chair - timber, - 1.jpg",
-    "images": [
-      "data/images/images_assets/Side chair - timber, - 1.jpg"
-    ],
-    "category": "FF&E",
-    "unit": "Count",
-    "quantity": 1,
-    "manufacturer": null,
-    "supplier": null,
-    "dimensions": {
-      "height": null,
-      "depth": null,
-      "width": null
-    },
-    "primaryMaterialStream": null,
-    "weight": {
-      "perUnit": 14,
-      "total": 14
-    },
-    "pathway": {
-      "suggested": "Rehome",
-      "suggestedId": null,
-      "partners": [
-        "PIF",
-        "ReLove"
-      ],
-      "partnersSupplementary": []
-    },
-    "location": "PHQ Level 2",
-    "notes": {
-      "audit": "Timber frame side chair with patterned fabric.\nSeating register code M4 (Visitor / meeting chair). 1 items counted from the 3D walkthrough, 1 seen in 2+ photos. Example photos: 03889.jpg, 03972.jpg.\nWeight per unit carried over from 'Conference Chairs' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
-      "workshop": null
-    },
-    "embodiedCarbon": {
-      "perUnit": null,
-      "ecSource": null,
-      "total": null
-    },
-    "wasteEmissions": {
-      "factor": null,
-      "efSource": null,
-      "potential": null
-    },
-    "pathwayNotes": {
-      "retain": null,
-      "reuse": null,
-      "adaptiveReuse": null,
-      "refurbish": null,
-      "recycle": null,
-      "disposal": null,
-      "rehome": "Lift out by hand (no fixings), wipe down, and check the frame, mechanisms (gas lift, castors where fitted) and upholstery for damage. Allocate to the pathway partner for rehoming. Clean, protect upholstery, stack safely and label by model so partners can collect in lots.",
-      "remanufacture": null,
-      "stewardship": null
-    },
-    "pathwayConfirmed": null
-  },
-  {
     "id": "seat-m5",
-    "title": "Breakout Chair – Upholstered, steel frame (M5)",
-    "imageUrl": "data/images/images_assets/Side chair - olive p - 1.jpg",
+    "title": "Breakout Chair - Stackable, Green Upholstered, Steel Frame (M5)",
+    "imageUrl": "data/images/images_assets/Breakout Chair - Stack (M5) - 1.jpg",
     "images": [
-      "data/images/images_assets/Side chair - olive p - 1.jpg",
-      "data/images/images_assets/Side chair - olive p - 2.jpg",
-      "data/images/images_assets/Side chair - olive p - 3.jpg"
+      "data/images/images_assets/Breakout Chair - Stack (M5) - 1.jpg",
+      "data/images/images_assets/Breakout Chair - Stack (M5) - 2.jpg",
+      "data/images/images_assets/Breakout Chair - Stack (M5) - 3.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -3130,12 +2945,11 @@
   },
   {
     "id": "seat-b1",
-    "title": "Stacking chair – red polypropylene shell, chrome legs (B1)",
-    "imageUrl": "data/images/images_assets/Stacking chair - red - 1.jpg",
+    "title": "Breakout Chair - Stackable, Red Polymer, Chrome Legs (B1)",
+    "imageUrl": "data/images/images_assets/Breakout Chair - Stack (B1) - 1.jpg",
     "images": [
-      "data/images/images_assets/Stacking chair - red - 1.jpg",
-      "data/images/images_assets/Stacking chair - red - 2.jpg",
-      "data/images/images_assets/Stacking chair - red - 3.jpg"
+      "data/images/images_assets/Breakout Chair - Stack (B1) - 1.jpg",
+      "data/images/images_assets/Breakout Chair - Stack (B1) - 2.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -3147,7 +2961,7 @@
       "depth": null,
       "width": null
     },
-    "primaryMaterialStream": "Metal: Ferrous",
+    "primaryMaterialStream": "Polymer: Thermoplastic 1-6",
     "weight": {
       "perUnit": 5,
       "total": 70
@@ -3161,7 +2975,7 @@
       ],
       "partnersSupplementary": []
     },
-    "location": "PHQ Level 2",
+    "location": null,
     "notes": {
       "audit": "Red moulded shell on chrome 4-leg frame (breakout/lunch).\nSeating register code B1 (Breakout chair). 14 items counted from the 3D walkthrough, 13 seen in 2+ photos. Example photos: 04111.jpg, 04112.jpg, 04113.jpg, 04114.jpg, 04115.jpg, 04116.jpg.\nWeight per unit carried over from 'Breakout Chairs (various)' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
       "workshop": null
@@ -3191,12 +3005,12 @@
   },
   {
     "id": "acc6aab3-0aa9-45d5-b80c-9e4b56ae36e1",
-    "title": "Breakout Chair – black shell, timber legs (B2)",
-    "imageUrl": "data/images/images_assets/Shell chair - black - 1.jpg",
+    "title": "Breakout Chair - Shell, Timber 4-leg, Black (B2)",
+    "imageUrl": "data/images/images_assets/Breakout Chair - Shell (B2) - 1.jpg",
     "images": [
-      "data/images/images_assets/Shell chair - black - 1.jpg",
-      "data/images/images_assets/Shell chair - black - 2.jpg",
-      "data/images/images_assets/Shell chair - black - 3.jpg"
+      "data/images/images_assets/Breakout Chair - Shell (B2) - 1.jpg",
+      "data/images/images_assets/Breakout Chair - Shell (B2) - 2.jpg",
+      "data/images/images_assets/Breakout Chair - Shell (B2) - 3.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -3252,12 +3066,10 @@
   },
   {
     "id": "seat-b3",
-    "title": "Stacking chair – lime green plastic (B3)",
-    "imageUrl": "data/images/images_assets/Stacking chair - lim - 1.jpg",
+    "title": "Breakout Chair - Stackable, Plastic (B3)",
+    "imageUrl": "data/images/images_assets/Breakout Chair - Stack (B3) - 1.jpg",
     "images": [
-      "data/images/images_assets/Stacking chair - lim - 1.jpg",
-      "data/images/images_assets/Stacking chair - lim - 2.jpg",
-      "data/images/images_assets/Stacking chair - lim - 3.jpg"
+      "data/images/images_assets/Breakout Chair - Stack (B3) - 1.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -3313,12 +3125,12 @@
   },
   {
     "id": "seat-b4",
-    "title": "Stacking chair – navy fabric, black frame (B4)",
-    "imageUrl": "data/images/images_assets/Stacking chair - nav - 1.jpg",
+    "title": "Breakout Chair - Sled, Blue Upholstered (B4)",
+    "imageUrl": "data/images/images_assets/Breakout Chair - Sled (B4) - 1.jpg",
     "images": [
-      "data/images/images_assets/Stacking chair - nav - 1.jpg",
+      "data/images/images_assets/Breakout Chair - Sled (B4) - 1.jpg",
       "data/images/images_assets/Stacking chair - nav - 2.jpg",
-      "data/images/images_assets/Stacking chair - nav - 3.jpg"
+      "data/images/images_assets/Breakout Chair - Sled (B4) - 2.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -3374,11 +3186,10 @@
   },
   {
     "id": "seat-st",
-    "title": "Stool – black round seat (ST)",
-    "imageUrl": "data/images/images_assets/Stool - black round - 1.jpg",
+    "title": "Stool - Black Leather (ST)",
+    "imageUrl": "data/images/images_assets/Stool - Black Leather (ST) - 1.jpg",
     "images": [
-      "data/images/images_assets/Stool - black round - 1.jpg",
-      "data/images/images_assets/Stool - black round - 2.jpg"
+      "data/images/images_assets/Stool - Black Leather (ST) - 1.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -3433,15 +3244,15 @@
   },
   {
     "id": "c4e92b7b-2966-4ac3-880f-61224f179b91",
-    "title": "Sofa 2-seat – red fabric (S1)",
-    "imageUrl": "data/images/images_assets/Sofa 2-seat - red fa - 1.jpg",
+    "title": "Armchair - Red (S1)",
+    "imageUrl": "data/images/images_assets/Armchair - Red (S1) - 1.jpg",
     "images": [
-      "data/images/images_assets/Sofa 2-seat - red fa - 1.jpg",
-      "data/images/images_assets/Sofa 2-seat - red fa - 2.jpg"
+      "data/images/images_assets/Armchair - Red (S1) - 1.jpg",
+      "data/images/images_assets/Armchair - Red (S1) - 2.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
-    "quantity": 4,
+    "quantity": 2,
     "manufacturer": null,
     "supplier": null,
     "dimensions": {
@@ -3452,7 +3263,7 @@
     "primaryMaterialStream": null,
     "weight": {
       "perUnit": 20,
-      "total": 80
+      "total": 40
     },
     "pathway": {
       "suggested": "Rehome",
@@ -3462,7 +3273,7 @@
       ],
       "partnersSupplementary": []
     },
-    "location": "PHQ Level 2",
+    "location": null,
     "notes": {
       "audit": "Red/burgundy fabric two-seat sofa, block arms (paired with S1A in offices).\nSeating register code S1 (Sofa / lounge). 4 items counted from the 3D walkthrough, 4 seen in 2+ photos. Example photos: 00388.jpg, 00389.jpg, 03420.jpg, 03531.jpg, 03532.jpg, 03533.jpg.\nWeight per unit carried over from 'Lounge Chair (various)' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
       "workshop": null
@@ -3492,7 +3303,7 @@
   },
   {
     "id": "seat-s1a",
-    "title": "Armchair – red fabric (matching S1) (S1A)",
+    "title": "Armchair - red fabric (matching S1) (S1A)",
     "imageUrl": "data/images/images_assets/Armchair - red fabri - 1.jpg",
     "images": [
       "data/images/images_assets/Armchair - red fabri - 1.jpg",
@@ -3551,11 +3362,11 @@
   },
   {
     "id": "seat-l1",
-    "title": "Tub chair – red fabric (L1)",
-    "imageUrl": "data/images/images_assets/Tub chair - red fabr - 1.jpg",
+    "title": "Tub Chair - Upholstered, red (L1)",
+    "imageUrl": "data/images/images_assets/Tub Chair - Upholstere (L1) - 1.jpg",
     "images": [
-      "data/images/images_assets/Tub chair - red fabr - 1.jpg",
-      "data/images/images_assets/Tub chair - red fabr - 2.jpg"
+      "data/images/images_assets/Tub Chair - Upholstere (L1) - 1.jpg",
+      "data/images/images_assets/Tub Chair - Upholstere (L1) - 2.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -3580,9 +3391,9 @@
       ],
       "partnersSupplementary": []
     },
-    "location": "PHQ Level 2",
+    "location": null,
     "notes": {
-      "audit": "Rounded red fabric tub chair.\nSeating register code L1 (Sofa / lounge). 3 items counted from the 3D walkthrough, 2 seen in 2+ photos. Example photos: 03558.jpg, 03559.jpg, 03560.jpg, 03561.jpg, 03562.jpg, 03827.jpg.\nWeight per unit carried over from 'Lounge Chair (various)' (estimate, to confirm). Areas the walkthrough did not enter (west wing, Library store) are not counted.",
+      "audit": "Rounded red fabric tub chair.",
       "workshop": null
     },
     "embodiedCarbon": {
@@ -3610,10 +3421,10 @@
   },
   {
     "id": "seat-l2",
-    "title": "Lounge Chair – teal fabric (L2)",
-    "imageUrl": "data/images/images_assets/Lounge chair - teal - 2.jpg",
+    "title": "Lounge Chair - teal fabric (L2)",
+    "imageUrl": "data/images/images_assets/Armchair - Tub, teal (L2) - 1.jpg",
     "images": [
-      "data/images/images_assets/Lounge chair - teal - 2.jpg"
+      "data/images/images_assets/Armchair - Tub, teal (L2) - 1.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -3668,12 +3479,11 @@
   },
   {
     "id": "seat-l3",
-    "title": "Sofa – 2-seater, charcoal fabric (L3)",
-    "imageUrl": "data/images/images_assets/Lounge armchair - ch - 1.jpg",
+    "title": "Sofa - 2-seat, charcoal fabric (L3)",
+    "imageUrl": "data/images/images_assets/Sofa - 2-seat, charcoa (L3) - 1.jpg",
     "images": [
-      "data/images/images_assets/Lounge armchair - ch - 1.jpg",
-      "data/images/images_assets/Lounge armchair - ch - 2.jpg",
-      "data/images/images_assets/Lounge armchair - ch - 3.jpg"
+      "data/images/images_assets/Sofa - 2-seat, charcoa (L3) - 1.jpg",
+      "data/images/images_assets/Sofa - 2-seat, charcoa (L3) - 2.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -3729,12 +3539,11 @@
   },
   {
     "id": "seat-s2",
-    "title": "Sofa 2-seat – black leather (S2)",
-    "imageUrl": "data/images/images_assets/Sofa 2-seat - black - 1.jpg",
+    "title": "Sofa - 2-seat, black leather (S2)",
+    "imageUrl": "data/images/images_assets/Sofa - 2-seat, black l (S2) - 1.jpg",
     "images": [
-      "data/images/images_assets/Sofa 2-seat - black - 1.jpg",
-      "data/images/images_assets/Sofa 2-seat - black - 2.jpg",
-      "data/images/images_assets/Sofa 2-seat - black - 3.jpg"
+      "data/images/images_assets/Sofa - 2-seat, black l (S2) - 1.jpg",
+      "data/images/images_assets/Sofa - 2-seat, black l (S2) - 2.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -3789,11 +3598,11 @@
   },
   {
     "id": "seat-s3",
-    "title": "Sofa 2-seat – teal/blue fabric (S3)",
-    "imageUrl": "data/images/images_assets/Sofa 2-seat - tealbl - 1.jpg",
+    "title": "Sofa - 2-seat, teal/blue fabric (S3)",
+    "imageUrl": "data/images/images_assets/Sofa - 2-seat, tealblu (S3) - 1.jpg",
     "images": [
-      "data/images/images_assets/Sofa 2-seat - tealbl - 1.jpg",
-      "data/images/images_assets/Sofa 2-seat - tealbl - 2.jpg"
+      "data/images/images_assets/Sofa - 2-seat, tealblu (S3) - 1.jpg",
+      "data/images/images_assets/Sofa - 2-seat, tealblu (S3) - 2.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -3848,12 +3657,11 @@
   },
   {
     "id": "seat-s5",
-    "title": "Sofa – floral tapestry fabric (S5)",
-    "imageUrl": "data/images/images_assets/Sofa - floral tapest - 1.jpg",
+    "title": "Sofa - floral tapestry fabric (S5)",
+    "imageUrl": "data/images/images_assets/Sofa - floral tapestry (S5) - 1.jpg",
     "images": [
-      "data/images/images_assets/Sofa - floral tapest - 1.jpg",
-      "data/images/images_assets/Sofa - floral tapest - 2.jpg",
-      "data/images/images_assets/Sofa - floral tapest - 3.jpg"
+      "data/images/images_assets/Sofa - floral tapestry (S5) - 1.jpg",
+      "data/images/images_assets/Sofa - floral tapestry (S5) - 2.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -3909,10 +3717,10 @@
   {
     "id": "ffe-d2",
     "title": "Return Air Grille - Half egg crate",
-    "imageUrl": "data/images/images_assets/Ceiling services - S (D2) - 2.jpg",
+    "imageUrl": "data/images/images_assets/Return Air Grille - Ha - 1.jpg",
     "images": [
-      "data/images/images_assets/Ceiling services - S (D2) - 2.jpg",
-      "data/images/images_assets/Ceiling services - S (D2) - 3.jpg"
+      "data/images/images_assets/Return Air Grille - Ha - 1.jpg",
+      "data/images/images_assets/Return Air Grille - Ha - 2.jpg"
     ],
     "category": "Services",
     "unit": "Count",
@@ -3967,12 +3775,12 @@
   },
   {
     "id": "ffe-f5",
-    "title": "Filing cabinet – Metal, Vertical 4-drawer, grey (F5)",
-    "imageUrl": "data/images/images_assets/Filing cabinet - Ver (F5) - 1.jpg",
+    "title": "Filing cabinet - Metal, Vertical 4-drawer, Grey (F5)",
+    "imageUrl": "data/images/images_assets/Filing cabinet - Metal (F5) - 1.jpg",
     "images": [
-      "data/images/images_assets/Filing cabinet - Ver (F5) - 1.jpg",
-      "data/images/images_assets/Filing cabinet - Ver (F5) - 2.jpg",
-      "data/images/images_assets/Filing cabinet - Ver (F5) - 3.jpg"
+      "data/images/images_assets/Filing cabinet - Metal (F5) - 1.jpg",
+      "data/images/images_assets/Filing cabinet - Metal (F5) - 2.jpg",
+      "data/images/images_assets/Filing cabinet - Metal (F5) - 3.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -4025,14 +3833,14 @@
   },
   {
     "id": "ffe-f3",
-    "title": "Filing Cabinet – Miscellaneous single column (various)",
-    "imageUrl": "data/images/images_assets/Filing cabinet - Lat (F3) - 2.jpg",
+    "title": "Filing Cabinet - Miscellaneous Single Column (various)",
+    "imageUrl": "data/images/images_assets/Filing Cabinet - Misce - 1.jpg",
     "images": [
-      "data/images/images_assets/Filing cabinet - Lat (F3) - 2.jpg",
-      "data/images/images_assets/Filing cabinet - Lat (F3) - 3.jpg",
-      "data/images/images_assets/Filing Cabinet – Metal, single column (various) - 3.png",
-      "data/images/images_assets/Filing Cabinet – Miscellaneous single column (various) - 4.png",
-      "data/images/images_assets/Filing Cabinet – Miscellaneous single column (various) - 5.png"
+      "data/images/images_assets/Filing Cabinet - Misce - 1.jpg",
+      "data/images/images_assets/Filing Cabinet - Misce - 2.jpg",
+      "data/images/images_assets/Filing Cabinet - Misce - 3.png",
+      "data/images/images_assets/Filing Cabinet - Misce - 4.png",
+      "data/images/images_assets/Filing Cabinet - Misce - 5.png"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -4085,11 +3893,11 @@
   },
   {
     "id": "ffe-f2",
-    "title": "Filing Cabinet – Metal, 2-drawer (F2)",
-    "imageUrl": "data/images/images_assets/Filing cabinet - Lat (F2) - 3.jpg",
+    "title": "Filing Cabinet - Metal, 2-drawer (F2)",
+    "imageUrl": "data/images/images_assets/Filing Cabinet - Metal (F2) - 1.jpg",
     "images": [
-      "data/images/images_assets/Filing cabinet - Lat (F2) - 3.jpg",
-      "data/images/images_assets/Filing Cabinet – Metal, 2-drawer (F2) - 2.png"
+      "data/images/images_assets/Filing Cabinet - Metal (F2) - 1.jpg",
+      "data/images/images_assets/Filing Cabinet - Metal (F2) - 2.png"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -4142,10 +3950,10 @@
   },
   {
     "id": "ffe-f7",
-    "title": "Filing Cabinet – Wide Single (F7)",
-    "imageUrl": "data/images/images_assets/Filing cabinet - Lat (F7) - 2.jpg",
+    "title": "Filing Cabinet - Wide Single (F7)",
+    "imageUrl": "data/images/images_assets/Filing Cabinet - Wide (F7) - 1.jpg",
     "images": [
-      "data/images/images_assets/Filing cabinet - Lat (F7) - 2.jpg"
+      "data/images/images_assets/Filing Cabinet - Wide (F7) - 1.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -4198,12 +4006,12 @@
   },
   {
     "id": "ffe-c1",
-    "title": "Cupboard – Steel stationery cupboard 2-door, beige/grey, ~1.8–2.0 m (C1)",
-    "imageUrl": "data/images/images_assets/Cupboard - Steel sta - 1.jpg",
+    "title": "Cupboard - Steel stationery cupboard 2-door, beige/grey, ~1.8-2.0 m (C1)",
+    "imageUrl": "data/images/images_assets/Cupboard - Steel stati (C1) - 1.jpg",
     "images": [
-      "data/images/images_assets/Cupboard - Steel sta - 1.jpg",
-      "data/images/images_assets/Cupboard - Steel sta - 2.jpg",
-      "data/images/images_assets/Cupboard - Steel sta - 3.jpg"
+      "data/images/images_assets/Cupboard - Steel stati (C1) - 1.jpg",
+      "data/images/images_assets/Cupboard - Steel stati (C1) - 2.jpg",
+      "data/images/images_assets/Cupboard - Steel stati (C1) - 3.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -4258,12 +4066,12 @@
   },
   {
     "id": "ffe-c2",
-    "title": "Cupboard – Tall cupboard 2-door, white, ~2.1 m (C2)",
-    "imageUrl": "data/images/images_assets/Cupboard - Tall cupb (C2) - 1.jpg",
+    "title": "Cupboard - Tall cupboard 2-door, white (C2)",
+    "imageUrl": "data/images/images_assets/Cupboard - Tall cupboa (C2) - 1.jpg",
     "images": [
-      "data/images/images_assets/Cupboard - Tall cupb (C2) - 1.jpg",
-      "data/images/images_assets/Cupboard - Tall cupb (C2) - 2.jpg",
-      "data/images/images_assets/Cupboard - Tall cupb (C2) - 3.jpg"
+      "data/images/images_assets/Cupboard - Tall cupboa (C2) - 1.jpg",
+      "data/images/images_assets/Cupboard - Tall cupboa (C2) - 2.jpg",
+      "data/images/images_assets/Cupboard - Tall cupboa (C2) - 3.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -4318,12 +4126,12 @@
   },
   {
     "id": "ffe-c7",
-    "title": "Cupboard – Display cabinet, timber with glazed doors (C7)",
-    "imageUrl": "data/images/images_assets/Cupboard - Display c - 1.jpg",
+    "title": "Cupboard - Display, timber with glazed doors (C7)",
+    "imageUrl": "data/images/images_assets/Cupboard - Display, ti (C7) - 1.jpg",
     "images": [
-      "data/images/images_assets/Cupboard - Display c - 1.jpg",
-      "data/images/images_assets/Cupboard - Display c - 2.jpg",
-      "data/images/images_assets/Cupboard - Display c - 3.jpg"
+      "data/images/images_assets/Cupboard - Display, ti (C7) - 1.jpg",
+      "data/images/images_assets/Cupboard - Display, ti (C7) - 2.jpg",
+      "data/images/images_assets/Cupboard - Display, ti (C7) - 3.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -4377,70 +4185,11 @@
     "pathwayConfirmed": null
   },
   {
-    "id": "ffe-c9",
-    "title": "Cupboard – Tambour-door cabinet, white (C9)",
-    "imageUrl": "data/images/images_assets/Cupboard - Tambour-d - 1.jpg",
-    "images": [
-      "data/images/images_assets/Cupboard - Tambour-d - 1.jpg",
-      "data/images/images_assets/Cupboard - Tambour-d - 2.jpg"
-    ],
-    "category": "FF&E",
-    "unit": "Count",
-    "quantity": 2,
-    "manufacturer": null,
-    "supplier": null,
-    "dimensions": {
-      "height": null,
-      "depth": null,
-      "width": null
-    },
-    "primaryMaterialStream": "Metal: Ferrous",
-    "weight": {
-      "perUnit": 70,
-      "total": 140
-    },
-    "pathway": {
-      "suggested": "Rehome",
-      "suggestedId": null,
-      "partners": [
-        "Loop"
-      ],
-      "partnersSupplementary": []
-    },
-    "location": "PHQ Level 2",
-    "notes": {
-      "audit": "Tambour-door cabinet, white.\nFF&E register code C9 (Cupboards). 2 counted from the 3D walkthrough; every detection reviewed by eye and merged by model and position.\nWeight, material and pathway carried over from 'Tambour Cabinet' (estimate, to confirm). Original row 'Tambour Cabinet' kept unchanged. Areas the walkthrough did not enter (west wing) are not counted.",
-      "workshop": null
-    },
-    "embodiedCarbon": {
-      "perUnit": null,
-      "ecSource": null,
-      "total": null
-    },
-    "wasteEmissions": {
-      "factor": null,
-      "efSource": null,
-      "potential": null
-    },
-    "pathwayNotes": {
-      "retain": null,
-      "reuse": null,
-      "adaptiveReuse": null,
-      "refurbish": null,
-      "recycle": null,
-      "disposal": null,
-      "rehome": "Empty contents and remove keys. Take out drawers and shelves to reduce weight, secure doors, and move on a trolley. Allocate to the pathway partner for rehoming. Clean, tape drawers and doors shut, and label by type so they can be collected in lots.",
-      "remanufacture": null,
-      "stewardship": null
-    },
-    "pathwayConfirmed": null
-  },
-  {
     "id": "ffe-c4",
-    "title": "Cupboard – Tall cupboard, timber-look, open shelving (C4)",
-    "imageUrl": "data/images/images_assets/Cupboard - Tall cupb (C4) - 1.jpg",
+    "title": "Cupboard - Tall cupboard, timber-look, open shelving (C4)",
+    "imageUrl": "data/images/images_assets/Cupboard - Tall cupboa (C4) - 1.jpg",
     "images": [
-      "data/images/images_assets/Cupboard - Tall cupb (C4) - 1.jpg"
+      "data/images/images_assets/Cupboard - Tall cupboa (C4) - 1.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -4495,10 +4244,10 @@
   },
   {
     "id": "ffe-c5",
-    "title": "Cupboard – Low cupboard 2-door, white (C5)",
-    "imageUrl": "data/images/images_assets/Cupboard - Low cupbo - 1.jpg",
+    "title": "Cupboard - Low cupboard 2-door, white (C5)",
+    "imageUrl": "data/images/images_assets/Cupboard - Low cupboar (C5) - 1.jpg",
     "images": [
-      "data/images/images_assets/Cupboard - Low cupbo - 1.jpg"
+      "data/images/images_assets/Cupboard - Low cupboar (C5) - 1.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -4553,11 +4302,11 @@
   },
   {
     "id": "ffe-k2",
-    "title": "Lockers – Single full-height louvred (K2)",
-    "imageUrl": "data/images/images_assets/Locker - Steel louvr - 1.jpg",
+    "title": "Lockers - Single full-height louvred (K2)",
+    "imageUrl": "data/images/images_assets/Lockers - Single full (K2) - 1.jpg",
     "images": [
-      "data/images/images_assets/Locker - Steel louvr - 1.jpg",
-      "data/images/images_assets/Locker - Steel louvr - 2.jpg"
+      "data/images/images_assets/Lockers - Single full (K2) - 1.jpg",
+      "data/images/images_assets/Lockers - Single full (K2) - 2.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -4612,11 +4361,11 @@
   },
   {
     "id": "ffe-k1",
-    "title": "Lockers – Single full-height, Steel (K1)",
-    "imageUrl": "data/images/images_assets/Locker - Steel full - 1.jpg",
+    "title": "Lockers - Single full-height, Steel (K1)",
+    "imageUrl": "data/images/images_assets/Lockers - Single full (K1) - 1.jpg",
     "images": [
-      "data/images/images_assets/Locker - Steel full - 1.jpg",
-      "data/images/images_assets/Locker - Steel full - 3.jpg"
+      "data/images/images_assets/Lockers - Single full (K1) - 1.jpg",
+      "data/images/images_assets/Lockers - Single full (K1) - 2.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -4671,11 +4420,11 @@
   },
   {
     "id": "ffe-sh",
-    "title": "Shelving – Boltless Steel Open (SH)",
-    "imageUrl": "data/images/images_assets/Shelving - Steel ope - 1.jpg",
+    "title": "Shelving - Boltless Steel Open (SH)",
+    "imageUrl": "data/images/images_assets/Shelving - Boltless St (SH) - 1.jpg",
     "images": [
-      "data/images/images_assets/Shelving - Steel ope - 1.jpg",
-      "data/images/images_assets/Shelving - Steel ope - 2.jpg"
+      "data/images/images_assets/Shelving - Boltless St (SH) - 1.jpg",
+      "data/images/images_assets/Shelving - Boltless St (SH) - 2.jpg"
     ],
     "category": "Built Form",
     "unit": "Count",
@@ -4730,12 +4479,12 @@
   },
   {
     "id": "ffe-t5",
-    "title": "Table – Round/oval table, white top, pedestal base (T5)",
-    "imageUrl": "data/images/images_assets/Table - Roundoval ta - 1.jpg",
+    "title": "Table - Café, Round, Pedestal Base, white (T5)",
+    "imageUrl": "data/images/images_assets/Table - Café, Round, P (T5) - 1.jpg",
     "images": [
-      "data/images/images_assets/Table - Roundoval ta - 1.jpg",
-      "data/images/images_assets/Table - Roundoval ta - 2.jpg",
-      "data/images/images_assets/Table - Roundoval ta - 3.jpg"
+      "data/images/images_assets/Table - Café, Round, P (T5) - 1.jpg",
+      "data/images/images_assets/Table - Café, Round, P (T5) - 2.jpg",
+      "data/images/images_assets/Table - Café, Round, P (T5) - 3.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -4760,69 +4509,9 @@
       ],
       "partnersSupplementary": []
     },
-    "location": "PHQ Level 2",
+    "location": null,
     "notes": {
-      "audit": "Round/oval table, white top, pedestal base.\nFF&E register code T5 (Tables). 8 counted from the 3D walkthrough; every detection reviewed by eye and merged by model and position.\nWeight, material and pathway carried over from 'Meeting Table' (estimate, to confirm). Original row 'Meeting Table' kept unchanged. Areas the walkthrough did not enter (west wing) are not counted. Large tables seen as several pieces; ±1–2 per room.",
-      "workshop": null
-    },
-    "embodiedCarbon": {
-      "perUnit": null,
-      "ecSource": null,
-      "total": null
-    },
-    "wasteEmissions": {
-      "factor": null,
-      "efSource": null,
-      "potential": null
-    },
-    "pathwayNotes": {
-      "retain": null,
-      "reuse": null,
-      "adaptiveReuse": null,
-      "refurbish": null,
-      "recycle": null,
-      "disposal": null,
-      "rehome": "Unscrew or unclip tops from their bases (or lift out whole where free-standing), keep fixings with each table and protect edges and corners. Allocate to the pathway partner for rehoming. Clean, wrap corners, stack tops flat and bases together, and label by type for collection.",
-      "remanufacture": null,
-      "stewardship": null
-    },
-    "pathwayConfirmed": null
-  },
-  {
-    "id": "ffe-t2",
-    "title": "Table – Rectangular table, white top, black/white frame (interview / small meeting) (T2)",
-    "imageUrl": "data/images/images_assets/Table - Rectangular - 1.jpg",
-    "images": [
-      "data/images/images_assets/Table - Rectangular - 1.jpg",
-      "data/images/images_assets/Table - Rectangular - 2.jpg",
-      "data/images/images_assets/Table - Rectangular - 3.jpg"
-    ],
-    "category": "FF&E",
-    "unit": "Count",
-    "quantity": 6,
-    "manufacturer": null,
-    "supplier": null,
-    "dimensions": {
-      "height": null,
-      "depth": null,
-      "width": null
-    },
-    "primaryMaterialStream": "Wood: Particleboard",
-    "weight": {
-      "perUnit": 30,
-      "total": 180
-    },
-    "pathway": {
-      "suggested": "Rehome",
-      "suggestedId": null,
-      "partners": [
-        "Loop"
-      ],
-      "partnersSupplementary": []
-    },
-    "location": "PHQ Level 2",
-    "notes": {
-      "audit": "Rectangular table, white top, black/white frame (interview / small meeting).\nFF&E register code T2 (Tables). 6 counted from the 3D walkthrough; every detection reviewed by eye and merged by model and position.\nWeight, material and pathway carried over from 'Meeting Table' (estimate, to confirm). Original row 'Meeting Table' kept unchanged. Areas the walkthrough did not enter (west wing) are not counted. Large tables seen as several pieces; ±1–2 per room.",
+      "audit": null,
       "workshop": null
     },
     "embodiedCarbon": {
@@ -4850,12 +4539,11 @@
   },
   {
     "id": "ffe-t3",
-    "title": "Table – Café table, white or grey round top, timber legs (T3)",
-    "imageUrl": "data/images/images_assets/Table - Caf table, w - 1.jpg",
+    "title": "Table - Café, Round, white with timber legs (T3)",
+    "imageUrl": "data/images/images_assets/Table - Café, Round, w (T3) - 1.jpg",
     "images": [
-      "data/images/images_assets/Table - Caf table, w - 1.jpg",
-      "data/images/images_assets/Table - Caf table, w - 2.jpg",
-      "data/images/images_assets/Table - Caf table, w - 3.jpg"
+      "data/images/images_assets/Table - Café, Round, w (T3) - 1.jpg",
+      "data/images/images_assets/Table - Café, Round, w (T3) - 2.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -4880,9 +4568,9 @@
       ],
       "partnersSupplementary": []
     },
-    "location": "PHQ Level 2",
+    "location": null,
     "notes": {
-      "audit": "Café table, white or grey round top, timber legs.\nFF&E register code T3 (Tables). 3 counted from the 3D walkthrough; every detection reviewed by eye and merged by model and position.\nWeight, material and pathway carried over from 'Breakout Table (various)' (estimate, to confirm). Original row 'Breakout Table (various)' kept unchanged. Areas the walkthrough did not enter (west wing) are not counted. Large tables seen as several pieces; ±1–2 per room.",
+      "audit": null,
       "workshop": null
     },
     "embodiedCarbon": {
@@ -4910,16 +4598,15 @@
   },
   {
     "id": "ffe-t20",
-    "title": "Table – Study table, white rectangular (library) (T20)",
-    "imageUrl": "data/images/images_assets/Table - Study table, - 1.jpg",
+    "title": "Table - Meeting, Rectangular, white (library) (T20)",
+    "imageUrl": "data/images/images_assets/Table - Meeting, Recta (T20) - 1.jpg",
     "images": [
-      "data/images/images_assets/Table - Study table, - 1.jpg",
-      "data/images/images_assets/Table - Study table, - 2.jpg",
-      "data/images/images_assets/Table - Study table, - 3.jpg"
+      "data/images/images_assets/Table - Meeting, Recta (T20) - 1.jpg",
+      "data/images/images_assets/Table - Meeting, Recta (T20) - 2.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
-    "quantity": 3,
+    "quantity": 2,
     "manufacturer": null,
     "supplier": null,
     "dimensions": {
@@ -4930,7 +4617,7 @@
     "primaryMaterialStream": "Wood: Particleboard",
     "weight": {
       "perUnit": 30,
-      "total": 90
+      "total": 60
     },
     "pathway": {
       "suggested": "Rehome",
@@ -4940,9 +4627,9 @@
       ],
       "partnersSupplementary": []
     },
-    "location": "PHQ Level 2",
+    "location": "Library",
     "notes": {
-      "audit": "Study table, white rectangular (library).\nFF&E register code T20 (Tables). 3 counted from the 3D walkthrough; every detection reviewed by eye and merged by model and position.\nWeight, material and pathway carried over from 'Meeting Table' (estimate, to confirm). Original row 'Meeting Table' kept unchanged. Areas the walkthrough did not enter (west wing) are not counted. Large tables seen as several pieces; ±1–2 per room.",
+      "audit": null,
       "workshop": null
     },
     "embodiedCarbon": {
@@ -4970,16 +4657,16 @@
   },
   {
     "id": "ffe-t4",
-    "title": "Table – Boardroom / meeting table, timber-look, boat-shaped or rectangular (T4)",
-    "imageUrl": "data/images/images_assets/Table - Boardroom me - 1.jpg",
+    "title": "Table - Meeting, Boat-shape, timber-laminate (T4)",
+    "imageUrl": "data/images/images_assets/Table - Meeting, Boat (T4) - 1.jpg",
     "images": [
-      "data/images/images_assets/Table - Boardroom me - 1.jpg",
-      "data/images/images_assets/Table - Boardroom me - 2.jpg",
-      "data/images/images_assets/Table - Boardroom me - 3.jpg"
+      "data/images/images_assets/Table - Meeting, Boat (T4) - 1.jpg",
+      "data/images/images_assets/Table - Meeting, Boat (T4) - 2.jpg",
+      "data/images/images_assets/Table - Meeting, Boat (T4) - 3.png"
     ],
     "category": "FF&E",
     "unit": "Count",
-    "quantity": 2,
+    "quantity": 1,
     "manufacturer": null,
     "supplier": null,
     "dimensions": {
@@ -4990,7 +4677,7 @@
     "primaryMaterialStream": "Wood: Particleboard",
     "weight": {
       "perUnit": 80,
-      "total": 160
+      "total": 80
     },
     "pathway": {
       "suggested": "Rehome",
@@ -5000,9 +4687,9 @@
       ],
       "partnersSupplementary": []
     },
-    "location": "PHQ Level 2",
+    "location": null,
     "notes": {
-      "audit": "Boardroom / meeting table, timber-look, boat-shaped or rectangular.\nFF&E register code T4 (Tables). 2 counted from the 3D walkthrough; every detection reviewed by eye and merged by model and position.\nWeight, material and pathway carried over from 'Conference Table' (estimate, to confirm). Original row 'Conference Table' kept unchanged. Areas the walkthrough did not enter (west wing) are not counted. Large tables seen as several pieces; ±1–2 per room.",
+      "audit": "In room adjacent-right to Intel Room of Homicide Department (bottom left working space)",
       "workshop": null
     },
     "embodiedCarbon": {
@@ -5030,10 +4717,10 @@
   },
   {
     "id": "ffe-t10",
-    "title": "Table – Dining rectangular, white (T10)",
-    "imageUrl": "data/images/images_assets/Table - Dining recta (T10) - 1.jpg",
+    "title": "Table - Dining, Rectangular, white (T10)",
+    "imageUrl": "data/images/images_assets/Table - Dining, Rectan (T10) - 1.jpg",
     "images": [
-      "data/images/images_assets/Table - Dining recta (T10) - 1.jpg"
+      "data/images/images_assets/Table - Dining, Rectan (T10) - 1.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -5087,12 +4774,11 @@
     "pathwayConfirmed": null
   },
   {
-    "id": "ffe-t13",
-    "title": "Table – Meeting table, cherry veneer (T13)",
-    "imageUrl": "data/images/images_assets/Table - Meeting tabl (T13) - 1.jpg",
+    "id": "ffe-t14",
+    "title": "Table - Breakout, Centre-insert, timber and grey (T14)",
+    "imageUrl": "data/images/images_assets/Table - Breakout, Cent (T14) - 1.jpg",
     "images": [
-      "data/images/images_assets/Table - Meeting tabl (T13) - 1.jpg",
-      "data/images/images_assets/Table - Meeting tabl (T13) - 2.jpg"
+      "data/images/images_assets/Table - Breakout, Cent (T14) - 1.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -5117,67 +4803,7 @@
       ],
       "partnersSupplementary": []
     },
-    "location": "PHQ Level 2",
-    "notes": {
-      "audit": "Meeting table, cherry veneer.\nFF&E register code T13 (Tables). 2 counted from the 3D walkthrough; every detection reviewed by eye and merged by model and position.\nWeight, material and pathway carried over from 'Meeting Table' (estimate, to confirm). Original row 'Meeting Table' kept unchanged. Areas the walkthrough did not enter (west wing) are not counted. Large tables seen as several pieces; ±1–2 per room.",
-      "workshop": null
-    },
-    "embodiedCarbon": {
-      "perUnit": null,
-      "ecSource": null,
-      "total": null
-    },
-    "wasteEmissions": {
-      "factor": null,
-      "efSource": null,
-      "potential": null
-    },
-    "pathwayNotes": {
-      "retain": null,
-      "reuse": null,
-      "adaptiveReuse": null,
-      "refurbish": null,
-      "recycle": null,
-      "disposal": null,
-      "rehome": "Unscrew or unclip tops from their bases (or lift out whole where free-standing), keep fixings with each table and protect edges and corners. Allocate to the pathway partner for rehoming. Clean, wrap corners, stack tops flat and bases together, and label by type for collection.",
-      "remanufacture": null,
-      "stewardship": null
-    },
-    "pathwayConfirmed": null
-  },
-  {
-    "id": "ffe-t14",
-    "title": "Table – Meeting table, two-tone oak / charcoal (T14)",
-    "imageUrl": "data/images/images_assets/Table - Meeting tabl (T14) - 1.jpg",
-    "images": [
-      "data/images/images_assets/Table - Meeting tabl (T14) - 1.jpg",
-      "data/images/images_assets/Table - Meeting tabl (T14) - 2.jpg",
-      "data/images/images_assets/Table - Meeting tabl (T14) - 3.jpg"
-    ],
-    "category": "FF&E",
-    "unit": "Count",
-    "quantity": 2,
-    "manufacturer": null,
-    "supplier": null,
-    "dimensions": {
-      "height": null,
-      "depth": null,
-      "width": null
-    },
-    "primaryMaterialStream": "Wood: Particleboard",
-    "weight": {
-      "perUnit": 30,
-      "total": 60
-    },
-    "pathway": {
-      "suggested": "Rehome",
-      "suggestedId": null,
-      "partners": [
-        "Loop"
-      ],
-      "partnersSupplementary": []
-    },
-    "location": "PHQ Level 2",
+    "location": "Meals",
     "notes": {
       "audit": "Meeting table, two-tone oak / charcoal.\nFF&E register code T14 (Tables). 2 counted from the 3D walkthrough; every detection reviewed by eye and merged by model and position.\nWeight, material and pathway carried over from 'Meeting Table' (estimate, to confirm). Original row 'Meeting Table' kept unchanged. Areas the walkthrough did not enter (west wing) are not counted. Large tables seen as several pieces; ±1–2 per room.",
       "workshop": null
@@ -5207,16 +4833,15 @@
   },
   {
     "id": "ffe-t15",
-    "title": "Table – Meeting table, golden oak, large (T15)",
-    "imageUrl": "data/images/images_assets/Table - Meeting tabl (T15) - 1.jpg",
+    "title": "Table - Meeting, Rectangular 12-seat, timber (T15)",
+    "imageUrl": "data/images/images_assets/Table - Meeting, Recta (T15) - 1.jpg",
     "images": [
-      "data/images/images_assets/Table - Meeting tabl (T15) - 1.jpg",
-      "data/images/images_assets/Table - Meeting tabl (T15) - 2.jpg",
-      "data/images/images_assets/Table - Meeting tabl (T15) - 3.jpg"
+      "data/images/images_assets/Table - Meeting, Recta (T15) - 1.jpg",
+      "data/images/images_assets/Table - Meeting, Recta (T15) - 2.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
-    "quantity": 2,
+    "quantity": 1,
     "manufacturer": null,
     "supplier": null,
     "dimensions": {
@@ -5224,10 +4849,10 @@
       "depth": null,
       "width": null
     },
-    "primaryMaterialStream": "Wood: Particleboard",
+    "primaryMaterialStream": "Wood: Solid Timber",
     "weight": {
       "perUnit": 80,
-      "total": 160
+      "total": 80
     },
     "pathway": {
       "suggested": "Rehome",
@@ -5237,9 +4862,9 @@
       ],
       "partnersSupplementary": []
     },
-    "location": "PHQ Level 2",
+    "location": "Meeting",
     "notes": {
-      "audit": "Meeting table, golden oak, large.\nFF&E register code T15 (Tables). 2 counted from the 3D walkthrough; every detection reviewed by eye and merged by model and position.\nWeight, material and pathway carried over from 'Conference Table' (estimate, to confirm). Original row 'Conference Table' kept unchanged. Areas the walkthrough did not enter (west wing) are not counted. Large tables seen as several pieces; ±1–2 per room.",
+      "audit": "In meeting room adjacent-left to the library",
       "workshop": null
     },
     "embodiedCarbon": {
@@ -5267,16 +4892,15 @@
   },
   {
     "id": "ffe-t16",
-    "title": "Table – Round meeting table, charcoal/grey (T16)",
-    "imageUrl": "data/images/images_assets/Table - Round meetin (T16) - 1.jpg",
+    "title": "Table - Café, Round, charcoal (T16)",
+    "imageUrl": "data/images/images_assets/Table - Café, Round, c (T16) - 1.jpg",
     "images": [
-      "data/images/images_assets/Table - Round meetin (T16) - 1.jpg",
-      "data/images/images_assets/Table - Round meetin (T16) - 2.jpg",
-      "data/images/images_assets/Table - Round meetin (T16) - 3.jpg"
+      "data/images/images_assets/Table - Café, Round, c (T16) - 1.jpg",
+      "data/images/images_assets/Table - Café, Round, c (T16) - 2.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
-    "quantity": 2,
+    "quantity": 1,
     "manufacturer": null,
     "supplier": null,
     "dimensions": {
@@ -5287,7 +4911,7 @@
     "primaryMaterialStream": "Wood: Particleboard",
     "weight": {
       "perUnit": 30,
-      "total": 60
+      "total": 30
     },
     "pathway": {
       "suggested": "Rehome",
@@ -5297,7 +4921,7 @@
       ],
       "partnersSupplementary": []
     },
-    "location": "PHQ Level 2",
+    "location": "Manager",
     "notes": {
       "audit": "Round meeting table, charcoal/grey.\nFF&E register code T16 (Tables). 2 counted from the 3D walkthrough; every detection reviewed by eye and merged by model and position.\nWeight, material and pathway carried over from 'Meeting Table' (estimate, to confirm). Original row 'Meeting Table' kept unchanged. Areas the walkthrough did not enter (west wing) are not counted. Large tables seen as several pieces; ±1–2 per room.",
       "workshop": null
@@ -5327,16 +4951,15 @@
   },
   {
     "id": "ffe-t18",
-    "title": "Table – Boardroom table, white long rectangular (T18)",
-    "imageUrl": "data/images/images_assets/Table - Boardroom ta (T18) - 1.jpg",
+    "title": "Table - Meeting, Rectangular, white (T18)",
+    "imageUrl": "data/images/images_assets/Table - Meeting, Recta (T18) - 1.png",
     "images": [
-      "data/images/images_assets/Table - Boardroom ta (T18) - 1.jpg",
-      "data/images/images_assets/Table - Boardroom ta (T18) - 2.jpg",
-      "data/images/images_assets/Table - Boardroom ta (T18) - 3.jpg"
+      "data/images/images_assets/Table - Meeting, Recta (T18) - 1.png",
+      "data/images/images_assets/Table - Meeting, Recta (T18) - 2.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
-    "quantity": 2,
+    "quantity": 1,
     "manufacturer": null,
     "supplier": null,
     "dimensions": {
@@ -5347,7 +4970,7 @@
     "primaryMaterialStream": "Wood: Particleboard",
     "weight": {
       "perUnit": 80,
-      "total": 160
+      "total": 80
     },
     "pathway": {
       "suggested": "Rehome",
@@ -5357,9 +4980,9 @@
       ],
       "partnersSupplementary": []
     },
-    "location": "PHQ Level 2",
+    "location": "Meeting",
     "notes": {
-      "audit": "Boardroom table, white long rectangular.\nFF&E register code T18 (Tables). 2 counted from the 3D walkthrough; every detection reviewed by eye and merged by model and position.\nWeight, material and pathway carried over from 'Conference Table' (estimate, to confirm). Original row 'Conference Table' kept unchanged. Areas the walkthrough did not enter (west wing) are not counted. Large tables seen as several pieces; ±1–2 per room.",
+      "audit": "In meeting room below CIO Chief Info Officer",
       "workshop": null
     },
     "embodiedCarbon": {
@@ -5387,11 +5010,11 @@
   },
   {
     "id": "ffe-t19",
-    "title": "Table – Café table, beech round (T19)",
-    "imageUrl": "data/images/images_assets/Table - Caf table, b - 1.jpg",
+    "title": "Side Table - Rounded, timber laminate (T19)",
+    "imageUrl": "data/images/images_assets/Side Table - Rounded (T19) - 1.jpg",
     "images": [
-      "data/images/images_assets/Table - Caf table, b - 1.jpg",
-      "data/images/images_assets/Table - Caf table, b - 2.jpg"
+      "data/images/images_assets/Side Table - Rounded (T19) - 1.jpg",
+      "data/images/images_assets/Side Table - Rounded (T19) - 2.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -5416,9 +5039,9 @@
       ],
       "partnersSupplementary": []
     },
-    "location": "PHQ Level 2",
+    "location": null,
     "notes": {
-      "audit": "Café table, beech round.\nFF&E register code T19 (Tables). 2 counted from the 3D walkthrough; every detection reviewed by eye and merged by model and position.\nWeight, material and pathway carried over from 'Breakout Table (various)' (estimate, to confirm). Original row 'Breakout Table (various)' kept unchanged. Areas the walkthrough did not enter (west wing) are not counted. Large tables seen as several pieces; ±1–2 per room.",
+      "audit": null,
       "workshop": null
     },
     "embodiedCarbon": {
@@ -5446,12 +5069,12 @@
   },
   {
     "id": "ffe-t1",
-    "title": "Table – Meeting table, white round/oval ~1.2 m (T1)",
-    "imageUrl": "data/images/images_assets/Table - Meeting tabl (T1) - 1.jpg",
+    "title": "Table - Meeting, Round 6-seat, white with chrome legs (T1)",
+    "imageUrl": "data/images/images_assets/Table - Meeting, Round (T1) - 1.jpg",
     "images": [
-      "data/images/images_assets/Table - Meeting tabl (T1) - 1.jpg",
-      "data/images/images_assets/Table - Meeting tabl (T1) - 2.jpg",
-      "data/images/images_assets/Table - Meeting tabl (T1) - 3.jpg"
+      "data/images/images_assets/Table - Meeting, Round (T1) - 1.jpg",
+      "data/images/images_assets/Table - Meeting, Round (T1) - 2.png",
+      "data/images/images_assets/Table - Meeting, Round (T1) - 3.png"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -5476,7 +5099,7 @@
       ],
       "partnersSupplementary": []
     },
-    "location": "PHQ Level 2",
+    "location": null,
     "notes": {
       "audit": "Meeting table, white round/oval ~1.2 m.\nFF&E register code T1 (Tables). 1 counted from the 3D walkthrough; every detection reviewed by eye and merged by model and position.\nWeight, material and pathway carried over from 'Meeting Table' (estimate, to confirm). Original row 'Meeting Table' kept unchanged. Areas the walkthrough did not enter (west wing) are not counted. Large tables seen as several pieces; ±1–2 per room.",
       "workshop": null
@@ -5506,12 +5129,11 @@
   },
   {
     "id": "ffe-t6",
-    "title": "Table – Conference table, white rectangular (T6)",
-    "imageUrl": "data/images/images_assets/Table - Conference t - 1.jpg",
+    "title": "Table - Meeting, Rectangular 6-seat, white (T6)",
+    "imageUrl": "data/images/images_assets/Table - Meeting, Recta (T6) - 1.jpg",
     "images": [
-      "data/images/images_assets/Table - Conference t - 1.jpg",
-      "data/images/images_assets/Table - Conference t - 2.jpg",
-      "data/images/images_assets/Table - Conference t - 3.jpg"
+      "data/images/images_assets/Table - Meeting, Recta (T6) - 1.jpg",
+      "data/images/images_assets/Table - Meeting, Recta (T6) - 2.png"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -5536,9 +5158,9 @@
       ],
       "partnersSupplementary": []
     },
-    "location": "PHQ Level 2",
+    "location": "Office",
     "notes": {
-      "audit": "Conference table, white rectangular (glass-louvre room).\nFF&E register code T6 (Tables). 1 counted from the 3D walkthrough; every detection reviewed by eye and merged by model and position.\nWeight, material and pathway carried over from 'Meeting Table' (estimate, to confirm). Original row 'Meeting Table' kept unchanged. Areas the walkthrough did not enter (west wing) are not counted. Large tables seen as several pieces; ±1–2 per room.",
+      "audit": "In Office 2nd to the left from the Conference Room",
       "workshop": null
     },
     "embodiedCarbon": {
@@ -5566,12 +5188,12 @@
   },
   {
     "id": "ffe-t7",
-    "title": "Table – Meeting table, beech rectangular (T7)",
-    "imageUrl": "data/images/images_assets/Table - Meeting tabl (T7) - 1.jpg",
+    "title": "Table - Breakout, Gable-leg, timber laminate (T7)",
+    "imageUrl": "data/images/images_assets/Table - Breakout, Gabl (T7) - 1.jpg",
     "images": [
-      "data/images/images_assets/Table - Meeting tabl (T7) - 1.jpg",
-      "data/images/images_assets/Table - Meeting tabl (T7) - 2.jpg",
-      "data/images/images_assets/Table - Meeting tabl (T7) - 3.jpg"
+      "data/images/images_assets/Table - Breakout, Gabl (T7) - 1.jpg",
+      "data/images/images_assets/Table - Breakout, Gabl (T7) - 2.jpg",
+      "data/images/images_assets/Table - Breakout, Gabl (T7) - 3.png"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -5596,7 +5218,7 @@
       ],
       "partnersSupplementary": []
     },
-    "location": "PHQ Level 2",
+    "location": "Administration",
     "notes": {
       "audit": "Meeting table, beech rectangular.\nFF&E register code T7 (Tables). 1 counted from the 3D walkthrough; every detection reviewed by eye and merged by model and position.\nWeight, material and pathway carried over from 'Meeting Table' (estimate, to confirm). Original row 'Meeting Table' kept unchanged. Areas the walkthrough did not enter (west wing) are not counted. Large tables seen as several pieces; ±1–2 per room.",
       "workshop": null
@@ -5626,12 +5248,11 @@
   },
   {
     "id": "ffe-t8",
-    "title": "Table – Boardroom table, white boat-shaped with timber inlay strip (T8)",
-    "imageUrl": "data/images/images_assets/Table - Boardroom ta (T8) - 1.jpg",
+    "title": "Table - Meeting, Boat-shape, white (T8)",
+    "imageUrl": "data/images/images_assets/Table - Meeting, Boat (T8) - 1.jpg",
     "images": [
-      "data/images/images_assets/Table - Boardroom ta (T8) - 1.jpg",
-      "data/images/images_assets/Table - Boardroom ta (T8) - 2.jpg",
-      "data/images/images_assets/Table - Boardroom ta (T8) - 3.jpg"
+      "data/images/images_assets/Table - Meeting, Boat (T8) - 1.jpg",
+      "data/images/images_assets/Table - Meeting, Boat (T8) - 2.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -5656,9 +5277,9 @@
       ],
       "partnersSupplementary": []
     },
-    "location": "PHQ Level 2",
+    "location": "Administration",
     "notes": {
-      "audit": "Boardroom table, white boat-shaped with timber inlay strip.\nFF&E register code T8 (Tables). 1 counted from the 3D walkthrough; every detection reviewed by eye and merged by model and position.\nWeight, material and pathway carried over from 'Conference Table' (estimate, to confirm). Original row 'Conference Table' kept unchanged. Areas the walkthrough did not enter (west wing) are not counted. Large tables seen as several pieces; ±1–2 per room.",
+      "audit": null,
       "workshop": null
     },
     "embodiedCarbon": {
@@ -5686,12 +5307,11 @@
   },
   {
     "id": "ffe-t9",
-    "title": "Table – Meeting table, light oak top, white legs (T9)",
-    "imageUrl": "data/images/images_assets/Table - Meeting tabl (T9) - 1.jpg",
+    "title": "Table - Conference, timber laminate (T9)",
+    "imageUrl": "data/images/images_assets/Table - Conference, ti (T9) - 1.jpg",
     "images": [
-      "data/images/images_assets/Table - Meeting tabl (T9) - 1.jpg",
-      "data/images/images_assets/Table - Meeting tabl (T9) - 2.jpg",
-      "data/images/images_assets/Table - Meeting tabl (T9) - 3.jpg"
+      "data/images/images_assets/Table - Conference, ti (T9) - 1.jpg",
+      "data/images/images_assets/Table - Conference, ti (T9) - 2.png"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -5716,67 +5336,9 @@
       ],
       "partnersSupplementary": []
     },
-    "location": "PHQ Level 2",
+    "location": "Manager Information Systems",
     "notes": {
-      "audit": "Meeting table, light oak top, white legs.\nFF&E register code T9 (Tables). 1 counted from the 3D walkthrough; every detection reviewed by eye and merged by model and position.\nWeight, material and pathway carried over from 'Meeting Table' (estimate, to confirm). Original row 'Meeting Table' kept unchanged. Areas the walkthrough did not enter (west wing) are not counted. Large tables seen as several pieces; ±1–2 per room.",
-      "workshop": null
-    },
-    "embodiedCarbon": {
-      "perUnit": null,
-      "ecSource": null,
-      "total": null
-    },
-    "wasteEmissions": {
-      "factor": null,
-      "efSource": null,
-      "potential": null
-    },
-    "pathwayNotes": {
-      "retain": null,
-      "reuse": null,
-      "adaptiveReuse": null,
-      "refurbish": null,
-      "recycle": null,
-      "disposal": null,
-      "rehome": "Unscrew or unclip tops from their bases (or lift out whole where free-standing), keep fixings with each table and protect edges and corners. Allocate to the pathway partner for rehoming. Clean, wrap corners, stack tops flat and bases together, and label by type for collection.",
-      "remanufacture": null,
-      "stewardship": null
-    },
-    "pathwayConfirmed": null
-  },
-  {
-    "id": "ffe-t17",
-    "title": "Table – Training table, timber-look (rows) (T17)",
-    "imageUrl": "data/images/images_assets/Table - Training tab - 1.jpg",
-    "images": [
-      "data/images/images_assets/Table - Training tab - 1.jpg"
-    ],
-    "category": "FF&E",
-    "unit": "Count",
-    "quantity": 1,
-    "manufacturer": null,
-    "supplier": null,
-    "dimensions": {
-      "height": null,
-      "depth": null,
-      "width": null
-    },
-    "primaryMaterialStream": "Wood: Particleboard",
-    "weight": {
-      "perUnit": 30,
-      "total": 30
-    },
-    "pathway": {
-      "suggested": "Rehome",
-      "suggestedId": null,
-      "partners": [
-        "Loop"
-      ],
-      "partnersSupplementary": []
-    },
-    "location": "PHQ Level 2",
-    "notes": {
-      "audit": "Training table, timber-look (rows).\nFF&E register code T17 (Tables). 1 counted from the 3D walkthrough; every detection reviewed by eye and merged by model and position.\nWeight, material and pathway carried over from 'Meeting Table' (estimate, to confirm). Original row 'Meeting Table' kept unchanged. Areas the walkthrough did not enter (west wing) are not counted. Large tables seen as several pieces; ±1–2 per room.",
+      "audit": "Particleboard top with powder-coated steel legs (white)",
       "workshop": null
     },
     "embodiedCarbon": {
@@ -5804,10 +5366,10 @@
   },
   {
     "id": "ffe-t21",
-    "title": "Table – Side table, white (T21)",
-    "imageUrl": "data/images/images_assets/Table - Side table, - 1.jpg",
+    "title": "Side Table - Rectangular, white (T21)",
+    "imageUrl": "data/images/images_assets/Side Table - Rectangul (T21) - 1.jpg",
     "images": [
-      "data/images/images_assets/Table - Side table, - 1.jpg"
+      "data/images/images_assets/Side Table - Rectangul (T21) - 1.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -5832,9 +5394,9 @@
       ],
       "partnersSupplementary": []
     },
-    "location": "PHQ Level 2",
+    "location": null,
     "notes": {
-      "audit": "Side table, white.\nFF&E register code T21 (Tables). 1 counted from the 3D walkthrough; every detection reviewed by eye and merged by model and position.\nWeight, material and pathway carried over from 'Breakout Table (various)' (estimate, to confirm). Original row 'Breakout Table (various)' kept unchanged. Areas the walkthrough did not enter (west wing) are not counted. Large tables seen as several pieces; ±1–2 per room.",
+      "audit": null,
       "workshop": null
     },
     "embodiedCarbon": {
@@ -5862,10 +5424,10 @@
   },
   {
     "id": "ffe-t22",
-    "title": "Table – Round meeting table, dark timber (T22)",
-    "imageUrl": "data/images/images_assets/Table - Round meetin (T22) - 1.jpg",
+    "title": "Table - Café, Round, timber (T22)",
+    "imageUrl": "data/images/images_assets/Table - Café, Round, t (T22) - 1.jpg",
     "images": [
-      "data/images/images_assets/Table - Round meetin (T22) - 1.jpg"
+      "data/images/images_assets/Table - Café, Round, t (T22) - 1.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -5877,7 +5439,7 @@
       "depth": null,
       "width": null
     },
-    "primaryMaterialStream": "Wood: Particleboard",
+    "primaryMaterialStream": "Wood: Solid Timber",
     "weight": {
       "perUnit": 30,
       "total": 30
@@ -5890,7 +5452,7 @@
       ],
       "partnersSupplementary": []
     },
-    "location": "PHQ Level 2",
+    "location": "CIO Chief Info Officer",
     "notes": {
       "audit": "Round meeting table, dark timber.\nFF&E register code T22 (Tables). 1 counted from the 3D walkthrough; every detection reviewed by eye and merged by model and position.\nWeight, material and pathway carried over from 'Meeting Table' (estimate, to confirm). Original row 'Meeting Table' kept unchanged. Areas the walkthrough did not enter (west wing) are not counted. Large tables seen as several pieces; ±1–2 per room.",
       "workshop": null
@@ -5926,8 +5488,7 @@
       "data/images/images_assets/Sliding Glass Panel - 1.png",
       "data/images/images_assets/Sliding Glass Panel - 2.png",
       "data/images/images_assets/Sliding Glass Panel - 3.jpg",
-      "data/images/images_assets/Sliding Glass Panel - 4.jpg",
-      "data/images/images_assets/Sliding Glass Panel - 5.jpg"
+      "data/images/images_assets/Sliding Glass Panel - 4.jpg"
     ],
     "category": "Built Form",
     "unit": "Count",
@@ -6045,13 +5606,13 @@
   {
     "id": "f0b1175c-d7a0-4076-8fbb-b2b06ff50606",
     "title": "Carpet Tile - Alternate",
-    "imageUrl": "data/images/images_assets/Carpet Tile - Altern - 1.png",
+    "imageUrl": "data/images/images_assets/Carpet Tile - Alternat - 1.png",
     "images": [
-      "data/images/images_assets/Carpet Tile - Altern - 1.png",
-      "data/images/images_assets/Carpet Tile - Altern - 2.jpg",
-      "data/images/images_assets/Carpet Tile - Altern - 3.png",
-      "data/images/images_assets/Carpet Tile - Altern - 4.jpg",
-      "data/images/images_assets/Carpet Tile - Altern - 5.png"
+      "data/images/images_assets/Carpet Tile - Alternat - 1.png",
+      "data/images/images_assets/Carpet Tile - Alternat - 2.jpg",
+      "data/images/images_assets/Carpet Tile - Alternat - 3.png",
+      "data/images/images_assets/Carpet Tile - Alternat - 4.jpg",
+      "data/images/images_assets/Carpet Tile - Alternat - 5.png"
     ],
     "category": "Built Form",
     "unit": "Area (m2)",
@@ -6105,10 +5666,10 @@
   {
     "id": "7200bd13-5fa4-4d1f-a24f-17f31a18e208",
     "title": "Joinery - Kitchenette",
-    "imageUrl": "data/images/images_assets/Joinery - Kitchenett - 1.jpg",
+    "imageUrl": "data/images/images_assets/Joinery - Kitchenette - 1.jpg",
     "images": [
-      "data/images/images_assets/Joinery - Kitchenett - 1.jpg",
-      "data/images/images_assets/Joinery - Kitchenett - 2.png"
+      "data/images/images_assets/Joinery - Kitchenette - 1.jpg",
+      "data/images/images_assets/Joinery - Kitchenette - 2.png"
     ],
     "category": "Built Form",
     "unit": "Count",
@@ -6163,12 +5724,12 @@
   },
   {
     "id": "83b8aaa4-7cde-4b3a-af3f-8068b55c7250",
-    "title": "Joinery - In-built utility cabinet",
-    "imageUrl": "data/images/images_assets/Joinery - In-built u - 1.png",
+    "title": "Joinery - In-built Utility Cabinet",
+    "imageUrl": "data/images/images_assets/Joinery - In-built Uti - 1.png",
     "images": [
-      "data/images/images_assets/Joinery - In-built u - 1.png",
-      "data/images/images_assets/Joinery - In-built u - 2.jpg",
-      "data/images/images_assets/Joinery - In-built u - 4.png"
+      "data/images/images_assets/Joinery - In-built Uti - 1.png",
+      "data/images/images_assets/Joinery - In-built Uti - 2.jpg",
+      "data/images/images_assets/Joinery - In-built Uti - 3.png"
     ],
     "category": "Built Form",
     "unit": "Count",
@@ -6282,10 +5843,10 @@
   {
     "id": "a16aa96a-9d00-4323-831d-b57cccf57af4",
     "title": "Partition Window Pane",
-    "imageUrl": "data/images/images_assets/Partition Window Pan - 1.png",
+    "imageUrl": "data/images/images_assets/Partition Window Pane - 1.png",
     "images": [
-      "data/images/images_assets/Partition Window Pan - 1.png",
-      "data/images/images_assets/Partition Window Pan - 2.png"
+      "data/images/images_assets/Partition Window Pane - 1.png",
+      "data/images/images_assets/Partition Window Pane - 2.png"
     ],
     "category": "Built Form",
     "unit": "Area (m2)",
@@ -6339,9 +5900,9 @@
   {
     "id": "82d4d770-9403-4750-8ead-861a929a28c6",
     "title": "Plasterboard Partition Wall",
-    "imageUrl": "data/images/images_assets/Plasterboard Partiti - 1.png",
+    "imageUrl": "data/images/images_assets/Plasterboard Partition - 1.png",
     "images": [
-      "data/images/images_assets/Plasterboard Partiti - 1.png"
+      "data/images/images_assets/Plasterboard Partition - 1.png"
     ],
     "category": "Built Form",
     "unit": "Area (m2)",
@@ -6395,9 +5956,9 @@
   {
     "id": "909ffd8d-7869-496d-8fb2-667ae91f22b4",
     "title": "Plasterboard Bulkhead",
-    "imageUrl": "data/images/images_assets/Plasterboard Bulkhea - 1.png",
+    "imageUrl": "data/images/images_assets/Plasterboard Bulkhead - 1.png",
     "images": [
-      "data/images/images_assets/Plasterboard Bulkhea - 1.png"
+      "data/images/images_assets/Plasterboard Bulkhead - 1.png"
     ],
     "category": "Built Form",
     "unit": "Volume (m3)",
@@ -6451,10 +6012,10 @@
   {
     "id": "1041abae-6900-4608-8b46-d11f36f53658",
     "title": "Joinery - Low Partition Shelf",
-    "imageUrl": "data/images/images_assets/Joinery - Low Partit - 1.png",
+    "imageUrl": "data/images/images_assets/Joinery - Low Partitio - 1.png",
     "images": [
-      "data/images/images_assets/Joinery - Low Partit - 1.png",
-      "data/images/images_assets/Joinery - Low Partit - 2.png"
+      "data/images/images_assets/Joinery - Low Partitio - 1.png",
+      "data/images/images_assets/Joinery - Low Partitio - 2.png"
     ],
     "category": "Built Form",
     "unit": "Linear Metre (m)",
@@ -6508,10 +6069,10 @@
   {
     "id": "bfd4afe6-436d-4dfd-8b45-786632a6f979",
     "title": "Exit Sign - Wall-mounted",
-    "imageUrl": "data/images/images_assets/Exit Sign - Wall-mou - 1.png",
+    "imageUrl": "data/images/images_assets/Exit Sign - Wall-mount - 1.png",
     "images": [
-      "data/images/images_assets/Exit Sign - Wall-mou - 1.png",
-      "data/images/images_assets/Exit Sign - Wall-mou - 2.png"
+      "data/images/images_assets/Exit Sign - Wall-mount - 1.png",
+      "data/images/images_assets/Exit Sign - Wall-mount - 2.png"
     ],
     "category": "Services",
     "unit": "Count",
@@ -6567,11 +6128,11 @@
   {
     "id": "6ab09dd7-62fb-49fc-a80e-577b567ade51",
     "title": "Firearm Protection Panel",
-    "imageUrl": "data/images/images_assets/Firearm Protection P - 1.png",
+    "imageUrl": "data/images/images_assets/Firearm Protection Pan - 1.png",
     "images": [
-      "data/images/images_assets/Firearm Protection P - 1.png",
-      "data/images/images_assets/Firearm Protection P - 2.png",
-      "data/images/images_assets/Firearm Protection P - 3.jpg"
+      "data/images/images_assets/Firearm Protection Pan - 1.png",
+      "data/images/images_assets/Firearm Protection Pan - 2.png",
+      "data/images/images_assets/Firearm Protection Pan - 3.jpg"
     ],
     "category": "Built Form",
     "unit": "Area (m2)",
@@ -6628,9 +6189,9 @@
   {
     "id": "e3be4735-3c82-41cc-854d-2f182041d165",
     "title": "Resilient Flooring - Meals",
-    "imageUrl": "data/images/images_assets/Resilient Flooring - 1.png",
+    "imageUrl": "data/images/images_assets/Resilient Flooring - M - 1.png",
     "images": [
-      "data/images/images_assets/Resilient Flooring - 1.png"
+      "data/images/images_assets/Resilient Flooring - M - 1.png"
     ],
     "category": "Built Form",
     "unit": "Area (m2)",
@@ -6687,11 +6248,11 @@
   {
     "id": "66563963-1982-4311-ab46-aca4355e70ed",
     "title": "Resilient Flooring - Lockers",
-    "imageUrl": "data/images/images_assets/Resilient Flooring (2) - 1.jpg",
+    "imageUrl": "data/images/images_assets/Resilient Flooring - L - 1.jpg",
     "images": [
-      "data/images/images_assets/Resilient Flooring (2) - 1.jpg",
-      "data/images/images_assets/Resilient Flooring (2) - 3.jpg",
-      "data/images/images_assets/Resilient Flooring (2) - 4.jpg"
+      "data/images/images_assets/Resilient Flooring - L - 1.jpg",
+      "data/images/images_assets/Resilient Flooring - L - 2.jpg",
+      "data/images/images_assets/Resilient Flooring - L - 3.jpg"
     ],
     "category": "Built Form",
     "unit": "Area (m2)",
@@ -6748,10 +6309,10 @@
   {
     "id": "6e85c618-6671-4f06-831c-c51e685cf546",
     "title": "Glass Partition - Frosted",
-    "imageUrl": "data/images/images_assets/Glass Partition - Fr - 1.png",
+    "imageUrl": "data/images/images_assets/Glass Partition - Fros - 1.png",
     "images": [
-      "data/images/images_assets/Glass Partition - Fr - 1.png",
-      "data/images/images_assets/Glass Partition - Fr - 2.jpg"
+      "data/images/images_assets/Glass Partition - Fros - 1.png",
+      "data/images/images_assets/Glass Partition - Fros - 2.jpg"
     ],
     "category": "Built Form",
     "unit": "Area (m2)",
@@ -6808,11 +6369,11 @@
   {
     "id": "7477ab91-6c30-4298-9b43-c6f2bb37acd8",
     "title": "Door - Solid Core Secure",
-    "imageUrl": "data/images/images_assets/Door - Solid Core Se - 1.png",
+    "imageUrl": "data/images/images_assets/Door - Solid Core Secu - 1.png",
     "images": [
-      "data/images/images_assets/Door - Solid Core Se - 1.png",
-      "data/images/images_assets/Door - Solid Core Se - 2.jpg",
-      "data/images/images_assets/Door - Solid Core Se - 3.jpg"
+      "data/images/images_assets/Door - Solid Core Secu - 1.png",
+      "data/images/images_assets/Door - Solid Core Secu - 2.jpg",
+      "data/images/images_assets/Door - Solid Core Secu - 3.jpg"
     ],
     "category": "Built Form",
     "unit": "Count",
@@ -6866,10 +6427,10 @@
   {
     "id": "76367ac1-69be-45d8-b4a1-f50c1619a1ea",
     "title": "Door - Glass Swing with Pull Handle",
-    "imageUrl": "data/images/images_assets/Door - Glass Swing w - 1.png",
+    "imageUrl": "data/images/images_assets/Door - Glass Swing wit - 1.png",
     "images": [
-      "data/images/images_assets/Door - Glass Swing w - 1.png",
-      "data/images/images_assets/Door - Glass Swing w - 3.png"
+      "data/images/images_assets/Door - Glass Swing wit - 1.png",
+      "data/images/images_assets/Door - Glass Swing wit - 2.png"
     ],
     "category": "Built Form",
     "unit": "Count",
@@ -6923,9 +6484,9 @@
   {
     "id": "8f72d2ac-0d89-41f6-a834-fc94e7196aea",
     "title": "Door - Solid Core with Glass Pane",
-    "imageUrl": "data/images/images_assets/Door - Solid Core wi - 1.png",
+    "imageUrl": "data/images/images_assets/Door - Solid Core with G - 1.png",
     "images": [
-      "data/images/images_assets/Door - Solid Core wi - 1.png"
+      "data/images/images_assets/Door - Solid Core with G - 1.png"
     ],
     "category": "Built Form",
     "unit": "Count",
@@ -6979,11 +6540,11 @@
   {
     "id": "c6d90a77-0c10-42c6-8743-9ee722411b3d",
     "title": "Joinery - Fixed Benchtops",
-    "imageUrl": "data/images/images_assets/Joinery - Fixed Benc - 1.png",
+    "imageUrl": "data/images/images_assets/Joinery - Fixed Bencht - 1.png",
     "images": [
-      "data/images/images_assets/Joinery - Fixed Benc - 1.png",
-      "data/images/images_assets/Joinery - Fixed Benc - 2.png",
-      "data/images/images_assets/Joinery - Fixed Benc - 3.png"
+      "data/images/images_assets/Joinery - Fixed Bencht - 1.png",
+      "data/images/images_assets/Joinery - Fixed Bencht - 2.png",
+      "data/images/images_assets/Joinery - Fixed Bencht - 3.png"
     ],
     "category": "Built Form",
     "unit": "Count",
@@ -7154,11 +6715,11 @@
   {
     "id": "d27d80f6-c18c-44f4-8d49-18cd11601690",
     "title": "Joinery - Kitchen Benchtop",
-    "imageUrl": "data/images/images_assets/Joinery - Kitchen Be - 1.png",
+    "imageUrl": "data/images/images_assets/Joinery - Kitchen Benc - 1.png",
     "images": [
-      "data/images/images_assets/Joinery - Kitchen Be - 1.png",
-      "data/images/images_assets/Joinery - Kitchen Be - 2.png",
-      "data/images/images_assets/Joinery - Kitchen Be - 3.jpg"
+      "data/images/images_assets/Joinery - Kitchen Benc - 1.png",
+      "data/images/images_assets/Joinery - Kitchen Benc - 2.png",
+      "data/images/images_assets/Joinery - Kitchen Benc - 3.jpg"
     ],
     "category": "Built Form",
     "unit": "Count",
@@ -7214,9 +6775,9 @@
   {
     "id": "bb29de33-6e32-47f7-a4c0-4062713a1a9b",
     "title": "Joinery - Kitchen Cabinetry",
-    "imageUrl": "data/images/images_assets/Joinery - Kitchen Ca - 1.png",
+    "imageUrl": "data/images/images_assets/Joinery - Kitchen Cabi - 1.png",
     "images": [
-      "data/images/images_assets/Joinery - Kitchen Ca - 1.png"
+      "data/images/images_assets/Joinery - Kitchen Cabi - 1.png"
     ],
     "category": "Built Form",
     "unit": "Count",
@@ -7271,18 +6832,14 @@
   },
   {
     "id": "2dc8ae3b-f288-4f23-8e9b-89a9a101c7f6",
-    "title": "Table - Breakout (various)",
-    "imageUrl": "data/images/images_assets/Table - Breakout (va - 1.png",
+    "title": "Table - Breakout, timber",
+    "imageUrl": "data/images/images_assets/Table - Breakout, timb - 1.png",
     "images": [
-      "data/images/images_assets/Table - Breakout (va - 1.png",
-      "data/images/images_assets/Table - Breakout (va - 2.png",
-      "data/images/images_assets/Table - Breakout (va - 3.jpg",
-      "data/images/images_assets/Table - Breakout (va - 4.png",
-      "data/images/images_assets/Table - Breakout (va - 5.jpg"
+      "data/images/images_assets/Table - Breakout, timb - 1.png"
     ],
     "category": "FF&E",
     "unit": "Count",
-    "quantity": 24,
+    "quantity": 1,
     "manufacturer": null,
     "supplier": null,
     "dimensions": {
@@ -7293,7 +6850,7 @@
     "primaryMaterialStream": "Wood: Particleboard",
     "weight": {
       "perUnit": 35,
-      "total": 840
+      "total": 35
     },
     "pathway": {
       "suggested": "Rehome",
@@ -7303,10 +6860,10 @@
       ],
       "partnersSupplementary": []
     },
-    "location": null,
+    "location": "Meals",
     "notes": {
       "audit": "Includes all non workstation / desk tables of various size from round cafe tables to meeting / lunch tables. Full breakdown can be provided if necessary",
-      "workshop": null
+      "workshop": "Delete item once each individual table type separated out"
     },
     "embodiedCarbon": {
       "perUnit": null,
@@ -7334,9 +6891,9 @@
   {
     "id": "944ca922-b810-4dcf-9875-3db233bc2892",
     "title": "Door - Solid Core with Vent",
-    "imageUrl": "data/images/images_assets/Door - Solid Core wi (2) - 1.png",
+    "imageUrl": "data/images/images_assets/Door - Solid Core with V - 1.png",
     "images": [
-      "data/images/images_assets/Door - Solid Core wi (2) - 1.png"
+      "data/images/images_assets/Door - Solid Core with V - 1.png"
     ],
     "category": "Built Form",
     "unit": "Count",
@@ -7390,10 +6947,10 @@
   {
     "id": "9dfbfd27-5583-48df-b097-10efc4c7238f",
     "title": "Locker Storage Shelves",
-    "imageUrl": "data/images/images_assets/Locker Storage Shelv - 3.jpg",
+    "imageUrl": "data/images/images_assets/Locker Storage Shelves - 1.jpg",
     "images": [
-      "data/images/images_assets/Locker Storage Shelv - 3.jpg",
-      "data/images/images_assets/Locker Storage Shelv - 1.jpg"
+      "data/images/images_assets/Locker Storage Shelves - 1.jpg",
+      "data/images/images_assets/Locker Storage Shelves - 2.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -7449,9 +7006,9 @@
   {
     "id": "493e64b2-7079-4aba-b64e-5761315e693d",
     "title": "Lockers - Single, Four-door, Black",
-    "imageUrl": "data/images/images_assets/Lockers - Black - 1.jpg",
+    "imageUrl": "data/images/images_assets/Lockers - Single, Four - 1.jpg",
     "images": [
-      "data/images/images_assets/Lockers - Black - 1.jpg"
+      "data/images/images_assets/Lockers - Single, Four - 1.jpg"
     ],
     "category": "Built Form",
     "unit": "Count",
@@ -7507,9 +7064,9 @@
   {
     "id": "fb097eb7-91c7-460a-a2a0-caeefbb392e1",
     "title": "Door Jamb - Aluminium",
-    "imageUrl": "data/images/images_assets/Door Jamb - Aluminiu - 1.jpg",
+    "imageUrl": "data/images/images_assets/Door Jamb - Aluminium - 1.jpg",
     "images": [
-      "data/images/images_assets/Door Jamb - Aluminiu - 1.jpg"
+      "data/images/images_assets/Door Jamb - Aluminium - 1.jpg"
     ],
     "category": "Built Form",
     "unit": "Count",
@@ -7563,10 +7120,10 @@
   {
     "id": "12028022-8cf5-48ef-b3bb-26bbeaf6144c",
     "title": "Return Air Grille - Egg Crate",
-    "imageUrl": "data/images/images_assets/Return Air Grille - 1.jpg",
+    "imageUrl": "data/images/images_assets/Return Air Grille - Eg - 1.jpg",
     "images": [
-      "data/images/images_assets/Return Air Grille - 1.jpg",
-      "data/images/images_assets/Return Air Grille - 2.png"
+      "data/images/images_assets/Return Air Grille - Eg - 1.jpg",
+      "data/images/images_assets/Return Air Grille - Eg - 2.png"
     ],
     "category": "Services",
     "unit": "Count",
@@ -7622,10 +7179,10 @@
   {
     "id": "ae069d66-8006-43d3-8e7a-9a2415686a15",
     "title": "Lockers Main - Single, Full-height, Beige",
-    "imageUrl": "data/images/images_assets/Lockers - Beige - 1.jpg",
+    "imageUrl": "data/images/images_assets/Lockers Main - Single - 1.jpg",
     "images": [
-      "data/images/images_assets/Lockers - Beige - 1.jpg",
-      "data/images/images_assets/Lockers - Beige - 2.png"
+      "data/images/images_assets/Lockers Main - Single - 1.jpg",
+      "data/images/images_assets/Lockers Main - Single - 2.png"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -7681,9 +7238,9 @@
   {
     "id": "7bf1ce4a-c92c-4fb2-83b3-50c21c7c514c",
     "title": "Sink - Single with Mixer",
-    "imageUrl": "data/images/images_assets/Sink - Single with M - 1.png",
+    "imageUrl": "data/images/images_assets/Sink - Single with Mix - 1.png",
     "images": [
-      "data/images/images_assets/Sink - Single with M - 1.png"
+      "data/images/images_assets/Sink - Single with Mix - 1.png"
     ],
     "category": "Built Form",
     "unit": "Count",
@@ -7966,12 +7523,12 @@
   {
     "id": "d33f561b-504c-42e8-9de5-fc2ab9a7f6bc",
     "title": "Storage Cabinet (various)",
-    "imageUrl": "data/images/images_assets/Storage Cabinet (var - 1.jpg",
+    "imageUrl": "data/images/images_assets/Storage Cabinet - 1.jpg",
     "images": [
-      "data/images/images_assets/Storage Cabinet (var - 1.jpg",
-      "data/images/images_assets/Storage Cabinet (var - 2.png",
-      "data/images/images_assets/Storage Cabinet (var - 3.jpg",
-      "data/images/images_assets/Storage Cabinet (var - 4.jpg"
+      "data/images/images_assets/Storage Cabinet - 1.jpg",
+      "data/images/images_assets/Storage Cabinet - 2.png",
+      "data/images/images_assets/Storage Cabinet - 3.jpg",
+      "data/images/images_assets/Storage Cabinet - 4.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -8027,14 +7584,14 @@
   {
     "id": "274c8f4d-15df-4d29-83d4-7b80c4b49fa4",
     "title": "Wheelie Bin (various)",
-    "imageUrl": "data/images/images_assets/Wheelie Bin (various - 1.jpg",
+    "imageUrl": "data/images/images_assets/Wheelie Bin (various) - 1.jpg",
     "images": [
-      "data/images/images_assets/Wheelie Bin (various - 1.jpg",
-      "data/images/images_assets/Wheelie Bin (various - 2.jpg"
+      "data/images/images_assets/Wheelie Bin (various) - 1.jpg",
+      "data/images/images_assets/Wheelie Bin (various) - 2.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
-    "quantity": 1,
+    "quantity": 3,
     "manufacturer": null,
     "supplier": null,
     "dimensions": {
@@ -8045,7 +7602,7 @@
     "primaryMaterialStream": "Polymer: Thermoplastic 1-6",
     "weight": {
       "perUnit": 12,
-      "total": 12
+      "total": 36
     },
     "pathway": {
       "suggested": "Reuse",
@@ -8258,10 +7815,10 @@
   {
     "id": "5b097e86-7d99-41de-bd00-d9d4501a0080",
     "title": "Workstation - Single Sit-to-Stand",
-    "imageUrl": "data/images/images_assets/Workstation - Single - 1.png",
+    "imageUrl": "data/images/images_assets/Workstation - Single S - 1.png",
     "images": [
-      "data/images/images_assets/Workstation - Single - 1.png",
-      "data/images/images_assets/Workstation - Single - 2.png"
+      "data/images/images_assets/Workstation - Single S - 1.png",
+      "data/images/images_assets/Workstation - Single S - 2.png"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -8371,8 +7928,10 @@
   {
     "id": "ce0e7cba-8b7f-4706-b7d7-b1a8ea3db81f",
     "title": "ZIP Tap - 2-in-1",
-    "imageUrl": null,
-    "images": [],
+    "imageUrl": "data/images/images_assets/ZIP Tap - 2-in-1 - 1.png",
+    "images": [
+      "data/images/images_assets/ZIP Tap - 2-in-1 - 1.png"
+    ],
     "category": "Services",
     "unit": "Count",
     "quantity": 1,
@@ -8424,10 +7983,10 @@
   },
   {
     "id": "1abf52f3-8570-4cf9-896d-bf95e7206901",
-    "title": "Table - Conference",
-    "imageUrl": "data/images/images_assets/Table - Conference - 1.jpg",
+    "title": "Table - Conference, cherry",
+    "imageUrl": "data/images/images_assets/Table - Conference, ch - 1.jpg",
     "images": [
-      "data/images/images_assets/Table - Conference - 1.jpg"
+      "data/images/images_assets/Table - Conference, ch - 1.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -8452,7 +8011,7 @@
       ],
       "partnersSupplementary": []
     },
-    "location": null,
+    "location": "Viewing Room",
     "notes": {
       "audit": null,
       "workshop": null
@@ -8767,10 +8326,10 @@
   {
     "id": "2b1cd35a-baa7-4eda-b5f4-a9b2c7adb11c",
     "title": "Library Shelf",
-    "imageUrl": "data/images/images_assets/Library Shelf - 2.jpg",
+    "imageUrl": "data/images/images_assets/Library Shelf - 1.jpg",
     "images": [
-      "data/images/images_assets/Library Shelf - 2.jpg",
-      "data/images/images_assets/Library Shelf - 3.jpg"
+      "data/images/images_assets/Library Shelf - 1.jpg",
+      "data/images/images_assets/Library Shelf - 2.jpg"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -8903,12 +8462,15 @@
       "suggested": "Retain",
       "suggestedId": null,
       "partners": [],
-      "partnersSupplementary": []
+      "partnersSupplementary": [
+        "ALD",
+        "JR Hammer"
+      ]
     },
     "location": null,
     "notes": {
       "audit": null,
-      "workshop": "Cable removed during strip-out to be recycled (ALD)"
+      "workshop": "Cable removed during strip-out to be recycled (ALD)."
     },
     "embodiedCarbon": {
       "perUnit": null,
@@ -8921,11 +8483,11 @@
       "potential": null
     },
     "pathwayNotes": {
-      "retain": "Live cabling is retained in place. Cable removed during strip-out is to be isolated and disconnected from all equipment first, stripped of fittings, consolidated in the cable bin and recycled via pathway partner.",
+      "retain": "Live cabling is retained in place. Cable removed during strip-out is to be isolated and disconnected from all equipment first, stripped of fittings, consolidated in the cable bin and recycled via supplementary pathway partner.",
       "reuse": null,
       "adaptiveReuse": null,
       "refurbish": null,
-      "recycle": null,
+      "recycle": "Redundant data and electrical cables to be isolated and made safe then placed in cable bin for recycling via pathway partner.",
       "disposal": null,
       "rehome": null,
       "remanufacture": null,
@@ -9107,11 +8669,11 @@
   {
     "id": "fa343d77-202d-4e78-a6ee-bddc3d08af44",
     "title": "Blinds - Venetian Window",
-    "imageUrl": "data/images/images_assets/Blinds - Venetian Wi - 1.png",
+    "imageUrl": "data/images/images_assets/Blinds - Venetian Wind - 1.png",
     "images": [
-      "data/images/images_assets/Blinds - Venetian Wi - 1.png",
-      "data/images/images_assets/Blinds - Venetian Wi - 2.png",
-      "data/images/images_assets/Blinds - Venetian Wi - 3.png"
+      "data/images/images_assets/Blinds - Venetian Wind - 1.png",
+      "data/images/images_assets/Blinds - Venetian Wind - 2.png",
+      "data/images/images_assets/Blinds - Venetian Wind - 3.png"
     ],
     "category": "Built Form",
     "unit": "Linear Metre (m)",
@@ -9226,10 +8788,10 @@
   {
     "id": "4a903ab2-1be4-4766-81ee-04d9e7c3447c",
     "title": "Miscellaneous Switches and Outlets",
-    "imageUrl": "data/images/images_assets/Miscellaneous Switch - 1.png",
+    "imageUrl": "data/images/images_assets/Miscellaneous Switches - 1.png",
     "images": [
-      "data/images/images_assets/Miscellaneous Switch - 1.png",
-      "data/images/images_assets/Miscellaneous Switch - 2.png"
+      "data/images/images_assets/Miscellaneous Switches - 1.png",
+      "data/images/images_assets/Miscellaneous Switches - 2.png"
     ],
     "category": "Services",
     "unit": "Count",
@@ -9341,8 +8903,10 @@
   {
     "id": "14ebe09a-e207-4204-a9a9-ddee46ad885d",
     "title": "Door Jamb - Glass Pane",
-    "imageUrl": null,
-    "images": [],
+    "imageUrl": "data/images/images_assets/Door Jamb - Glass Pane - 1.png",
+    "images": [
+      "data/images/images_assets/Door Jamb - Glass Pane - 1.png"
+    ],
     "category": "Built Form",
     "unit": "Count",
     "quantity": 1,
@@ -9515,11 +9079,11 @@
   {
     "id": "305053ae-f6b1-404d-90a6-d47186e6b6fb",
     "title": "Workstation Pod - Desk Left",
-    "imageUrl": "data/images/images_assets/Workstation Pod - De - 1.jpg",
+    "imageUrl": "data/images/images_assets/Workstation Pod - Desk L - 1.jpg",
     "images": [
-      "data/images/images_assets/Workstation Pod - De - 1.jpg",
-      "data/images/images_assets/Workstation Pod - De - 2.png",
-      "data/images/images_assets/Workstation Pod - De - 3.png"
+      "data/images/images_assets/Workstation Pod - Desk L - 1.jpg",
+      "data/images/images_assets/Workstation Pod - Desk L - 2.png",
+      "data/images/images_assets/Workstation Pod - Desk L - 3.png"
     ],
     "category": "Built Form",
     "unit": "Count",
@@ -9575,10 +9139,10 @@
   {
     "id": "f33107ab-5528-4eee-9a55-0e6587d17848",
     "title": "Workstation Pod - Desk Right",
-    "imageUrl": "data/images/images_assets/Workstation Pod - De (2) - 1.png",
+    "imageUrl": "data/images/images_assets/Workstation Pod - Desk R - 1.png",
     "images": [
-      "data/images/images_assets/Workstation Pod - De (2) - 1.png",
-      "data/images/images_assets/Workstation Pod - De (2) - 2.png"
+      "data/images/images_assets/Workstation Pod - Desk R - 1.png",
+      "data/images/images_assets/Workstation Pod - Desk R - 2.png"
     ],
     "category": "Built Form",
     "unit": "Count",
@@ -9634,10 +9198,10 @@
   {
     "id": "5f9abe11-c181-4e09-8386-14fd1f3c5a9b",
     "title": "Workstation Pod - Mounted Pedestal Drawers",
-    "imageUrl": "data/images/images_assets/Workstation Pod - Mo - 1.png",
+    "imageUrl": "data/images/images_assets/Workstation Pod - Moun - 1.png",
     "images": [
-      "data/images/images_assets/Workstation Pod - Mo - 1.png",
-      "data/images/images_assets/Workstation Pod - Mo - 2.png"
+      "data/images/images_assets/Workstation Pod - Moun - 1.png",
+      "data/images/images_assets/Workstation Pod - Moun - 2.png"
     ],
     "category": "Built Form",
     "unit": "Count",
@@ -9693,12 +9257,12 @@
   {
     "id": "a055c6b0-189a-4c99-a147-c071c50ef26a",
     "title": "Workstation Pod - Desk Middle Folding",
-    "imageUrl": "data/images/images_assets/Workstation Pod - De (3) - 1.png",
+    "imageUrl": "data/images/images_assets/Workstation Pod - Desk M - 1.png",
     "images": [
-      "data/images/images_assets/Workstation Pod - De (3) - 1.png",
-      "data/images/images_assets/Workstation Pod - De (3) - 2.png",
-      "data/images/images_assets/Workstation Pod - De (3) - 3.png",
-      "data/images/images_assets/Workstation Pod - De (3) - 4.png"
+      "data/images/images_assets/Workstation Pod - Desk M - 1.png",
+      "data/images/images_assets/Workstation Pod - Desk M - 2.png",
+      "data/images/images_assets/Workstation Pod - Desk M - 3.png",
+      "data/images/images_assets/Workstation Pod - Desk M - 4.png"
     ],
     "category": "Built Form",
     "unit": "Count",
@@ -9757,7 +9321,7 @@
     "imageUrl": "data/images/images_assets/Desk Partition - 1.png",
     "images": [
       "data/images/images_assets/Desk Partition - 1.png",
-      "data/images/images_assets/Desk Partition - 3.png"
+      "data/images/images_assets/Desk Partition - 2.png"
     ],
     "category": "Built Form",
     "unit": "Linear Metre (m)",
@@ -9867,9 +9431,9 @@
   {
     "id": "70f436e1-bd62-4f5a-97ae-a19bf2cf83e3",
     "title": "Resilient Flooring - Server",
-    "imageUrl": "data/images/images_assets/Resilient Flooring (3) - 1.png",
+    "imageUrl": "data/images/images_assets/Resilient Flooring - S - 1.png",
     "images": [
-      "data/images/images_assets/Resilient Flooring (3) - 1.png"
+      "data/images/images_assets/Resilient Flooring - S - 1.png"
     ],
     "category": "Built Form",
     "unit": "Count",
@@ -9926,9 +9490,9 @@
   {
     "id": "32e9afad-7711-429f-93f0-11da343711fd",
     "title": "Door - Glass with Timber Frame",
-    "imageUrl": "data/images/images_assets/Door - Glass with Ti - 1.png",
+    "imageUrl": "data/images/images_assets/Door - Glass with Timb - 1.png",
     "images": [
-      "data/images/images_assets/Door - Glass with Ti - 1.png"
+      "data/images/images_assets/Door - Glass with Timb - 1.png"
     ],
     "category": "Built Form",
     "unit": "Count",
@@ -10101,10 +9665,10 @@
   {
     "id": "b74571d9-784f-4e69-981a-cb030f56ace5",
     "title": "Workstation - Dual Sit-to-Stand",
-    "imageUrl": "data/images/images_assets/Workstation - Dual S - 1.png",
+    "imageUrl": "data/images/images_assets/Workstation - Dual Sit - 1.png",
     "images": [
-      "data/images/images_assets/Workstation - Dual S - 1.png",
-      "data/images/images_assets/Workstation - Dual S - 2.png"
+      "data/images/images_assets/Workstation - Dual Sit - 1.png",
+      "data/images/images_assets/Workstation - Dual Sit - 2.png"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -10215,9 +9779,9 @@
   {
     "id": "2680af84-6954-4d9f-a4af-35a7e25d3b2c",
     "title": "Desk - Mobile Standing",
-    "imageUrl": "data/images/images_assets/Desk - Mobile Standi - 1.png",
+    "imageUrl": "data/images/images_assets/Desk - Mobile Standing - 1.png",
     "images": [
-      "data/images/images_assets/Desk - Mobile Standi - 1.png"
+      "data/images/images_assets/Desk - Mobile Standing - 1.png"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -10389,10 +9953,10 @@
   {
     "id": "60fa6122-1423-44d3-b412-60c7cfaf2326",
     "title": "Mobile Pedestal",
-    "imageUrl": "data/images/images_assets/Mobile Pedestal - 2.png",
+    "imageUrl": "data/images/images_assets/Mobile Pedestal - 1.png",
     "images": [
-      "data/images/images_assets/Mobile Pedestal - 2.png",
       "data/images/images_assets/Mobile Pedestal - 1.png",
+      "data/images/images_assets/Mobile Pedestal - 2.png",
       "data/images/images_assets/Mobile Pedestal - 3.png",
       "data/images/images_assets/Mobile Pedestal - 4.png",
       "data/images/images_assets/Mobile Pedestal - 5.png"
@@ -10449,8 +10013,10 @@
   {
     "id": "1fd30c11-e850-4026-ba3b-753820f0a142",
     "title": "Wall Stud and Track",
-    "imageUrl": null,
-    "images": [],
+    "imageUrl": "data/images/images_assets/Wall Stud and Track - 1.png",
+    "images": [
+      "data/images/images_assets/Wall Stud and Track - 1.png"
+    ],
     "category": "Built Form",
     "unit": "Linear Metre (m)",
     "quantity": 1,
@@ -10505,8 +10071,10 @@
   {
     "id": "9f294591-e107-442b-ad78-1f6bac94a995",
     "title": "Wall Insulation Batts",
-    "imageUrl": null,
-    "images": [],
+    "imageUrl": "data/images/images_assets/Wall Insulation Batts - 1.png",
+    "images": [
+      "data/images/images_assets/Wall Insulation Batts - 1.png"
+    ],
     "category": "Built Form",
     "unit": "Volume (m3)",
     "quantity": 1,
@@ -10532,7 +10100,7 @@
     },
     "location": null,
     "notes": {
-      "audit": "Confirm insulation type and if possible to remanufacture through Planet Protector's Jeanius product",
+      "audit": "Confirm insulation type and if possible to remanufacture through Planet Protector's Jeanius product. Insulation to be removed and bagged for bailing. Upcycled via pathway partner into new polyester materials.",
       "workshop": null
     },
     "embodiedCarbon": {
@@ -10561,13 +10129,13 @@
   {
     "id": "ac768fc0-67e3-475c-9e1d-7a848d1fdfa4",
     "title": "Refrigerator - Top-mount (multiple)",
-    "imageUrl": "data/images/images_assets/Refrigerator - Top-m - 1.png",
+    "imageUrl": "data/images/images_assets/Refrigerator - Top-mou - 1.png",
     "images": [
-      "data/images/images_assets/Refrigerator - Top-m - 1.png",
-      "data/images/images_assets/Refrigerator - Top-m - 2.png",
-      "data/images/images_assets/Refrigerator - Top-m - 3.png",
-      "data/images/images_assets/Refrigerator - Top-m - 4.png",
-      "data/images/images_assets/Refrigerator - Top-m - 5.png"
+      "data/images/images_assets/Refrigerator - Top-mou - 1.png",
+      "data/images/images_assets/Refrigerator - Top-mou - 2.png",
+      "data/images/images_assets/Refrigerator - Top-mou - 3.png",
+      "data/images/images_assets/Refrigerator - Top-mou - 4.png",
+      "data/images/images_assets/Refrigerator - Top-mou - 5.png"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -10678,9 +10246,9 @@
   {
     "id": "504bb3d9-d0ed-4f78-92bf-c74035ac0ac8",
     "title": "Refrigerator - Bottom-mount (Multiple)",
-    "imageUrl": "data/images/images_assets/Refrigerator - Botto - 1.png",
+    "imageUrl": "data/images/images_assets/Refrigerator - Bottom - 1.png",
     "images": [
-      "data/images/images_assets/Refrigerator - Botto - 1.png"
+      "data/images/images_assets/Refrigerator - Bottom - 1.png"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -10734,10 +10302,10 @@
   {
     "id": "9160230b-e951-4469-bda6-52a06a9cb9b8",
     "title": "Desk - Semicircle Console Table",
-    "imageUrl": "data/images/images_assets/Desk - Semicircle Co - 1.png",
+    "imageUrl": "data/images/images_assets/Desk - Semicircle Cons - 1.png",
     "images": [
-      "data/images/images_assets/Desk - Semicircle Co - 1.png",
-      "data/images/images_assets/Desk - Semicircle Co - 2.png"
+      "data/images/images_assets/Desk - Semicircle Cons - 1.png",
+      "data/images/images_assets/Desk - Semicircle Cons - 2.png"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -10792,10 +10360,10 @@
   },
   {
     "id": "41d8f97c-f494-4a1c-b601-460c9b7cf49c",
-    "title": "Table - Dining rectangular, green",
-    "imageUrl": "data/images/images_assets/Table - Dining recta (2) - 1.png",
+    "title": "Table - Dining, Rectangular, green",
+    "imageUrl": "data/images/images_assets/Table - Dining, Rectan - 1.png",
     "images": [
-      "data/images/images_assets/Table - Dining recta (2) - 1.png"
+      "data/images/images_assets/Table - Dining, Rectan - 1.png"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -10851,8 +10419,10 @@
   {
     "id": "74ecacfe-e0ec-421c-a124-c0bb72f54724",
     "title": "HVAC Ducting - Rigid",
-    "imageUrl": null,
-    "images": [],
+    "imageUrl": "data/images/images_assets/HVAC Ducting - Rigid - 1.png",
+    "images": [
+      "data/images/images_assets/HVAC Ducting - Rigid - 1.png"
+    ],
     "category": "Out-of-Scope",
     "unit": "Linear Metre (m)",
     "quantity": 1,
@@ -10876,7 +10446,7 @@
     },
     "location": null,
     "notes": {
-      "audit": null,
+      "audit": "Image is from a previous audit as no access to ceiling services",
       "workshop": "If any redundant mech services, update pathway accordingly and change from out-of-scope to services"
     },
     "embodiedCarbon": {
@@ -10905,8 +10475,10 @@
   {
     "id": "9f7a3550-4695-4cac-83a0-7a3ed07d2923",
     "title": "HVAC Ducting - Flexible",
-    "imageUrl": null,
-    "images": [],
+    "imageUrl": "data/images/images_assets/HVAC Ducting - Flexibl - 1.png",
+    "images": [
+      "data/images/images_assets/HVAC Ducting - Flexibl - 1.png"
+    ],
     "category": "Out-of-Scope",
     "unit": "Linear Metre (m)",
     "quantity": 1,
@@ -10930,7 +10502,7 @@
     },
     "location": null,
     "notes": {
-      "audit": null,
+      "audit": "Image is from a previous audit as no access to ceiling services",
       "workshop": "If any redundant mech services, update pathway accordingly and change from out-of-scope to services"
     },
     "embodiedCarbon": {
@@ -10959,8 +10531,10 @@
   {
     "id": "829d0abc-a91e-4256-8a49-32b4c98d42fb",
     "title": "Blinds - Perimeter",
-    "imageUrl": null,
-    "images": [],
+    "imageUrl": "data/images/images_assets/Blinds - Perimeter - 1.png",
+    "images": [
+      "data/images/images_assets/Blinds - Perimeter - 1.png"
+    ],
     "category": "Out-of-Scope",
     "unit": "Linear Metre (m)",
     "quantity": 1,
@@ -11013,9 +10587,9 @@
   {
     "id": "5d5b09ac-e90e-41ae-8557-b5731b921b59",
     "title": "Lockers - Two-door, beige",
-    "imageUrl": "data/images/images_assets/New Asset.png",
+    "imageUrl": "data/images/images_assets/Lockers - Two-door, be - 1.png",
     "images": [
-      "data/images/images_assets/New Asset.png"
+      "data/images/images_assets/Lockers - Two-door, be - 1.png"
     ],
     "category": "FF&E",
     "unit": "Count",
@@ -11043,6 +10617,288 @@
     "location": null,
     "notes": {
       "audit": null,
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": null,
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "3db1ebe7-90a6-4043-8793-6b33ad99c862",
+    "title": "Table - Meeting, Square, white",
+    "imageUrl": "data/images/images_assets/Table - Meeting, Squar - 1.png",
+    "images": [
+      "data/images/images_assets/Table - Meeting, Squar - 1.png",
+      "data/images/images_assets/Table - Meeting, Squar - 2.png"
+    ],
+    "category": "FF&E",
+    "unit": "Count",
+    "quantity": 3,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": "Wood: Particleboard",
+    "weight": {
+      "perUnit": null,
+      "total": null
+    },
+    "pathway": {
+      "suggested": "Retain",
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": "Meet",
+    "notes": {
+      "audit": "In MEET room above Digital Evidence",
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": null,
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "47d16605-19a5-404c-8ae0-4a94bef56e80",
+    "title": "Table - Meeting, Rectangular 6-seat, timber",
+    "imageUrl": "data/images/images_assets/Table - Meeting, Recta - 1.png",
+    "images": [
+      "data/images/images_assets/Table - Meeting, Recta - 1.png"
+    ],
+    "category": "FF&E",
+    "unit": "Count",
+    "quantity": 1,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": "Wood: Solid Timber",
+    "weight": {
+      "perUnit": null,
+      "total": null
+    },
+    "pathway": {
+      "suggested": "Retain",
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": "Library",
+    "notes": {
+      "audit": null,
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": null,
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "d36efaaa-c572-4717-8b7c-3d85e4ed651d",
+    "title": "Table - Café, Gable-leg, white",
+    "imageUrl": "data/images/images_assets/Table - Café, Gable-le - 1.png",
+    "images": [
+      "data/images/images_assets/Table - Café, Gable-le - 1.png"
+    ],
+    "category": "FF&E",
+    "unit": "Count",
+    "quantity": 1,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": "Wood: Particleboard",
+    "weight": {
+      "perUnit": null,
+      "total": null
+    },
+    "pathway": {
+      "suggested": "Recycle",
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": null,
+    "notes": {
+      "audit": null,
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": null,
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "16678bc7-e798-45cc-be3e-225a94bd729c",
+    "title": "Table - Meeting, Gable-leg, white",
+    "imageUrl": "data/images/images_assets/Table - Meeting, Gable - 1.png",
+    "images": [
+      "data/images/images_assets/Table - Meeting, Gable - 1.png",
+      "data/images/images_assets/Table - Meeting, Gable - 2.png"
+    ],
+    "category": "FF&E",
+    "unit": "Count",
+    "quantity": 1,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": "Wood: Particleboard",
+    "weight": {
+      "perUnit": null,
+      "total": null
+    },
+    "pathway": {
+      "suggested": "Retain",
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": "Digital Evidence",
+    "notes": {
+      "audit": null,
+      "workshop": null
+    },
+    "embodiedCarbon": {
+      "perUnit": null,
+      "ecSource": null,
+      "total": null
+    },
+    "wasteEmissions": {
+      "factor": null,
+      "efSource": null,
+      "potential": null
+    },
+    "pathwayNotes": {
+      "retain": null,
+      "reuse": null,
+      "adaptiveReuse": null,
+      "refurbish": null,
+      "recycle": null,
+      "disposal": null,
+      "rehome": null,
+      "remanufacture": null,
+      "stewardship": null
+    },
+    "pathwayConfirmed": null
+  },
+  {
+    "id": "fd4fb0e4-2c15-464e-916c-f7f80705e15b",
+    "title": "Table - Square, small, white",
+    "imageUrl": "data/images/images_assets/Table - Square, small - 1.png",
+    "images": [
+      "data/images/images_assets/Table - Square, small - 1.png"
+    ],
+    "category": "FF&E",
+    "unit": "Count",
+    "quantity": 1,
+    "manufacturer": null,
+    "supplier": null,
+    "dimensions": {
+      "height": null,
+      "depth": null,
+      "width": null
+    },
+    "primaryMaterialStream": "Wood: Particleboard",
+    "weight": {
+      "perUnit": null,
+      "total": null
+    },
+    "pathway": {
+      "suggested": "Recycle",
+      "suggestedId": null,
+      "partners": [],
+      "partnersSupplementary": []
+    },
+    "location": "ITS",
+    "notes": {
+      "audit": "In lower ITS work area",
       "workshop": null
     },
     "embodiedCarbon": {

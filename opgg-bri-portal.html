@@ -77,7 +77,14 @@
         </div>
       </div>
     </div>
-    <button class="nav-tab" data-tab="register"  onclick="setNav(this)">Asset Register</button>
+    <div class="nav-drop">
+      <button class="nav-tab" data-tab="register" onclick="setNav(this);this.blur()">Asset Register</button>
+      <div class="nav-drop-menu-wrap">
+        <div class="nav-drop-menu">
+          <a onclick="goEditAssets()">Edit Assets</a>
+        </div>
+      </div>
+    </div>
 <!-- ALD REPORT removed for now (data/ald_report.json kept) — nav tab
     <button class="nav-tab" data-tab="aldreport"  onclick="setNav(this)">ALD Report</button>
 -->
@@ -96,7 +103,9 @@
       <svg class="i" viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
       <span class="notif">2</span>
     </button>
-    <button class="btn-export" disabled title="Exports coming soon">↑ Export Report</button>
+    <!-- Export Report hidden for now (kept for later). Replaced by a second Edit Assets button.
+    <button class="btn-export" id="btn-export-report" disabled title="Exports coming soon">↑ Export Report</button> -->
+    <button class="btn-export" id="btn-edit-assets" onclick="goEditAssets()" title="Edit asset data">✎ Edit Assets</button>
   </div>
 </nav>
 
@@ -572,6 +581,9 @@
 </div><!-- /tab-dashboard -->
 
 
+<!-- ══ EDIT ASSETS (sub-page of Asset Register; built by review.js) ══ -->
+<div id="tab-edit" class="tab-page"><div id="r8-edit-root" style="height:100%"></div></div>
+
 <!-- ══ ASSET REGISTER TAB (default) ══ -->
 <div id="tab-register" class="tab-page">
 <div class="main">
@@ -622,7 +634,7 @@
           <div class="reg-sub">Every recorded asset across the project - switch views or use filters to browse select items.</div>
         </div>
         <div class="reg-actions">
-          <button class="reg-btn" disabled title="Exports coming soon" onclick="document.querySelector('.btn-export').click()">
+          <button class="reg-btn" disabled title="Exports coming soon" onclick="var b=document.getElementById('btn-export-report');if(b)b.click()">
             <svg class="i" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             Export
           </button>
@@ -1312,6 +1324,7 @@
 </div>
 
 <script src="app.js" defer></script>
+<script src="review.js" defer></script>
 
 </body>
 </html>

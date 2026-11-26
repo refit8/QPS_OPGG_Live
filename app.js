@@ -73,9 +73,8 @@ function normaliseAsset(r) {
     mfr:      r.manufacturer|| null,
     sup:      r.supplier    || null,
     pNotes:   r.pathwayNotes || {},
-    confirmed: (typeof r.pathwayConfirmed === 'boolean') ? r.pathwayConfirmed : null,
     reused:   r.intoNewFitout === true,
-    excluded: r.excludeFromStats === true || r.category === 'Out-of-Scope',
+    excluded: r.category === 'Out-of-Scope',
   };
 }
 
@@ -600,6 +599,7 @@ function navHome() {
 
 /* ── Main tab navigation ── */
 function setNav(el) {
+  if (window.R8Review) R8Review.syncViews();   /* redraw register / KPIs after edits */
   setNavCompact(true);
   document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
   el.classList.add('active');
@@ -611,6 +611,15 @@ function setNav(el) {
     if (tab === 'dashboard') setTimeout(remeasureOverviewIframes, 80);
     if (tab === 'register' && window.reclampAssetPanel) setTimeout(window.reclampAssetPanel, 0);
   }
+}
+
+/* ── Edit Assets: sub-page under Asset Register (Register nav tab stays highlighted) ── */
+function goEditAssets() {
+  setNav(document.querySelector('.nav-tab[data-tab=register]'));
+  document.querySelectorAll('.tab-page').forEach(p => p.style.display = 'none');
+  const t = document.getElementById('tab-edit');
+  if (t) t.style.display = 'block';
+  if (window.R8Review) R8Review.openEditPage();
 }
 
 /* ── On-Site Reuse spotlight: Retain assets that are starred (stars are per-browser) ── */
@@ -786,8 +795,7 @@ function setDetailImg(assetIdx, i) {
 /* ── Out-of-Scope assets are listed in the asset register only (so the client can see they were identified)
    and are left out of EVERY total, chart and calculation. Charts apply the same rule in their own filters. ── */
 /* ── Construction Waste is a separate material stream (tracked outside the fitout defit dataset).
-   Assets flagged excludeFromStats in assets.json (e.g. Perimeter Blinds, pending base-build confirmation)
-   stay in the register but are likewise left out of every total.
+   Assets that should stay in the register but out of every total are given the Out-of-Scope category.
    Excluded from every KPI / chart total below; shown only in the (currently removed) ALD Report tab. ── */
 function statsAssets() {
   return ASSETS.filter(a => a.cat !== 'Construction Waste' && a.cat !== 'Out-of-Scope' && !a.excluded);
@@ -1385,9 +1393,9 @@ loadData();
 
 
 /* ── Export Report -> Contact Us modal ── */
-document.querySelector('.btn-export').addEventListener('click', function () {
-  openContactModal();
-});
+/* The header Export Report button is hidden for now (see opgg-bri-portal.html); its id is #btn-export-report. */
+var _exportBtn = document.getElementById('btn-export-report');
+if (_exportBtn) _exportBtn.addEventListener('click', function () { openContactModal(); });
 
 
 /* ── Document Repository ─────────────────────────────────────── */
