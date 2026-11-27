@@ -224,7 +224,7 @@ nav.topnav {
   align-items: center;
   margin-right: 24px;
   flex-shrink: 0;
-  text-decoration: none;
+  text-decoration: none; display: inline-block;
 }
 .r8-logo img { height: 46px; width: auto; display: block; transition: height .28s cubic-bezier(.4,0,.2,1); }
 
@@ -311,6 +311,14 @@ nav.topnav {
   font-family: var(--font);
 }
 .btn-export:hover { background: var(--orange-h); }
+.btn-submit-hdr { padding: 10px 18px; background: transparent; color: rgba(255,255,255,.55); border: 1.5px solid rgba(255,255,255,.3); border-radius: 999px; font-size: 15px; font-weight: 600; font-family: var(--font); cursor: pointer; transition: background .15s, color .15s, border-color .15s; }
+.btn-submit-hdr[hidden] { display: none; }
+.btn-submit-hdr.is-ready { background: var(--orange); border-color: var(--orange); color: #fff; }
+.btn-submit-hdr.is-ready:hover { background: var(--orange-h); border-color: var(--orange-h); }
+.app.nav-compact .btn-submit-hdr { padding: 8px 14px; font-size: 14px; }
+.btn-signout { padding: 10px 18px; background: transparent; color: rgba(255,255,255,.85); border: 1.5px solid rgba(255,255,255,.35); border-radius: 999px; font-size: 15px; font-weight: 600; font-family: var(--font); cursor: pointer; transition: background .15s, color .15s; }
+.btn-signout:hover { background: rgba(255,255,255,.12); color: #fff; }
+.app.nav-compact .btn-signout { padding: 8px 14px; font-size: 14px; }
 .btn-export:disabled, .btn-export:disabled:hover { background: var(--grey-300); color: #fff; cursor: not-allowed; }
 
 /* ── Compact banner state — applied once the user scrolls the active
@@ -1003,7 +1011,7 @@ svg.i { width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2;stro
   border: 1px solid #E2DED6;
   background: transparent;
   cursor: pointer;
-  text-decoration: none;
+  text-decoration: none; display: inline-block;
   display: flex;
   align-items: center;
   gap: 5px;
@@ -2002,6 +2010,7 @@ svg.i { width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2;stro
   margin-top: 30px; background: none; border: none; cursor: pointer;
   font-family: var(--font); font-size: 11px; letter-spacing: .16em; text-transform: uppercase;
   color: var(--ink-4); animation: spl-rise .6s ease .55s both;
+  text-decoration: none; display: inline-block;
 }
 .spl-skip:hover { color: var(--ink); }
 
@@ -2042,6 +2051,15 @@ nav.topnav { position: relative; }
 }
 .nav-tab { padding: 10px 18px; font-size: 18px; }
 .app.nav-compact .nav-tab { padding: 9px 16px; font-size: 16px; }
+/* With Sign out + Submit changes + Edit Assets on the right, the absolutely-centred tabs collide at common laptop widths:
+   below 1620px let them sit centred in the free space between the logo and the buttons instead. */
+@media (max-width: 1620px) {
+  .nav-tabs { position: static; transform: none; margin: 0 auto; }
+  .nav-tab { padding: 9px 14px; font-size: 16px; }
+  .app.nav-compact .nav-tab { padding: 8px 12px; font-size: 15px; }
+  .btn-signout, .btn-submit-hdr { padding: 8px 14px; font-size: 14px; }
+  .btn-export { padding: 10px 18px; font-size: 15px; }
+}
 @media (max-width: 1180px) {
   .nav-tab { padding: 8px 10px; font-size: 13.5px; }
   .app.nav-compact .nav-tab { padding: 6px 9px; font-size: 12.8px; }

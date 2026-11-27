@@ -42,7 +42,7 @@
         <div class="spl-card-go">Enter portal &rarr;</div>
       </button>
     </div>
-    <button class="spl-skip" onclick="dismissSplash()">Skip</button>
+    <a class="spl-skip" href="https://refit8.io" target="_blank" rel="noopener">Visit refit8.io</a>
   </div>
   <div class="spl-bg-figure" aria-hidden="true">
     <img src="data/images/Sketches/Refit8 Isometric Asset.png" alt="">
@@ -81,6 +81,7 @@
       <button class="nav-tab" data-tab="register" onclick="setNav(this);this.blur()">Asset Register</button>
       <div class="nav-drop-menu-wrap">
         <div class="nav-drop-menu">
+          <a onclick="setNav(document.querySelector('.nav-tab[data-tab=register]'))">Register</a>
           <a onclick="goEditAssets()">Edit Assets</a>
         </div>
       </div>
@@ -105,6 +106,8 @@
     </button>
     <!-- Export Report hidden for now (kept for later). Replaced by a second Edit Assets button.
     <button class="btn-export" id="btn-export-report" disabled title="Exports coming soon">↑ Export Report</button> -->
+    <button class="btn-signout" onclick="signOut()" title="Sign out">Sign out</button>
+    <button class="btn-submit-hdr" id="btn-submit-changes" onclick="R8Review.submitClick()" hidden>Submit changes</button>
     <button class="btn-export" id="btn-edit-assets" onclick="goEditAssets()" title="Edit asset data">✎ Edit Assets</button>
   </div>
 </nav>
@@ -146,7 +149,7 @@
     </div>
     <div class="hs-item">
       <div class="hs-val accent" id="home-nla">—</div>
-      <div class="hs-lbl">Net Lettable Area</div>
+      <div class="hs-lbl">Net Lettable Area**</div>
     </div>
   </div>
 
@@ -226,6 +229,7 @@
     <div style="font-size:19px;font-weight:700;color:var(--ink);margin-bottom:8px">Note: Initial Draft Only</div>
     These are preliminary findings. The entire site has not yet been quantified, and the register reflects only the areas and items audited to date. Additional items and quantities can be added to suit how BVN would like to use the data, and the figures shown will update as the register grows. If an item, quantity or note needs further investigation, please let the Refit8 team know via <a onclick="goContact()" style="color:inherit;text-decoration:underline;cursor:pointer">Contact Us</a> or your Refit8 project contact.<br>
     * Target diversion rate for the project. The planned (live) diversion rate is shown on the Overview and Register tabs and will update as the audit progresses.
+    <br>** Net lettable area (NLA) applies only to the scope of the audited fitout. Areas and items excluded from the audit are listed under Out-of-scope below.
   </div>
 
   <!-- ══ EXPLORE ══ -->

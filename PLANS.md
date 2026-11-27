@@ -47,7 +47,87 @@ set-up is handled by a colleague. This file is the hand-over.
 
 ---
 
+## 2b. Editing and approval workflow (owner decisions, 2026-11-27)
+
+**Editor steps (UI built in the static portal; sending to a server is not built):**
+1. Edit fields on the Edit Assets page (or the register's Review / edit card). Edits are **staged**. Moving between assets keeps them staged.
+2. **Save changes** applies all staged edits in that browser (register, KPIs, home update) and keeps them there. **Discard** throws all staged edits away; nothing is written.
+3. **Submit for review** sends the saved changes to the admins. In the preview this only marks them as submitted in the browser and says nothing is sent yet. It sits in the same bar as Save, and the header Edit Assets button shows a count badge while anything is saved or staged but not submitted. Signing out with unsubmitted changes asks for confirmation.
+
+**Admin review (to build in the Next.js / AWS version):**
+- Approvers: the owner, possibly one or two other team members. **One approval is enough.**
+- Decide **each field individually** (accept / reject / skip). No batch-only approval needed.
+- Each pending change shows the **initial value and the proposed value**. This also covers stale edits: if the data changed since the editor made their change, the admin still sees initial vs new and uses judgement.
+- No rejection reason required (handled through other messaging channels). No withdraw option for editors for now.
+- No trusted editors. Optional lightweight extra: admins can edit directly without going through review (source data can also be edited directly in the repo / owner's editor).
+- Keep an audit log (who proposed, who decided, when) and data versioning so a bad merge can be undone.
+
+## 2c. Shared login and the submission record (owner decisions, 2026-11-27)
+
+**Constraint:** everyone is likely to share one login and password. There is therefore no way to know who submitted a change and no user-dependent pages or access. The portal cannot hold a private admin page: anyone with the password would see it. Review has to happen somewhere private.
+
+**Proposed route (hosting colleague to confirm; Supabase is the working assumption):**
+1. **Submit** sends the changes to a Supabase table (`submissions`). The browser's public key is limited by an **insert-only** row policy: it can add rows but cannot read, change or delete any.
+2. **Review is private and local.** Either in the Supabase dashboard (Table Editor, no code) or, preferably, in a local admin tool (successor to `review_tool.py`) that downloads pending changes using a private key kept only on the owner's machine, never in the website. The tool shows original vs new per field; accept / reject each one individually.
+3. **Apply:** accepted changes are written into `data/assets.json` locally (totals recalculated), committed and pushed; Amplify redeploys and everyone sees the update. The tool also marks the rows accepted / rejected in Supabase so they do not reappear.
+4. Git as the inbox instead is only possible with a small server function in between (the browser cannot write to a repo). Supabase is simpler.
+
+**Known limits with a shared login:** no submitter identity (none is collected); anyone with the password could send junk submissions. Every change still needs admin approval, so harm is limited; the database should reject malformed rows and can rate-limit inserts.
+
+**Submission record: JSON.** In Supabase, one row per change with values stored as JSON.
+
+*Submission (one per press of Submit):*
+
+| Field | Meaning |
+|---|---|
+| `submission_id` | unique ID |
+| `submitted_at` | timestamp (UTC) |
+| `data_version` | which data the edits were based on |
+| `change_count` | number of changes in it |
+
+No submitter name or contact (decided: there is no way to verify it).
+
+*Change (one per edited field):*
+
+| Field | Meaning |
+|---|---|
+| `change_id` | unique ID |
+| `submission_id` | the submission it belongs to |
+| `asset_id` | the asset's ID |
+| `asset_title` | its name, so the record is readable on its own |
+| `field` | e.g. `quantity`, `pathway.suggested` |
+| `field_label` | e.g. "Quantity" |
+| `original_value` | what the submitter started from |
+| `new_value` | what they changed it to |
+| `value_type` | number, text or list |
+
+*Review fields (filled in by the admin, not the submitter):*
+
+| Field | Meaning |
+|---|---|
+| `status` | pending, accepted or rejected |
+| `decided_at` | when the admin decided |
+| `value_at_decision` | the live value at that moment (shows stale edits as initial vs new) |
+
+Example payload:
+
+```json
+{
+  "submission_id": "b3c1...",
+  "submitted_at": "2026-11-27T04:12:09Z",
+  "data_version": "a1b2c3d4e5f6a7b8",
+  "change_count": 2,
+  "changes": [
+    { "asset_id": "4e287bba-...", "asset_title": "Air Diffuser - Louvre-faced",
+      "field": "quantity", "field_label": "Quantity",
+      "original_value": 90, "new_value": 7, "value_type": "number" }
+  ]
+}
+```
+
 ## 3. Decisions still needed from the owner
+
+- **Login credentials storage (important):** credentials and roles must NOT live in the page's source code (anyone can read it, and the data is sensitive). Options: Amplify's site-wide password (one shared credential, no roles) as a stopgap, or real accounts through AWS (Cognito) with roles checked on the server. Hosting colleague to advise. A front-end-only role switch is possible for UI testing but is not secure.
 
 - **Approval model:** does every editor change need admin approval, or can trusted users change some fields directly?
 - **Editable fields:** see section 4 (owner to mark each field).

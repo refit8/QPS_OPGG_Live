@@ -54,6 +54,11 @@
   FIELDS.forEach(function (f) { FIELD_BY_KEY[f.key] = f; });
 
   /* Totals are calculated from the inputs, exactly as the owner's editor does (edit_assets.py recalc) */
+  var CALCS = [
+    { key: 'weight.total',            label: 'Total weight (kg)',          sec: 'Weight & dimensions', d: 2 },
+    { key: 'embodiedCarbon.total',    label: 'EC total (kgCO₂e)',    sec: 'Environmental impact', d: 2 },
+    { key: 'wasteEmissions.potential', label: 'WE potential (kgCO₂e)', sec: 'Environmental impact', d: 4 }
+  ];
   var INPUT_OF_TOTALS = { 'quantity': 1, 'weight.perUnit': 1, 'embodiedCarbon.perUnit': 1, 'wasteEmissions.factor': 1 };
   function recalcTotals(r) {
     var q = Number(r.quantity) || 0, wp = Number(getPath(r, 'weight.perUnit')) || 0,
@@ -135,7 +140,7 @@
   var raws = {};       // id → the raw assets.json record, with edits applied
   var origTotals = {}; // id → original calculated totals
   var overlay = { edits: {} };   // id → { path: edited value }   (only where different from base)
-  var meta = { lastExportSig: null, lastExportAt: null };
+  var meta = { lastExportSig: null, lastExportAt: null, submitted: {} };
   var storeKey = 'r8-review:' + CFG.baseVersion + ':' + (CFG.assetsHash || '');
   var storageOk = true;
 
@@ -145,6 +150,7 @@
       if (s && s.edits) overlay = { edits: s.edits };
       if (s && s.meta) meta = s.meta;
     } catch (e) { storageOk = false; }
+    if (!meta.submitted) meta.submitted = {};
   }
   function saveStore() {
     try { localStorage.setItem(storeKey, JSON.stringify({ edits: overlay.edits, meta: meta })); storageOk = true; }
@@ -173,8 +179,159 @@
       (overlay.edits[id] = overlay.edits[id] || {})[path] = clone(val);
     }
     saveStore();
+    if (raws[id]) setPath(raws[id], path, clone(currentVal(id, path)));
     syncAsset(id);
     updateBar();
+  }
+
+  /* ══ Drafts: what is typed in a form but not yet saved. Save commits them (setEdit); nothing else changes until then. ══ */
+  var drafts = {};   // id → { path: value }
+  function draftCount(id) { return Object.keys(drafts[id] || {}).length; }
+  function allDrafts() {
+    var a = 0, f = 0;
+    Object.keys(drafts).forEach(function (id) { var n = draftCount(id); if (n) { a++; f += n; } });
+    return { assets: a, fields: f };
+  }
+  function hasDraft(id, path) { return !!drafts[id] && Object.prototype.hasOwnProperty.call(drafts[id], path); }
+  function formVal(id, path) { return hasDraft(id, path) ? drafts[id][path] : currentVal(id, path); }
+  function setDraft(id, path, val) {
+    if (same(val, currentVal(id, path))) { if (drafts[id]) delete drafts[id][path]; }
+    else (drafts[id] = drafts[id] || {})[path] = clone(val);
+    if (drafts[id] && !Object.keys(drafts[id]).length) delete drafts[id];
+  }
+  function saveDrafts(ids) {
+    ids = ids || Object.keys(drafts);
+    var n = 0;
+    ids.forEach(function (id) {
+      var d = drafts[id]; if (!d) return;
+      Object.keys(d).forEach(function (p) { setEdit(id, p, d[p]); n++; });
+      delete drafts[id];
+    });
+    if (n) { syncViews(); toast(n + ' change' + (n > 1 ? 's' : '') + ' saved'); }
+    updateSaveBars();
+    return n;
+  }
+  function discardDrafts(ids) { (ids || Object.keys(drafts)).forEach(function (id) { delete drafts[id]; }); updateSaveBars(); }
+  /* Calculated cells shown while typing (preview only; committed on Save) */
+  function previewRaw(id) {
+    var t = clone(raws[id]), d = drafts[id] || {};
+    Object.keys(d).forEach(function (p) { setPath(t, p, clone(d[p])); });
+    if (Object.keys(d).concat(Object.keys(overlay.edits[id] || {})).some(function (k) { return INPUT_OF_TOTALS[k]; })) recalcTotals(t);
+    return t;
+  }
+
+  /* Save bar (one per open form) */
+  function saveBarHtml(id, withClear) {
+    return '<div class="r8-savebar" data-id="' + id + '"><span class="r8-sb-msg"></span>' +
+      '<button type="button" data-sb="discard">Discard</button><button type="button" data-sb="save" class="r8-sb-save">Save changes</button>' +
+      (withClear ? '<button type="button" data-sb="clear" class="r8-sb-clear" title="Remove all your edits and restore the original data">Clear all changes</button>' : '') + '</div>';
+  }
+  /* Saved edits not yet submitted for review (submission is local for now; the server will receive it later) */
+  function unsubmitted() {
+    var a = 0, f = 0;
+    Object.keys(overlay.edits).forEach(function (id) {
+      var sv = (meta.submitted || {})[id], n = 0;
+      Object.keys(overlay.edits[id]).forEach(function (p) {
+        if (!sv || !Object.prototype.hasOwnProperty.call(sv, p) || !same(sv[p], overlay.edits[id][p])) n++;
+      });
+      if (n) { a++; f += n; }
+    });
+    return { assets: a, fields: f };
+  }
+  function plural(n, w) { return n + ' ' + w + (n > 1 ? 's' : ''); }
+  function updateSaveBars() {
+    var t = allDrafts(), u = unsubmitted();
+    Array.prototype.forEach.call(document.querySelectorAll('.r8-savebar'), function (el) {
+      var ready = u.fields > 0 && !t.fields;
+      el.classList.toggle('r8-dirty', t.fields > 0);
+      el.classList.toggle('r8-ready', ready);
+      el.querySelector('.r8-sb-msg').textContent = t.fields
+        ? plural(t.fields, 'unsaved change') + ' on ' + plural(t.assets, 'asset')
+        : u.fields ? plural(u.fields, 'saved change') + ' on ' + plural(u.assets, 'asset') + ' — press Submit changes (top right) when you have finished all your edits'
+        : counts().fields ? 'All changes submitted for review' : 'No changes';
+      el.querySelector('[data-sb=save]').disabled = !t.fields;
+      el.querySelector('[data-sb=discard]').disabled = !t.fields;
+      var cb = el.querySelector('[data-sb=clear]');
+      if (cb) cb.disabled = !(t.fields || counts().fields);
+    });
+    /* Header "Submit changes" button: appears after the first edit; greyed until staged edits are saved, then orange */
+    var hb = document.getElementById('btn-submit-changes');
+    if (hb) {
+      var any = t.fields + counts().fields > 0;     // visible from the first edit; greyed whenever there is nothing to submit
+      hb.hidden = !any;
+      hb.classList.toggle('is-ready', u.fields > 0 && !t.fields);
+      hb.setAttribute('aria-disabled', (u.fields > 0 && !t.fields) ? 'false' : 'true');
+      hb.title = t.fields ? 'Save your changes before submitting' : (u.fields ? 'Submit your saved changes for review' : 'All saved changes have been submitted');
+    }
+  }
+  function submitClick() {
+    if (allDrafts().fields) { toast('Save changes before submitting', true); return; }
+    if (!unsubmitted().fields) { toast('Nothing new to submit', true); return; }
+    submitAll();
+  }
+  function submitAll() {
+    var t = allDrafts(), u = unsubmitted();
+    if (t.fields || !u.fields) return;
+    if (!confirm('Submit ' + plural(u.fields, 'change') + ' on ' + plural(u.assets, 'asset') + ' for review?\n\nAn admin will review each change and decide whether to apply it. (Preview: submissions are not sent to a server yet.)')) return;
+    meta.submitted = {};
+    Object.keys(overlay.edits).forEach(function (id) { meta.submitted[id] = clone(overlay.edits[id]); });
+    meta.submittedAt = new Date().toISOString();
+    saveStore();
+    toast(plural(u.fields, 'change') + ' submitted for review');
+    updateSaveBars();
+  }
+  /* Mark assets in the Edit Assets list that have staged (unsaved) changes */
+  function markStaged(id) {
+    var el = document.querySelector('#r8e-list .r8e-item[data-id="' + id + '"]');
+    if (el) el.classList.toggle('staged', draftCount(id) > 0);
+    markRegisterStaged(id);
+  }
+  /* Same marker on the register table row / card view */
+  function markRegisterStaged(id) {
+    var list = assetsList() || [];
+    for (var i = 0; i < list.length; i++) if (list[i].id === id) {
+      ['tr', 'gc'].forEach(function (p) { var e = document.getElementById(p + i); if (e) e.classList.toggle('r8-staged', draftCount(id) > 0); });
+      break;
+    }
+  }
+  function afterDraftAction(id) {
+    var card = document.getElementById('r8-card');
+    if (editBuilt && document.getElementById('tab-edit') && document.getElementById('tab-edit').style.display !== 'none') { renderEditList(); renderEditForm(); }
+    else if (card) { var list = assetsList() || []; for (var i = 0; i < list.length; i++) if (list[i].id === id) { refresh(i); break; } }
+  }
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest && e.target.closest('[data-sb]');
+    if (!b) return;
+    var id = b.closest('.r8-savebar').getAttribute('data-id');
+    if (b.getAttribute('data-sb') === 'clear') { clearAll(); return; }
+    if (b.getAttribute('data-sb') === 'save') saveDrafts();
+    else {
+      var t = allDrafts();
+      if (!confirm('Discard all ' + t.fields + ' unsaved change' + (t.fields > 1 ? 's' : '') + ' on ' + t.assets + ' asset' + (t.assets > 1 ? 's' : '') + '? Nothing has been saved yet, so they will be lost.')) return;
+      discardDrafts();
+    }
+    afterDraftAction(id);
+  });
+
+  /* Unsaved-changes prompt: Save / Discard / Stay. Used when moving to another asset or page, and on sign out. */
+  function guard(proceed, what) {
+    var t = allDrafts();
+    if (!t.fields) return false;
+    var m = document.createElement('div'); m.id = 'r8-modal';
+    m.innerHTML = '<div class="r8-mbox"><h3>Unsaved changes</h3><p>You have ' + t.fields + ' unsaved change' + (t.fields > 1 ? 's' : '') +
+      ' on ' + t.assets + ' asset' + (t.assets > 1 ? 's' : '') + '. Save them before ' + (what || 'continuing') + '?</p>' +
+      '<div class="r8-mbtns"><button data-m="stay">Stay here</button><button data-m="discard">Discard</button><button data-m="save" class="r8-sb-save">Save and continue</button></div></div>';
+    document.body.appendChild(m);
+    m.addEventListener('click', function (e) {
+      var k = e.target.getAttribute && e.target.getAttribute('data-m');
+      if (!k) return;
+      m.remove();
+      if (k === 'stay') return;
+      if (k === 'save') saveDrafts(); else discardDrafts();
+      afterDraftAction(editSel);
+      proceed();
+    });
+    return true;
   }
 
   /* Recalculate totals + refresh the normalised record the portal draws from */
@@ -234,18 +391,17 @@
   /* ══ Hook 2: the review card inside the asset detail panel ══ */
   function fieldId(k, pfx) { return (pfx || 'r8f-') + k.replace(/\./g, '-'); }
   var openId = null;     // id of the asset whose review box is expanded (none by default)
-  var dirtyIdx = null;   // asset whose read-only view needs a refresh once focus leaves the card
 
   function cardHtml(a) {
     var id = a.id, rows = '';
-    FIELDS.filter(function (f) { return f.quick; }).forEach(function (f) {
+    FIELDS.filter(function (f) { return !f.ro; }).forEach(function (f) {
       rows += rowHtml(id, f);
     });
     var n = Object.keys(overlay.edits[id] || {}).length;
     return '<div class="r8-card" id="r8-card" data-id="' + id + '">' +
       '<div class="r8-card-hd"><span>Review edits</span><span><span class="r8-badge" id="r8-asset-badge"' + (n ? '' : ' hidden') + '>' +
-      n + ' edited</span> <a href="#" id="r8-close" class="r8-close">Close</a></span></div>' + rows +
-      '<div class="r8-foot">Need to change something else? Use <b>Asset Register › Edit Assets</b> for every field. Changes show here straight away and are saved in this browser only. The project owner reviews them before anything changes in the main data. Use <b>Export changes</b> (bottom left) to send them.</div></div>';
+      n + ' edited</span> <a href="#" id="r8-close" class="r8-close">Close</a></span></div>' + saveBarHtml(id) + rows + saveBarHtml(id) +
+      '<div class="r8-foot">Your edits are staged until you press <b>Save changes</b> (which applies every staged edit) or <b>Discard</b>. Saved changes are kept in this browser only; the project owner reviews them before anything changes in the main data.</div></div>';
   }
 
   function optsFor(f) {
@@ -259,10 +415,10 @@
   function rowHtml(id, f, pfx) {
     var rows = '';
     {
-      var val = currentVal(id, f.key), fid = fieldId(f.key, pfx), w = '';
+      var val = f.ro ? currentVal(id, f.key) : formVal(id, f.key), fid = fieldId(f.key, pfx), w = '';
       var changed = !same(val, base[id][f.key]);
       if (f.ro) {
-        return '<div class="r8-row r8-ro-row"><label>' + f.label + ' <span class="r8-fixed">fixed</span></label>' +
+        return '<div class="r8-row r8-ro-row"><label>' + f.label + '</label>' +
           '<div class="r8-ro">' + (val == null || val === '' ? '—' : esc(toInput(f, val))) + '</div></div>';
       }
       if (f.type === 'select') {
@@ -303,37 +459,30 @@
     var card = document.getElementById('r8-card');
     document.getElementById('r8-close').addEventListener('click', function (e) { e.preventDefault(); openId = null; refresh(idx); });
 
+    updateSaveBars();
     function onEdit(e) {
       var el = e.target, key = el.getAttribute && el.getAttribute('data-key');
       if (!key) return;
-      var f = FIELD_BY_KEY[key];
-      setEdit(a.id, key, fromInput(f, el.value));
-      var row = el.closest('.r8-row'), ch = !same(currentVal(a.id, key), base[a.id][key]);
+      setDraft(a.id, key, fromInput(FIELD_BY_KEY[key], el.value));
+      var row = el.closest('.r8-row'), ch = !same(formVal(a.id, key), base[a.id][key]);
       row.classList.toggle('r8-changed', ch);
       row.querySelector('.r8-orig').hidden = !ch;
-      var n = Object.keys(overlay.edits[a.id] || {}).length, b = document.getElementById('r8-asset-badge');
-      b.hidden = !n; b.textContent = n + ' edited';
-      dirtyIdx = idx;
-      if (el.tagName === 'SELECT') refresh(idx, el.id);   // pathway badge / notes change straight away
+      markStaged(a.id);
+      updateSaveBars();
     }
     card.addEventListener('input', onEdit);
     card.addEventListener('change', onEdit);
-    card.addEventListener('focusout', function (e) {
-      if (dirtyIdx === idx && !(e.relatedTarget && card.contains(e.relatedTarget))) setTimeout(function () { if (dirtyIdx === idx) refresh(idx); }, 0);
-    });
     card.addEventListener('click', function (e) {
       var k = e.target.getAttribute && e.target.getAttribute('data-revert');
       if (!k) return;
       e.preventDefault();
-      setEdit(a.id, k, clone(base[a.id][k]));
-      dirtyIdx = null;
+      setDraft(a.id, k, clone(base[a.id][k]));
       refresh(idx);
     });
   }
 
   /* Re-render the detail panel + register (keeps scroll and focus) */
   function refresh(idx, focusId, toCard) {
-    dirtyIdx = null;
     var sc = document.getElementById('p-detail'), top = sc ? sc.scrollTop : 0;
     if (typeof doFilter === 'function') doFilter();
     if (typeof selAsset === 'function') selAsset(idx);
@@ -347,6 +496,7 @@
 
   /* ══ Hook 3: mark edited rows / cards in the register ══ */
   function afterRender() {
+    Object.keys(drafts).forEach(markRegisterStaged);
     Object.keys(overlay.edits).forEach(function (id) {
       var list = assetsList();
       if (!Object.keys(overlay.edits[id]).length || !list) return;
@@ -383,21 +533,31 @@
     host.innerHTML = rows.map(function (a, i) {
       var n = editedCount(a.id), nx = rows[i + 1];
       var end = (typeof starFirst !== 'undefined' && starFirst && isStarred(a) && nx && !isStarred(nx)) ? ' star-end' : '';
-      return '<div class="r8e-item' + (a.id === editSel ? ' on' : '') + (n ? ' ed' : '') + end + '" data-id="' + a.id + '">' +
+      return '<div class="r8e-item' + (a.id === editSel ? ' on' : '') + (n ? ' ed' : '') + (draftCount(a.id) ? ' staged' : '') + end + '" data-id="' + a.id + '">' +
         (a.thumbUrl || a.imageUrl ? '<img src="' + esc(a.thumbUrl || a.imageUrl) + '" loading="lazy" alt="">' : '<span class="r8e-ph"></span>') +
+        '<span class="r8e-dot" title="Unsaved changes"></span>' +
         '<span class="r8e-it"><b>' + esc(a.n) + '</b><i>' + esc(a.cat) + (a.pw && a.pw !== 'Unknown' ? ' \u00b7 ' + esc(a.pw) : '') + '</i></span>' +
         (n ? '<span class="r8-badge">' + n + '</span>' : '') +
         (typeof starBtnHtml === 'function' ? starBtnHtml(a) : '') + '</div>';
     }).join('') || '<div class="r8e-empty">No assets match.</div>';
     document.getElementById('r8e-count').textContent = rows.length + ' of ' + list.length + ' assets';
   }
-  function calcHtml(id) {
-    var r = raws[id] || {};
-    function f(v, d) { return v == null ? '\u2014' : Number(v).toLocaleString(undefined, { maximumFractionDigits: d }); }
-    return '<div class="r8e-calc"><b>Calculated automatically</b>' +
-      '<span>Total weight <em>' + f(getPath(r, 'weight.total'), 2) + ' kg</em></span>' +
-      '<span>Total EC <em>' + f(getPath(r, 'embodiedCarbon.total'), 2) + ' kgCO\u2082e</em></span>' +
-      '<span>WE potential <em>' + f(getPath(r, 'wasteEmissions.potential'), 4) + ' kgCO\u2082e</em></span></div>';
+  function calcVal(id, c) {
+    var v = getPath(raws[id] || {}, c.key);
+    return v == null ? '—' : Number(v).toLocaleString(undefined, { maximumFractionDigits: c.d });
+  }
+  function calcRows(id, sec) {
+    return CALCS.filter(function (c) { return c.sec === sec; }).map(function (c) {
+      return '<div class="r8-row r8-ro-row"><label>' + c.label + ' <span class="r8-auto">auto</span></label>' +
+        '<div class="r8-ro r8-calc" data-calc="' + c.key + '">' + calcVal(id, c) + '</div></div>';
+    }).join('');
+  }
+  function updateCalcs(id) {
+    var t = previewRaw(id);
+    CALCS.forEach(function (c) {
+      var el = document.querySelector('#r8-edit-root [data-calc="' + c.key + '"]');
+      if (el) { var v = getPath(t, c.key); el.textContent = v == null ? '\u2014' : Number(v).toLocaleString(undefined, { maximumFractionDigits: c.d }); }
+    });
   }
   function renderEditForm() {
     var host = document.getElementById('r8e-main'), list = assetsList() || [], a = null;
@@ -405,20 +565,21 @@
     if (!host) return;
     if (!a) { host.innerHTML = '<div class="r8e-empty big">Pick an asset on the left to edit it.</div>'; return; }
     var n = editedCount(a.id), img = a.imageUrl;
-    var html = '<div class="r8e-head">' + (img ? '<img src="' + esc(img) + '" alt="">' : '<span class="r8e-ph big"></span>') +
+    var html = saveBarHtml(a.id, true) + '<div class="r8e-head">' + (img ? '<img src="' + esc(img) + '" alt="">' : '<span class="r8e-ph big"></span>') +
       '<div><h2>' + esc(a.n) + '</h2><p>' + esc(a.cat) + ' \u00b7 ID ' + esc(a.id) + '</p></div>' +
       '<div class="r8e-head-act"><span class="r8-badge" id="r8e-badge"' + (n ? '' : ' hidden') + '>' + n + ' edited</span> ' +
       '<button type="button" id="r8e-revert-all"' + (n ? '' : ' disabled') + '>Revert this asset</button></div></div>';
     SECTIONS.forEach(function (sec) {
       var fs = FIELDS.filter(function (f) { return f.sec === sec; });
       html += '<div class="r8e-sec"><h3>' + sec + '</h3><div class="r8e-grid' + (sec === 'Notes' || sec === 'Pathway notes' ? ' one' : '') + '">' +
-        fs.map(function (f) { return rowHtml(a.id, f, 'r8e-'); }).join('') + '</div>' +
-        (sec === 'Weight & dimensions' ? '<div id="r8e-calc-wrap">' + calcHtml(a.id) + '</div>' : '') + '</div>';
+        fs.map(function (f) { return rowHtml(a.id, f, 'r8e-'); }).join('') + calcRows(a.id, sec) + '</div></div>';
     });
-    html += '<div class="r8e-foot">Your changes show in this browser straight away and are saved here automatically. The main dataset is not changed until the project owner reviews and accepts them. Use <b>Export changes</b> (bottom left) to send them. Photos can\u2019t be changed here yet.</div>';
+    html += '<div class="r8e-foot">Your edits are staged as you move between assets. Press <b>Save changes</b> to apply them all, or <b>Discard</b> to throw them away. Saved changes are kept in this browser only; the main dataset is not changed until the project owner reviews and accepts them. Photos can\u2019t be changed here yet.</div>';
     var sc = host.scrollTop;
     host.innerHTML = html;
     host.scrollTop = sc;
+    updateSaveBars();
+    updateCalcs(a.id);
   }
   function selectEdit(id) {
     editSel = id;
@@ -445,32 +606,32 @@
     });
     document.getElementById('r8e-list').addEventListener('click', function (e) {
       if (e.target.closest && e.target.closest('.star-btn')) return;       // star button handles itself (app.js toggleStar)
-      var it = e.target.closest && e.target.closest('.r8e-item'); if (it) selectEdit(it.getAttribute('data-id'));
+      var it = e.target.closest && e.target.closest('.r8e-item'); if (!it) return;
+      var id = it.getAttribute('data-id');
+      if (id === editSel) return;
+      selectEdit(id);       // staged changes stay staged while you move between assets
     });
     var main = document.getElementById('r8e-main');
     function onEdit(e) {
       var el = e.target, key = el.getAttribute && el.getAttribute('data-key');
       if (!key || !editSel) return;
       var f = FIELD_BY_KEY[key], v = fromInput(f, el.value);
-      if ((key === 'title' || key === 'category') && v == null) return;     // these can't be blank
-      setEdit(editSel, key, v);
-      var row = el.closest('.r8-row'), ch = !same(currentVal(editSel, key), base[editSel][key]);
+      setDraft(editSel, key, v);
+      var row = el.closest('.r8-row'), ch = !same(formVal(editSel, key), base[editSel][key]);
       row.classList.toggle('r8-changed', ch);
       row.querySelector('.r8-orig').hidden = !ch;
-      var n = editedCount(editSel), b = document.getElementById('r8e-badge');
-      b.hidden = !n; b.textContent = n + ' edited';
-      document.getElementById('r8e-revert-all').disabled = !n;
-      document.getElementById('r8e-calc-wrap').innerHTML = calcHtml(editSel);
-      if (e.type === 'change') renderEditList();
+      updateCalcs(editSel);
+      markStaged(editSel);
+      updateSaveBars();
     }
     main.addEventListener('input', onEdit);
     main.addEventListener('change', onEdit);
     main.addEventListener('click', function (e) {
       var k = e.target.getAttribute && e.target.getAttribute('data-revert');
-      if (k) { e.preventDefault(); setEdit(editSel, k, clone(base[editSel][k])); renderEditList(); renderEditForm(); return; }
-      if (e.target.id === 'r8e-revert-all' && confirm('Revert every edit you made to this asset?')) {
-        Object.keys(overlay.edits[editSel] || {}).slice().forEach(function (p) { setEdit(editSel, p, clone(base[editSel][p])); });
-        renderEditList(); renderEditForm();
+      if (k) { e.preventDefault(); setDraft(editSel, k, clone(base[editSel][k])); markStaged(editSel); renderEditForm(); return; }
+      if (e.target.id === 'r8e-revert-all' && confirm('Revert every edit on this asset to the original values? (You still need to press Save changes.)')) {
+        Object.keys(overlay.edits[editSel] || {}).concat(Object.keys(drafts[editSel] || {})).forEach(function (p) { setDraft(editSel, p, clone(base[editSel][p])); });
+        markStaged(editSel); renderEditForm();
       }
     });
   }
@@ -548,6 +709,27 @@
     rd.readAsText(file);
   }
 
+  /* Remove every saved and staged edit and put the original data back (no page reload, so you stay where you are) */
+  function clearAll() {
+    var t = allDrafts(), c = counts();
+    if (!t.fields && !c.fields) return;
+    var submittedNote = Object.keys(meta.submitted || {}).length ? '\n\nChanges you have already submitted for review are not affected.' : '';
+    if (!confirm('Clear all changes?\n\nThis removes every edit you have saved or staged in this browser and restores the original data. This cannot be undone.' + submittedNote)) return;
+    var ids = Object.keys(overlay.edits);
+    ids.forEach(function (id) {
+      Object.keys(overlay.edits[id]).forEach(function (p) { if (raws[id]) setPath(raws[id], p, clone(base[id][p])); });
+    });
+    overlay.edits = {}; drafts = {}; meta.submitted = {};
+    saveStore();
+    ids.forEach(syncAsset);
+    syncViews();
+    updateSaveBars();
+    if (editBuilt) { renderEditList(); renderEditForm(); }
+    var card = document.getElementById('r8-card');
+    if (card) { var list = assetsList() || [], cid = card.getAttribute('data-id'); for (var i = 0; i < list.length; i++) if (list[i].id === cid) { refresh(i); break; } }
+    toast('All changes cleared. Original data restored.');
+  }
+
   function resetAll() {
     if (!counts().fields) return;
     if (!confirm('Discard ALL your edits in this browser and go back to the original data?\n\nExport first if you want to keep them.')) return;
@@ -557,9 +739,14 @@
 
   /* ══ Floating bar ══ */
   var barEl = null, toastEl = null, toastT = null;
-  function toast(msg) {
+  function toast(msg, warn) {
     if (!toastEl) return;
     toastEl.textContent = msg; toastEl.hidden = false;
+    toastEl.style.background = warn ? '#e8730c' : '';
+    toastEl.style.bottom = warn ? '24px' : '';
+    toastEl.style.top = warn ? 'auto' : '';
+    toastEl.style.left = warn ? 'auto' : '';
+    toastEl.style.right = warn ? '24px' : '';
     clearTimeout(toastT); toastT = setTimeout(function () { toastEl.hidden = true; }, 3500);
   }
   function updateBar() {
@@ -585,7 +772,19 @@
       '.r8e-srch{display:flex;gap:8px;align-items:center;margin-bottom:8px}.r8e-srch input{flex:1}.r8e-srch label{font-size:12px;color:var(--grey-500,#737373)}' +
       '.r8e-srch select{flex:1;font:inherit;font-size:13px;padding:6px 8px;border:1px solid var(--grey-300,#d4d4d4);border-radius:6px;background:#fff}' +
       '#r8e-starfirst{border:1px solid var(--grey-300,#d4d4d4);border-radius:6px;background:#fff;padding:7px;cursor:pointer;display:inline-flex}#r8e-starfirst.on{border-color:var(--orange,#e8730c);background:#fff4ec}#r8e-starfirst svg{width:16px;height:16px}#r8e-starfirst.on svg{fill:var(--orange,#e8730c);stroke:var(--orange,#e8730c)}' +
+      'tr.r8-staged td:first-child{box-shadow:inset 3px 0 0 #f4b98a}tr.r8-staged td{background:#fffaf5}.g-card.r8-staged{box-shadow:inset 0 0 0 2px #f4b98a}' +
+      '.r8e-dot{display:none;width:9px;height:9px;border-radius:50%;background:var(--orange,#e8730c);flex:0 0 auto}.r8e-item.staged .r8e-dot{display:block}.r8e-item.staged{background:#fffaf5}' +
       '.r8e-item .star-btn{margin-left:auto}.r8e-item:not(:hover) .star-btn:not(.on){visibility:hidden}.r8e-item.star-end{border-bottom:2px solid var(--orange,#e8730c)}' +
+      '.r8-savebar{display:flex;align-items:center;justify-content:flex-end;gap:8px;padding:8px 12px;margin:0 0 12px;border:1px solid var(--grey-200,#e5e5e5);border-radius:8px;background:#fff;font-size:13px}' +
+      '.r8-savebar .r8-sb-msg{margin-right:auto;color:var(--grey-500,#737373)}.r8-savebar.r8-dirty{border-color:var(--orange,#e8730c);background:#fff8f0}.r8-savebar.r8-dirty .r8-sb-msg{color:var(--orange,#e8730c);font-weight:600}' +
+      '.r8-savebar button,#r8-modal button{font:inherit;font-size:13px;padding:6px 12px;border:1px solid var(--grey-300,#d4d4d4);border-radius:6px;background:#fff;cursor:pointer}' +
+      '.r8-savebar.r8-ready{border-color:var(--navy,#1e1b5c);background:#f3f2fb}.r8-savebar.r8-ready .r8-sb-msg{color:var(--navy,#1e1b5c);font-weight:600}' +
+      '.r8-sb-clear{color:#b42318!important;border-color:#f3c4bf!important}.r8-sb-clear:hover:not(:disabled){background:#fef3f2!important}' +
+      '.r8-savebar button:disabled{opacity:.4;cursor:default}.r8-sb-save{background:var(--orange,#e8730c)!important;border-color:var(--orange,#e8730c)!important;color:#fff;font-weight:700}.r8-sb-save:disabled{opacity:.4}' +
+      '.r8e-main>.r8-savebar:first-child{position:sticky;top:-24px;z-index:5;margin:-24px -32px 16px;border-radius:0;border-width:0 0 1px}' +
+      '#r8-modal{position:fixed;inset:0;z-index:100000;background:rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center}' +
+      '.r8-mbox{background:#fff;border-radius:12px;padding:22px 24px;max-width:420px;width:calc(100vw - 32px);box-shadow:0 16px 40px rgba(0,0,0,.3)}.r8-mbox h3{margin:0 0 8px;font-size:18px}.r8-mbox p{margin:0 0 18px;font-size:14px;line-height:1.5;color:var(--grey-700,#404040)}' +
+      '.r8-mbtns{display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap}' +
       '.r8e-wrap{display:flex;height:100%;min-height:0;background:var(--off-white,#fafafa)}' +
       '.r8e-side{width:330px;flex:0 0 330px;display:flex;flex-direction:column;background:#fff;border-right:1px solid var(--grey-200,#e5e5e5);min-height:0}' +
       '.r8e-sh{padding:16px 16px 10px;border-bottom:1px solid var(--grey-200,#e5e5e5)}.r8e-sh h2{font-size:18px;margin:0 0 4px}' +
@@ -618,7 +817,7 @@
       '.r8-row textarea{resize:vertical;line-height:1.4}' +
       '.r8-row input:focus,.r8-row select:focus,.r8-row textarea:focus{outline:2px solid var(--orange,#e8730c);outline-offset:-1px}' +
       '.r8-changed input,.r8-changed select,.r8-changed textarea{border-color:var(--orange,#e8730c);background:#fff8f0}' +
-      '.r8-ro{padding:6px 8px;border-radius:5px;background:var(--grey-100,#f3f3f3);color:var(--grey-700,#404040);font-size:14px;white-space:pre-wrap;min-height:20px}.r8-fixed{font-weight:500;font-size:10.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--grey-500,#737373);margin-left:4px}.r8-hint{font-size:11.5px;color:var(--grey-500,#737373);margin-top:2px}' +
+      '.r8-ro{padding:6px 8px;border-radius:5px;background:var(--grey-100,#f3f3f3);color:var(--grey-700,#404040);font-size:14px;white-space:pre-wrap;min-height:20px}.r8-auto{font-weight:500;font-size:10.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--grey-500,#737373);margin-left:4px}.r8-ro.r8-calc{background:#eef3ff;color:#1e3a8a;font-weight:600}.r8-hint{font-size:11.5px;color:var(--grey-500,#737373);margin-top:2px}' +
       '.r8-orig{font-size:12px;color:var(--grey-500,#737373);margin-top:3px}.r8-orig a{color:var(--orange,#e8730c)}' +
       '.r8-foot{font-size:12px;color:var(--grey-500,#737373);border-top:1px solid var(--grey-200,#e5e5e5);padding-top:8px;margin-top:4px}' +
       'tr.r8-edited td:first-child{box-shadow:inset 3px 0 0 var(--orange,#e8730c)}.g-card.r8-edited{box-shadow:inset 0 0 0 2px var(--orange,#e8730c)}' +
@@ -633,9 +832,11 @@
     document.head.appendChild(css);
 
     toastEl = document.createElement('div'); toastEl.id = 'r8-toast'; toastEl.hidden = true; document.body.appendChild(toastEl);
+    updateSaveBars();
+    window.addEventListener('beforeunload', function (e) { if (allDrafts().fields) { e.preventDefault(); e.returnValue = ''; } });
     updateBar();
   }
 
-  window.R8Review = { openEditPage: openEditPage, syncViews: syncViews, applyToRaw: applyToRaw, decorate: decorate, afterRender: afterRender, onStarChange: onStarChange, exportChanges: exportChanges, resetAll: resetAll, _buildExport: buildExport, _fields: FIELDS };
+  window.R8Review = { submitClick: submitClick, unsubmittedCount: function () { return unsubmitted().fields; }, guard: guard, hasDrafts: function () { return allDrafts().fields > 0; }, openEditPage: openEditPage, syncViews: syncViews, applyToRaw: applyToRaw, decorate: decorate, afterRender: afterRender, onStarChange: onStarChange, exportChanges: exportChanges, resetAll: resetAll, _buildExport: buildExport, _fields: FIELDS };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', buildBar); else buildBar();
 })();

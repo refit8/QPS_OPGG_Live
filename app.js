@@ -578,18 +578,30 @@ function showView(v) {
 /* ── Collapsing banner header ──
    Expanded (larger) by default; shrinks to its original size once the
    user scrolls the active view, or navigates to another page/tab. */
+let _navFlipAt = 0;
 function setNavCompact(v) {
   const app = document.querySelector('.app');
-  if (app) app.classList.toggle('nav-compact', v);
+  if (!app || app.classList.contains('nav-compact') === v) return;
+  app.classList.toggle('nav-compact', v);
+  _navFlipAt = Date.now();
 }
+/* Shrinking/growing the header changes the height of the scroll area, which can itself move scrollTop and fire another
+   scroll event. On a page that overflows by only a few pixels that made the header flick big/small forever, so the
+   header (a) never re-expands straight after changing, and (b) only re-expands if the page still has real room to scroll. */
 document.addEventListener('scroll', function(e) {
   const t = e.target;
   if (!t || typeof t.scrollTop !== 'number') return;
-  setNavCompact(t.scrollTop > 8);
+  const app = document.querySelector('.app');
+  if (t.scrollTop > 8) { setNavCompact(true); return; }
+  if (!app || !app.classList.contains('nav-compact')) return;
+  if (Date.now() - _navFlipAt < 700) return;
+  if (t.scrollHeight - t.clientHeight < 90) return;
+  setNavCompact(false);
 }, true);
 
 /* ── Home navigation (logo click) ── */
 function navHome() {
+  if (window.R8Review && R8Review.guard(navHome, 'leaving this page')) return;   /* unsaved edits prompt */
   setNavCompact(true);
   document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
   document.querySelectorAll('.tab-page').forEach(p => p.style.display = 'none');
@@ -597,8 +609,24 @@ function navHome() {
   if (h) h.style.display = 'block';
 }
 
+/* ── Sign out: warns about unsaved edits, then returns to the splash screen ── */
+function signOut() {
+  if (window.R8Review && R8Review.guard(signOut, 'signing out')) return;
+  const unsub = window.R8Review ? R8Review.unsubmittedCount() : 0;
+  if (unsub && !confirm('You have ' + unsub + ' saved change' + (unsub > 1 ? 's' : '') + ' that ' + (unsub > 1 ? 'have' : 'has') + ' not been submitted for review.\n\nSign out anyway? Your saved changes will stay in this browser.')) return;
+  navHome();
+  try { sessionStorage.removeItem('r8-splash-seen'); } catch (e) {}
+  const el = document.getElementById('r8-splash');
+  if (!el) return;
+  el.style.display = '';
+  el.classList.remove('out', 'reveal', 'show');
+  void el.offsetWidth;
+  initSplash();
+}
+
 /* ── Main tab navigation ── */
 function setNav(el) {
+  if (window.R8Review && R8Review.guard(function () { setNav(el); }, 'leaving this page')) return;   /* unsaved edits prompt */
   if (window.R8Review) R8Review.syncViews();   /* redraw register / KPIs after edits */
   setNavCompact(true);
   document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
@@ -615,6 +643,9 @@ function setNav(el) {
 
 /* ── Edit Assets: sub-page under Asset Register (Register nav tab stays highlighted) ── */
 function goEditAssets() {
+  const cur = document.getElementById('tab-edit');
+  if (cur && cur.style.display === 'block') return;   /* already here */
+  if (window.R8Review && R8Review.guard(goEditAssets, 'leaving this page')) return;
   setNav(document.querySelector('.nav-tab[data-tab=register]'));
   document.querySelectorAll('.tab-page').forEach(p => p.style.display = 'none');
   const t = document.getElementById('tab-edit');
@@ -637,7 +668,7 @@ function renderSpotlight() {
   const root = document.getElementById('spot-root');
   if (!root) return;
   const items = spotItems();
-  const banner = '<div class="interact-banner"><span class="ib-tag">Interactive</span><span class="ib-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11.5V5.5a1.5 1.5 0 0 1 3 0V11m0-1.5a1.5 1.5 0 0 1 3 0V11m0 .5a1.5 1.5 0 0 1 3 0V13m0 .5a1.5 1.5 0 0 1 3 0v3.5a6 6 0 0 1-6 6h-2.5a6 6 0 0 1-4.8-2.4L4.5 16.5a1.6 1.6 0 0 1 2.5-2L9 17"/></svg></span><span><b>Browse</b> the retained assets with the arrows or by scrolling, and use the <b>Mass / Quantity</b> toggle to change the chart. The spotlight shows Retain assets <b>starred</b> in the Asset Register &mdash; stars are saved in your own browser, so this is a personal view.</span></div>';
+  const banner = '<div class="interact-banner"><span class="ib-tag">Interactive</span><span class="ib-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11.5V5.5a1.5 1.5 0 0 1 3 0V11m0-1.5a1.5 1.5 0 0 1 3 0V11m0 .5a1.5 1.5 0 0 1 3 0V13m0 .5a1.5 1.5 0 0 1 3 0v3.5a6 6 0 0 1-6 6h-2.5a6 6 0 0 1-4.8-2.4L4.5 16.5a1.6 1.6 0 0 1 2.5-2L9 17"/></svg></span><span>The spotlight shows Retain assets <b>starred</b> in the Asset Register &mdash; stars are saved in your own browser, so this is a personal view. <b>Browse</b> the retained assets with the arrows or by scrolling, and use the <b>Mass / Quantity</b> toggle to change the chart.</span></div>';
     if (!items.length) {
     root.innerHTML = banner + '<div class="spot-empty"><b>No retained assets spotlighted yet</b>' +
       'Star an asset with the Retain pathway in the Asset Register and it will be featured here.</div>';
@@ -826,7 +857,7 @@ function initOverviewStats() {
   set('ov-diversion',  s.divRate.toFixed(1) + '<span class="rku">%</span>');
   set('ov-divert-sub', fmt(s.divertKg) + ' kg diverted, including retained assets');
   set('ov-landfill',     fmt(s.landfillKg) + '<span class="rku">kg</span>');
-  set('ov-landfill-sub', '~' + (s.landfillKg / 330).toFixed(2) + ' m³ vol · ' + (s.landfillKg / NLA_M2).toFixed(2) + ' kg/m² intensity');
+  set('ov-landfill-sub', (s.landfillKg / NLA_M2).toFixed(2) + ' kg/m² waste intensity');
   set('ov-nla',          NLA_M2.toLocaleString());
   set('ov-nla-sub',      (s.totalKg / NLA_M2).toFixed(1) + ' kg/m² fitout density');
 }
@@ -844,17 +875,17 @@ function renderOverviewMinis() {
   const pwSorted = Object.keys(byPw).filter(p => byPw[p] > 0).sort((a, b) => byPw[b] - byPw[a]);
   set('om-flow',
     '<div class="om-stack">' + pwSorted.map(p =>
-      '<span style="width:' + (byPw[p] / totalKg * 100).toFixed(2) + '%;background:' + ((PW_COLORS[p] || {}).tx || '#999') + '"></span>'
+      '<span style="width:' + (byPw[p] / totalKg * 100).toFixed(2) + '%;background:' + (PW_CHART[p] || '#999') + '"></span>'
     ).join('') + '</div>' +
     '<div class="om-legend">' + pwSorted.slice(0, 3).map(p =>
-      '<div><span><span style="display:inline-block;width:8px;height:8px;border-radius:2px;background:' + ((PW_COLORS[p] || {}).tx || '#999') + ';margin-right:7px"></span>' + p + '</span><b>' + (byPw[p] / totalKg * 100).toFixed(1) + '%</b></div>'
+      '<div><span><span style="display:inline-block;width:8px;height:8px;border-radius:2px;background:' + (PW_CHART[p] || '#999') + ';margin-right:7px"></span>' + p + '</span><b>' + (byPw[p] / totalKg * 100).toFixed(1) + '%</b></div>'
     ).join('') + '</div>');
 
   /* 2 — Recovery: top-4 pathway mini bars */
   const mxPw = byPw[pwSorted[0]] || 1;
   set('om-pyr', '<div class="om-bars">' + pwSorted.slice(0, 4).map(p =>
     '<div class="om-bar"><span class="ob-lbl">' + p + '</span>' +
-    '<span class="ob-track"><span class="ob-fill" style="width:' + (byPw[p] / mxPw * 100).toFixed(1) + '%;background:' + ((PW_COLORS[p] || {}).tx || '#999') + '"></span></span>' +
+    '<span class="ob-track"><span class="ob-fill" style="width:' + (byPw[p] / mxPw * 100).toFixed(1) + '%;background:' + (PW_CHART[p] || '#999') + '"></span></span>' +
     '<span class="ob-val">' + fmtWt(byPw[p]) + '</span></div>'
   ).join('') + '</div>');
 
@@ -952,6 +983,20 @@ const PW_COLORS = {
   'Stewardship':   { bg:'#fef9c3', tx:'#854d0e' },
   'Recycle':       { bg:'#e8effe', tx:'#1a4ba6' },
   'Dispose':       { bg:'#feeaea', tx:'#991b1b' },
+};
+
+/* ── Pathway colours for the Overview preview widgets: brand navy / blue / orange family, bright enough
+   that neighbouring pathways stay distinguishable (the PW_COLORS text tones above are too dark and merge). ── */
+const PW_CHART = {
+  'Retain':         '#1E1B5C',   /* brand navy */
+  'Stewardship':    '#3D7BEA',   /* bright blue */
+  'Reuse':          '#7FB2F5',   /* light blue */
+  'Adaptive Reuse': '#5B54C9',   /* indigo */
+  'Refurbish':      '#1FB5C9',   /* cyan */
+  'Remanufacture':  '#9A96E8',   /* periwinkle */
+  'Rehome':         '#F4A86A',   /* soft orange */
+  'Recycle':        '#E8762B',   /* brand orange */
+  'Dispose':        '#C0392B',   /* red */
 };
 
 /* ── Pathway destination bars ── */
