@@ -63,14 +63,14 @@ set-up is handled by a colleague. This file is the hand-over.
 
 ## 4. Field decisions (owner, 2026-11-27)
 
-**Editable (19):** Quantity, Location, Manufacturer, Supplier, Primary material stream, Pathway, Primary partner(s), Supplementary partner(s), Weight per unit (kg), Workshop notes, and all nine pathway notes (Retain, Reuse, Adaptive Reuse, Refurbish, Recycle, Dispose, Rehome, Remanufacture, Stewardship).
+**Editable (22):** Quantity, Location, Manufacturer, Supplier, Primary material stream, Pathway, Primary partner(s), Supplementary partner(s), Weight per unit (kg), Height / Depth / Width (mm), Workshop notes, and all nine pathway notes (Retain, Reuse, Adaptive Reuse, Refurbish, Recycle, Dispose, Rehome, Remanufacture, Stewardship).
 
 **Fixed (shown read-only; the merge tool also rejects them):** ID, Title, Category, Unit, Photos, EC per unit, EC source, WE factor, EF source, Audit notes.
 
 **Automatic (calculated, never edited):** total weight, total embodied carbon, waste emissions potential. Recalculated from quantity, weight per unit, EC per unit and WE factor.
 
 **Not on the owner's list, handled as follows (confirm):**
-- Height / Depth / Width (mm): treated as **fixed** for now.
+- Height / Depth / Width (mm): made **editable** (owner confirmed; not used in any calculation yet).
 - `intoNewFitout`: kept in the data model, not editable. Not set on any asset right now.
 - Add asset: not available to editors. Delete asset: admin only (owner's local editor, later the admin area).
 

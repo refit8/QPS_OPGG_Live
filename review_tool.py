@@ -24,6 +24,9 @@ FIELDS = {
     "pathway.partners":              "Primary partner(s)",
     "pathway.partnersSupplementary": "Supplementary partner(s)",
     "weight.perUnit":                "Weight per unit (kg)",
+    "dimensions.height":             "Height (mm)",
+    "dimensions.depth":              "Depth (mm)",
+    "dimensions.width":              "Width (mm)",
     "notes.workshop":                "Workshop notes",
     "pathwayNotes.retain":           "Pathway note: Retain",
     "pathwayNotes.reuse":            "Pathway note: Reuse",
@@ -35,7 +38,7 @@ FIELDS = {
     "pathwayNotes.remanufacture":    "Pathway note: Remanufacture",
     "pathwayNotes.stewardship":      "Pathway note: Stewardship",
 }
-NUMBER_FIELDS = {"quantity", "weight.perUnit"}
+NUMBER_FIELDS = {"quantity", "weight.perUnit", "dimensions.height", "dimensions.depth", "dimensions.width"}
 REQUIRED_FIELDS = set()
 CATEGORIES = {"Built Form", "FF&E", "Services", "Construction Waste", "Out-of-Scope"}
 UNITS = {"Count", "Mass (kg)", "Area (m2)", "Linear Metre (m)", "Volume (m3)"}
